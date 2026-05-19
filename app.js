@@ -219,56 +219,17 @@
                 if (active) p.removeAttribute("hidden");
                 else p.setAttribute("hidden", "");
             });
+            // Scroll the active tab into view on mobile
+            var activeTab = wrapper.querySelector("[data-tour-tab=\"" + id + "\"]");
+            if (activeTab && activeTab.scrollIntoView) {
+                activeTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+            }
         }
 
         tabs.forEach(function (tab) {
             tab.addEventListener("click", function () {
                 showPanel(tab.getAttribute("data-tour-tab"));
             });
-        });
-
-        // Initialize each gallery (carousel)
-        wrapper.querySelectorAll("[data-gallery]").forEach(function (gallery) {
-            var track = gallery.querySelector("[data-gallery-track]");
-            var prev = gallery.querySelector("[data-gallery-prev]");
-            var next = gallery.querySelector("[data-gallery-next]");
-            var dotsContainer = gallery.querySelector("[data-gallery-dots]");
-            if (!track) return;
-            var slides = track.children;
-            var count = slides.length;
-            var idx = 0;
-
-            if (count <= 1) {
-                gallery.classList.add("single");
-                return;
-            }
-
-            // Build dots
-            if (dotsContainer) {
-                for (var i = 0; i < count; i++) {
-                    var d = document.createElement("button");
-                    if (i === 0) d.className = "active";
-                    d.setAttribute("aria-label", "Image " + (i + 1));
-                    (function (k) {
-                        d.addEventListener("click", function () { go(k); });
-                    })(i);
-                    dotsContainer.appendChild(d);
-                }
-            }
-
-            function go(n) {
-                idx = (n + count) % count;
-                track.style.transform = "translateX(-" + (idx * 100) + "%)";
-                if (dotsContainer) {
-                    var dots = dotsContainer.children;
-                    for (var j = 0; j < dots.length; j++) {
-                        dots[j].classList.toggle("active", j === idx);
-                    }
-                }
-            }
-
-            if (prev) prev.addEventListener("click", function () { go(idx - 1); });
-            if (next) next.addEventListener("click", function () { go(idx + 1); });
         });
     }
 

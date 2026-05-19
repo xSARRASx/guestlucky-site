@@ -2614,14 +2614,14 @@ a { color: inherit; text-decoration: none; }
 /* Empêcher tout débordement horizontal sur la page entière */
 html, body { overflow-x: hidden; max-width: 100vw; }
 
-/* ============ Interface Tour (tabs + gallery) ============ */
+/* ============ Interface Tour (tabs + per-image captions) ============ */
 .interface-tour { padding: 5rem 0; }
 
 .tour-wrapper {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     box-shadow: var(--shadow-sm);
 }
 
@@ -2629,8 +2629,8 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     display: flex;
     gap: 0.5rem;
     overflow-x: auto;
-    padding: 0.25rem 0.25rem 1rem;
-    margin-bottom: 1.25rem;
+    padding: 0.25rem 0.25rem 1.25rem;
+    margin-bottom: 2rem;
     border-bottom: 1px solid var(--line);
     scrollbar-width: thin;
     scrollbar-color: var(--primary-light) transparent;
@@ -2666,26 +2666,25 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     box-shadow: 0 6px 16px rgba(107,70,255,0.30);
 }
 
-.tour-panels { position: relative; }
-
 .tour-panel {
     display: none;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 2rem;
-    align-items: center;
     animation: tourFade 0.35s ease;
 }
-.tour-panel.active { display: grid; }
-.tour-panel[hidden] { display: none; }
-.tour-panel.active[hidden] { display: none; }
+.tour-panel.active { display: block; }
+.tour-panel[hidden] { display: none !important; }
 
 @keyframes tourFade {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-.tour-text { padding: 0.5rem 0.25rem; }
-
+.tour-panel-head {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .tour-tag {
     display: inline-block;
     background: var(--primary-soft);
@@ -2698,138 +2697,101 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
-
-.tour-text h3 {
-    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+.tour-panel-head h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.2;
     margin-bottom: 0.85rem;
     color: var(--ink);
 }
-
-.tour-text p {
-    font-size: 1rem;
+.tour-panel-head p {
+    font-size: 1.02rem;
     color: var(--ink-soft);
     line-height: 1.6;
 }
 
-.tour-gallery { position: relative; }
+.tour-stack {
+    display: grid;
+    gap: 3rem;
+    max-width: 880px;
+    margin: 0 auto;
+}
 
-.tour-frame {
+.tour-shot {
+    margin: 0;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.tour-shot .tour-frame {
     position: relative;
     background: var(--navy);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 24px 60px rgba(15,15,31,0.18);
+    box-shadow: 0 20px 50px rgba(15,15,31,0.12);
     border: 1px solid rgba(255,255,255,0.06);
 }
-
-.tour-frame .frame-bar {
+.tour-shot .frame-bar {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.6rem 0.85rem;
+    padding: 0.55rem 0.8rem;
     background: var(--navy-2);
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.tour-frame .frame-bar .dot-r,
-.tour-frame .frame-bar .dot-y,
-.tour-frame .frame-bar .dot-g {
-    width: 11px; height: 11px; border-radius: 50%;
-}
-.tour-frame .frame-bar .dot-r { background: #ff5f57; }
-.tour-frame .frame-bar .dot-y { background: #febc2e; }
-.tour-frame .frame-bar .dot-g { background: #28c840; }
-.tour-frame .frame-bar .url {
+.tour-shot .frame-bar .dot-r,
+.tour-shot .frame-bar .dot-y,
+.tour-shot .frame-bar .dot-g { width: 10px; height: 10px; border-radius: 50%; }
+.tour-shot .frame-bar .dot-r { background: #ff5f57; }
+.tour-shot .frame-bar .dot-y { background: #febc2e; }
+.tour-shot .frame-bar .dot-g { background: #28c840; }
+.tour-shot .frame-bar .url {
     margin-left: auto;
     margin-right: auto;
     background: rgba(255,255,255,0.06);
     color: rgba(255,255,255,0.7);
-    padding: 0.22rem 0.7rem;
+    padding: 0.2rem 0.65rem;
     border-radius: 6px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
     max-width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-.tour-track {
-    display: flex;
-    transition: transform 0.4s ease;
-    background: #fff;
-}
-.tour-track img {
-    flex: 0 0 100%;
+.tour-shot .tour-frame img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    object-fit: cover;
+    background: #fff;
 }
 
-.tour-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.95);
-    border: 1px solid var(--line);
-    color: var(--primary-dark);
-    font-size: 1.5rem;
+.tour-caption {
+    text-align: center;
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+.tour-caption h4 {
+    font-size: 1.15rem;
     font-weight: 700;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    transition: background 0.18s, transform 0.15s, opacity 0.2s;
-    z-index: 2;
-    font-family: inherit;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
 }
-.tour-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
-.tour-arrow.prev { left: 0.75rem; }
-.tour-arrow.next { right: 0.75rem; }
+.tour-caption p {
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+.tour-caption em { color: var(--muted); font-style: italic; }
 
-.tour-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.45rem;
-    margin-top: 1rem;
-}
-.tour-dots:empty { display: none; }
-.tour-dots button {
-    width: 9px;
-    height: 9px;
-    padding: 0;
-    border-radius: 50%;
-    border: none;
-    background: var(--line);
-    cursor: pointer;
-    transition: background 0.18s, transform 0.18s;
-}
-.tour-dots button.active {
-    background: var(--primary);
-    transform: scale(1.3);
-}
-
-/* Single-image gallery: hide arrows */
-.tour-gallery.single .tour-arrow { display: none; }
-
-/* Responsive */
-@media (max-width: 980px) {
-    .tour-panel { grid-template-columns: 1fr; gap: 1.5rem; }
-    .tour-text { text-align: center; }
-}
 @media (max-width: 720px) {
     .interface-tour { padding: 3rem 0; }
-    .tour-wrapper { padding: 1rem; }
+    .tour-wrapper { padding: 1.25rem 1rem; }
     .tour-tab { padding: 0.5rem 0.85rem; font-size: 0.82rem; }
-    .tour-arrow { width: 34px; height: 34px; font-size: 1.2rem; }
-    .tour-text h3 { font-size: 1.2rem; }
-    .tour-text p { font-size: 0.92rem; }
+    .tour-stack { gap: 2.25rem; }
+    .tour-panel-head h3 { font-size: 1.4rem; }
+    .tour-caption h4 { font-size: 1.05rem; }
 }
