@@ -231,6 +231,33 @@
                 showPanel(tab.getAttribute("data-tour-tab"));
             });
         });
+
+        // Sub-tabs (one per image inside a panel)
+        wrapper.querySelectorAll("[data-tour-subtabs]").forEach(function (group) {
+            var subtabs = group.querySelectorAll("[data-tour-subtab]");
+            var panel = group.parentNode;
+            while (panel && !panel.hasAttribute("data-tour-panel")) {
+                panel = panel.parentNode;
+            }
+            if (!panel) return;
+            var shots = panel.querySelectorAll("[data-tour-shot]");
+            subtabs.forEach(function (st) {
+                st.addEventListener("click", function () {
+                    var idx = st.getAttribute("data-tour-subtab");
+                    subtabs.forEach(function (s) {
+                        var active = s.getAttribute("data-tour-subtab") === idx;
+                        s.classList.toggle("active", active);
+                        s.setAttribute("aria-selected", active ? "true" : "false");
+                    });
+                    shots.forEach(function (sh) {
+                        var active = sh.getAttribute("data-tour-shot") === idx;
+                        sh.classList.toggle("active", active);
+                        if (active) sh.removeAttribute("hidden");
+                        else sh.setAttribute("hidden", "");
+                    });
+                });
+            });
+        });
     }
 
     function init() {
