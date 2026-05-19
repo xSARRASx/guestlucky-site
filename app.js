@@ -200,6 +200,78 @@
         });
     }
 
+    function initInterfaceTour() {
+        var wrapper = document.querySelector("[data-interface-tour]");
+        if (!wrapper) return;
+
+        var tabs = wrapper.querySelectorAll("[data-tour-tab]");
+        var panels = wrapper.querySelectorAll("[data-tour-panel]");
+
+        function showPanel(id) {
+            tabs.forEach(function (t) {
+                var active = t.getAttribute("data-tour-tab") === id;
+                t.classList.toggle("active", active);
+                t.setAttribute("aria-selected", active ? "true" : "false");
+            });
+            panels.forEach(function (p) {
+                var active = p.getAttribute("data-tour-panel") === id;
+                p.classList.toggle("active", active);
+                if (active) p.removeAttribute("hidden");
+                else p.setAttribute("hidden", "");
+            });
+        }
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+                showPanel(tab.getAttribute("data-tour-tab"));
+            });
+        });
+
+        // Initialize each gallery (carousel)
+        wrapper.querySelectorAll("[data-gallery]").forEach(function (gallery) {
+            var track = gallery.querySelector("[data-gallery-track]");
+            var prev = gallery.querySelector("[data-gallery-prev]");
+            var next = gallery.querySelector("[data-gallery-next]");
+            var dotsContainer = gallery.querySelector("[data-gallery-dots]");
+            if (!track) return;
+            var slides = track.children;
+            var count = slides.length;
+            var idx = 0;
+
+            if (count <= 1) {
+                gallery.classList.add("single");
+                return;
+            }
+
+            // Build dots
+            if (dotsContainer) {
+                for (var i = 0; i < count; i++) {
+                    var d = document.createElement("button");
+                    if (i === 0) d.className = "active";
+                    d.setAttribute("aria-label", "Image " + (i + 1));
+                    (function (k) {
+                        d.addEventListener("click", function () { go(k); });
+                    })(i);
+                    dotsContainer.appendChild(d);
+                }
+            }
+
+            function go(n) {
+                idx = (n + count) % count;
+                track.style.transform = "translateX(-" + (idx * 100) + "%)";
+                if (dotsContainer) {
+                    var dots = dotsContainer.children;
+                    for (var j = 0; j < dots.length; j++) {
+                        dots[j].classList.toggle("active", j === idx);
+                    }
+                }
+            }
+
+            if (prev) prev.addEventListener("click", function () { go(idx - 1); });
+            if (next) next.addEventListener("click", function () { go(idx + 1); });
+        });
+    }
+
     function init() {
         initPricing();
         initFAQ();
@@ -208,6 +280,7 @@
         initCookieBanner();
         initWebinarFloat();
         initLangDropdown();
+        initInterfaceTour();
         var yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
     }

@@ -247,96 +247,338 @@
         </div>
     </section>
 
-    <!-- SHOWCASE - L'OUTIL EN ACTION -->
-    <section class="section showcase" id="showcase">
+    <!-- INTERFACE TOUR - Découverte interactive de l'outil -->
+    <section class="section interface-tour" id="interface-tour">
         <div class="container">
             <div class="section-head">
                 <span class="section-eyebrow"><span class="dot"></span> L'outil en action</span>
                 <h2>Découvrez l'interface <span class="accent">GuestLucky</span></h2>
-                <p class="lead">Une plateforme complète, pensée pour les pros de la location courte durée. Voici l'outil de l'intérieur.</p>
+                <p class="lead">Une plateforme complète, pensée pour les pros de la location courte durée. Naviguez module par module et voyez l'outil de l'intérieur.</p>
             </div>
 
-            <div class="showcase-grid">
+            <div class="tour-wrapper" data-interface-tour>
+                <div class="tour-tabs" role="tablist" aria-label="Modules GuestLucky">
+                    <button class="tour-tab active" data-tour-tab="analytics" role="tab" aria-selected="true">Analytics</button>
+                    <button class="tour-tab" data-tour-tab="annonces" role="tab">Mes annonces</button>
+                    <button class="tour-tab" data-tour-tab="calendrier" role="tab">Calendrier</button>
+                    <button class="tour-tab" data-tour-tab="reservations" role="tab">Réservations</button>
+                    <button class="tour-tab" data-tour-tab="tarification" role="tab">Tarification</button>
+                    <button class="tour-tab" data-tour-tab="pricelabs" role="tab">PriceLabs</button>
+                    <button class="tour-tab" data-tour-tab="messagerie" role="tab">Messagerie IA</button>
+                    <button class="tour-tab" data-tour-tab="autoactions" role="tab">Auto-actions</button>
+                    <button class="tour-tab" data-tour-tab="avis" role="tab">Avis clients</button>
+                    <button class="tour-tab" data-tour-tab="compte" role="tab">Compte</button>
+                    <button class="tour-tab" data-tour-tab="facturation" role="tab">Facturation</button>
+                    <button class="tour-tab" data-tour-tab="reclamations" role="tab">Réclamations & avis</button>
+                    <button class="tour-tab" data-tour-tab="incidents" role="tab">Incidents</button>
+                    <button class="tour-tab" data-tour-tab="services" role="tab">Services additionnels</button>
+                    <button class="tour-tab" data-tour-tab="stock" role="tab">Stock</button>
+                    <button class="tour-tab" data-tour-tab="discussion" role="tab">Discussion équipe</button>
+                </div>
 
-                <article class="showcase-item showcase-large">
-                    <div class="showcase-frame">
-                        <div class="frame-bar">
-                            <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                            <span class="url">app.guestlucky.com / channel-manager</span>
+                <div class="tour-panels">
+
+                    <article class="tour-panel active" data-tour-panel="analytics" role="tabpanel">
+                        <div class="tour-text">
+                            <span class="tour-tag">Analytics</span>
+                            <h3>Analyses & performances en temps réel</h3>
+                            <p>Visualisez vos revenus, votre taux d'occupation et toutes les statistiques clés de vos logements en un coup d'œil. Filtres par période, par bien ou par canal pour piloter votre activité finement.</p>
                         </div>
-                        <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110793149.png" alt="Calendrier Channel Manager GuestLucky avec multi-canaux Airbnb, Booking, Expedia, Abritel" loading="lazy">
-                    </div>
-                    <div class="showcase-text">
-                        <span class="showcase-tag">Channel Manager</span>
-                        <h3>Calendrier unifié multi-canaux</h3>
-                        <p>Toutes vos réservations <strong>Airbnb, Booking, Expedia, Abritel et directes</strong> dans un seul calendrier coloré. Plus jamais de double réservation, modifications en temps réel.</p>
-                    </div>
-                </article>
-
-                <article class="showcase-item">
-                    <div class="showcase-frame">
-                        <div class="frame-bar">
-                            <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                            <span class="url">app.guestlucky.com / reservations</span>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / analytics</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.47.56.png" alt="Tableau de bord analytics GuestLucky — revenus et performances" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.48.28.png" alt="Statistiques de taux d'occupation dans GuestLucky" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.49.06.png" alt="Analyse détaillée des revenus par logement et par canal" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
                         </div>
-                        <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110797587.png" alt="Liste des réservations multi-canaux dans GuestLucky" loading="lazy">
-                    </div>
-                    <div class="showcase-text">
-                        <span class="showcase-tag">Réservations</span>
-                        <h3>Vue centralisée des bookings</h3>
-                        <p>Liste claire de tous vos voyageurs, peu importe le canal de réservation. Filtres rapides, recherche, et statut en temps réel.</p>
-                    </div>
-                </article>
+                    </article>
 
-                <article class="showcase-item">
-                    <div class="showcase-frame">
-                        <div class="frame-bar">
-                            <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                            <span class="url">app.guestlucky.com / ia-config</span>
+                    <article class="tour-panel" data-tour-panel="annonces" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Annonces</span>
+                            <h3>Gérez toutes vos annonces au même endroit</h3>
+                            <p>Synchronisez et pilotez vos annonces <strong>Airbnb, Booking, Expedia, Abritel</strong>… Modifiez descriptions, photos et tarifs sans jongler entre les plateformes.</p>
                         </div>
-                        <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110801649.png" alt="Configuration de l'IA voyageurs GuestLucky (GPT-4o, mots exclus, température)" loading="lazy">
-                    </div>
-                    <div class="showcase-text">
-                        <span class="showcase-tag">Messagerie IA</span>
-                        <h3>Configuration fine de l'IA</h3>
-                        <p>Choisis le modèle <strong>GPT-4o</strong>, le ton, la température, les <strong>mots-clés exclus</strong> et le délai de réponse. L'IA répond à ta place, mais reste sous ton contrôle.</p>
-                    </div>
-                </article>
-
-                <article class="showcase-item">
-                    <div class="showcase-frame">
-                        <div class="frame-bar">
-                            <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                            <span class="url">app.guestlucky.com / messages</span>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / annonces</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.51.01.png" alt="Liste des annonces GuestLucky multi-plateformes" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.51.40.png" alt="Édition d'une annonce dans GuestLucky" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
                         </div>
-                        <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110804064.jpg" alt="Messages voyageurs GuestLucky avec Airbnb et Booking centralisés" loading="lazy">
-                    </div>
-                    <div class="showcase-text">
-                        <span class="showcase-tag">Messages voyageurs</span>
-                        <h3>Boîte de réception unifiée</h3>
-                        <p>Tous tes messages <strong>Airbnb, Booking, etc.</strong> dans une seule interface. L'IA répond automatiquement ou tu reprends la main quand tu veux.</p>
-                    </div>
-                </article>
+                    </article>
 
-                <article class="showcase-item showcase-large">
-                    <div class="showcase-frame">
-                        <div class="frame-bar">
-                            <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                            <span class="url">app.guestlucky.com / auto-actions</span>
+                    <article class="tour-panel" data-tour-panel="calendrier" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Channel Manager</span>
+                            <h3>Calendrier unifié multi-canaux</h3>
+                            <p>Toutes vos réservations <strong>Airbnb, Booking, Expedia, Abritel et directes</strong> dans un seul calendrier coloré. Fini les doubles réservations, mises à jour en temps réel.</p>
                         </div>
-                        <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110805184.png" alt="Auto-actions et livret d'accueil dans GuestLucky" loading="lazy">
-                    </div>
-                    <div class="showcase-text">
-                        <span class="showcase-tag">Auto-actions & Livret d'accueil</span>
-                        <h3>Automatise tout : check-in, check-out, codes</h3>
-                        <p>Crée des <strong>messages automatiques</strong> personnalisés (avec le prénom du voyageur, l'adresse, les codes…) déclenchés au bon moment : à la réservation, J-1, jour J, après le départ.</p>
-                    </div>
-                </article>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / calendrier</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110793149.png" alt="Calendrier multi-canaux GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
 
+                    <article class="tour-panel" data-tour-panel="reservations" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Réservations</span>
+                            <h3>Toutes vos réservations centralisées</h3>
+                            <p>Une vue claire de chaque booking, filtres rapides, recherche et statuts en temps réel. Plus besoin d'ouvrir 5 onglets pour suivre vos voyageurs.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / reservations</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.52.49.png" alt="Liste des réservations GuestLucky" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.52.16.png" alt="Détails d'une réservation dans GuestLucky" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="tarification" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Tarification</span>
+                            <h3>Tarifs dynamiques en quelques clics</h3>
+                            <p>Ajustez prix de base, saisons, remises et suppléments depuis une interface intuitive. Optimisez votre rendement sans prise de tête.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / tarification</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.53.26.png" alt="Tarification dynamique GuestLucky" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.53.33.png" alt="Réglage des saisons tarifaires" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.54.30.png" alt="Suppléments et remises GuestLucky" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="pricelabs" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Yield Management</span>
+                            <h3>Yield management intégré avec PriceLabs</h3>
+                            <p>Connectez votre compte <strong>PriceLabs</strong> pour synchroniser automatiquement des tarifs dynamiques basés sur la demande locale, les événements et la concurrence.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / pricelabs</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.55.31.png" alt="Intégration PriceLabs dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="messagerie" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Messagerie IA</span>
+                            <h3>Boîte de réception unifiée avec IA</h3>
+                            <p>Tous les messages <strong>Airbnb, Booking, etc.</strong> dans une seule interface. L'IA répond automatiquement, vous reprenez la main quand vous voulez.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / messagerie</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.25.52.png" alt="Boîte de réception unifiée GuestLucky" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.26.14.png" alt="Réponse IA à un voyageur" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.57.31.png" alt="Paramètres IA voyageurs GuestLucky" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="autoactions" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Auto-actions</span>
+                            <h3>Automatisez check-in, check-out & codes</h3>
+                            <p>Créez des <strong>messages automatiques personnalisés</strong> (prénom, adresse, codes…) déclenchés à la réservation, J-1, jour J ou après le départ. Sans rien faire.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / auto-actions</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.59.39.png" alt="Auto-actions et livret d'accueil dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="avis" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Avis voyageurs</span>
+                            <h3>Suivi de vos avis voyageurs</h3>
+                            <p>Centralisez les notes et commentaires laissés par vos voyageurs sur chaque canal pour piloter votre réputation en un coup d'œil.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / avis</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.17.47.png" alt="Avis voyageurs centralisés dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="compte" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Compte</span>
+                            <h3>Paramètres & profil</h3>
+                            <p>Gérez votre équipe, vos accès, vos informations de facturation et vos préférences depuis un espace clair et sécurisé.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / compte</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.18.22.png" alt="Paramètres de compte GuestLucky" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.18.36.png" alt="Gestion des accès équipe GuestLucky" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="facturation" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Facturation</span>
+                            <h3>Facturation propriétaires automatisée</h3>
+                            <p>Générez automatiquement relevés mensuels et factures pour vos propriétaires. Téléchargement PDF en un clic, conforme à la facturation électronique 2026.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / facturation</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Image_20260519_123020-scaled.jpg" alt="Facturation propriétaires automatisée dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="reclamations" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Réclamations</span>
+                            <h3>Gestion des réclamations voyageurs</h3>
+                            <p>Centralisez retours, plaintes et demandes spéciales de vos voyageurs pour un suivi rigoureux et un service client au top.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / reclamations</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.21.52.png" alt="Réclamations voyageurs dans GuestLucky" loading="lazy">
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.22.03.png" alt="Détail d'une réclamation GuestLucky" loading="lazy">
+                                </div>
+                                <button class="tour-arrow prev" data-gallery-prev aria-label="Image précédente">‹</button>
+                                <button class="tour-arrow next" data-gallery-next aria-label="Image suivante">›</button>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="incidents" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Incidents</span>
+                            <h3>Suivi des incidents logements</h3>
+                            <p>Créez des fiches incidents (équipement cassé, fuite, problème ménage) reliées directement au logement et à la réservation concernés.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / incidents</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.22.34.png" alt="Suivi des incidents logements dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="services" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Services additionnels</span>
+                            <h3>Vendez des services en plus</h3>
+                            <p>Proposez ménage supplémentaire, late check-out, panier d'accueil, location de matériel… et facturez-les automatiquement à vos voyageurs.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / services</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.23.08.png" alt="Services additionnels GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="stock" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Stock</span>
+                            <h3>Gestion du stock & des consommables</h3>
+                            <p>Suivez les stocks de linge, produits ménagers et consommables sur chaque logement pour ne jamais être pris au dépourvu.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / stock</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.23.51.png" alt="Gestion du stock et des consommables dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                    <article class="tour-panel" data-tour-panel="discussion" role="tabpanel" hidden>
+                        <div class="tour-text">
+                            <span class="tour-tag">Discussion équipe</span>
+                            <h3>Espace d'échange interne</h3>
+                            <p>Communiquez directement avec vos prestataires de ménage et vos propriétaires depuis GuestLucky. Tout l'historique de l'équipe centralisé au même endroit.</p>
+                        </div>
+                        <div class="tour-gallery" data-gallery>
+                            <div class="tour-frame">
+                                <div class="frame-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="url">app.guestlucky.com / discussion</span></div>
+                                <div class="tour-track" data-gallery-track>
+                                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.24.10.png" alt="Discussion interne entre propriétaires et prestataires de ménage dans GuestLucky" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="tour-dots" data-gallery-dots></div>
+                        </div>
+                    </article>
+
+                </div>
             </div>
 
-            <div style="text-align:center;margin-top:2.5rem;">
-                <a href="fonctionnalites.html" class="btn-cta">Voir toutes les fonctionnalités <span class="arrow">→</span></a>
+            <div style="text-align:center;margin-top:3rem;">
+                <a href="#demo" class="btn-cta">Découvrir GuestLucky en démo <span class="arrow">→</span></a>
             </div>
         </div>
     </section>
