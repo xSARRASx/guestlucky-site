@@ -202,7 +202,6 @@
 <script>
 (function () {
     var ENDPOINT = "register-webinar.php";
-    var THANKS_URL = "merci-webinaire-en.html";
     var ONE_CLICK_BASE = "https://event.webinarjam.com/zg53v/register/r2wplcw1/1click";
     var SCHEDULE_ID = 1;
 
@@ -230,23 +229,22 @@
 
         var data = new FormData(form);
         data.append("source", window.location.pathname);
-        var firstname = data.get("firstname") || "";
 
         if (window.dataLayer) window.dataLayer.push({event: "webinar_register_submit"});
 
-        fetch(ENDPOINT, { method: "POST", body: data })
-            .then(function (r) { return r.json().catch(function(){ return {ok:false}; }); })
-            .then(function (res) {
-                // Que le PHP réussisse ou non, l'inscription est probablement faite chez WJ.
-                // On redirige vers la page de remerciement.
-                var url = THANKS_URL + (firstname ? "?name=" + encodeURIComponent(firstname) : "");
-                window.location.href = url;
-            })
-            .catch(function (err) {
-                // Si le PHP n'est pas accessible (404, CORS), fallback vers WJ One-Click
-                console.warn("PHP indisponible, fallback WJ:", err);
-                window.location.href = buildOneClickUrl(data);
-            });
+        // Admin notification in the background: sendBeacon guarantees delivery
+        // even though the page navigates away right after.
+        try {
+            if (navigator.sendBeacon) {
+                navigator.sendBeacon(ENDPOINT, data);
+            } else {
+                fetch(ENDPOINT, { method: "POST", body: data, keepalive: true });
+            }
+        } catch (err) {}
+
+        // The visitor's browser opens the WebinarJam 1-click URL — this is what
+        // ACTUALLY creates the registration on WebinarJam's side.
+        window.location.href = buildOneClickUrl(data);
     });
 })();
 document.getElementById("year").textContent = new Date().getFullYear();
