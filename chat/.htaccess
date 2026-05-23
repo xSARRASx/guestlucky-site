@@ -1,0 +1,19 @@
+# Protege les fichiers sensibles de l'acces public.
+
+<FilesMatch "^\.env|\.env\..*">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "system_prompt\.php|manual\.php">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "rate_limit\.json">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Force UTF-8
+AddDefaultCharset UTF-8

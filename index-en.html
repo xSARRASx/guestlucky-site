@@ -137,6 +137,78 @@
         </div>
     </section>
 
+    <!-- LUCKY COPILOT — New AI feature -->
+    <section class="section copilot-promo" id="copilot">
+        <div class="copilot-promo-bg"><span class="blob purple"></span><span class="blob magenta"></span></div>
+        <div class="container">
+            <div class="section-head">
+                <span class="copilot-badge"><span class="pulse"></span> New · Available now</span>
+                <h2>Lucky Copilot, <span class="accent-magenta">the AI built into</span> GuestLucky</h2>
+                <p class="lead">Answers all your questions and takes action for you. Your right hand, available 24/7, natively integrated into your software.</p>
+            </div>
+
+            <div class="copilot-grid">
+                <div class="copilot-text">
+                    <ul class="copilot-features">
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                            <div>
+                                <strong>Answers any question</strong>
+                                <span>FAQ, features, pricing, tutorials — instant answers, no manual digging.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <div>
+                                <strong>Reads your data on demand</strong>
+                                <span>Reservations, listings, revenue, occupancy — ask and he shows it.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                            <div>
+                                <strong>Creates for you</strong>
+                                <span>Incidents, cleaning missions, listings, reservations… all from the chat.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                            <div>
+                                <strong>Edits in one message</strong>
+                                <span>Prices, calendars, guest welcome book — just tell him, it's done.</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn-copilot-cta" onclick="document.getElementById('glcv-bubble').click()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.7 5.2L19 9l-5.3 1.7L12 16l-1.7-5.3L5 9l5.3-1.8z"/></svg>
+                        Try Lucky Copilot
+                        <span class="arrow">→</span>
+                    </button>
+                    <p class="copilot-note">Ask him anything right now, without leaving this page.</p>
+                </div>
+
+                <div class="copilot-mock" aria-hidden="true">
+                    <div class="copilot-mock-frame">
+                        <div class="copilot-mock-header">
+                            <div class="copilot-mock-avatar"></div>
+                            <div>
+                                <div class="copilot-mock-title">Lucky Copilot</div>
+                                <div class="copilot-mock-status">Online</div>
+                            </div>
+                        </div>
+                        <div class="copilot-mock-body">
+                            <div class="copilot-mock-msg user">How many reservations this month?</div>
+                            <div class="copilot-mock-msg ai">You have <strong>42 reservations</strong> in May for <strong>€8,320</strong> in revenue. Want the breakdown per property?</div>
+                            <div class="copilot-mock-msg user">Create an incident "broken water heater" on Capitole studio</div>
+                            <div class="copilot-mock-msg ai">Incident created ✅ A mission has been sent to your cleaning provider.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- WEBINAR PROMO -->
     <section class="webinar-promo" aria-label="Webinaire de présentation GuestLucky">
         <div class="container">
@@ -772,5 +844,10 @@
         <button class="cookie-accept" data-cookie-action="accepted">Accept</button>
     </div>
 </div>
+
+<!-- Lucky Copilot widget -->
+<link rel="stylesheet" href="/chat/assets/widget.css">
+<script src="/chat/assets/widget.js" data-chat-url="/chat/chat.php"></script>
+
 </body>
 </html>

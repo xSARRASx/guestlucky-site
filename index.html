@@ -136,6 +136,78 @@
             </div>
         </div>
     </section>
+    <!-- LUCKY COPILOT — Nouvelle fonctionnalité IA -->
+    <section class="section copilot-promo" id="copilot">
+        <div class="copilot-promo-bg"><span class="blob purple"></span><span class="blob magenta"></span></div>
+        <div class="container">
+            <div class="section-head">
+                <span class="copilot-badge"><span class="pulse"></span> Nouveau · Disponible maintenant</span>
+                <h2>Lucky Copilot, <span class="accent-magenta">l'IA intégrée</span> à GuestLucky</h2>
+                <p class="lead">Répond à toutes vos questions et passe à l'action à votre place. Votre bras droit, disponible 24/7, intégré nativement à votre logiciel.</p>
+            </div>
+
+            <div class="copilot-grid">
+                <div class="copilot-text">
+                    <ul class="copilot-features">
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                            <div>
+                                <strong>Répond à toutes vos questions</strong>
+                                <span>FAQ, fonctionnalités, prix, tutoriels — réponse instantanée, sans chercher dans le manuel.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <div>
+                                <strong>Consulte vos données en un mot</strong>
+                                <span>Réservations, logements, chiffre d'affaires, taux d'occupation — demandez, il vous montre.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                            <div>
+                                <strong>Crée pour vous</strong>
+                                <span>Incidents, missions ménage, annonces, réservations… créés directement depuis le chat.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                            <div>
+                                <strong>Modifie en un message</strong>
+                                <span>Prix, calendriers, livret d'accueil voyageur — dites-le, c'est fait.</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn-copilot-cta" onclick="document.getElementById('glcv-bubble').click()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.7 5.2L19 9l-5.3 1.7L12 16l-1.7-5.3L5 9l5.3-1.8z"/></svg>
+                        Essayer Lucky Copilot
+                        <span class="arrow">→</span>
+                    </button>
+                    <p class="copilot-note">Posez-lui une question dès maintenant, sans quitter cette page.</p>
+                </div>
+
+                <div class="copilot-mock" aria-hidden="true">
+                    <div class="copilot-mock-frame">
+                        <div class="copilot-mock-header">
+                            <div class="copilot-mock-avatar"></div>
+                            <div>
+                                <div class="copilot-mock-title">Lucky Copilot</div>
+                                <div class="copilot-mock-status">En ligne</div>
+                            </div>
+                        </div>
+                        <div class="copilot-mock-body">
+                            <div class="copilot-mock-msg user">Combien de réservations ce mois-ci&nbsp;?</div>
+                            <div class="copilot-mock-msg ai">Vous avez <strong>42 réservations</strong> en mai pour un CA de <strong>8 320&nbsp;€</strong>. Vous voulez le détail par logement&nbsp;?</div>
+                            <div class="copilot-mock-msg user">Crée un incident "chauffe-eau cassé" sur le studio Capitole</div>
+                            <div class="copilot-mock-msg ai">Incident créé ✅ Une mission a été envoyée à votre prestataire de ménage.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- WEBINAR PROMO -->
     <section class="webinar-promo" aria-label="Webinaire de présentation GuestLucky">
@@ -772,5 +844,10 @@
         <button class="cookie-accept" data-cookie-action="accepted">Accepter</button>
     </div>
 </div>
+
+<!-- Lucky Copilot widget -->
+<link rel="stylesheet" href="/chat/assets/widget.css">
+<script src="/chat/assets/widget.js" data-chat-url="/chat/chat.php"></script>
+
 </body>
 </html>
