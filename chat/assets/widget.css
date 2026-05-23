@@ -196,6 +196,37 @@
     border-radius: 14px;
 }
 
+/* ---- Rendered markdown inside AI messages ---- */
+.glcv-msg-ai { white-space: normal; }
+.glcv-msg-ai p { margin: 0 0 8px; }
+.glcv-msg-ai p:last-child { margin-bottom: 0; }
+.glcv-msg-ai strong { color: #FFB1C9; font-weight: 700; }
+.glcv-msg-ai em { font-style: italic; }
+.glcv-msg-ai code {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12.5px;
+    color: #FFE0F0;
+}
+.glcv-msg-ai ul, .glcv-msg-ai ol {
+    margin: 4px 0 10px;
+    padding-left: 22px;
+}
+.glcv-msg-ai li { margin-bottom: 4px; }
+.glcv-msg-ai li:last-child { margin-bottom: 0; }
+.glcv-msg-ai .glcv-md-h {
+    font-weight: 700;
+    margin: 10px 0 4px;
+    color: #FF8FBE;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+}
+.glcv-msg-ai .glcv-md-h:first-child { margin-top: 0; }
+.glcv-msg-ai a { color: #9B6FFF; text-decoration: underline; }
+.glcv-msg-ai a:hover { color: #B68BFF; }
+
 /* Etat "ecrit en train" */
 .glcv-typing {
     align-self: flex-start;

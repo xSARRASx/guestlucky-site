@@ -124,12 +124,90 @@
         if (welcome) welcome.remove();
     }
 
+    function escapeHtml(s) {
+        return String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function renderMarkdown(raw) {
+        var s = escapeHtml(raw);
+        // Inline code `code`
+        s = s.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+        // Bold **text**
+        s = s.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
+        // Italic *text* (single asterisk, not bold, must contain non-space)
+        s = s.replace(/(^|[^*])\*([^*\s][^*\n]*?)\*(?!\*)/g, '$1<em>$2</em>');
+        // Markdown links [text](url)
+        s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+            '<a href="$2" target="_blank" rel="noopener">$1</a>');
+        // Auto-link bare URLs
+        s = s.replace(/(^|[\s])(https?:\/\/[^\s<)]+)/g,
+            '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+
+        var lines = s.split('\n');
+        var out = [];
+        var inUl = false, inOl = false;
+        var paragraph = [];
+
+        function flushP() {
+            if (paragraph.length) {
+                out.push('<p>' + paragraph.join('<br>') + '</p>');
+                paragraph = [];
+            }
+        }
+        function closeLists() {
+            if (inUl) { out.push('</ul>'); inUl = false; }
+            if (inOl) { out.push('</ol>'); inOl = false; }
+        }
+        function closeAll() { flushP(); closeLists(); }
+
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+
+            if (line.trim() === '') { closeAll(); continue; }
+
+            var h = line.match(/^\s*(#{1,6})\s+(.+)$/);
+            if (h) { closeAll(); out.push('<div class="glcv-md-h">' + h[2] + '</div>'); continue; }
+
+            var ul = line.match(/^\s*[-*]\s+(.+)$/);
+            if (ul) {
+                flushP();
+                if (inOl) { out.push('</ol>'); inOl = false; }
+                if (!inUl) { out.push('<ul>'); inUl = true; }
+                out.push('<li>' + ul[1] + '</li>');
+                continue;
+            }
+
+            var ol = line.match(/^\s*\d+\.\s+(.+)$/);
+            if (ol) {
+                flushP();
+                if (inUl) { out.push('</ul>'); inUl = false; }
+                if (!inOl) { out.push('<ol>'); inOl = true; }
+                out.push('<li>' + ol[1] + '</li>');
+                continue;
+            }
+
+            closeLists();
+            paragraph.push(line);
+        }
+        closeAll();
+        return out.join('');
+    }
+
     function appendMessage(role, text) {
         clearWelcome();
         var messages = document.getElementById('glcv-messages');
         var bubble = document.createElement('div');
         bubble.className = 'glcv-msg glcv-msg-' + role;
-        bubble.textContent = text;
+        if (role === 'ai') {
+            bubble.innerHTML = renderMarkdown(text);
+        } else {
+            bubble.textContent = text;
+        }
         messages.appendChild(bubble);
         messages.scrollTop = messages.scrollHeight;
     }
