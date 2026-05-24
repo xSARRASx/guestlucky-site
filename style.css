@@ -3621,3 +3621,71 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 }
 .article-faq details p strong { color: var(--ink); }
 .article-faq details p a { color: var(--primary); text-decoration: underline; }
+
+/* ---- Fixes critiques article blog ---- */
+/* Force les images à ne JAMAIS dépasser la colonne de l'article */
+.article-body .article-figure,
+.article-body figure {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.article-body .article-figure img,
+.article-body figure img,
+.article-body img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 14px;
+}
+
+/* Box CTA in-article : fond foncé + bouton blanc lisible (cohérent avec end-cta) */
+.article-cta-box {
+    background: linear-gradient(135deg, #1F1547 0%, #2D1545 50%, #1A1640 100%) !important;
+    border: 1px solid rgba(155,111,255,0.30) !important;
+    color: #fff !important;
+}
+.article-cta-box h3 {
+    color: #fff !important;
+}
+.article-cta-box p {
+    color: rgba(255,255,255,0.92) !important;
+}
+.article-cta-box p strong {
+    color: #FFB1C9 !important;
+}
+.article-cta-box .btn-cta {
+    background: #fff !important;
+    color: var(--primary-dark) !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.30) !important;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+.article-cta-box .btn-cta:hover {
+    background: #faf7ff !important;
+    color: var(--primary-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 38px rgba(0,0,0,0.40) !important;
+}
+
+/* Boutons type "lien" inline dans le corps de l'article */
+.article-body .link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--primary);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.article-body .link-btn:hover {
+    color: var(--primary-dark);
+}
