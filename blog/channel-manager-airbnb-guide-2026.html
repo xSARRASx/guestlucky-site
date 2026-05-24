@@ -69,6 +69,19 @@
         {"@type": "ListItem", "position": 3, "name": "Channel Manager Airbnb : le guide complet 2026"}
       ]
     }</script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Channel Manager vs PMS : c'est quoi la différence ?","acceptedAnswer":{"@type":"Answer","text":"Un Channel Manager synchronise tes annonces et tes calendriers sur les plateformes (Airbnb, Booking, Abritel). Un PMS (Property Management System) gère l'opérationnel de tes logements : ménage, accueil, facturation propriétaires, incidents. GuestLucky combine les deux dans un seul outil, sans frais supplémentaire."}},
+        {"@type":"Question","name":"Combien de temps pour connecter tous mes canaux ?","acceptedAnswer":{"@type":"Answer","text":"Compte 15 à 30 minutes par canal. Pour 3 canaux (Airbnb, Booking, Abritel) sur quelques logements, c'est plié en moins de 2 heures, y compris la configuration de l'ERP."}},
+        {"@type":"Question","name":"Un Channel Manager protège-t-il à 100% des doubles réservations ?","acceptedAnswer":{"@type":"Answer","text":"Avec une synchronisation en temps réel comme celle de GuestLucky, oui — à condition de toujours passer par l'outil pour bloquer ou ouvrir tes dates, et de ne plus modifier directement sur Airbnb, Booking ou Abritel."}},
+        {"@type":"Question","name":"Si je dépasse 2 logements, que se passe-t-il ?","acceptedAnswer":{"@type":"Answer","text":"Tu passes simplement sur le plan Premium (5,99 € HT/mois/logement) ou Pro (9,99 € HT/mois/logement). Pas d'engagement, tu peux changer de plan à tout moment, et tu ne paies que les logements actifs."}},
+        {"@type":"Question","name":"Le plan Pro à 9,99 € comprend vraiment tout ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Channel Manager + Lucky Copilot IA + messagerie IA voyageurs + ERP complet (réservations, facturation propriétaires, planning ménages, livret d'accueil, incidents, stock, services additionnels). 0 % de commission sur les réservations et les services. 0 frais caché."}},
+        {"@type":"Question","name":"Y a-t-il des frais en plus pour les paiements ou la facturation ?","acceptedAnswer":{"@type":"Answer","text":"Aucun frais GuestLucky en plus. Si tu utilises Stripe ou un autre prestataire de paiement, leurs frais bancaires standards s'appliquent, mais GuestLucky ne prend aucune commission additionnelle."}},
+        {"@type":"Question","name":"GuestLucky convient-il pour les conciergeries pros et les sous-loueurs ?","acceptedAnswer":{"@type":"Answer","text":"Oui — l'outil est conçu pour les conciergeries professionnelles, les sous-loueurs et les investisseurs locatifs qui veulent un outil unique pour piloter leur activité courte durée."}}
+      ]
+    }</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,111 +156,191 @@
 
         <div class="article-body container">
 
-            <p class="article-intro">Si vous gérez plus d'un logement en location courte durée, vous l'avez sans doute déjà vécu : deux voyageurs débarquent le même soir avec une confirmation de réservation valide pour la même nuit. Panique, remboursement, mauvais avis, et confiance qui s'effrite. <strong>Un Channel Manager</strong> existe précisément pour que cette situation ne se produise <em>jamais</em>.</p>
+            <p class="article-intro">Si tu gères plus d'un logement en location courte durée, tu l'as sans doute déjà vécu&nbsp;: deux voyageurs débarquent le même soir avec une confirmation de réservation valide pour la même nuit. Panique, remboursement, mauvais avis, et confiance qui s'effrite. <strong>Un Channel Manager Airbnb</strong> existe pour que cette situation ne se produise <em>jamais</em>.</p>
 
-            <p>Dans ce guide, on fait le tour complet : à quoi ça sert vraiment, comment ça marche, ce qu'il faut absolument exiger, les pièges à éviter, et combien ça coûte en 2026.</p>
+            <p>Dans ce guide, on fait le tour complet&nbsp;: à quoi sert vraiment un Channel Manager, comment ça fonctionne, ce qu'il faut absolument exiger, les pièges classiques à éviter, et comment tu peux te lancer concrètement <strong>en 1 à 2 heures chrono</strong>.</p>
 
-            <h2>C'est quoi exactement un Channel Manager&nbsp;?</h2>
-            <p>Un Channel Manager (ou "gestionnaire de canaux" en français) est un logiciel qui <strong>synchronise vos annonces et vos calendriers entre toutes les plateformes</strong> sur lesquelles vous louez : Airbnb, Booking.com, Expedia, Abritel, Vrbo, plus votre site direct.</p>
+            <h2 id="cest-quoi">C'est quoi exactement un Channel Manager&nbsp;?</h2>
+            <p>Un Channel Manager (ou "gestionnaire de canaux" en français) est un logiciel qui <strong>synchronise tes annonces et tes calendriers entre toutes les plateformes</strong> sur lesquelles tu loues&nbsp;: <strong>Airbnb, Booking, Abritel</strong>, ton site direct, et les autres canaux du marché.</p>
+
+            <figure class="article-figure">
+                <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/image-1779110793149.png" alt="Calendrier multi-canaux Channel Manager GuestLucky : Airbnb, Booking, Expedia et Abritel synchronisés en temps réel" loading="lazy">
+                <figcaption>Le calendrier unifié GuestLucky : toutes tes réservations Airbnb, Booking et Abritel dans une seule vue.</figcaption>
+            </figure>
+
             <p>Concrètement, dès qu'une réservation tombe sur Airbnb, les autres plateformes sont automatiquement <strong>bloquées sur ces dates</strong> en quelques secondes. Plus de double réservation possible.</p>
-            <p>Il fait aussi l'inverse : vous changez le prix sur le Channel Manager, et le nouveau tarif est poussé partout en même temps. Une seule interface pour piloter 5, 10 ou 200 logements.</p>
+            <p>Il fait aussi l'inverse&nbsp;: tu changes un prix dans le Channel Manager, et le nouveau tarif est poussé partout en même temps. Une seule interface pour piloter 5, 10, ou 200 logements.</p>
 
-            <h2>Pourquoi c'est devenu indispensable en 2026</h2>
-            <p>Si vous n'aviez "qu'un seul logement sur Airbnb" il y a 5 ans, ça pouvait passer. Aujourd'hui, le marché a complètement changé.</p>
+            <h2 id="pourquoi">Pourquoi c'est devenu indispensable en 2026</h2>
+            <p>Si tu n'avais "qu'un seul logement sur Airbnb" il y a 5 ans, ça pouvait passer. Aujourd'hui, le marché a complètement changé.</p>
 
-            <h3>1. Les doubles réservations coûtent très cher</h3>
-            <p>Une double réservation, ce n'est pas seulement un voyageur mécontent. C'est :</p>
+            <h3>1. Les doubles réservations coûtent vraiment cher</h3>
+            <p>Une double réservation, ce n'est pas seulement un voyageur mécontent. C'est&nbsp;:</p>
             <ul>
                 <li>Le <strong>remboursement intégral</strong> du séjour</li>
-                <li>Une <strong>pénalité Airbnb</strong> (jusqu'à 100 € par incident) qui plombe votre statut Superhost</li>
+                <li>Une <strong>pénalité Airbnb</strong> qui peut plomber ton statut Superhost pour plusieurs mois</li>
                 <li>Un <strong>avis 1 étoile</strong> public qui restera visible des mois</li>
                 <li>Du temps perdu en SAV, en relogement, en mails de crise</li>
             </ul>
-            <p>Le coût moyen d'une double réservation pour un gestionnaire pro tourne autour de <strong>250 à 600 €</strong> en cumul. Un Channel Manager à 6 €/mois rentabilise sa première année dès le premier incident évité.</p>
+            <p>Le coût moyen d'une double réservation pour un gestionnaire pro tourne autour de <strong>250 à 600&nbsp;€</strong> en cumul. Un Channel Manager bien choisi rentabilise son année dès le premier incident évité.</p>
 
-            <h3>2. Vous ne pouvez plus dépendre d'une seule plateforme</h3>
+            <h3>2. Tu ne peux plus dépendre d'une seule plateforme</h3>
             <p>Airbnb a connu plusieurs vagues de déréférencement, de changements d'algorithme et de hausses de commission ces dernières années. <strong>Multiplier les canaux n'est plus une option, c'est une assurance.</strong></p>
-            <p>Avec un Channel Manager, ajouter Booking.com, Expedia ou un site direct ne demande plus 3 fois plus de travail. Vous gardez une seule source de vérité.</p>
+            <p>Avec un Channel Manager, ajouter Booking, Abritel ou un site direct ne demande plus 3 fois plus de travail. Tu gardes une seule source de vérité, peu importe le nombre de canaux que tu actives.</p>
 
             <h3>3. La facturation électronique 2026 change la donne</h3>
-            <p>La réforme de la facturation électronique entre en vigueur en France, et les conciergeries professionnelles doivent désormais émettre des <strong>factures conformes</strong> pour chaque réservation. Un Channel Manager intégré à un ERP fait ça automatiquement pour vous, peu importe le canal d'origine.</p>
+            <p>La réforme de la facturation électronique entre en vigueur en France, et les conciergeries professionnelles doivent désormais émettre des <strong>factures conformes</strong> pour chaque réservation. Un Channel Manager intégré à un ERP fait ça automatiquement pour toi, peu importe le canal d'origine de la réservation.</p>
 
-            <h2>Les fonctionnalités à exiger absolument</h2>
-            <p>Tous les Channel Managers ne se valent pas. Voici la liste minimum qu'on recommande de cocher avant de signer :</p>
+            <h2 id="fonctionnalites">Les fonctionnalités à exiger absolument</h2>
+            <p>Tous les Channel Managers ne se valent pas. Voici la liste minimum qu'on recommande de cocher avant de signer&nbsp;:</p>
 
-            <h3>Synchronisation bidirectionnelle en temps réel</h3>
-            <p>"Bidirectionnelle" veut dire que les informations circulent dans les deux sens : si une réservation arrive sur Booking, votre calendrier Airbnb se met à jour, et inversement. <strong>"En temps réel"</strong> veut dire en quelques secondes, pas toutes les 30 minutes. Un délai de 30 minutes, c'est largement assez pour qu'un deuxième voyageur réserve la même nuit.</p>
+            <figure class="article-figure">
+                <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.51.01.png" alt="Gestion centralisée des annonces multi-plateformes Airbnb, Booking, Abritel dans GuestLucky" loading="lazy">
+                <figcaption>Centralisation de toutes tes annonces multi-plateformes dans une seule interface.</figcaption>
+            </figure>
+
+            <h3>Synchronisation en temps réel</h3>
+            <p>Les informations doivent circuler dans les deux sens&nbsp;: une réservation sur Booking met à jour ton calendrier Airbnb, et inversement, <strong>en quelques secondes</strong>. Méfie-toi des outils qui synchronisent toutes les 30 minutes ou toutes les heures&nbsp;: c'est largement assez pour qu'un deuxième voyageur réserve la même nuit pendant l'intervalle.</p>
 
             <h3>Calendrier unifié multi-canaux</h3>
-            <p>Un seul écran qui montre toutes vos réservations, peu importe d'où elles viennent, avec un code couleur par plateforme. Indispensable pour avoir une vraie vision d'ensemble.</p>
+            <p>Un seul écran qui montre toutes tes réservations, peu importe d'où elles viennent, avec un code couleur par plateforme. Indispensable pour avoir une vraie vision d'ensemble quand tu gères plusieurs logements.</p>
 
-            <h3>Modification groupée des tarifs et restrictions</h3>
-            <p>Pouvoir augmenter tous vos prix de 15&nbsp;% pour les vacances scolaires en 3 clics, sans devoir modifier chaque annonce séparément. Idem pour les nuits minimum, les fermetures, les promos.</p>
+            <h3>Modifications groupées des tarifs et restrictions</h3>
+            <p>Pouvoir augmenter tous tes prix de 15&nbsp;% pour les vacances scolaires en 3 clics, sans devoir modifier chaque annonce séparément. Idem pour les nuits minimum, les fermetures, les promos last minute.</p>
 
-            <h3>Connexion native Airbnb + Booking + Expedia + Abritel</h3>
-            <p>Méfiez-vous des Channel Managers qui ne se connectent à Booking que via iCal : c'est lent, ça loupe des réservations et ça ne synchronise pas les tarifs. <strong>Une vraie API certifiée</strong> sur chaque canal majeur, c'est non-négociable.</p>
+            <h3>Connexion solide à Airbnb, Booking et Abritel</h3>
+            <p>Ce sont les 3 canaux qui font 90&nbsp;% du volume en France. Si l'outil ne couvre pas les 3 proprement (avec mise à jour réelle des prix, pas juste l'agenda), passe ton chemin.</p>
 
-            <h3>Détection d'anomalies et alertes</h3>
-            <p>Un bon Channel Manager vous prévient si une synchronisation échoue, si un canal est désactivé, ou si un calendrier diverge. Vous ne devriez jamais découvrir un problème en lisant un avis 1 étoile.</p>
+            <h3>Un vrai support, en français, accessible</h3>
+            <p>Quand un canal plante un soir de week-end, tu n'as pas envie d'écrire un ticket en anglais à un support qui répond sous 48h. Un support réactif, en français, par WhatsApp ou messagerie directe, c'est ce qui fait la différence quand ça chauffe. Vérifie l'horaire et le canal du support <strong>avant</strong> de signer, pas après.</p>
 
-            <h2>Les 4 pièges classiques à éviter</h2>
+            <h2 id="pieges">Les 4 pièges classiques à éviter</h2>
 
-            <h3>Piège 1 : le "Channel Manager gratuit"</h3>
-            <p>Aucun outil sérieux n'est gratuit, parce que les API officielles d'Airbnb et Booking sont payantes pour les éditeurs. Un Channel Manager "gratuit" se rattrape forcément ailleurs : commission par réservation, données revendues, fonctionnalités bridées. Préférez un <strong>vrai abonnement clair</strong> et 0 % de commission.</p>
+            <h3>Piège 1 — le "Channel Manager gratuit"</h3>
+            <p>Aucun outil sérieux n'est gratuit, parce que les connexions officielles à Airbnb et Booking coûtent cher aux éditeurs. Un Channel Manager "gratuit" se rattrape forcément ailleurs&nbsp;: commission par réservation, données revendues, fonctionnalités bridées, modules payants au compte-gouttes. Préfère un <strong>vrai abonnement clair, tout-inclus</strong>, sans commission cachée.</p>
 
-            <h3>Piège 2 : la synchronisation par iCal uniquement</h3>
-            <p>iCal, c'est un échange de fichiers calendrier toutes les 1 à 2 heures. Ce n'est pas du temps réel. Sur une saison haute, ça suffit largement à créer des doubles réservations. Refusez si c'est le seul mode de synchro pour Booking ou Airbnb.</p>
+            <h3>Piège 2 — la synchronisation "iCal seul"</h3>
+            <p>iCal, c'est un échange de fichiers calendrier toutes les 1 à 2 heures. Ce n'est pas du temps réel, et ça ne synchronise PAS les tarifs (juste les dates bloquées). Sur une saison haute, ça suffit largement à créer des doubles réservations. Refuse si c'est le seul mode de synchro proposé pour tes canaux principaux.</p>
 
-            <h3>Piège 3 : l'engagement annuel sans essai</h3>
-            <p>Un Channel Manager pro doit pouvoir être testé <strong>au moins 7 à 14 jours</strong>, ou proposer une formule mensuelle sans engagement. Si on vous demande de signer 12 mois sans avoir mis les mains dans l'outil, fuyez.</p>
+            <h3>Piège 3 — l'engagement annuel sans essai gratuit</h3>
+            <p>Un Channel Manager pro doit pouvoir être testé. Soit avec une <strong>période d'essai claire</strong>, soit avec une formule mensuelle sans engagement, soit (encore mieux) avec un <strong>plan gratuit à vie</strong> sur quelques logements pour vraiment se faire une idée. Si on te demande de signer 12 mois sans aucun moyen d'essayer, fuis.</p>
 
-            <h3>Piège 4 : pas de support en français</h3>
-            <p>Quand un canal plante un soir de week-end, vous n'avez pas envie d'écrire un ticket en anglais à un support qui répond sous 48h. Un support réactif, en français, c'est ce qui fait la différence quand ça chauffe.</p>
+            <h3>Piège 4 — pas de support en français</h3>
+            <p>Le support en anglais qui répond sous 48h est un piège classique. Vérifie avant de signer&nbsp;: combien de temps pour une réponse, quel canal, dans quelle langue. Pose une question test avant de payer.</p>
 
             <div class="article-cta-box">
-                <h3>✨ Et si vous testiez le Channel Manager GuestLucky&nbsp;?</h3>
-                <p>Channel Manager + IA voyageurs + facturation propriétaires + planning ménages : <strong>TOUT est inclus</strong>, <strong>0&nbsp;% de commission</strong>, aucun frais caché. À partir de <strong>5,99 €/mois/logement</strong> et <strong>2 logements gratuits à vie</strong> pour démarrer.</p>
+                <h3>✨ Et si tu testais le Channel Manager GuestLucky&nbsp;?</h3>
+                <p>Channel Manager + <strong>Lucky Copilot IA</strong> + ERP complet (facturation propriétaires, planning ménages, incidents, livret d'accueil) — <strong>TOUT est inclus</strong>, <strong>0&nbsp;% de commission</strong> sur tes réservations, aucun frais caché. À partir de <strong>5,99&nbsp;€ HT/mois/logement</strong> et <strong>2 logements gratuits à vie</strong> pour démarrer.</p>
                 <a href="../index.html" class="btn-cta">Découvrir GuestLucky <span class="arrow">→</span></a>
             </div>
 
-            <h2>Combien ça coûte vraiment en 2026&nbsp;?</h2>
-            <p>Le marché est très éclaté côté tarification : abonnement par logement, commissions sur les réservations, frais d'installation, modules à débloquer un par un… Le piège classique, c'est de regarder uniquement le prix d'appel sans voir ce qui se cache derrière.</p>
-            <p>Le bon réflexe : <strong>toujours raisonner en coût total sur 12 mois</strong>, en additionnant l'abonnement + les commissions éventuelles + les add-ons. Et comparez ce total avec le coût d'une seule double réservation évitée (généralement 250 à 600&nbsp;€). Vous verrez que les "solutions gratuites" reviennent souvent plus cher qu'un abonnement clair.</p>
+            <h2 id="tarifs">Tarifs&nbsp;: la transparence avant tout</h2>
+            <p>Le marché est ultra-éclaté côté tarification&nbsp;: abonnement par logement, commissions sur les réservations, frais d'installation, modules à débloquer un par un, "options" indispensables facturées en plus… Le piège classique, c'est de regarder uniquement le prix d'appel sans voir ce qui se cache derrière.</p>
+            <p>Le bon réflexe pour comparer&nbsp;: <strong>raisonne en coût total sur 12 mois</strong>, en additionnant abonnement + commissions éventuelles + add-ons obligatoires. Et compare ce total au coût d'une seule double réservation évitée (généralement 250 à 600&nbsp;€).</p>
 
-            <h3>Le positionnement GuestLucky : tout inclus, zéro commission</h3>
+            <h3>Le positionnement GuestLucky&nbsp;: tout inclus, zéro commission</h3>
             <p>Plutôt que de multiplier les options payantes et les frais surprises, on a fait le choix d'un modèle <strong>simple, transparent et tout-compris</strong>&nbsp;:</p>
             <ul>
                 <li><strong>Gratuit jusqu'à 2 logements</strong> — à vie, sans carte bancaire, pour tester sereinement</li>
-                <li><strong>Premium à 5,99 €/mois/logement</strong> — les fonctions essentielles pour bien démarrer</li>
-                <li><strong>Pro à 9,99 €/mois/logement</strong> — <strong>TOUT est inclus</strong>&nbsp;: Channel Manager, IA voyageurs, facturation propriétaires, livret d'accueil, planning ménages, incidents, services additionnels, stock, espace propriétaires, et tout le reste</li>
-                <li><strong>À partir de 50 logements</strong> — tarifs préférentiels négociés directement avec notre équipe</li>
+                <li><strong>Premium à 5,99&nbsp;€ HT/mois/logement</strong> — l'ERP complet (réservations, planning ménages, incidents, services additionnels, espace propriétaires…) pour les gestionnaires qui ont déjà leur synchronisation de canaux</li>
+                <li><strong>Pro à 9,99&nbsp;€ HT/mois/logement</strong> — <strong>TOUT est inclus</strong>&nbsp;: Channel Manager (Airbnb / Booking / Abritel), <strong>Lucky Copilot IA</strong>, messagerie IA voyageurs 24/7, ERP complet, facturation propriétaires automatique, livret d'accueil dynamique, planning ménages, incidents, stock, services additionnels, espace propriétaires</li>
+                <li><strong>À partir de 50 logements</strong> — tarifs préférentiels négociés directement avec l'équipe</li>
             </ul>
-            <p><strong>0&nbsp;% de commission</strong> sur les réservations. <strong>0&nbsp;% sur les services additionnels</strong>. <strong>0 frais caché</strong>. Aucun module à débloquer, aucune option à payer en plus. Ce que vous voyez, c'est ce que vous payez — pour de bon.</p>
+            <p><strong>0&nbsp;% de commission</strong> sur les réservations. <strong>0&nbsp;% sur les services additionnels.</strong> <strong>Aucun frais caché.</strong> Aucun module à débloquer en plus. Ce que tu vois, c'est ce que tu paies — pour de bon.</p>
+            <p>À côté de l'abonnement, quelques services sont proposés <strong>à la carte</strong>, totalement optionnels&nbsp;: un accompagnement personnalisé pour configurer l'outil avec un expert, un module d'analyse de la concurrence dans ton quartier pour caler tes prix au plus juste, ou encore l'intégration de serrures connectées pour automatiser les check-ins. Tu actives uniquement ce dont tu as besoin.</p>
 
-            <h2>Comment démarrer sans douleur</h2>
-            <p>La migration vers un Channel Manager fait souvent peur, à raison : si on s'y prend mal, on peut se retrouver avec des calendriers désynchronisés pendant 48h. Le bon protocole :</p>
-            <ol>
-                <li><strong>Choisir un week-end calme</strong> (peu d'arrivées/départs prévus)</li>
-                <li>Faire un <strong>export complet</strong> de ses réservations existantes</li>
-                <li>Connecter UN seul canal à la fois (commencer par Airbnb, plus simple)</li>
-                <li>Vérifier la synchro pendant 24h avant de connecter le suivant</li>
-                <li>Toujours <strong>garder l'œil sur le calendrier unifié</strong> pendant la première semaine</li>
-            </ol>
-            <p>Avec un bon support technique, la mise en route prend généralement <strong>moins de 2 heures</strong>.</p>
+            <p>👉 Pour le détail complet des plans, <a href="../tarifs.html">voir la page tarifs</a>.</p>
 
-            <h2>En résumé</h2>
+            <h2 id="copilot">Lucky Copilot&nbsp;: l'IA qui pilote ton activité par chat</h2>
+            <p>L'autre nouveauté qui change la vie en 2026, et qui est <strong>nativement intégrée à GuestLucky</strong>&nbsp;: <strong>Lucky Copilot</strong>, ton assistant IA conversationnel.</p>
+
+            <figure class="article-figure">
+                <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-12.25.52.png" alt="Boîte de réception unifiée et messagerie IA GuestLucky pour répondre aux voyageurs Airbnb et Booking en automatique" loading="lazy">
+                <figcaption>Boîte de réception unifiée avec IA voyageurs intégrée à Lucky Copilot.</figcaption>
+            </figure>
+
+            <p>Concrètement, tu lui parles comme à un collègue, dans une fenêtre de chat à l'intérieur de l'app&nbsp;:</p>
             <ul>
-                <li>Un Channel Manager synchronise toutes vos plateformes en temps réel → <strong>fini les doubles réservations</strong></li>
-                <li>Indispensable dès que vous gérez 2+ logements ou 2+ canaux</li>
-                <li>À exiger : API natives, temps réel, calendrier unifié, modifications groupées, alertes</li>
-                <li>À fuir : iCal seul, "gratuit", engagement long sans test, support absent</li>
-                <li>Budget réaliste : 6 à 15&nbsp;€/mois/logement pour une solution moderne complète</li>
-                <li>Migration possible en quelques heures avec le bon protocole</li>
+                <li><em>"Combien de réservations sur le studio Capitole ce mois-ci ?"</em> → il te sort le chiffre et le détail</li>
+                <li><em>"Crée un incident chauffe-eau cassé sur le T2 Marais"</em> → c'est fait, et le prestataire est notifié</li>
+                <li><em>"Modifie le prix de juin sur tous mes logements à +15&nbsp;%"</em> → il te propose, tu valides, c'est appliqué partout</li>
+                <li><em>"Quel est mon taux d'occupation comparé au mois dernier ?"</em> → il te sort les chiffres, les comparatifs et les tendances</li>
+            </ul>
+            <p>Plus besoin de cliquer dans 5 menus pour faire une action simple. <strong>Lucky Copilot fait gagner des heures par semaine</strong>, et il est dispo 24/7, depuis n'importe quel écran. Il est inclus dans le plan Pro, sans surcoût.</p>
+
+            <p>👉 Découvre Lucky Copilot en détail sur la <a href="../index.html#copilot">page d'accueil GuestLucky</a>.</p>
+
+            <h2 id="lancement">Comment te lancer concrètement en 1 à 2 heures</h2>
+            <p>La migration vers un Channel Manager fait souvent peur, à raison&nbsp;: si on s'y prend mal, on peut se retrouver avec des calendriers désynchronisés pendant 48h. La bonne nouvelle&nbsp;: avec un outil moderne et un bon protocole, c'est plié dans la matinée.</p>
+
+            <figure class="article-figure">
+                <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-19-a-11.52.49.png" alt="Tableau de bord des réservations GuestLucky une fois la connexion multi-canaux activée" loading="lazy">
+                <figcaption>Tableau de bord centralisé une fois tes canaux connectés : toutes les réservations en un coup d'œil.</figcaption>
+            </figure>
+
+            <h3>Étape 1 — Inscription gratuite (5 minutes)</h3>
+            <p>Crée ton compte sur <a href="../index.html">guestlucky.com</a>. Tu démarres directement avec <strong>2 logements gratuits à vie</strong>, sans carte bancaire. Aucun engagement.</p>
+
+            <h3>Étape 2 — Connexion de tes annonces (15 à 30 minutes par canal)</h3>
+            <p>Tu ajoutes tes logements et tu les relies à tes annonces existantes sur Airbnb, Booking et Abritel. L'outil te guide étape par étape, et la première synchro se fait en quelques minutes par logement.</p>
+
+            <h3>Étape 3 — Configuration de ton ERP (30 minutes à 1 heure)</h3>
+            <p>Tu paramètres les éléments qui te concernent&nbsp;: tarifs, saisons, règles de check-in/check-out, livret d'accueil, équipe ménage, propriétaires, paramètres de la messagerie IA voyageurs. <strong>Tout est centralisé</strong>, pas besoin de jongler avec 5 outils.</p>
+
+            <h3>Étape 4 — Vérification 24h (passive)</h3>
+            <p>Pendant les premières 24h, garde un œil sur le calendrier unifié pour t'assurer que tout circule bien entre les canaux. Aucune intervention nécessaire si tout est correctement connecté.</p>
+
+            <p><strong>Au total&nbsp;: entre 1h et 2h selon le nombre de logements.</strong> Si tu préfères être accompagné, un rendez-vous de configuration personnalisé avec un expert GuestLucky est disponible sur demande — tu lui donnes tes accès, il fait tout avec toi, tu n'as qu'à valider.</p>
+
+            <h3>Support quand tu as besoin</h3>
+            <p>Pour toute question pendant la mise en route (ou après), notre <strong>support WhatsApp est dispo au 07&nbsp;59&nbsp;94&nbsp;43&nbsp;05</strong>. Pas de ticket à remplir, pas d'attente — tu écris, on répond. Et si tu préfères chatter dans l'app, Lucky Copilot répond aussi aux questions sur l'outil directement.</p>
+
+            <h2 id="faq">Questions fréquentes</h2>
+
+            <div class="article-faq">
+                <details>
+                    <summary>Channel Manager vs PMS&nbsp;: c'est quoi la différence&nbsp;?</summary>
+                    <p>Un <strong>Channel Manager</strong> synchronise tes annonces et tes calendriers sur les plateformes (Airbnb, Booking, Abritel). Un <strong>PMS</strong> (Property Management System) gère l'opérationnel de tes logements&nbsp;: ménage, accueil, facturation propriétaires, incidents. GuestLucky combine les deux dans un seul outil, sans frais supplémentaire.</p>
+                </details>
+                <details>
+                    <summary>Combien de temps pour connecter tous mes canaux&nbsp;?</summary>
+                    <p>Compte 15 à 30 minutes par canal. Pour 3 canaux (Airbnb, Booking, Abritel) sur quelques logements, c'est plié en moins de 2&nbsp;h, y compris la configuration de l'ERP.</p>
+                </details>
+                <details>
+                    <summary>Un Channel Manager protège-t-il à 100&nbsp;% des doubles réservations&nbsp;?</summary>
+                    <p>Avec une synchronisation en temps réel comme celle de GuestLucky, oui — à condition de toujours passer par l'outil pour bloquer ou ouvrir tes dates, et de ne plus modifier directement sur Airbnb, Booking ou Abritel.</p>
+                </details>
+                <details>
+                    <summary>Si je dépasse 2 logements, que se passe-t-il&nbsp;?</summary>
+                    <p>Tu passes simplement sur le plan Premium (5,99&nbsp;€ HT/mois/logement) ou Pro (9,99&nbsp;€ HT/mois/logement). Pas d'engagement, tu peux changer de plan à tout moment, et tu ne paies que les logements actifs.</p>
+                </details>
+                <details>
+                    <summary>Le plan Pro à 9,99&nbsp;€ comprend vraiment tout&nbsp;?</summary>
+                    <p>Oui. Channel Manager + Lucky Copilot IA + messagerie IA voyageurs + ERP complet (réservations, facturation propriétaires, planning ménages, livret d'accueil, incidents, stock, services additionnels). <strong>0&nbsp;% de commission</strong> sur les réservations et les services. <strong>0 frais caché.</strong></p>
+                </details>
+                <details>
+                    <summary>Y a-t-il des frais en plus pour les paiements ou la facturation&nbsp;?</summary>
+                    <p>Aucun frais GuestLucky en plus. Si tu utilises Stripe ou un autre prestataire de paiement, leurs frais bancaires standards s'appliquent (entre 1,4&nbsp;% et 2,9&nbsp;% selon le moyen de paiement), mais GuestLucky ne prend aucune commission additionnelle.</p>
+                </details>
+                <details>
+                    <summary>GuestLucky convient-il pour les conciergeries pros et les sous-loueurs&nbsp;?</summary>
+                    <p>Oui — l'outil est conçu pour les <strong>conciergeries professionnelles</strong>, les <strong>sous-loueurs</strong>, et les <strong>investisseurs locatifs</strong> qui veulent un outil unique pour piloter leur activité courte durée. <a href="../pour-qui.html">Voir la page Pour qui&nbsp;?</a></p>
+                </details>
+            </div>
+
+            <h2 id="resume">En résumé</h2>
+            <ul>
+                <li>Un Channel Manager synchronise toutes tes plateformes en temps réel → <strong>fini les doubles réservations</strong></li>
+                <li>Indispensable dès que tu gères 2+ logements ou 2+ canaux</li>
+                <li>À exiger&nbsp;: temps réel, calendrier unifié, modifications groupées, support en français, connexion solide à Airbnb / Booking / Abritel</li>
+                <li>À fuir&nbsp;: iCal seul, "gratuit" avec commissions cachées, engagement long sans test, support absent</li>
+                <li>Le bon prix&nbsp;: <strong>9,99&nbsp;€ HT/mois/logement</strong> chez GuestLucky pour un tout-inclus solide avec Lucky Copilot IA et 0&nbsp;% de commission</li>
+                <li>Migration possible en <strong>1 à 2 heures</strong> avec le bon outil et le bon support</li>
             </ul>
 
             <div class="article-end-cta">
-                <h3>Prêt à tester un vrai Channel Manager&nbsp;?</h3>
-                <p>GuestLucky vous offre <strong>2 logements gratuits à vie</strong> pour découvrir le Channel Manager, la messagerie IA, le calendrier unifié et tout l'ERP. Sans carte bancaire, sans engagement.</p>
+                <h3>Prêt à tester un Channel Manager qui va à l'essentiel&nbsp;?</h3>
+                <p>GuestLucky t'offre <strong>2 logements gratuits à vie</strong> pour découvrir le Channel Manager, Lucky Copilot IA, la messagerie voyageurs et tout l'ERP. Sans carte bancaire, sans engagement, sans commission cachée.</p>
                 <div class="article-end-cta-row">
                     <a href="../index.html#demo" class="btn-cta">Réserver une démo <span class="arrow">→</span></a>
                     <a href="../tarifs.html" class="btn-secondary">Voir les tarifs</a>
