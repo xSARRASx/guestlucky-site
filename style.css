@@ -3689,3 +3689,129 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 .article-body .link-btn:hover {
     color: var(--primary-dark);
 }
+
+/* ============ Instagram floating bubble ============ */
+.floating-contact .bubble.instagram {
+    background: linear-gradient(135deg, #FEDA77 0%, #F58529 25%, #DD2A7B 50%, #8134AF 75%, #515BD4 100%);
+}
+.floating-contact .bubble.instagram svg { width: 26px; height: 26px; }
+
+/* ============ Sommaire (Table of contents) ============ */
+.article-toc {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--primary);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 2rem;
+}
+.article-toc-title {
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--primary-dark);
+    margin: 0 0 0.75rem !important;
+    padding: 0;
+}
+.article-toc ol {
+    list-style: none;
+    counter-reset: toc;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem 1.5rem;
+}
+.article-toc li {
+    counter-increment: toc;
+    position: relative;
+    padding-left: 1.85rem;
+    margin: 0;
+    font-size: 0.92rem;
+}
+.article-toc li::before {
+    content: counter(toc, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+.article-toc a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+    transition: color 0.18s, border-color 0.18s;
+}
+.article-toc a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* ============ Boutons de partage social ============ */
+.article-share {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 2rem;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.article-share-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin-right: 0.4rem;
+    letter-spacing: 0.03em;
+}
+.share-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.15s;
+    text-decoration: none;
+    position: relative;
+}
+.share-btn:hover {
+    transform: translateY(-2px);
+}
+.share-btn svg { width: 16px; height: 16px; }
+.share-btn.share-x:hover { background: #000; border-color: #000; color: #fff; }
+.share-btn.share-linkedin:hover { background: #0A66C2; border-color: #0A66C2; color: #fff; }
+.share-btn.share-wa:hover { background: #25D366; border-color: #25D366; color: #fff; }
+.share-btn.share-email:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+.share-btn.share-copy:hover { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
+.share-copy-feedback {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+.share-btn.share-copy.copied .share-copy-feedback {
+    opacity: 1;
+}
+
+@media (max-width: 720px) {
+    .article-toc ol { grid-template-columns: 1fr; }
+}

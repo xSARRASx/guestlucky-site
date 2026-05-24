@@ -260,6 +260,30 @@
         });
     }
 
+    function initShareCopy() {
+        document.querySelectorAll(".share-copy[data-copy-url]").forEach(function (btn) {
+            btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                var url = btn.getAttribute("data-copy-url") || window.location.href;
+                var done = function () {
+                    btn.classList.add("copied");
+                    setTimeout(function () { btn.classList.remove("copied"); }, 1800);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url).then(done, done);
+                } else {
+                    var ta = document.createElement("textarea");
+                    ta.value = url;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try { document.execCommand("copy"); } catch (err) {}
+                    document.body.removeChild(ta);
+                    done();
+                }
+            });
+        });
+    }
+
     function init() {
         initPricing();
         initFAQ();
@@ -269,6 +293,7 @@
         initWebinarFloat();
         initLangDropdown();
         initInterfaceTour();
+        initShareCopy();
         var yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
