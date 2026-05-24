@@ -3815,3 +3815,24 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 @media (max-width: 720px) {
     .article-toc ol { grid-template-columns: 1fr; }
 }
+
+/* ---- Renforcement bulle Instagram (override cache + couleurs vives) ---- */
+.floating-contact .bubble.instagram {
+    background: linear-gradient(135deg, #FEDA77 0%, #F58529 25%, #DD2A7B 50%, #8134AF 75%, #515BD4 100%) !important;
+    color: #fff !important;
+}
+.floating-contact .bubble.instagram svg {
+    width: 28px !important;
+    height: 28px !important;
+    fill: #fff !important;
+}
+
+/* ---- Renforcement share buttons (icônes visibles, feedback caché par défaut) ---- */
+.share-btn svg {
+    width: 17px !important;
+    height: 17px !important;
+    display: block;
+}
+.share-copy-feedback {
+    display: none;
+}

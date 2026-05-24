@@ -265,9 +265,14 @@
             btn.addEventListener("click", function (e) {
                 e.preventDefault();
                 var url = btn.getAttribute("data-copy-url") || window.location.href;
+                var feedback = btn.querySelector(".share-copy-feedback");
                 var done = function () {
                     btn.classList.add("copied");
-                    setTimeout(function () { btn.classList.remove("copied"); }, 1800);
+                    if (feedback) feedback.style.display = "block";
+                    setTimeout(function () {
+                        btn.classList.remove("copied");
+                        if (feedback) feedback.style.display = "none";
+                    }, 1800);
                 };
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(url).then(done, done);
