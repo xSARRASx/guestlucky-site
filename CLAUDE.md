@@ -149,3 +149,31 @@ guestlucky-site/
 - Toujours mettre le **WhatsApp** comme support, jamais email
 - Pour les CTA "Réserver une démo", URL directe iClosed
 - Pour les CTA "Essayer Lucky Copilot", `onclick="document.getElementById('glcv-bubble').click()"`
+
+## ⚠️ LEÇON CRUCIALE : style.css pas toujours uploadé sur le serveur PlanetHoster
+
+**Problème récurrent** : Martin upload les HTML modifiés mais OUBLIE souvent d'upload `style.css` → affichage cassé sur la prod (cartes blog stackées en 1 colonne, icônes SVG géantes, bulle Insta blanche au lieu du dégradé, boutons de partage sans icônes…).
+
+**Solution adoptée et VALIDÉE** : pour les pages CRITIQUES où le CSS est très spécifique (blog/index.html, blog/channel-manager-airbnb-guide-2026.html), **injecter un bloc `<style>` inline dans le `<head>`** avec TOUTES les règles CSS essentielles (grid, cards, TOC, share, hero, body, figure, FAQ).
+
+Comme ça la page s'affiche correctement même sans le style.css à jour. Le `<link rel="stylesheet" href="../style.css">` reste en place, le inline ne fait que **dupliquer défensivement** les règles critiques.
+
+**Règles défensives** :
+- Pour CHAQUE nouvel article de blog : copier le bloc `<style>` inline du template channel-manager-airbnb-guide-2026.html
+- Pour les SVG icons critiques : mettre `width="X" height="X"` en attribut HTML inline en plus du CSS
+- Pour les bulles flottantes (Insta, WhatsApp) : aussi `style="background: linear-gradient(...)"` en inline
+- Si Martin signale un bug d'affichage sur la prod, première hypothèse = style.css pas uploadé → solution = inliner
+
+## 📦 Quand Martin demande "envoie moi le zip"
+
+Commande :
+```bash
+cd /home/user && rm -f guestlucky-site-FINAL.zip && cd guestlucky-site && \
+zip -r /home/user/guestlucky-site-FINAL.zip . -x ".git/*" ".claude/*" "chat/.env" "*.DS_Store"
+```
+
+Puis `SendUserFile` avec ce path. **JAMAIS inclure `chat/.env`** (clé Gemini privée).
+Toujours rappeler à Martin :
+1. Uploader TOUT le contenu (HTML + style.css + app.js + chat/ + blog/)
+2. NE PAS toucher `chat/.env` sur le serveur
+3. Cmd+Shift+R ou navigation privée pour vider le cache
