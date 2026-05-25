@@ -47,17 +47,17 @@
 }</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "SoftwareApplication",
   "name": "GuestLucky",
+  "operatingSystem": "Web, iOS, Android",
+  "applicationCategory": "BusinessApplication",
   "description": "Channel Manager et logiciel de gestion pour location courte durée",
-  "brand": {"@type": "Brand", "name": "GuestLucky"},
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "EUR",
-    "lowPrice": "0",
-    "highPrice": "9.99",
-    "offerCount": "4"
-  }
+  "url": "https://www.guestlucky.com/tarifs.html",
+  "offers": [
+    {"@type": "Offer", "name": "Gratuit", "price": "0", "priceCurrency": "EUR", "description": "2 logements à vie, 0% commission"},
+    {"@type": "Offer", "name": "Premium", "price": "5.99", "priceCurrency": "EUR", "description": "ERP complet par logement/mois HT"},
+    {"@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "EUR", "description": "Tout inclus : Channel Manager + Lucky Copilot par logement/mois HT"}
+  ]
 }</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
