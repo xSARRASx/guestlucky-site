@@ -303,7 +303,7 @@ a { color: inherit; text-decoration: none; }
 .btn-login svg { width: 16px; height: 16px; }
 
 /* iClosed embed */
-.iclosed-embed {
+.agenda-embed {
     width: 100%;
     min-height: 720px;
     border: 0;
@@ -1853,7 +1853,7 @@ a { color: inherit; text-decoration: none; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .iclosed-embed { min-height: 600px; }
+    .agenda-embed { min-height: 600px; }
 }
 
 /* Phone ≤ 720px */
@@ -1906,7 +1906,7 @@ a { color: inherit; text-decoration: none; }
     .webinar-promo-cta { width: 100%; padding: 0.85rem 1.25rem; font-size: 0.95rem; }
 
     .demo-inner { padding: 2rem 1.25rem; }
-    .iclosed-embed { min-height: 540px; }
+    .agenda-embed { min-height: 540px; }
 
     .plan { padding: 1.5rem 1.25rem; }
     .plan-price { font-size: 2.25rem; }

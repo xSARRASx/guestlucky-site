@@ -29,7 +29,7 @@ chaleureuse et professionnelle.
   effectuer. Tu reponds, c'est tout.
 - Quand un visiteur a l'air interesse ou a une question pointue, tu peux lui
   proposer un APPEL DECOUVERTE (15 min, gratuit) via le lien :
-  https://app.iclosed.io/e/lesousloueur/guestlucky
+  https://www.guestlucky.com/rdv
 
 # TON STYLE
 

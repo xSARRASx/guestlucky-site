@@ -1,0 +1,16 @@
+# ============================================================
+# .htaccess — guestlucky.com
+# ============================================================
+
+RewriteEngine On
+
+# ── Redirections courtes pour la prise de RDV (agenda GuestLucky) ──
+RewriteRule ^rdv$                  /agenda.html [L]
+RewriteRule ^rdv/site$             /agenda.html?utm_source=guestlucky&utm_medium=website&utm_campaign=guestlucky&utm_content=bouton_rdv [L,QSA]
+RewriteRule ^rdv/youtube$          /agenda.html?utm_source=youtube&utm_medium=video&utm_campaign=guestlucky&utm_content=description [L,QSA]
+RewriteRule ^rdv/instagram$        /agenda.html?utm_source=instagram&utm_medium=social&utm_campaign=guestlucky&utm_content=bio [L,QSA]
+RewriteRule ^rdv/instagram-story$  /agenda.html?utm_source=instagram&utm_medium=story&utm_campaign=guestlucky&utm_content=swipe_up [L,QSA]
+RewriteRule ^rdv/tiktok$           /agenda.html?utm_source=tiktok&utm_medium=social&utm_campaign=guestlucky&utm_content=bio [L,QSA]
+RewriteRule ^rdv/linkedin$         /agenda.html?utm_source=linkedin&utm_medium=social&utm_campaign=guestlucky&utm_content=post [L,QSA]
+RewriteRule ^rdv/email$            /agenda.html?utm_source=email&utm_medium=newsletter&utm_campaign=guestlucky&utm_content=cta [L,QSA]
+RewriteRule ^rdv/qr$               /agenda.html?utm_source=qrcode&utm_medium=print&utm_campaign=guestlucky&utm_content=flyer [L,QSA]

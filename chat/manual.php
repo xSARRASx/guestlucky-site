@@ -133,7 +133,7 @@ connexions OTA. Aucun engagement, paiement unique.
 
 Pour parler a un conseiller avant de se lancer ou demander une demo :
 Lien d'appel decouverte (15 minutes, gratuit, sans engagement) :
-https://app.iclosed.io/e/lesousloueur/guestlucky
+https://www.guestlucky.com/rdv
 
 # QUESTIONS FREQUENTES
 
@@ -203,7 +203,7 @@ via le lien iClosed pour qu'on t'en parle.
 # COMMENT CONTACTER GUESTLUCKY
 
 - Site : https://guestlucky.com
-- Appel decouverte (gratuit, 15 min) : https://app.iclosed.io/e/lesousloueur/guestlucky
+- Appel decouverte (gratuit, 15 min) : https://www.guestlucky.com/rdv
 - Email : via le formulaire de contact sur guestlucky.com
 
 # CE QU'IL FAUT EVITER DE FAIRE EN TANT QUE COPILOTE VITRINE

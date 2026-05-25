@@ -63,10 +63,29 @@ Ne JAMAIS proposer email comme canal de support. L'email `contact@guestlucky.com
 - Instagram : [@guestlucky.off](https://www.instagram.com/guestlucky.off/)
 - WhatsApp pro : 07 59 94 43 05
 
-## 📅 Réservation démo
+## 📅 Réservation démo / RDV (NOUVEAU SYSTÈME — agenda interne)
 
-URL directe iClosed (FORMULAIRE) : `https://app.iclosed.io/e/lesousloueur/guestlucky`
-Toujours linker DIRECTEMENT vers cette URL pour les CTA "Réserver une démo", pas via la home.
+**TOUS les CTA "Réserver une démo" / "Book a demo" / "Prendre RDV" pointent maintenant vers `/rdv` (agenda GuestLucky interne, dev par Kévin)**, plus jamais vers iClosed.
+
+URLs courtes (gérées par `.htaccess` à la racine) :
+- `/rdv` — agenda standard (sans UTM)
+- `/rdv/site` — bouton du site (UTM source=guestlucky, medium=website) ← utilisé dans tous les boutons HTML
+- `/rdv/instagram`, `/rdv/youtube`, `/rdv/tiktok`, `/rdv/linkedin`, `/rdv/email`, `/rdv/qr`, `/rdv/instagram-story` — variantes UTM pour chaque canal externe
+
+Dans le chat Lucky Copilot (chat.php / system_prompt.php / manual.php) : utiliser l'URL absolue `https://www.guestlucky.com/rdv`.
+
+L'ancienne URL iClosed reste connue (`https://app.iclosed.io/e/lesousloueur/guestlucky`) — backup mental uniquement, ne plus l'utiliser.
+
+### Architecture côté serveur (PlanetHoster)
+- `agenda.html` (frontend) à la racine `/public_html/`
+- 8 fichiers PHP dans `/public_html/api/` : `get_agenda_config.php`, `get_availability.php`, `booking_webhook.php`, `autosave_contact.php`, `check_promo.php`, `google_auth_start.php` (à supprimer après init), `google_auth_callback.php` (idem)
+- Fichier `.env` (`glAgenda.env`) **HORS** webroot, dans `/home/VOTRE_USER/private/glAgenda.env` — contient les clés Airtable, Google OAuth, Stripe, WEBHOOK_SECRET
+- Dossiers `api/cache/`, `api/cache/availability/`, `api/logs/` à créer avec perms 755
+- Dans chaque fichier PHP, remplacer `VOTRE_USER` par l'identifiant PlanetHoster réel
+- Doc d'installation complète dans `INSTALLATION_AGENDA.md` à la racine du repo
+- Synchro Google Calendar, Airtable (bookings + contacts), Stripe Payment Links, email de confirmation Gmail avec lien Google Meet
+
+⚠️ Les clés API ne doivent JAMAIS être commit dans le repo ni passer par Claude. Martin les colle manuellement dans `glAgenda.env` sur PlanetHoster.
 
 ## ⛔ Mots BANNIS publiquement (ne JAMAIS écrire dans le site)
 
@@ -147,7 +166,7 @@ guestlucky-site/
 - Images du blog : utiliser les URLs `locationcourteduree.fr/wp-content/uploads/2026/05/...` qui sont déjà en place
 - Toujours vérifier les **mots bannis** (beds24, mandat de gestion, garantie financière) avant de pousser
 - Toujours mettre le **WhatsApp** comme support, jamais email
-- Pour les CTA "Réserver une démo", URL directe iClosed
+- Pour les CTA "Réserver une démo", URL `/rdv/site` (nouvel agenda interne, plus iClosed)
 - Pour les CTA "Essayer Lucky Copilot", `onclick="document.getElementById('glcv-bubble').click()"`
 
 ## ⚠️ LEÇON CRUCIALE : style.css pas toujours uploadé sur le serveur PlanetHoster

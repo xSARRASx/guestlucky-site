@@ -113,7 +113,7 @@ if (!rateLimitAllow($ip)) {
     respond(429, "Tu as pose beaucoup de questions, fais une petite pause "
         . "et reviens dans une heure. Si tu veux echanger maintenant, tu peux "
         . "prendre un appel decouverte (gratuit, 15 min) : "
-        . "https://app.iclosed.io/e/lesousloueur/guestlucky");
+        . "https://www.guestlucky.com/rdv");
 }
 
 // ============================================================================
@@ -228,7 +228,7 @@ $text = trim($text);
 if ($text === '') {
     respond(502, "Je n'ai pas reussi a formuler une reponse. Reformule la "
         . "question, ou prends un appel decouverte : "
-        . "https://app.iclosed.io/e/lesousloueur/guestlucky");
+        . "https://www.guestlucky.com/rdv");
 }
 
 echo json_encode([
