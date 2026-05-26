@@ -240,8 +240,8 @@
     }
 
     // === Dates du webinaire (modifie ici si la date change) ===
-    var EVENT_START_UTC = "20260525T160000Z"; // 18 juin 2026 18h Paris (CEST = UTC+2) -> 16h UTC
-    var EVENT_END_UTC   = "20260525T170000Z"; // 1h plus tard
+    var EVENT_START_UTC = "20260618T160000Z"; // 18 juin 2026 18h Paris (CEST = UTC+2) -> 16h UTC
+    var EVENT_END_UTC   = "20260618T170000Z"; // 1h plus tard
     var EVENT_TITLE     = "Webinaire GuestLucky — Channel Manager & gestion conciergerie";
     var EVENT_DESC      = "Découvrez GuestLucky en direct : démo complète, IA voyageurs, planning ménages, tarifs. Lien de connexion dans votre email de confirmation.";
     var EVENT_LOCATION  = "En ligne (lien envoyé par email)";
@@ -258,7 +258,7 @@
     // Outlook Online
     var ocal = "https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent"
         + "&subject=" + encodeURIComponent(EVENT_TITLE)
-        + "&startdt=2026-05-25T16:00:00Z&enddt=2026-05-25T17:00:00Z"
+        + "&startdt=2026-06-18T16:00:00Z&enddt=2026-06-18T17:00:00Z"
         + "&body=" + encodeURIComponent(EVENT_DESC)
         + "&location=" + encodeURIComponent(EVENT_LOCATION);
     var o = document.getElementById("cal-outlook");
@@ -270,7 +270,7 @@
         "VERSION:2.0",
         "PRODID:-//GuestLucky//Webinaire//FR",
         "BEGIN:VEVENT",
-        "UID:webinar-guestlucky-25052026@guestlucky.com",
+        "UID:webinar-guestlucky-18062026@guestlucky.com",
         "DTSTAMP:" + EVENT_START_UTC,
         "DTSTART:" + EVENT_START_UTC,
         "DTEND:" + EVENT_END_UTC,

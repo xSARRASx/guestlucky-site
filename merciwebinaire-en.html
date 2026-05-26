@@ -233,8 +233,8 @@
     try { var p = new URLSearchParams(window.location.search); name = (p.get("name") || p.get("wj_lead_first_name") || "").trim(); } catch (e) {}
     if (name) document.getElementById("user-name").textContent = name + "!";
 
-    var EVENT_START_UTC = "20260525T160000Z";
-    var EVENT_END_UTC   = "20260525T170000Z";
+    var EVENT_START_UTC = "20260618T160000Z";
+    var EVENT_END_UTC   = "20260618T170000Z";
     var EVENT_TITLE     = "GuestLucky Webinar — Channel Manager & concierge management";
     var EVENT_DESC      = "Discover GuestLucky live: full demo, AI guest messaging, cleaning schedule, pricing. Join link in your confirmation email.";
     var EVENT_LOCATION  = "Online (link sent by email)";
@@ -248,13 +248,13 @@
 
     var ocal = "https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent"
         + "&subject=" + encodeURIComponent(EVENT_TITLE)
-        + "&startdt=2026-05-25T16:00:00Z&enddt=2026-05-25T17:00:00Z"
+        + "&startdt=2026-06-18T16:00:00Z&enddt=2026-06-18T17:00:00Z"
         + "&body=" + encodeURIComponent(EVENT_DESC)
         + "&location=" + encodeURIComponent(EVENT_LOCATION);
     document.getElementById("cal-outlook").href = ocal;
 
     var ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//GuestLucky//Webinar//EN","BEGIN:VEVENT",
-        "UID:webinar-guestlucky-25052026@guestlucky.com","DTSTAMP:" + EVENT_START_UTC,
+        "UID:webinar-guestlucky-18062026@guestlucky.com","DTSTAMP:" + EVENT_START_UTC,
         "DTSTART:" + EVENT_START_UTC,"DTEND:" + EVENT_END_UTC,
         "SUMMARY:" + EVENT_TITLE,"DESCRIPTION:" + EVENT_DESC,"LOCATION:" + EVENT_LOCATION,
         "URL:https://www.guestlucky.com/webinaire-en.html","END:VEVENT","END:VCALENDAR"].join("\r\n");
