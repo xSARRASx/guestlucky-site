@@ -3075,6 +3075,244 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     .floating-contact { bottom: calc(0.75rem + 76px); }
 }
 
+/* ============ Lucky Clean (WhatsApp) ============ */
+.clean-promo {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #ECF8F1 0%, #F4FBF6 100%);
+}
+.clean-promo-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.clean-promo-bg .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.40;
+}
+.clean-promo-bg .blob.green {
+    width: 360px; height: 360px;
+    background: #25D366;
+    top: -80px; right: -120px;
+}
+.clean-promo-bg .blob.mint {
+    width: 320px; height: 320px;
+    background: #128C7E;
+    bottom: -100px; left: -80px;
+    opacity: 0.25;
+}
+.clean-promo > .container { position: relative; z-index: 1; }
+
+.clean-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(18,140,126,0.18));
+    border: 1px solid rgba(18,140,126,0.30);
+    color: #075E54;
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+.clean-badge .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
+    animation: cleanPulse 1.6s infinite;
+}
+@keyframes cleanPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+    70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.clean-promo h2 .accent-green {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.clean-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.clean-features {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    margin: 0 0 2rem;
+    padding: 0;
+}
+.clean-features li {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+}
+.clean-features .ci {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(37,211,102,0.30);
+}
+.clean-features .ci svg { width: 19px; height: 19px; }
+.clean-features strong {
+    display: block;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.01em;
+}
+.clean-features li > div > span {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    line-height: 1.5;
+}
+
+.btn-clean-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    color: #fff;
+    padding: 0.95rem 1.85rem;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(37,211,102,0.40);
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+.btn-clean-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 38px rgba(37,211,102,0.55);
+    color: #fff;
+}
+.btn-clean-cta svg { width: 18px; height: 18px; flex-shrink: 0; }
+.btn-clean-cta .arrow { transition: transform 0.2s; }
+.btn-clean-cta:hover .arrow { transform: translateX(3px); }
+
+.clean-note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.85rem;
+    font-style: italic;
+}
+
+.clean-mock {
+    position: relative;
+}
+.clean-mock::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    background: radial-gradient(circle, rgba(37,211,102,0.30), transparent 60%);
+    filter: blur(50px);
+    z-index: -1;
+}
+.clean-mock-frame {
+    background: #E5DDD5;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(18,140,126,0.30), 0 0 0 1px rgba(18,140,126,0.10);
+    overflow: hidden;
+    transform: rotate(1.5deg);
+    transition: transform 0.3s ease;
+}
+.clean-mock-frame:hover { transform: rotate(0deg); }
+.clean-mock-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #075E54;
+}
+.clean-mock-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.15);
+    flex: 0 0 auto;
+}
+.clean-mock-avatar svg { width: 22px; height: 22px; }
+.clean-mock-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.2;
+}
+.clean-mock-status {
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+    margin-top: 2px;
+}
+.clean-mock-body {
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 340px;
+    background-color: #E5DDD5;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(0,0,0,0.04) 0%, transparent 40%);
+}
+.clean-mock-msg {
+    max-width: 86%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.45;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+    color: #0F1A1A;
+}
+.clean-mock-msg.me {
+    align-self: flex-end;
+    background: #DCF8C6;
+    border-bottom-right-radius: 3px;
+}
+.clean-mock-msg.bot {
+    align-self: flex-start;
+    background: #FFFFFF;
+    border-bottom-left-radius: 3px;
+}
+.clean-mock-msg.bot strong { color: #075E54; }
+
+@media (max-width: 980px) {
+    .clean-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .clean-mock-frame { transform: none; }
+}
+@media (max-width: 720px) {
+    .clean-promo { padding: 3.5rem 0; }
+}
+
 /* ============ Blog ============ */
 .blog-hero { padding: 4.5rem 0 3rem; }
 .blog-hero h1 { max-width: 22ch; }
