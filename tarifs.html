@@ -80,6 +80,7 @@
 
 <style id="v6-tarifs-defensive">
 /* TARIFS V6 — inline defensive */
+.site-footer{margin-top:0 !important}
 .tp-hero{position:relative;padding:90px 0 60px;background:linear-gradient(180deg,#f6f3ff 0%,#fff 80%);overflow:hidden;text-align:center}
 .tp-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(107,70,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(107,70,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,#000 30%,transparent 80%);pointer-events:none}
 .tp-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.5;pointer-events:none}
@@ -103,6 +104,7 @@
 .tp-cards-section{padding:60px 0 100px;background:linear-gradient(180deg,#fff 0%,#faf8ff 100%);position:relative}
 .tp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1240px;margin:0 auto}
 .tp-card{background:#fff;border:1.5px solid rgba(15,26,53,.06);border-radius:24px;padding:32px 26px;position:relative;display:flex;flex-direction:column;gap:18px;box-shadow:0 18px 40px -22px rgba(15,26,53,.12);transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden}
+.tp-card.popular{padding-top:46px}
 .tp-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -20px rgba(107,70,255,.25);border-color:rgba(107,70,255,.2)}
 .tp-card::before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(107,70,255,.08),transparent 70%);opacity:.7;pointer-events:none}
 .tp-card.popular{background:linear-gradient(165deg,#6b46ff 0%,#9B6FFF 100%);color:#fff;border-color:transparent;transform:scale(1.04);box-shadow:0 30px 70px -20px rgba(107,70,255,.55)}
@@ -288,52 +290,21 @@
         </div>
         <div class="gtrio-grid">
             <div class="gtrio-card">
-                <div class="gtrio-ic">💎</div>
+                <div class="gtrio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
                 <h3>0% commission à vie</h3>
                 <p>Sur les services, cautions et paiements voyageurs. Pas de pourcentage. Pas de frais cachés. Jamais.</p>
             </div>
             <div class="gtrio-card gtrio-feat">
                 <span class="gtrio-rib">Le plus aimé</span>
-                <div class="gtrio-ic">🎁</div>
+                <div class="gtrio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
                 <h3>2 logements gratuits à vie</h3>
                 <p>Crée ton compte, ajoute jusqu'à 2 biens, utilise GuestLucky en illimité. Pour toujours.</p>
             </div>
             <div class="gtrio-card">
-                <div class="gtrio-ic">🛡️</div>
+                <div class="gtrio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
                 <h3>30 jours satisfait ou remboursé</h3>
                 <p>Tu testes Pro pendant 30 jours. Pas convaincu&nbsp;? Remboursement à 100%, sans questions.</p>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- BIG COMPARATOR -->
-<section class="big-vs">
-    <div class="container">
-        <div class="bv-head">
-            <span class="bv-eb">Face à face</span>
-            <h2 class="bv-title">À ce prix, <span class="bv-grad">personne ne fait autant</span>.</h2>
-            <p class="bv-lead">On a comparé GuestLucky aux 3 solutions les plus utilisées par les conciergeries.</p>
-        </div>
-        <div class="bv-table">
-            <div class="bv-row bv-h">
-                <div class="bv-c bv-l">Fonctionnalité</div>
-                <div class="bv-c bv-us"><img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/logo-guestlucky.png" alt="GuestLucky" height="24"></div>
-                <div class="bv-c bv-them">Smoobu</div>
-                <div class="bv-c bv-them">Hospitable</div>
-                <div class="bv-c bv-them">SuperHote</div>
-            </div>
-            <div class="bv-row"><div class="bv-c bv-l">Channel Manager natif</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Messagerie IA voyageurs</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Copilote IA pour le gestionnaire</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Ménage piloté par WhatsApp</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Interface propriétaire dédiée</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Caution &amp; services 0%</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Livret d'accueil interactif</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Facturation électronique 2026</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">Support WhatsApp français</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
-            <div class="bv-row"><div class="bv-c bv-l">2 logements gratuits à vie</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
-            <div class="bv-row bv-price"><div class="bv-c bv-l">Prix tout inclus / logement / mois</div><div class="bv-c bv-us"><strong>9,99 €</strong></div><div class="bv-c">15,99 €</div><div class="bv-c">25 € +</div><div class="bv-c">19 € +</div></div>
         </div>
     </div>
 </section>

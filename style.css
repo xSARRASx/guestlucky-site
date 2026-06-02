@@ -5910,14 +5910,14 @@ html { scroll-behavior: smooth; }
 .gtrio-eb {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(37,211,102,.12);
-    color: #1FA34A;
+    background: rgba(107,70,255,.10);
+    color: #6b46ff;
     border-radius: 100px;
     font-size: 13px; font-weight: 700;
     margin-bottom: 16px;
 }
 .gtrio-title { font-size: clamp(2rem, 3.8vw, 3.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.035em; color: #0F1A35; margin: 0; }
-.gtrio-grad { background: linear-gradient(135deg, #25D366, #1FA34A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gtrio-grad { background: linear-gradient(135deg, #6b46ff, #E84A8C); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 .gtrio-grid {
     display: grid;
@@ -5958,7 +5958,9 @@ html { scroll-behavior: smooth; }
     box-shadow: 0 8px 22px -4px rgba(232,74,140,.55);
     white-space: nowrap;
 }
-.gtrio-ic { font-size: 2.8rem; line-height: 1; margin-bottom: 14px; }
+.gtrio-ic { width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(107,70,255,.12), rgba(232,74,140,.12)); color: #6b46ff; }
+.gtrio-ic svg { width: 28px; height: 28px; }
+.gtrio-feat .gtrio-ic { background: rgba(255,255,255,.18); color: #fff; }
 .gtrio-card h3 { font-size: 1.2rem; font-weight: 700; color: #0F1A35; margin: 0 0 10px; letter-spacing: -0.01em; }
 .gtrio-card p { color: #3a3a4a; font-size: 14.5px; line-height: 1.55; margin: 0; }
 
