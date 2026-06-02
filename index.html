@@ -147,9 +147,9 @@ html{scroll-behavior:smooth}
 .h3-float-b{top:38%;left:-38px;animation-delay:-1.5s}
 .h3-float-c{bottom:-16px;right:-16px;animation-delay:-3s}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.h3-fa-ic{width:38px;height:38px;background:linear-gradient(135deg,#25D366,#1FA34A);border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.h3-fa-ic{width:38px;height:38px;background:linear-gradient(135deg,#6b46ff,#9B6FFF);border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .h3-fa-ic.h3-fa-ai{background:linear-gradient(135deg,#6b46ff,#E84A8C)}
-.h3-fa-ic.h3-fa-clean{background:linear-gradient(135deg,#25D366,#128C7E)}
+.h3-fa-ic.h3-fa-clean{background:linear-gradient(135deg,#E84A8C,#FFB1C9);color:#fff}
 .h3-float-a strong,.h3-float-b strong,.h3-float-c strong{display:block;font-size:13px;color:#0F1A35}
 .h3-float-a span,.h3-float-b span,.h3-float-c span{font-size:11.5px;color:#6b6b80}
 .marquee-section{padding:60px 0 80px;background:linear-gradient(180deg,#fff 0%,#faf8ff 100%);border-top:1px solid rgba(15,26,53,.04);border-bottom:1px solid rgba(15,26,53,.04);overflow:hidden}
@@ -197,12 +197,20 @@ html{scroll-behavior:smooth}
 .ap-tl-name{font-size:13.5px;color:#0F1A35;font-weight:700}
 .ap-tl-name em{font-style:normal;font-weight:500;color:#6b6b80;font-size:12px}
 .ap-tl-task{font-size:13px;color:#3a3a4a;margin-top:2px;line-height:1.35}
-.ap-tl-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(107,70,255,.1)}
+.ap-tl-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(107,70,255,.1);color:#6b46ff}
+.ap-tl-ic svg{width:18px;height:18px}
+.ap-tl-ic.msg{background:rgba(232,74,140,.12);color:#E84A8C}
+.ap-tl-ic.money{background:rgba(107,70,255,.12);color:#6b46ff}
+.ap-tl-ic.clean{background:rgba(155,111,255,.15);color:#6b46ff}
+.ap-tl-ic.key{background:rgba(232,74,140,.10);color:#E84A8C}
+.ap-tl-ic.book{background:rgba(15,26,53,.08);color:#0F1A35}
+.ap-tl-ic.stats{background:rgba(107,70,255,.14);color:#6b46ff}
 .ap-board-right{display:flex;flex-direction:column;gap:16px}
 .ap-stat{background:#fff;border:1px solid rgba(15,26,53,.06);border-radius:20px;padding:22px 24px;box-shadow:0 20px 50px -20px rgba(15,26,53,.1);position:relative;overflow:hidden}
 .ap-stat-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .ap-stat-eb{font-size:11.5px;color:#6b6b80;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.ap-stat-ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(232,74,140,.12),rgba(107,70,255,.12));display:flex;align-items:center;justify-content:center;font-size:16px}
+.ap-stat-ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(232,74,140,.12),rgba(107,70,255,.12));display:flex;align-items:center;justify-content:center;font-size:16px;color:#6b46ff}
+.ap-stat-ic svg{width:18px;height:18px}
 .ap-stat-num{font-size:2.5rem;font-weight:800;color:#0F1A35;line-height:1;letter-spacing:-.02em}
 .ap-stat-sub{font-size:13px;color:#6b6b80;margin-top:4px}
 .ap-keep{background:linear-gradient(135deg,rgba(232,74,140,.08),rgba(107,70,255,.08));border:1px dashed rgba(232,74,140,.35);border-radius:16px;padding:18px 20px;font-size:14px;color:#3a3a4a;line-height:1.45}
@@ -218,7 +226,13 @@ html{scroll-behavior:smooth}
 .st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
 .st-card{background:#fff;border:1px solid rgba(15,26,53,.06);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;box-shadow:0 12px 32px -16px rgba(15,26,53,.1);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
 .st-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -20px rgba(107,70,255,.25)}
-.st-card-ic{font-size:2.2rem;line-height:1}
+.st-card-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(107,70,255,.12),rgba(232,74,140,.12));color:#6b46ff;margin-bottom:6px}
+.st-card-ic svg{width:26px;height:26px}
+.st-card.s2 .st-card-ic{color:#E84A8C;background:linear-gradient(135deg,rgba(232,74,140,.14),rgba(255,177,201,.18))}
+.st-card.s3 .st-card-ic{color:#6b46ff;background:linear-gradient(135deg,rgba(107,70,255,.16),rgba(155,111,255,.16))}
+.st-card.s5 .st-card-ic{color:#0F1A35;background:linear-gradient(135deg,rgba(15,26,53,.08),rgba(107,70,255,.10))}
+.st-card.s6 .st-card-ic{color:#6b46ff;background:linear-gradient(135deg,rgba(107,70,255,.14),rgba(232,74,140,.10))}
+.st-card.s7 .st-card-ic{color:#E84A8C;background:linear-gradient(135deg,rgba(232,74,140,.12),rgba(107,70,255,.10))}
 .st-card h3{font-size:1.1rem;font-weight:700;color:#0F1A35;margin:0;letter-spacing:-.01em;line-height:1.2}
 .st-card p{font-size:13.5px;color:#3a3a4a;line-height:1.5;margin:0;flex:1}
 .st-card p em{font-style:italic;color:#6b46ff;font-weight:600}
@@ -405,10 +419,10 @@ html{scroll-behavior:smooth}
                 <div class="h3-app-chrome">
                     <span class="h3-dot"></span><span class="h3-dot"></span><span class="h3-dot"></span>
                     <div class="h3-app-tabs">
-                        <span class="h3-tab active">📅 Planning</span>
-                        <span class="h3-tab">💬 Messages <em>3</em></span>
-                        <span class="h3-tab">🧼 Ménage</span>
-                        <span class="h3-tab">💸 Paiements</span>
+                        <span class="h3-tab active">Planning</span>
+                        <span class="h3-tab">Messages <em>3</em></span>
+                        <span class="h3-tab">Ménage</span>
+                        <span class="h3-tab">Paiements</span>
                     </div>
                 </div>
                 <div class="h3-app-body">
@@ -416,27 +430,27 @@ html{scroll-behavior:smooth}
                         <span>LOGEMENT</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
                     </div>
                     <div class="h3-cal-row">
-                        <span class="h3-listing">🏠 Loft République</span>
+                        <span class="h3-listing">Loft République</span>
                         <span class="h3-block airbnb" style="grid-column:span 3">Léa M. · Airbnb · 612 €</span>
                         <span class="h3-block free"></span>
                         <span class="h3-block booking" style="grid-column:span 3">Pierre R. · Booking</span>
                     </div>
                     <div class="h3-cal-row">
-                        <span class="h3-listing">🏛️ Studio Capitole</span>
+                        <span class="h3-listing">Studio Capitole</span>
                         <span class="h3-block direct" style="grid-column:span 2">Sarah K. · Direct</span>
                         <span class="h3-block free"></span>
                         <span class="h3-block airbnb" style="grid-column:span 3">Thomas L. · Airbnb</span>
                         <span class="h3-block free"></span>
                     </div>
                     <div class="h3-cal-row">
-                        <span class="h3-listing">🌊 Maison Garonne</span>
+                        <span class="h3-listing">Maison Garonne</span>
                         <span class="h3-block free"></span>
                         <span class="h3-block booking" style="grid-column:span 3">Famille Q. · Booking</span>
-                        <span class="h3-block clean">🧼</span>
+                        <span class="h3-block clean"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                         <span class="h3-block airbnb" style="grid-column:span 2">Hugo D. · Airbnb</span>
                     </div>
                     <div class="h3-cal-row">
-                        <span class="h3-listing">🏢 Saint-Cyp</span>
+                        <span class="h3-listing">Saint-Cyp</span>
                         <span class="h3-block direct" style="grid-column:span 3">Workteam · Direct</span>
                         <span class="h3-block free"></span>
                         <span class="h3-block airbnb" style="grid-column:span 3">Camille P. · Airbnb</span>
@@ -448,21 +462,21 @@ html{scroll-behavior:smooth}
                 </div>
             </div>
             <div class="h3-float-a">
-                <div class="h3-fa-ic">💸</div>
+                <div class="h3-fa-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                 <div>
                     <strong>+612 €</strong>
                     <span>Léa M. vient de réserver</span>
                 </div>
             </div>
             <div class="h3-float-b">
-                <div class="h3-fa-ic h3-fa-ai">✨</div>
+                <div class="h3-fa-ic h3-fa-ai"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14 9L21 12L14 15L12 22L10 15L3 12L10 9L12 2z"/></svg></div>
                 <div>
                     <strong>Lucky Copilot</strong>
                     <span>3 messages voyageurs envoyés en EN / ES / DE</span>
                 </div>
             </div>
             <div class="h3-float-c">
-                <div class="h3-fa-ic h3-fa-clean">🧼</div>
+                <div class="h3-fa-ic h3-fa-clean"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                 <div>
                     <strong>Mia confirme</strong>
                     <span>Ménage terminé · 12 photos jointes</span>
@@ -530,8 +544,8 @@ html{scroll-behavior:smooth}
         </div>
 
         <div class="ap-toggle">
-            <button class="ap-tg" data-ap="off"><span>😩</span> Sans autopilote</button>
-            <button class="ap-tg active" data-ap="on"><span>✨</span> Mode autopilote</button>
+            <button class="ap-tg" data-ap="off">Sans autopilote</button>
+            <button class="ap-tg active" data-ap="on">Mode autopilote</button>
         </div>
 
         <div class="ap-board">
@@ -560,7 +574,7 @@ html{scroll-behavior:smooth}
                                 <span class="ap-tl-name">Vaness <em>· Voyageurs</em></span>
                                 <span class="ap-tl-task">14 messages voyageurs traités en 6 langues · ton respecté</span>
                             </div>
-                            <span class="ap-tl-ic msg">💬</span>
+                            <span class="ap-tl-ic msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
                         </div>
                         <div class="ap-tl-row">
                             <span class="ap-tl-time">09h15</span>
@@ -569,7 +583,7 @@ html{scroll-behavior:smooth}
                                 <span class="ap-tl-name">Chris <em>· Exécutif</em></span>
                                 <span class="ap-tl-task">Ménages auto-assignés · 3 prestataires ont confirmé sur WhatsApp</span>
                             </div>
-                            <span class="ap-tl-ic clean">🧼</span>
+                            <span class="ap-tl-ic clean"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                         </div>
                         <div class="ap-tl-row">
                             <span class="ap-tl-time">11h50</span>
@@ -578,7 +592,7 @@ html{scroll-behavior:smooth}
                                 <span class="ap-tl-name">Céline <em>· Compta</em></span>
                                 <span class="ap-tl-task">Caution Booking encaissée · reçu envoyé auto au voyageur</span>
                             </div>
-                            <span class="ap-tl-ic money">💸</span>
+                            <span class="ap-tl-ic money"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
                         </div>
                         <div class="ap-tl-row">
                             <span class="ap-tl-time">14h20</span>
@@ -587,7 +601,7 @@ html{scroll-behavior:smooth}
                                 <span class="ap-tl-name">Sam <em>· Sécurité</em></span>
                                 <span class="ap-tl-task">Serrure connectée · nouveau code généré pour Léa M. · envoyé J-1</span>
                             </div>
-                            <span class="ap-tl-ic key">🔑</span>
+                            <span class="ap-tl-ic key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
                         </div>
                         <div class="ap-tl-row">
                             <span class="ap-tl-time">18h00</span>
@@ -596,7 +610,7 @@ html{scroll-behavior:smooth}
                                 <span class="ap-tl-name">Vaness <em>· Voyageurs</em></span>
                                 <span class="ap-tl-task">3 arrivées demain · livret d'accueil envoyé (12 onglets · 3 langues)</span>
                             </div>
-                            <span class="ap-tl-ic book">📘</span>
+                            <span class="ap-tl-ic book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
                         </div>
                         <div class="ap-tl-row">
                             <span class="ap-tl-time">22h40</span>
@@ -605,7 +619,7 @@ html{scroll-behavior:smooth}
                                 <span class="ap-tl-name">Lucky <em>· Copilot</em></span>
                                 <span class="ap-tl-task">+42 €/nuit suggéré sur Loft Vieux-Port · pic de demande détecté</span>
                             </div>
-                            <span class="ap-tl-ic stats">📈</span>
+                            <span class="ap-tl-ic stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
                         </div>
                     </div>
                 </div>
@@ -615,7 +629,7 @@ html{scroll-behavior:smooth}
                 <div class="ap-stat">
                     <div class="ap-stat-head">
                         <span class="ap-stat-eb">Temps gagné</span>
-                        <span class="ap-stat-ic">📈</span>
+                        <span class="ap-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                     </div>
                     <div class="ap-stat-num">15 h</div>
                     <div class="ap-stat-sub">par semaine, en moyenne</div>
@@ -623,7 +637,7 @@ html{scroll-behavior:smooth}
                 <div class="ap-stat">
                     <div class="ap-stat-head">
                         <span class="ap-stat-eb">Notifs à traiter</span>
-                        <span class="ap-stat-ic">✅</span>
+                        <span class="ap-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg></span>
                     </div>
                     <div class="ap-stat-num">0</div>
                     <div class="ap-stat-sub">tout est sous contrôle</div>
@@ -631,7 +645,7 @@ html{scroll-behavior:smooth}
                 <div class="ap-stat">
                     <div class="ap-stat-head">
                         <span class="ap-stat-eb">Soirées libres</span>
-                        <span class="ap-stat-ic">🌅</span>
+                        <span class="ap-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
                     </div>
                     <div class="ap-stat-num">5</div>
                     <div class="ap-stat-sub">cette semaine</div>
@@ -662,49 +676,49 @@ html{scroll-behavior:smooth}
 
         <div class="st-grid">
             <div class="st-card s1">
-                <div class="st-card-ic">📅</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
                 <h3>Channel Manager</h3>
                 <p>Airbnb, Booking, Abritel, Vrbo, Direct synchronisés en 2 secondes. Zéro double-résa, jamais.</p>
                 <span class="st-tag">Inclus dès le plan Gratuit</span>
             </div>
             <div class="st-card s2">
-                <div class="st-card-ic">💬</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
                 <h3>Messagerie IA voyageurs</h3>
                 <p>Répond 24/7 en 6 langues dans <em>ton ton</em>. Tu valides ou tu laisses partir, c'est toi qui décides.</p>
                 <span class="st-tag">Plan Pro</span>
             </div>
             <div class="st-card s3">
-                <div class="st-card-ic">✨</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></div>
                 <h3>Lucky Copilot</h3>
                 <p>Ton bras droit IA. Il consulte, crée, modifie tout dans ton compte — en français normal.</p>
                 <span class="st-tag">Plan Pro</span>
             </div>
             <div class="st-card s4">
-                <div class="st-card-ic">🧼</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9c-1.4 0-2.7-.3-3.9-.9L3 21l1-5"/><polyline points="9 11 11 13 15 9"/></svg></div>
                 <h3>Ménage sur WhatsApp</h3>
                 <p>Tes femmes de ménage n'ouvrent rien d'autre. Mission, photos, incident — tout sur WhatsApp.</p>
                 <span class="st-tag">Plan Pro</span>
             </div>
             <div class="st-card s5">
-                <div class="st-card-ic">📘</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
                 <h3>Livret d'accueil</h3>
                 <p>Page voyageur sur-mesure, 3 langues, code wifi, parking, restos, balades. Envoyée auto J-1.</p>
                 <span class="st-tag">Plan Premium</span>
             </div>
             <div class="st-card s6">
-                <div class="st-card-ic">💸</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="17" cy="15" r="1.5"/></svg></div>
                 <h3>Caution & services 0%</h3>
                 <p>Tu encaisses caution + ménage + extras direct sur ton compte Stripe. Aucune commission.</p>
                 <span class="st-tag">Toujours 0%</span>
             </div>
             <div class="st-card s7">
-                <div class="st-card-ic">🧾</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
                 <h3>Facturation 2026</h3>
                 <p>Factures électroniques conformes, exports compta, gestion taxe de séjour. Sans prise de tête.</p>
                 <span class="st-tag">Premium &amp; Pro</span>
             </div>
             <div class="st-card s8 st-cta-card">
-                <div class="st-card-ic">→</div>
+                <div class="st-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
                 <h3>Et 22 modules de plus.</h3>
                 <p>Owner portal, serrures connectées, revenue management, intégrations…</p>
                 <a href="fonctionnalites.html" class="st-link">Voir tout →</a>
@@ -791,7 +805,7 @@ html{scroll-behavior:smooth}
     <div class="container">
         <div class="mc-inner">
             <div class="mc-left">
-                <span class="mc-eb">🚀 Démo · 30 min · 100% gratuit</span>
+                <span class="mc-eb">Démo · 30 min · 100% gratuit</span>
                 <h2 class="mc-title">Ta nouvelle conciergerie<br><span class="mc-grad">commence dans 30 minutes.</span></h2>
                 <p class="mc-lead">Un expert GuestLucky te montre l'outil, comprend ta situation, et te dit honnêtement si on est faits pour bosser ensemble.</p>
                 <div class="mc-ctas">
