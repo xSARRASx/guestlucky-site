@@ -98,47 +98,13 @@ a { color: inherit; text-decoration: none; }
 .brand {
     display: inline-flex;
     align-items: center;
-    height: 42px;
-    text-decoration: none;
+    height: 38px;
 }
 
 .brand svg.logo-svg {
     height: 38px;
     width: auto;
     display: block;
-}
-
-.brand-mark {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    transition: transform .25s ease;
-}
-.brand-mark:hover { transform: translateY(-1px); }
-.brand-mark svg {
-    width: 38px;
-    height: 38px;
-    display: block;
-    flex-shrink: 0;
-}
-.brand-text {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: -.02em;
-    color: #0f0f1f;
-    line-height: 1;
-    background: linear-gradient(135deg, #6b46ff 0%, #E84A8C 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.site-footer .brand-text { color: #fff; background: none; -webkit-text-fill-color: #fff; }
-.site-footer .brand-mark svg path[stroke="#0f0f1f"] { stroke: #fff; }
-@media (max-width: 768px) {
-    .brand-mark svg { width: 34px; height: 34px; }
-    .brand-text { font-size: 1.1rem; }
 }
 
 .main-nav {
