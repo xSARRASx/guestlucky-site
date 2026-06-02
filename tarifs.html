@@ -63,7 +63,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=6">
 <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RXLNKH6L"></script>
     <script>
@@ -77,6 +77,72 @@
 <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WB4NPPJW');</script>
     <!-- End Google Tag Manager -->
+
+<style id="v6-tarifs-defensive">
+/* TARIFS V6 — inline defensive */
+.tp-hero{position:relative;padding:90px 0 60px;background:linear-gradient(180deg,#f6f3ff 0%,#fff 80%);overflow:hidden;text-align:center}
+.tp-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(107,70,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(107,70,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,#000 30%,transparent 80%);pointer-events:none}
+.tp-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.5;pointer-events:none}
+.tp-orb.a{width:520px;height:520px;background:radial-gradient(circle,#9B6FFF,transparent 70%);top:-180px;left:-120px}
+.tp-orb.b{width:420px;height:420px;background:radial-gradient(circle,#FFB1C9,transparent 70%);bottom:-120px;right:-100px}
+.tp-eb{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;background:rgba(232,74,140,.1);color:#E84A8C;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:18px;position:relative}
+.tp-title{font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.05;font-weight:800;letter-spacing:-.04em;color:#0F1A35;margin:0 0 16px;position:relative}
+.tp-title em{font-style:italic;background:linear-gradient(135deg,#E84A8C,#6b46ff);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.tp-lead{color:#3a3a4a;font-size:1.15rem;max-width:60ch;margin:0 auto;line-height:1.55;position:relative}
+.tp-lead strong{color:#0F1A35}
+.tp-toggle-wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px;margin-top:36px;position:relative}
+.tp-toggle{display:inline-flex;gap:4px;padding:5px;background:#fff;border:1px solid rgba(15,26,53,.08);border-radius:100px;box-shadow:0 8px 24px -8px rgba(15,26,53,.1)}
+.tp-tg{border:0;background:transparent;padding:10px 22px;font-size:14px;font-weight:600;color:#6b6b80;border-radius:100px;cursor:pointer;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.tp-tg.active{background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff;box-shadow:0 6px 16px -4px rgba(107,70,255,.4)}
+.tp-save{background:#E84A8C;color:#fff;padding:3px 8px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.5px}
+.tp-counter{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid rgba(15,26,53,.08);border-radius:100px;padding:6px 8px;box-shadow:0 8px 24px -8px rgba(15,26,53,.1)}
+.tp-counter strong{color:#0F1A35;font-size:14px;padding:0 4px}
+.tp-cbtn{width:36px;height:36px;background:rgba(107,70,255,.1);border:0;border-radius:50%;color:#6b46ff;font-size:18px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .15s}
+.tp-cbtn:hover{background:rgba(107,70,255,.2)}
+.tp-cnum{font-size:16px;font-weight:700;color:#0F1A35;min-width:32px;text-align:center}
+.tp-cards-section{padding:60px 0 100px;background:linear-gradient(180deg,#fff 0%,#faf8ff 100%);position:relative}
+.tp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1240px;margin:0 auto}
+.tp-card{background:#fff;border:1.5px solid rgba(15,26,53,.06);border-radius:24px;padding:32px 26px;position:relative;display:flex;flex-direction:column;gap:18px;box-shadow:0 18px 40px -22px rgba(15,26,53,.12);transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden}
+.tp-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -20px rgba(107,70,255,.25);border-color:rgba(107,70,255,.2)}
+.tp-card::before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(107,70,255,.08),transparent 70%);opacity:.7;pointer-events:none}
+.tp-card.popular{background:linear-gradient(165deg,#6b46ff 0%,#9B6FFF 100%);color:#fff;border-color:transparent;transform:scale(1.04);box-shadow:0 30px 70px -20px rgba(107,70,255,.55)}
+.tp-card.popular:hover{transform:scale(1.04) translateY(-6px)}
+.tp-card.popular::before{background:radial-gradient(circle,rgba(255,177,201,.3),transparent 70%);opacity:1}
+.tp-rib{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#E84A8C;color:#fff;padding:6px 16px;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;box-shadow:0 8px 18px -4px rgba(232,74,140,.55)}
+.tp-name{font-size:13px;font-weight:700;color:#6b46ff;letter-spacing:1.5px;text-transform:uppercase;margin:0;position:relative}
+.tp-card.popular .tp-name{color:#FFB1C9}
+.tp-price{font-size:3.2rem;font-weight:800;color:#0F1A35;line-height:1;letter-spacing:-.03em;position:relative}
+.tp-price .tp-unit{font-size:1rem;font-weight:600;color:#6b6b80;letter-spacing:0;margin-left:6px}
+.tp-card.popular .tp-price{color:#fff}
+.tp-card.popular .tp-unit{color:rgba(255,255,255,.85)}
+.tp-period{font-size:13px;color:#6b6b80;margin-top:-4px;position:relative}
+.tp-card.popular .tp-period{color:rgba(255,255,255,.8)}
+.tp-tagline{font-size:14px;color:#3a3a4a;line-height:1.45;font-style:italic;position:relative}
+.tp-card.popular .tp-tagline{color:rgba(255,255,255,.95)}
+.tp-total{background:#faf8ff;color:#6b46ff;padding:10px 14px;border-radius:12px;font-size:13.5px;font-weight:700;text-align:center;position:relative}
+.tp-card.popular .tp-total{background:rgba(255,255,255,.15);color:#fff}
+.tp-feats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1;position:relative}
+.tp-feats li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3a3a4a;line-height:1.4}
+.tp-card.popular .tp-feats li{color:rgba(255,255,255,.95)}
+.tp-feats li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#6b46ff,#9B6FFF);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px 11px;background-position:center;background-repeat:no-repeat;margin-top:1px;box-shadow:0 2px 6px -2px rgba(107,70,255,.4)}
+.tp-card.popular .tp-feats li::before{background-color:#fff;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b46ff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>")}
+.tp-card .tp-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff !important;border-radius:14px;font-weight:700;font-size:14.5px;text-decoration:none !important;box-shadow:0 12px 28px -10px rgba(107,70,255,.5);transition:transform .15s;position:relative}
+.tp-card .tp-cta:hover{transform:translateY(-2px)}
+.tp-card.popular .tp-cta{background:#fff;color:#6b46ff !important;box-shadow:0 12px 28px -10px rgba(0,0,0,.25)}
+.tp-card.dark .tp-cta{background:#0F1A35;color:#fff !important}
+.tp-faq-mini{padding:80px 0;background:#fff;text-align:center}
+.tp-faq-mini h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#0F1A35;margin:0 0 12px;letter-spacing:-.025em}
+.tp-faq-mini .ap-grad{background:linear-gradient(135deg,#E84A8C,#6b46ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tp-faq-list{max-width:780px;margin:36px auto 0;display:flex;flex-direction:column;gap:12px;text-align:left}
+.tp-faq-item{background:#faf8ff;border:1px solid rgba(15,26,53,.06);border-radius:14px;padding:18px 24px;cursor:pointer;transition:background .15s}
+.tp-faq-item:hover{background:#f0eaff}
+.tp-faq-item summary{font-weight:700;color:#0F1A35;font-size:15px;list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.tp-faq-item summary::after{content:"+";font-size:24px;color:#6b46ff;font-weight:600;transition:transform .2s}
+.tp-faq-item[open] summary::after{transform:rotate(45deg)}
+.tp-faq-item p{margin:14px 0 0;color:#3a3a4a;font-size:14.5px;line-height:1.55}
+@media (max-width:1024px){.tp-cards{grid-template-columns:repeat(2,1fr)}.tp-card.popular{transform:none}.tp-card.popular:hover{transform:translateY(-6px)}}
+@media (max-width:600px){.tp-cards{grid-template-columns:1fr}.tp-toggle-wrap{gap:16px}}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -114,118 +180,284 @@
 
 <main>
 
-<section class="hero" style="padding:5rem 0 2rem;">
-    <div class="blob-bg"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+<!-- TARIFS HERO -->
+<section class="tp-hero">
+    <div class="tp-orb a"></div>
+    <div class="tp-orb b"></div>
     <div class="container">
-        <span class="hero-badge"><span class="dot"></span> Plans de tarification</span>
-        <h1>Trouvez le plan <span class="accent">idéal</span></h1>
-        <p class="lead">Pas d'engagement, pas de frais cachés. Changez de plan quand vous voulez. Utilisez le calculateur ci-dessous pour estimer votre tarif selon votre nombre de logements.</p>
+        <span class="tp-eb">✨ Tarifs honnêtes &middot; 0% commission &middot; sans frais cachés</span>
+        <h1 class="tp-title">Un tarif <em>juste</em>.<br>Pas de surprises.</h1>
+        <p class="tp-lead">À partir de <strong>5,99 € HT / logement</strong>. <strong>2 logements gratuits à vie</strong>. Tout est inclus dans le plan que tu choisis. Vraiment tout.</p>
+
+        <div class="tp-toggle-wrap">
+            <div class="tp-toggle" id="tpBilling">
+                <button type="button" class="tp-tg active" data-tp="m">Mensuel</button>
+                <button type="button" class="tp-tg" data-tp="a">Annuel <span class="tp-save">-20%</span></button>
+            </div>
+            <div class="tp-counter">
+                <button type="button" class="tp-cbtn" id="tpMinus" aria-label="Moins">−</button>
+                <span class="tp-cnum" id="tpCount">1</span>
+                <button type="button" class="tp-cbtn" id="tpPlus" aria-label="Plus">+</button>
+                <strong>logement</strong>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="section" style="padding-top:2.5rem;">
+<!-- TARIFS CARDS -->
+<section class="tp-cards-section">
     <div class="container">
-
-        <div class="pricing-controls">
-            <div class="billing-toggle">
-                <span data-billing="monthly" class="active-label" style="cursor:pointer;">Mensuel</span>
-                <span class="switch" data-switch role="button" tabindex="0" aria-label="Basculer mensuel / annuel"></span>
-                <span data-billing="annual" style="cursor:pointer;">Annuel <small style="opacity:.7;font-weight:500;">(-20%)</small></span>
-            </div>
-            <div class="logements-counter">
-                <span class="label">Logements :</span>
-                <span class="counter-box">
-                    <button class="counter-btn" data-counter-dec aria-label="Diminuer">−</button>
-                    <span class="counter-value" data-counter-value>1</span>
-                    <button class="counter-btn" data-counter-inc aria-label="Augmenter">+</button>
-                </span>
-            </div>
-        </div>
-
-        <div class="pricing-grid">
-
-            <div class="plan">
-                <h3 class="plan-name">Gratuit</h3>
-                <div class="plan-price">0€</div>
-                <div class="plan-unit"></div>
-                <div class="plan-tag">Parfait pour tester l'outil</div>
-                <div class="plan-total" data-total="gratuit">Total : 0,00 €/mois</div>
-                <ul class="plan-features">
+        <div class="tp-cards">
+            <div class="tp-card">
+                <span class="tp-name">Gratuit</span>
+                <div class="tp-price">0 €<span class="tp-unit"></span></div>
+                <div class="tp-period">À vie · jusqu'à 2 logements</div>
+                <p class="tp-tagline">Pour tester l'outil sans risque, jusqu'à 2 logements.</p>
+                <div class="tp-total" data-total="0">Total : 0 € / mois</div>
+                <ul class="tp-feats">
                     <li>ERP en version gratuite</li>
-                    <li>Connexion iCal / ICS (sans Channel Manager)</li>
+                    <li>Synchronisation iCal / ICS</li>
                     <li>Jusqu'à 2 logements</li>
-                    <li>Jusqu'à 2 membres d'équipe</li>
-                    <li>2 services additionnels</li>
-                    <li>Support client en ligne</li>
+                    <li>2 membres d'équipe</li>
+                    <li>Support en ligne</li>
                 </ul>
-                <a href="demo.html" class="plan-cta">Démarrer maintenant <span class="arrow">→</span></a>
+                <a href="https://app.guestlucky.io/register" target="_blank" rel="noopener" class="tp-cta">Démarrer gratuitement <span>→</span></a>
             </div>
 
-            <div class="plan">
-                <h3 class="plan-name">Premium</h3>
-                <div class="plan-price" data-price="premium">5,99 €</div>
-                <div class="plan-unit">HT/mois/logement</div>
-                <div class="plan-tag">Pour gérer votre activité sans limites</div>
-                <div class="plan-total" data-total="premium">Total : 5,99 €/mois</div>
-                <ul class="plan-features">
+            <div class="tp-card">
+                <span class="tp-name">Premium</span>
+                <div class="tp-price"><span data-price-m="5.99" data-price-a="4.79">5,99 €</span><span class="tp-unit">/ mois</span></div>
+                <div class="tp-period">HT / logement / <span data-billing="mensuel">mois</span></div>
+                <p class="tp-tagline">L'ERP complet pour gérer ton activité sans Channel Manager.</p>
+                <div class="tp-total" data-total="5.99">Total : 5,99 € / mois</div>
+                <ul class="tp-feats">
                     <li>ERP complet (sans Channel Manager)</li>
                     <li>Synchronisation iCal / ICS</li>
                     <li>Membres d'équipe illimités</li>
-                    <li>Services illimités</li>
-                    <li>Support prioritaire sous 24h (WhatsApp + chat)</li>
-                    <li>Aide au paramétrage</li>
+                    <li>Services & caution illimités</li>
+                    <li>Support prioritaire WhatsApp 24h</li>
+                    <li>Livret d'accueil interactif</li>
                 </ul>
-                <a href="demo.html" class="plan-cta">Démarrer maintenant <span class="arrow">→</span></a>
+                <a href="demo.html" class="tp-cta">Réserver une démo <span>→</span></a>
             </div>
 
-            <div class="plan is-popular">
-                <span class="plan-badge"><span class="dot"></span> POPULAIRE</span>
-                <h3 class="plan-name">Pro</h3>
-                <div class="plan-price" data-price="pro">9,99 €</div>
-                <div class="plan-unit">HT/mois/logement</div>
-                <div class="plan-tag">Channel Manager + Messagerie IA</div>
-                <div class="plan-total" data-total="pro">Total : 9,99 €/mois</div>
-                <ul class="plan-features">
+            <div class="tp-card popular">
+                <span class="tp-rib">★ Le plus choisi</span>
+                <span class="tp-name">Pro</span>
+                <div class="tp-price"><span data-price-m="9.99" data-price-a="7.99">9,99 €</span><span class="tp-unit">/ mois</span></div>
+                <div class="tp-period">HT / logement / <span data-billing="mensuel">mois</span></div>
+                <p class="tp-tagline">TOUT inclus : Channel Manager + Lucky Copilot + IA voyageurs.</p>
+                <div class="tp-total" data-total="9.99">Total : 9,99 € / mois</div>
+                <ul class="tp-feats">
                     <li>Tout le Premium inclus</li>
-                    <li>Channel Manager (Airbnb, Booking, Abritel…)</li>
-                    <li>Messagerie IA automatisée</li>
-                    <li>Synchronisation temps réel multi-canaux</li>
-                    <li>Support prioritaire 24h</li>
+                    <li>Channel Manager (Airbnb, Booking, Abritel, Vrbo)</li>
+                    <li>Messagerie IA voyageurs en 6 langues</li>
+                    <li>Lucky Copilot (IA pour le gestionnaire)</li>
+                    <li>Lucky Clean (ménage sur WhatsApp)</li>
+                    <li>Synchronisation temps réel</li>
+                    <li>Facturation électronique 2026</li>
                 </ul>
-                <a href="demo.html" class="plan-cta">Démarrer maintenant <span class="arrow">→</span></a>
+                <a href="demo.html" class="tp-cta">Réserver une démo <span>→</span></a>
             </div>
 
-            <div class="plan">
-                <h3 class="plan-name">Personnalisé</h3>
-                <div class="plan-price small">sur devis</div>
-                <div class="plan-unit">+ de 50 logements/mois</div>
-                <div class="plan-tag">Pour les structures importantes ou multi-équipes</div>
-                <div class="plan-total" data-total="custom" style="display:none;"></div>
-                <ul class="plan-features">
-                    <li>Pas de limitation sur les membres d'équipe</li>
-                    <li>Pas de limitation sur les services</li>
-                    <li>Support dédié sous 12h sur WhatsApp + visio</li>
-                    <li>Paramétrage réalisé par nos soins</li>
+            <div class="tp-card dark">
+                <span class="tp-name">Personnalisé</span>
+                <div class="tp-price">Sur devis<span class="tp-unit"></span></div>
+                <div class="tp-period">+ 50 logements</div>
+                <p class="tp-tagline">Tarif négocié pour les conciergeries d'envergure et multi-équipes.</p>
+                <div class="tp-total">Configuration sur-mesure</div>
+                <ul class="tp-feats">
+                    <li>Tout le Pro inclus</li>
+                    <li>Pas de limite de membres / services</li>
+                    <li>Support dédié sous 12h (WhatsApp + visio)</li>
+                    <li>Paramétrage clé en main par notre équipe</li>
+                    <li>Account manager dédié</li>
                 </ul>
-                <a href="contact.html" class="plan-cta">Nous contacter <span class="arrow">→</span></a>
+                <a href="contact.html" class="tp-cta">Nous contacter <span>→</span></a>
             </div>
-
-        </div>
-
-        <div class="pricing-footnote">
-            <span>Sans engagement</span><span>·</span><span>Annulation à tout moment</span><span>·</span><span>Paiement sécurisé via Stripe</span>
         </div>
     </div>
 </section>
 
-<section class="section navy">
-    <div class="blob-bg"><div class="blob a"></div><div class="blob b"></div></div>
-    <div class="container" style="text-align:center;">
-        <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1rem;">Une question sur <span class="accent">les tarifs</span> ?</h2>
-        <p class="lead" style="margin-bottom:2rem;">Notre équipe vous répond en moins de 24h.</p>
-        <a href="contact.html" class="btn-cta" style="padding:0.95rem 1.8rem;">Nous contacter <span class="arrow">→</span></a>
+<!-- GUARANTEE TRIO -->
+<section class="gtrio">
+    <div class="container">
+        <div class="gtrio-head">
+            <span class="gtrio-eb">Nos engagements</span>
+            <h2 class="gtrio-title">Tu testes. Tu valides. <span class="gtrio-grad">Sinon on rembourse.</span></h2>
+        </div>
+        <div class="gtrio-grid">
+            <div class="gtrio-card">
+                <div class="gtrio-ic">💎</div>
+                <h3>0% commission à vie</h3>
+                <p>Sur les services, cautions et paiements voyageurs. Pas de pourcentage. Pas de frais cachés. Jamais.</p>
+            </div>
+            <div class="gtrio-card gtrio-feat">
+                <span class="gtrio-rib">Le plus aimé</span>
+                <div class="gtrio-ic">🎁</div>
+                <h3>2 logements gratuits à vie</h3>
+                <p>Crée ton compte, ajoute jusqu'à 2 biens, utilise GuestLucky en illimité. Pour toujours.</p>
+            </div>
+            <div class="gtrio-card">
+                <div class="gtrio-ic">🛡️</div>
+                <h3>30 jours satisfait ou remboursé</h3>
+                <p>Tu testes Pro pendant 30 jours. Pas convaincu&nbsp;? Remboursement à 100%, sans questions.</p>
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- BIG COMPARATOR -->
+<section class="big-vs">
+    <div class="container">
+        <div class="bv-head">
+            <span class="bv-eb">Face à face</span>
+            <h2 class="bv-title">À ce prix, <span class="bv-grad">personne ne fait autant</span>.</h2>
+            <p class="bv-lead">On a comparé GuestLucky aux 3 solutions les plus utilisées par les conciergeries.</p>
+        </div>
+        <div class="bv-table">
+            <div class="bv-row bv-h">
+                <div class="bv-c bv-l">Fonctionnalité</div>
+                <div class="bv-c bv-us"><img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/logo-guestlucky.png" alt="GuestLucky" height="24"></div>
+                <div class="bv-c bv-them">Smoobu</div>
+                <div class="bv-c bv-them">Hospitable</div>
+                <div class="bv-c bv-them">SuperHote</div>
+            </div>
+            <div class="bv-row"><div class="bv-c bv-l">Channel Manager natif</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Messagerie IA voyageurs</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Copilote IA pour le gestionnaire</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Ménage piloté par WhatsApp</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Interface propriétaire dédiée</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Caution &amp; services 0%</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Livret d'accueil interactif</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Facturation électronique 2026</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">Support WhatsApp français</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ok">✓</i></div></div>
+            <div class="bv-row"><div class="bv-c bv-l">2 logements gratuits à vie</div><div class="bv-c bv-us"><i class="ok">✓</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div><div class="bv-c"><i class="ko">—</i></div></div>
+            <div class="bv-row bv-price"><div class="bv-c bv-l">Prix tout inclus / logement / mois</div><div class="bv-c bv-us"><strong>9,99 €</strong></div><div class="bv-c">15,99 €</div><div class="bv-c">25 € +</div><div class="bv-c">19 € +</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ MINI -->
+<section class="tp-faq-mini">
+    <div class="container">
+        <h2>Tes <span class="ap-grad">questions</span>, nos réponses.</h2>
+        <div class="tp-faq-list">
+            <details class="tp-faq-item">
+                <summary>Y a-t-il un engagement ?</summary>
+                <p>Aucun. Tu peux annuler à tout moment depuis ton compte. Si tu as pris l'option annuelle (-20%), tu es couvert par notre garantie 30 jours satisfait ou remboursé.</p>
+            </details>
+            <details class="tp-faq-item">
+                <summary>Quelle est la différence entre Premium et Pro ?</summary>
+                <p>Le Premium inclut tout sauf le Channel Manager et les IA. Le Pro ajoute le Channel Manager (Airbnb, Booking, Abritel), la messagerie IA voyageurs, Lucky Copilot et Lucky Clean.</p>
+            </details>
+            <details class="tp-faq-item">
+                <summary>Que veut dire "0% commission" ?</summary>
+                <p>Toutes les cautions, services additionnels et paiements voyageurs que tu encaisses via GuestLucky vont à 100% sur ton compte Stripe. On ne prend aucune commission, sur rien. Jamais.</p>
+            </details>
+            <details class="tp-faq-item">
+                <summary>Combien coûte la migration depuis Smoobu / Hospitable ?</summary>
+                <p>Rien. Notre équipe fait la migration pour toi, gratuitement, généralement en 48h. On reprend tes annonces, tes calendriers, tes templates voyageurs.</p>
+            </details>
+            <details class="tp-faq-item">
+                <summary>Et si j'ai plus de 50 logements ?</summary>
+                <p>On passe sur un tarif négocié + account manager dédié. Contacte-nous pour qu'on évalue ensemble : <a href="contact.html" style="color:#6b46ff;font-weight:700">via la page contact</a> ou WhatsApp <a href="https://wa.me/33759944305" style="color:#6b46ff;font-weight:700">07 59 94 43 05</a>.</p>
+            </details>
+            <details class="tp-faq-item">
+                <summary>Le plan gratuit est-il vraiment "à vie" ?</summary>
+                <p>Oui. Si tu restes sous 2 logements, tu paies 0 € pour toujours. C'est notre engagement initial et on ne change pas les règles en cours de route.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- MEGA CTA -->
+<section class="mega-cta">
+    <div class="mc-bg"></div>
+    <div class="container">
+        <div class="mc-inner">
+            <div class="mc-left">
+                <span class="mc-eb">🚀 Démo · 30 min · 100% gratuit</span>
+                <h2 class="mc-title">Pas convaincu&nbsp;?<br><span class="mc-grad">On t'aide à choisir.</span></h2>
+                <p class="mc-lead">Un expert GuestLucky t'aide à choisir le bon plan selon ton activité. 30 min, sans engagement, et tu repars avec un setup clair.</p>
+                <div class="mc-ctas">
+                    <a href="demo.html" class="mc-btn-primary">
+                        <span>Réserver ma démo</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="https://wa.me/33759944305" target="_blank" rel="noopener" class="mc-btn-wa">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                        Sur WhatsApp
+                    </a>
+                </div>
+                <div class="mc-trust">
+                    <span>✓ 100% gratuit</span>
+                    <span>✓ Sans engagement</span>
+                    <span>✓ Réponse en 2 min sur WhatsApp</span>
+                </div>
+            </div>
+            <div class="mc-right" aria-hidden="true">
+                <div class="mc-phone">
+                    <div class="mc-screen">
+                        <div class="mc-head">
+                            <div class="mc-avatar"></div>
+                            <div>
+                                <div class="mc-name">L'équipe GuestLucky</div>
+                                <div class="mc-status"><span></span> En ligne</div>
+                            </div>
+                        </div>
+                        <div class="mc-msgs">
+                            <div class="mc-msg in">Salut ! Tu hésites entre Premium et Pro ? 👋</div>
+                            <div class="mc-msg out">Carrément, j'ai 6 logements</div>
+                            <div class="mc-msg in">Avec le CM Airbnb/Booking, Pro est fait pour toi. On en parle ?</div>
+                            <div class="mc-msg out">Go 🚀</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TARIFS LOGIC -->
+<script>
+(function(){
+    var billing = 'm';
+    var count = 1;
+    var btns = document.querySelectorAll('[data-tp]');
+    var countEl = document.getElementById('tpCount');
+    var minus = document.getElementById('tpMinus');
+    var plus = document.getElementById('tpPlus');
+    var periodEls = document.querySelectorAll('[data-billing]');
+
+    function update(){
+        document.querySelectorAll('[data-price-m]').forEach(function(el){
+            var price = parseFloat(billing === 'a' ? el.dataset.priceA : el.dataset.priceM);
+            el.textContent = price.toFixed(2).replace('.', ',') + ' €';
+        });
+        document.querySelectorAll('[data-total]').forEach(function(el){
+            var base = parseFloat(el.dataset.total);
+            if (base === 0){ el.textContent = 'Total : 0 € / mois'; return; }
+            var adj = billing === 'a' ? base * 0.8 : base;
+            var total = adj * count;
+            el.textContent = 'Total : ' + total.toFixed(2).replace('.', ',') + ' € / mois';
+        });
+        periodEls.forEach(function(el){ el.textContent = billing === 'a' ? 'mois (annuel)' : 'mois'; });
+    }
+
+    btns.forEach(function(b){
+        b.addEventListener('click', function(){
+            btns.forEach(function(x){ x.classList.remove('active'); });
+            b.classList.add('active');
+            billing = b.dataset.tp;
+            update();
+        });
+    });
+    minus.addEventListener('click', function(){ if (count > 1){ count--; countEl.textContent = count; update(); } });
+    plus.addEventListener('click', function(){ if (count < 99){ count++; countEl.textContent = count; update(); } });
+    update();
+})();
+</script>
 
 </main>
 
