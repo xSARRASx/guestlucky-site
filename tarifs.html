@@ -62,7 +62,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="style.css?v=16">
 <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RXLNKH6L"></script>
     <script>
@@ -227,6 +227,50 @@
 .gl-show-stat strong{display:block;font-size:28px;font-weight:800;background:linear-gradient(135deg,#FFB1C9,#9B6FFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em;margin-bottom:4px}
 .gl-show-stat span{font-size:12px;color:#c4c8d8;font-weight:600}
 @media (max-width:980px){.gl-show-stage{height:auto;display:flex;flex-direction:column;align-items:center;gap:14px;padding:30px 0}.gl-show-float{position:relative;animation:none!important;top:auto;left:auto;right:auto;bottom:auto;transform:none!important;width:100%;max-width:340px}.gl-show-core{position:relative;top:auto;left:auto;transform:none;width:160px;height:160px;margin:10px 0}.gl-show-stats{grid-template-columns:repeat(2,1fr);margin-top:30px}}
+
+/* === ALL-IN — "Tout est compris à 9,99 €" === */
+.allin{position:relative;padding:90px 0 100px;background:#fff;overflow:hidden}
+.allin::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 18% 22%,rgba(107,70,255,.08),transparent 45%),radial-gradient(circle at 82% 78%,rgba(232,74,140,.06),transparent 45%);pointer-events:none}
+.allin-head{text-align:center;max-width:760px;margin:0 auto 56px;position:relative}
+.allin-eb{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:linear-gradient(135deg,rgba(107,70,255,.12),rgba(232,74,140,.12));color:#6b46ff;border-radius:100px;font-size:13px;font-weight:700;margin-bottom:20px;letter-spacing:.02em}
+.allin-eb b{color:#0F1A35;font-weight:800}
+.allin-title{font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.1;font-weight:800;letter-spacing:-.035em;color:#0F1A35;margin:0 0 16px}
+.allin-title em{font-style:normal;background:linear-gradient(135deg,#6b46ff,#E84A8C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.allin-lead{color:#3a3a4a;font-size:1.1rem;line-height:1.55;margin:0;max-width:60ch;margin:0 auto}
+.allin-lead strong{color:#0F1A35}
+.allin-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:28px;max-width:1180px;margin:0 auto;position:relative}
+.allin-col{background:#fff;border:1.5px solid rgba(15,26,53,.07);border-radius:24px;padding:32px 30px;position:relative;box-shadow:0 18px 40px -22px rgba(15,26,53,.12)}
+.allin-col.yes{background:linear-gradient(165deg,#f6f3ff 0%,#fff 60%);border-color:rgba(107,70,255,.18)}
+.allin-col.yes::before{content:"";position:absolute;top:-1px;left:24px;right:24px;height:3px;background:linear-gradient(90deg,#6b46ff,#E84A8C);border-radius:3px}
+.allin-col.no{background:#fafafd;border-color:rgba(15,26,53,.08);border-style:dashed}
+.allin-col-h{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:18px;border-bottom:1.5px solid rgba(15,26,53,.06)}
+.allin-col-ic{width:42px;height:42px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.allin-col.yes .allin-col-ic{background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff;box-shadow:0 8px 22px -8px rgba(107,70,255,.5)}
+.allin-col.no .allin-col-ic{background:#eef0f6;color:#7b7b8e}
+.allin-col-ic svg{width:22px!important;height:22px!important}
+.allin-col-h h3{font-size:1.15rem;font-weight:800;color:#0F1A35;margin:0;letter-spacing:-.015em}
+.allin-col-h h3 small{display:block;font-size:12px;font-weight:600;color:#6b6b80;letter-spacing:0;margin-top:2px}
+.allin-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.allin-col.no .allin-list{grid-template-columns:1fr}
+.allin-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:#1a2547;line-height:1.4;padding:9px 12px;border-radius:10px;transition:background .15s}
+.allin-col.yes .allin-list li{background:rgba(107,70,255,.04)}
+.allin-col.yes .allin-list li:hover{background:rgba(107,70,255,.09)}
+.allin-col.no .allin-list li{background:transparent;color:#3a3a4a;font-size:14px}
+.allin-list li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;margin-top:1px;background-position:center;background-repeat:no-repeat}
+.allin-col.yes .allin-list li::before{background-color:#1aa84a;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px;box-shadow:0 2px 6px -2px rgba(26,168,74,.45)}
+.allin-col.no .allin-list li::before{background-color:#fff;border:1.5px solid #d6d6df;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237b7b8e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");background-size:9px}
+.allin-list li strong{color:#0F1A35;font-weight:700}
+.allin-col.no .allin-list li strong{color:#0F1A35}
+.allin-list li em{font-style:normal;display:block;font-size:12px;color:#6b6b80;margin-top:2px;font-weight:500}
+.allin-note{margin-top:24px;padding:14px 18px;background:#fff;border:1.5px solid rgba(15,26,53,.06);border-left:3px solid #E84A8C;border-radius:10px;font-size:13.5px;color:#3a3a4a;line-height:1.5}
+.allin-note strong{color:#0F1A35}
+.allin-foot{text-align:center;margin-top:48px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;position:relative}
+.allin-foot-tag{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#0F1A35;color:#fff;border-radius:100px;font-size:13.5px;font-weight:700}
+.allin-foot-tag b{background:linear-gradient(135deg,#FFB1C9,#9B6FFF);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.allin-foot a.allin-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff!important;text-decoration:none!important;border-radius:100px;font-weight:700;font-size:14.5px;box-shadow:0 14px 32px -10px rgba(107,70,255,.55);transition:transform .15s}
+.allin-foot a.allin-cta:hover{transform:translateY(-2px)}
+@media (max-width:980px){.allin-grid{grid-template-columns:1fr}.allin-list{grid-template-columns:1fr}}
+@media (max-width:600px){.allin{padding:60px 0 70px}.allin-col{padding:24px 20px}}
 </style>
 </head>
 <body>
@@ -378,6 +422,75 @@
         <div class="tp-modal-content" id="tpModalContent"></div>
     </div>
 </div>
+
+<!-- ALL-IN : tout est compris dans le Pro 9,99€ -->
+<section class="allin">
+    <div class="container">
+        <div class="allin-head">
+            <span class="allin-eb">💎 <b>9,99 € HT/mois/logement</b> · Plan Pro</span>
+            <h2 class="allin-title">À 9,99 €, <em>tout</em> est dans la boîte.<br>Vraiment tout.</h2>
+            <p class="allin-lead">Aucun module à débloquer. Aucune feature « premium » cachée derrière un paywall. <strong>Tu prends Pro, tu as l'écosystème GuestLucky complet.</strong></p>
+        </div>
+
+        <div class="allin-grid">
+            <div class="allin-col yes">
+                <div class="allin-col-h">
+                    <span class="allin-col-ic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <h3>Inclus dans le Pro à 9,99 €<small>Tout l'ERP + IA + Channel Manager · sans extra</small></h3>
+                </div>
+                <ul class="allin-list">
+                    <li><span><strong>Channel Manager</strong> <em>Airbnb · Booking · Abritel · Vrbo</em></span></li>
+                    <li><span><strong>Lucky Copilot</strong> <em>IA gestionnaire dans l'app</em></span></li>
+                    <li><span><strong>IA voyageurs 24/7</strong> <em>6 langues · réponses auto</em></span></li>
+                    <li><span><strong>Lucky Clean</strong> <em>ménage via WhatsApp</em></span></li>
+                    <li><span><strong>Calendrier multi-canaux</strong> <em>sync temps réel</em></span></li>
+                    <li><span><strong>Tarification dynamique</strong> <em>règles + saisons</em></span></li>
+                    <li><span><strong>Caution & services</strong> <em>0 % commission</em></span></li>
+                    <li><span><strong>Facturation 2026</strong> <em>Chorus Pro · conforme</em></span></li>
+                    <li><span><strong>Livret d'accueil</strong> <em>interactif · 6 langues</em></span></li>
+                    <li><span><strong>Auto-actions</strong> <em>workflows illimités</em></span></li>
+                    <li><span><strong>Membres d'équipe</strong> <em>illimités</em></span></li>
+                    <li><span><strong>Stats & reporting</strong> <em>RevPAR · TO · CA</em></span></li>
+                    <li><span><strong>Loi Hoguet</strong> <em>registre auto · Carte G</em></span></li>
+                    <li><span><strong>Stock & inventaire</strong> <em>linge · consommables</em></span></li>
+                    <li><span><strong>Paiements Stripe</strong> <em>PCI-DSS Level 1</em></span></li>
+                    <li><span><strong>Hébergement Europe</strong> <em>RGPD natif · backup live</em></span></li>
+                    <li><span><strong>Support WhatsApp</strong> <em>prioritaire · &lt; 24h</em></span></li>
+                    <li><span><strong>Mises à jour</strong> <em>nouvelles features incluses</em></span></li>
+                </ul>
+                <div class="allin-note">
+                    <strong>0 % de commission</strong> sur les services, cautions, paiements voyageurs. <strong>0 frais d'installation</strong>, <strong>0 frais cachés</strong>, <strong>résiliable en 1 clic</strong>.
+                </div>
+            </div>
+
+            <div class="allin-col no">
+                <div class="allin-col-h">
+                    <span class="allin-col-ic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                    </span>
+                    <h3>Options externes en plus<small>Services partenaires · activables si tu veux</small></h3>
+                </div>
+                <ul class="allin-list">
+                    <li><span><strong>Booking Engine</strong> <em>moteur de résa site direct · sur devis</em></span></li>
+                    <li><span><strong>Lucky Cover</strong> <em>assurance voyageurs via Meetch</em></span></li>
+                    <li><span><strong>Analyse de la concurrence</strong> <em>~5 € / mois / logement</em></span></li>
+                    <li><span><strong>Serrures connectées</strong> <em>Igloohome · matériel à part</em></span></li>
+                    <li><span><strong>RDV configuration expert</strong> <em>setup personnalisé · payant</em></span></li>
+                </ul>
+                <div class="allin-note">
+                    <strong>Ce sont des briques externes</strong> (partenaires, matériel, services humains). Pas indispensables pour faire tourner ton activité — mais dispo si tu veux aller plus loin.
+                </div>
+            </div>
+        </div>
+
+        <div class="allin-foot">
+            <span class="allin-foot-tag">✨ <b>Pro = tout l'écosystème GuestLucky</b> · pour 9,99 € HT/mois/logement</span>
+            <a href="demo.html" class="allin-cta">Réserver ma démo Pro <span>→</span></a>
+        </div>
+    </div>
+</section>
 
 <!-- SHOWCASE — vivant -->
 <section class="gl-show">
