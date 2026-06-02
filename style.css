@@ -1283,8 +1283,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .bubble {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -1292,12 +1292,169 @@ a { color: inherit; text-decoration: none; }
     color: #fff;
     box-shadow: 0 8px 24px rgba(0,0,0,0.20);
     transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
 }
 
 .bubble:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 30px rgba(0,0,0,0.28); }
 .bubble.whatsapp { background: #25d366; }
 .bubble.email { background: linear-gradient(135deg, #ea4335, #c5221f); }
-.bubble svg { width: 28px; height: 28px; }
+.bubble svg { width: 32px; height: 32px; }
+
+.bubble.logo {
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(107,70,255,0.30), 0 0 0 4px rgba(107,70,255,0.10);
+}
+.bubble.logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* ============ Welcome Modal ============ */
+.gl-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+}
+.gl-modal.show { display: flex; }
+.gl-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 26, 53, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: glModalFadeIn 0.25s ease;
+}
+.gl-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(180deg, #F4EEFF 0%, #FFFFFF 60%, #FFFFFF 100%);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(15,26,53,0.25), 0 0 0 1px rgba(107,70,255,0.10);
+    padding: 2.5rem 2rem 1.75rem;
+    text-align: center;
+    animation: glModalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes glModalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes glModalSlideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.gl-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(107,70,255,0.20);
+    background: rgba(255,255,255,0.85);
+    color: #6b46ff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.15s;
+}
+.gl-modal-close:hover {
+    background: #6b46ff;
+    color: #fff;
+    transform: rotate(90deg);
+}
+.gl-modal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(107,70,255,0.12), rgba(232,74,140,0.14));
+    border: 1px solid rgba(107,70,255,0.25);
+    color: #6b2bbf;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+}
+.gl-modal-title {
+    font-size: 1.65rem;
+    line-height: 1.20;
+    font-weight: 800;
+    color: #0f0f1f;
+    margin: 0 0 0.9rem;
+    letter-spacing: -0.02em;
+}
+.gl-modal-title .gl-accent {
+    background: linear-gradient(135deg, #6b46ff 0%, #E84A8C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.gl-modal-body {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: #3a3a4a;
+    margin: 0 0 1.5rem;
+}
+.gl-modal-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    background: linear-gradient(135deg, #6b46ff 0%, #E84A8C 100%);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.02rem;
+    text-decoration: none;
+    box-shadow: 0 14px 32px rgba(107,70,255,0.35);
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+.gl-modal-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(107,70,255,0.50);
+    color: #fff;
+}
+.gl-modal-cta svg { flex-shrink: 0; }
+.gl-modal-cta .gl-modal-arrow { transition: transform 0.2s; }
+.gl-modal-cta:hover .gl-modal-arrow { transform: translateX(3px); }
+.gl-modal-decline {
+    display: block;
+    width: 100%;
+    margin: 1rem 0 0.5rem;
+    background: none;
+    border: none;
+    color: #3a3a4a;
+    font-size: 0.92rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0.3rem 0;
+}
+.gl-modal-decline:hover { color: #0f0f1f; }
+.gl-modal-footer {
+    margin: 0.5rem 0 0;
+    font-size: 0.80rem;
+    color: #7a7a8c;
+}
+
+@media (max-width: 520px) {
+    .gl-modal-card { padding: 2rem 1.4rem 1.4rem; border-radius: 22px; }
+    .gl-modal-title { font-size: 1.35rem; }
+    .gl-modal-body { font-size: 0.93rem; }
+}
 
 /* ============ Responsive ============ */
 @media (max-width: 1024px) {
@@ -1912,7 +2069,9 @@ a { color: inherit; text-decoration: none; }
     .plan-price { font-size: 2.25rem; }
 
     .floating-contact { right: 0.75rem; bottom: 0.75rem; }
-    .bubble { width: 50px; height: 50px; }
+    .bubble { width: 56px; height: 56px; }
+    .bubble svg { width: 28px; height: 28px; }
+    .bubble.logo img { width: 38px; height: 38px; }
 
     .webinar-float { left: 0.5rem; right: 0.5rem; bottom: 0.5rem; width: auto; padding: 0.85rem; }
     .webinar-float h4 { font-size: 0.92rem; }
