@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=14">
+    <link rel="stylesheet" href="style.css?v=15">
 
 <style id="v6-fonc-defensive">
 /* FONC V6 — inline defensive */
@@ -431,6 +431,30 @@
 .fn-hub-stat strong{display:block;font-size:26px;font-weight:800;background:linear-gradient(135deg,#FFB1C9,#9B6FFF);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em;margin-bottom:4px}
 .fn-hub-stat span{font-size:11.5px;color:#c4c8d8;font-weight:600}
 @media (max-width:700px){.fn-hub-orbit{width:340px;height:340px}.fn-hub-center{width:120px;height:120px}.fn-hub-center svg{width:36px;height:36px}.fn-hub-pulse{width:120px;height:120px}.fn-hub-ch{width:90px}.fn-hub-ch-dot{width:50px;height:50px;border-radius:14px}.fn-hub-ch-dot svg{width:26px;height:26px}.fn-hub-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* === Micro-personnalisation des fn-card === */
+.fn-card-extra{margin-top:4px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.fn-x-chip{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:4px 8px;border-radius:6px;background:#f6f3ff;color:#6b46ff;border:1px solid rgba(107,70,255,.15);letter-spacing:.02em}
+.fn-x-chip.gr{background:#eafbf0;color:#1aa84a;border-color:rgba(37,211,102,.18)}
+.fn-x-chip.pk{background:#fff5fa;color:#E84A8C;border-color:rgba(232,74,140,.18)}
+.fn-x-chip.gd{background:#fff8e6;color:#b88817;border-color:rgba(232,180,80,.3)}
+.fn-x-chip.ink{background:#f5f6fa;color:#1a2547;border-color:rgba(26,37,71,.15)}
+.fn-x-chip svg{width:11px;height:11px}
+.fn-x-led{width:7px;height:7px;border-radius:50%;background:#1aa84a;box-shadow:0 0 0 3px rgba(37,211,102,.22);animation:ctwBlink 1.6s infinite;display:inline-block;flex-shrink:0}
+.fn-x-ch{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800;letter-spacing:-.02em;box-shadow:0 3px 6px -2px rgba(0,0,0,.18)}
+.fn-x-ch.ab{background:#FF5A5F}.fn-x-ch.bk{background:#003580}.fn-x-ch.br{background:#6b46ff}.fn-x-ch.vr{background:#245ABC}.fn-x-ch.dr{background:linear-gradient(135deg,#1aa84a,#25D366)}
+.fn-x-row{display:flex;align-items:center;gap:8px;width:100%}
+.fn-x-big{display:inline-flex;align-items:baseline;gap:5px;font-size:18px;font-weight:800;background:linear-gradient(135deg,#6b46ff,#E84A8C);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+.fn-x-big small{font-size:11px;color:#6b6b80;font-weight:600;-webkit-text-fill-color:#6b6b80}
+.fn-x-spark{width:80px;height:24px}
+.fn-x-spark path.fill{fill:url(#sparkGrad);opacity:.22;stroke:none}
+.fn-x-spark path.line{fill:none;stroke:#6b46ff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fn-x-bub{display:flex;align-items:center;gap:7px;background:#f6fff8;border:1px solid rgba(37,211,102,.2);padding:5px 9px;border-radius:8px;font-size:11px;color:#0f0f1f;width:100%}
+.fn-x-bub strong{color:#1aa84a;font-weight:700}
+.fn-x-bub time{margin-left:auto;color:#6b6b80;font-size:10px}
+.fn-x-gauge{position:relative;width:100%;height:6px;background:rgba(107,70,255,.1);border-radius:100px;overflow:hidden;flex:1}
+.fn-x-gauge i{position:absolute;left:0;top:0;bottom:0;border-radius:100px;background:linear-gradient(90deg,#6b46ff,#E84A8C)}
+.fn-x-gauge-tx{font-size:10.5px;font-weight:700;color:#0F1A35;white-space:nowrap}
 </style>
 
     <!-- Google Analytics (GA4) -->
@@ -659,6 +683,14 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
                     <h3>Channel Manager natif</h3>
                     <p>Airbnb, Booking, Abritel, Vrbo, Direct. Synchro en moins de 2 secondes, anti-double-résa garanti. Pas d'API tierce, c'est nous qui parlons aux canaux.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-ch ab" title="Airbnb">A</span>
+                        <span class="fn-x-ch bk" title="Booking">B</span>
+                        <span class="fn-x-ch br" title="Abritel">Ab</span>
+                        <span class="fn-x-ch vr" title="Vrbo">V</span>
+                        <span class="fn-x-ch dr" title="Site direct">D</span>
+                        <span class="fn-x-chip gr"><span class="fn-x-led"></span>sync 2 s</span>
+                    </div>
                     <span class="fn-card-plan">Inclus dès le Gratuit</span>
                 </div>
                 <div class="fn-card">
@@ -677,12 +709,28 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                     <h3>Multi-langues</h3>
                     <p>FR, EN, ES, IT, DE, NL. Annonces traduites, messages voyageurs auto-localisés, livrets multilingues.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-chip">FR</span>
+                        <span class="fn-x-chip">EN</span>
+                        <span class="fn-x-chip">ES</span>
+                        <span class="fn-x-chip">IT</span>
+                        <span class="fn-x-chip">DE</span>
+                        <span class="fn-x-chip">NL</span>
+                    </div>
                     <span class="fn-card-plan">Inclus dès le Premium</span>
                 </div>
                 <div class="fn-card">
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg></div>
                     <h3>Auto-actions</h3>
                     <p>Codes wifi 2h avant l'arrivée, demande d'avis 24h après le départ, relance de paiement, upsells de services… Tout ce qui se répète, automatisé.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-big">247<small>actions / mois</small></span>
+                        <svg class="fn-x-spark" viewBox="0 0 80 24" aria-hidden="true">
+                            <defs><linearGradient id="sparkGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#6b46ff"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+                            <path class="fill" d="M0 20 L10 16 L20 18 L30 12 L40 14 L50 8 L60 10 L70 5 L80 4 L80 24 L0 24 Z"/>
+                            <path class="line" d="M0 20 L10 16 L20 18 L30 12 L40 14 L50 8 L60 10 L70 5 L80 4"/>
+                        </svg>
+                    </div>
                     <span class="fn-card-plan">Inclus dès le Premium</span>
                 </div>
                 <div class="fn-card">
@@ -766,6 +814,9 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14 9L21 12L14 15L12 22L10 15L3 12L10 9L12 2z"/></svg></div>
                     <h3>Messagerie IA 24/7</h3>
                     <p>L'IA répond aux voyageurs dans 6 langues, dans ton ton de voix. Tu choisis si tu valides ou si tu laisses partir en autopilote.</p>
+                    <div class="fn-card-extra">
+                        <div class="fn-x-bub"><span class="fn-x-led"></span><span><strong>Sarah K.</strong> · répondu en 14 s</span><time>03:42</time></div>
+                    </div>
                     <span class="fn-card-plan">Plan Pro</span>
                 </div>
                 <div class="fn-card">
@@ -889,6 +940,13 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/></svg></div>
                     <h3>Stock linge & consommables</h3>
                     <p>Inventaire par logement, alerte automatique quand un seuil est franchi, commande déclenchable depuis l'app.</p>
+                    <div class="fn-card-extra">
+                        <div class="fn-x-row">
+                            <div class="fn-x-gauge"><i style="width:73%"></i></div>
+                            <span class="fn-x-gauge-tx">73 %</span>
+                        </div>
+                        <span class="fn-x-chip pk">Seuil 30 %</span>
+                    </div>
                     <span class="fn-card-plan">Plan Premium</span>
                 </div>
                 <div class="fn-card">
@@ -1021,12 +1079,20 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
                     <h3>Caution & services 0%</h3>
                     <p>Tu encaisses tout sur ton compte Stripe : caution, ménage extra, late check-out, paniers d'accueil. <strong>0% de commission, à vie</strong>.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-big">0 %<small>commission · à vie</small></span>
+                    </div>
                     <span class="fn-card-plan">Toujours 0%</span>
                 </div>
                 <div class="fn-card">
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                     <h3>Facturation électronique 2026</h3>
                     <p>Conforme à la réforme française. PDF certifié, envoi auto au voyageur, archivage 10 ans, dépôt sur Chorus Pro.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-chip gr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Conforme 2026</span>
+                        <span class="fn-x-chip ink">Chorus Pro</span>
+                        <span class="fn-x-chip">Archivage 10 ans</span>
+                    </div>
                     <span class="fn-card-plan">Premium &amp; Pro</span>
                 </div>
                 <div class="fn-card">
@@ -1051,6 +1117,13 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                     <h3>Statistiques & reporting</h3>
                     <p>RevPAR, ADR, taux d'occupation, performance par canal, par logement, par saison. Exports en 1 clic.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-big">+18 %<small>MoM · RevPAR</small></span>
+                        <svg class="fn-x-spark" viewBox="0 0 80 24" aria-hidden="true">
+                            <path class="fill" d="M0 18 L10 20 L20 14 L30 16 L40 11 L50 13 L60 7 L70 9 L80 3 L80 24 L0 24 Z" fill="url(#sparkGrad)"/>
+                            <path class="line" d="M0 18 L10 20 L20 14 L30 16 L40 11 L50 13 L60 7 L70 9 L80 3"/>
+                        </svg>
+                    </div>
                     <span class="fn-card-plan">Inclus dès le Premium</span>
                 </div>
             </div>
@@ -1149,18 +1222,30 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
                     <h3>Conformité loi Hoguet</h3>
                     <p>Registre des opérations, comptabilité séparée, contrats propriétaires — pensé pour les conciergeries Carte G.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-chip gd">Carte G compatible</span>
+                        <span class="fn-x-chip ink">Registre auto</span>
+                    </div>
                     <span class="fn-card-plan">Plan Pro</span>
                 </div>
                 <div class="fn-card">
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                     <h3>Hébergement Europe + RGPD</h3>
                     <p>Données hébergées en France, conformité RGPD native. Tu peux exporter ou supprimer un voyageur en 1 clic.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-chip ink">🇫🇷 Made in France</span>
+                        <span class="fn-x-chip gr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> RGPD natif</span>
+                    </div>
                     <span class="fn-card-plan">Tous les plans</span>
                 </div>
                 <div class="fn-card">
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36"/></svg></div>
                     <h3>Sauvegardes quotidiennes</h3>
                     <p>Tes données sauvegardées toutes les nuits, rétention 30 jours. Restauration possible à tout moment.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-chip gr"><span class="fn-x-led"></span>Backup live</span>
+                        <span class="fn-x-chip">30 j rétention</span>
+                    </div>
                     <span class="fn-card-plan">Tous les plans</span>
                 </div>
                 <div class="fn-card">
@@ -1173,6 +1258,10 @@
                     <div class="fn-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                     <h3>Stripe PCI-DSS Level 1</h3>
                     <p>Les paiements voyageurs et cautions passent par Stripe, certifié PCI-DSS Level 1. Aucune donnée carte ne touche nos serveurs.</p>
+                    <div class="fn-card-extra">
+                        <span class="fn-x-chip ink">PCI-DSS · Level 1</span>
+                        <span class="fn-x-chip gr"><span class="fn-x-led"></span>Stripe live</span>
+                    </div>
                     <span class="fn-card-plan">Tous les plans</span>
                 </div>
                 <div class="fn-card">
