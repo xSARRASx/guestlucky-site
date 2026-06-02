@@ -95,6 +95,18 @@ a { color: inherit; text-decoration: none; }
     padding: 0.95rem 0;
 }
 
+/* ===== Custom selection : rose clair GuestLucky ===== */
+::selection {
+    background: rgba(232, 74, 140, 0.28);
+    color: #0f0f1f;
+    text-shadow: none;
+}
+::-moz-selection {
+    background: rgba(232, 74, 140, 0.28);
+    color: #0f0f1f;
+    text-shadow: none;
+}
+
 .brand {
     display: inline-flex;
     align-items: center;
