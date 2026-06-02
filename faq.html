@@ -61,7 +61,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=6">
+
+<style id="v6-faq-defensive">
+.site-footer{margin-top:0 !important}
+.fq-hero{position:relative;padding:90px 0 50px;background:linear-gradient(180deg,#f6f3ff 0%,#fff 90%);overflow:hidden;text-align:center}
+.fq-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(107,70,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(107,70,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,#000 30%,transparent 80%);pointer-events:none}
+.fq-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.45;pointer-events:none}
+.fq-orb.a{width:380px;height:380px;background:#6b46ff;top:-100px;left:-80px}
+.fq-orb.b{width:340px;height:340px;background:#E84A8C;top:120px;right:-100px}
+.fq-hero .container{position:relative;z-index:1}
+.fq-eb{display:inline-block;padding:8px 18px;background:rgba(107,70,255,.10);border:1px solid rgba(107,70,255,.15);color:#6b46ff;border-radius:100px;font-size:13px;font-weight:700;margin-bottom:22px}
+.fq-title{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:800;line-height:1.05;letter-spacing:-.045em;color:#0F1A35;margin:0 auto 22px;max-width:18ch}
+.fq-grad{background:linear-gradient(135deg,#6b46ff 0%,#E84A8C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fq-lead{color:#3a3a4a;font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6;max-width:62ch;margin:0 auto}
+.fq-search{margin:36px auto 0;max-width:560px;position:relative}
+.fq-search input{width:100%;padding:16px 20px 16px 52px;border:1.5px solid rgba(15,26,53,.10);border-radius:100px;background:#fff;font-family:inherit;font-size:15px;color:#0F1A35;box-shadow:0 18px 40px -20px rgba(15,26,53,.18);transition:border-color .2s,box-shadow .2s}
+.fq-search input:focus{outline:0;border-color:#6b46ff;box-shadow:0 18px 40px -16px rgba(107,70,255,.35)}
+.fq-search::before{content:"";position:absolute;left:20px;top:50%;transform:translateY(-50%);width:18px;height:18px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b46ff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>") center/contain no-repeat}
+
+/* CATEGORIES TABS */
+.fq-cats-wrap{display:flex;justify-content:center;flex-wrap:wrap;margin:30px auto 0;gap:8px;max-width:900px}
+.fq-cat{padding:9px 18px;border:1.5px solid rgba(107,70,255,.20);background:#fff;border-radius:100px;font-family:inherit;font-size:13.5px;font-weight:600;color:#3a3a4a;cursor:pointer;transition:all .2s}
+.fq-cat.active{background:linear-gradient(135deg,#6b46ff,#E84A8C);color:#fff;border-color:transparent;box-shadow:0 10px 22px -6px rgba(232,74,140,.5)}
+.fq-cat:hover:not(.active){border-color:#6b46ff;color:#6b46ff}
+
+/* FAQ ACCORDIONS */
+.fq-section{padding:50px 0 80px;background:#fff;position:relative}
+.fq-list{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.fq-item{background:#fff;border:1.5px solid rgba(15,26,53,.06);border-radius:18px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.fq-item[open]{border-color:rgba(107,70,255,.25);box-shadow:0 22px 50px -22px rgba(107,70,255,.18)}
+.fq-item summary{padding:22px 26px;cursor:pointer;font-size:1.05rem;font-weight:700;color:#0F1A35;letter-spacing:-.01em;display:flex;align-items:center;gap:16px;list-style:none;position:relative}
+.fq-item summary::-webkit-details-marker{display:none}
+.fq-item summary::after{content:"";width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6b46ff,#9B6FFF);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");background-size:14px 14px;background-position:center;background-repeat:no-repeat;flex-shrink:0;margin-left:auto;transition:transform .25s}
+.fq-item[open] summary::after{transform:rotate(45deg)}
+.fq-item .fq-body{padding:0 26px 24px 26px;color:#3a3a4a;font-size:14.5px;line-height:1.65}
+.fq-item .fq-body p{margin:0 0 10px}
+.fq-item .fq-body p:last-child{margin-bottom:0}
+.fq-item .fq-body a{color:#6b46ff;font-weight:700;text-decoration:none}
+.fq-item .fq-body a:hover{text-decoration:underline}
+.fq-tag{display:inline-block;padding:3px 9px;background:rgba(107,70,255,.10);color:#6b46ff;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-right:10px;flex-shrink:0}
+.fq-item.hidden{display:none}
+
+/* STILL HAVE QUESTIONS */
+.fq-still{padding:60px 0;background:linear-gradient(180deg,#fff 0%,#f6f3ff 100%);text-align:center}
+.fq-still h2{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:#0F1A35;margin:0 0 10px;letter-spacing:-.025em}
+.fq-still p{color:#5a5a72;max-width:46ch;margin:0 auto 24px;font-size:1.02rem}
+.fq-still-ctas{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:768px){
+    .fq-hero{padding:60px 0 30px}
+    .fq-item summary{padding:18px 20px;font-size:.98rem;gap:10px}
+    .fq-item summary::after{width:28px;height:28px}
+    .fq-item .fq-body{padding:0 20px 20px}
+    .fq-tag{display:none}
+}
+</style>
 <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RXLNKH6L"></script>
     <script>
@@ -105,144 +160,257 @@
                 <a href="faq-en.html">EN</a>
             </div>
             <a href="https://app.guestlucky.io/login" target="_blank" rel="noopener" class="btn-login"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>Se connecter</a>
-            <a href="https://app.iclosed.io/e/lesousloueur/guestlucky" target="_blank" rel="noopener" class="btn-cta">Réserver une démo <span class="arrow">→</span></a>
+            <a href="demo.html" class="btn-cta">Réserver une démo <span class="arrow">→</span></a>
         </div>
     </div>
 </header>
 
 <main>
 
-<section class="hero">
-    <div class="blob-bg"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+<section class="fq-hero">
+    <div class="fq-orb a"></div>
+    <div class="fq-orb b"></div>
     <div class="container">
-        <span class="hero-badge"><span class="dot"></span> FAQ</span>
-        <h1>Vos questions, <span class="accent">nos réponses</span></h1>
-        <p class="lead">Tout ce qu'il faut savoir avant de se lancer avec GuestLucky.</p>
+        <span class="fq-eb">Foire aux questions · 23 réponses</span>
+        <h1 class="fq-title">On a regroupé <span class="fq-grad">tout ce qu'on nous demande</span>.</h1>
+        <p class="fq-lead">Tarif, fonctionnement du Channel Manager, IA voyageurs, migration, conformité, sécurité… si une réponse manque, écris-nous sur WhatsApp. On répond en moins de 5 min.</p>
+        <div class="fq-search"><input type="text" id="fqSearch" placeholder="Rechercher une question (ex: commission, IA, migration…)" autocomplete="off"></div>
+        <div class="fq-cats-wrap">
+            <button class="fq-cat active" data-fq="all">Tout</button>
+            <button class="fq-cat" data-fq="tarifs">Tarifs</button>
+            <button class="fq-cat" data-fq="produit">Produit & IA</button>
+            <button class="fq-cat" data-fq="migration">Migration & onboarding</button>
+            <button class="fq-cat" data-fq="securite">Sécurité & conformité</button>
+            <button class="fq-cat" data-fq="support">Support</button>
+        </div>
     </div>
 </section>
 
-<section class="section" style="padding-top:2rem;">
+<section class="fq-section">
     <div class="container">
-        <div class="faq-list">
+        <div class="fq-list">
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Combien ça coûte ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>GuestLucky propose 4 plans : <strong>Gratuit (0€)</strong> jusqu'à 2 logements, <strong>Premium (5,99€ HT/mois/logement)</strong>, <strong>Pro (9,99€ HT/mois/logement)</strong> avec Channel Manager + IA, et un plan <strong>Personnalisé</strong> sur devis pour les structures de plus de 50 logements. <a href="tarifs.html">Voir tous les tarifs →</a></p></div>
-            </div>
+            <details class="fq-item" data-cat="tarifs">
+                <summary><span class="fq-tag">Tarifs</span>Combien ça coûte vraiment ?</summary>
+                <div class="fq-body">
+                    <p><strong>4 plans clairs.</strong> Pas de surprise.</p>
+                    <p>• <strong>Gratuit</strong> — 0 € à vie, jusqu'à 2 logements. Pour tester sans risque.<br>• <strong>Premium</strong> — 5,99 € HT/mois/logement. Tout sauf le Channel Manager et les IA.<br>• <strong>Pro</strong> — 9,99 € HT/mois/logement. Tout : CM + Lucky Copilot + IA voyageurs + ménage WhatsApp.<br>• <strong>Personnalisé</strong> — sur devis pour 50+ logements.</p>
+                    <p>L'option annuelle te donne -20%. <a href="tarifs.html">Voir le détail des tarifs →</a></p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Qu'est-ce qui est inclus dans l'offre Pro ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>L'offre Pro comprend tout le Premium + le Channel Manager complet (Airbnb, Booking, Abritel, Vrbo…), la messagerie IA automatisée, la synchronisation temps réel multi-canaux et un support prioritaire sous 24h.</p></div>
-            </div>
+            <details class="fq-item" data-cat="tarifs">
+                <summary><span class="fq-tag">Tarifs</span>C'est vrai que vous ne prenez aucune commission ?</summary>
+                <div class="fq-body">
+                    <p>Oui. <strong>0% de commission</strong> sur tout : cautions, services additionnels (late check-out, ménage extra), upsells voyageurs, paiements directs. L'argent va à 100% sur ton compte Stripe.</p>
+                    <p>Tu paies uniquement ton abonnement mensuel. Pas de pourcentage caché, pas de "fee de transaction" déguisé. Jamais.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">C'est vrai que vous ne prenez aucune commission ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Oui. GuestLucky ne prend <strong>aucune commission</strong> sur vos réservations, vos cautions ou vos services additionnels. Vous payez uniquement votre abonnement mensuel selon le plan choisi.</p></div>
-            </div>
+            <details class="fq-item" data-cat="tarifs">
+                <summary><span class="fq-tag">Tarifs</span>Et si je dépasse 2 logements ?</summary>
+                <div class="fq-body">
+                    <p>Tu bascules automatiquement sur Premium ou Pro selon ton choix. Tu paies seulement les logements actifs (un logement archivé est gratuit). La transition est invisible : aucune perte de données, aucune reconfiguration.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Je peux essayer gratuitement ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Bien sûr. Le plan <strong>Gratuit</strong> vous permet de tester l'outil avec jusqu'à 2 logements, sans engagement ni carte bancaire. Vous pouvez aussi <a href="demo.html">réserver une démo gratuite</a> pour qu'on vous accompagne.</p></div>
-            </div>
+            <details class="fq-item" data-cat="tarifs">
+                <summary><span class="fq-tag">Tarifs</span>Je dois m'engager combien de temps ?</summary>
+                <div class="fq-body">
+                    <p><strong>Aucun engagement.</strong> Tous les plans sont mensuels et annulables en 2 clics depuis ton compte. Le plan annuel (-20%) inclut une garantie 30 jours satisfait ou remboursé.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Comment fonctionne le Channel Manager ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Vous connectez vos comptes Airbnb, Booking, Abritel, etc. à GuestLucky en quelques clics. Toutes les réservations, prix et disponibilités sont synchronisés en temps réel : une réservation sur un canal bloque immédiatement les autres. Plus jamais de double réservation.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>Qu'est-ce qui est inclus dans l'offre Pro ?</summary>
+                <div class="fq-body">
+                    <p>Tout. Le Pro inclut le Channel Manager (Airbnb, Booking, Abritel, Vrbo), la messagerie IA voyageurs 24/7 en 6 langues, Lucky Copilot (l'IA gestionnaire), le ménage piloté par WhatsApp, l'interface propriétaire dédiée, la facturation électronique 2026, et le support WhatsApp prioritaire.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">L'agent IA, ça marche vraiment ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Oui, et il s'améliore en continu. L'IA est entraînée sur les conversations de location courte durée, comprend le contexte (réservation en cours, dates, type de logement) et répond dans le ton que vous lui définissez. Vous pouvez reprendre la main à tout moment depuis l'interface.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>Comment fonctionne le Channel Manager ?</summary>
+                <div class="fq-body">
+                    <p>Tu connectes tes comptes Airbnb, Booking, Abritel à GuestLucky en 5 minutes (OAuth ou API). Une réservation sur un canal bloque les autres en moins de 2 secondes : <strong>zéro double-résa garanti</strong>. Tarifs, calendriers, disponibilités synchronisés en temps réel.</p>
+                    <p>On parle directement aux canaux — pas d'API tierce qui pourrait planter.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Vous proposez un site de réservation directe ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Cette fonctionnalité est en cours de développement. Pour l'instant, GuestLucky se concentre sur la centralisation et l'automatisation de vos canaux existants (Airbnb, Booking, etc.). Contactez-nous pour discuter de votre besoin spécifique.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>L'IA voyageurs, ça marche vraiment ?</summary>
+                <div class="fq-body">
+                    <p>Oui, et tu en as 3 modes selon ton confort :</p>
+                    <p>• <strong>Validation manuelle</strong> — l'IA propose, tu valides en 1 clic<br>• <strong>Auto avec filtres</strong> — elle envoie sauf si elle détecte un sujet sensible (remboursement, litige, urgence)<br>• <strong>100% auto</strong> — pour les hôtes confirmés, elle prend tout en main</p>
+                    <p>Elle parle 6 langues, dans <strong>ton</strong> ton de voix (tu lui montres 5 exemples, elle s'adapte). Tu peux interrompre n'importe quelle conversation depuis l'app.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Je dois m'engager combien de temps ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Aucun engagement. Tous nos plans sont mensuels et annulables à tout moment depuis votre tableau de bord. Le plan annuel offre simplement -20% de remise.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>C'est quoi Lucky Copilot exactement ?</summary>
+                <div class="fq-body">
+                    <p>Un assistant IA pour <strong>toi</strong>, pas pour les voyageurs. Il agit dans ton compte : crée une annonce, baisse un prix, génère un incident, sort un export compta, plannifie un ménage.</p>
+                    <p>Exemples concrets :</p>
+                    <p>• « Baisse de 10% le prix du Loft République entre le 14 et le 21 juillet »<br>• « Sors-moi le CA Airbnb de juin avec la TVA déduite »<br>• « Crée un incident douche bouchée chez Sarah K., avec sa photo »</p>
+                    <p>Accessible dans l'app et sur WhatsApp. Inclus dès le plan Pro.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Comment se passe la migration depuis mon outil actuel ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>On vous accompagne. Sur les plans <strong>Premium, Pro et Personnalisé</strong>, on vous aide à importer vos logements, vos modèles de messages et à connecter vos canaux. Pour les structures importantes (plan Personnalisé), notre équipe réalise même le paramétrage complet pour vous.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>Combien de canaux GuestLucky supporte-t-il ?</summary>
+                <div class="fq-body">
+                    <p>Les 4 principaux du marché français : <strong>Airbnb, Booking.com, Abritel/Vrbo, et Direct</strong> (résas en direct via ton propre site ou par téléphone). On évalue d'autres canaux selon la demande.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Ça marche pour combien de logements ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>De 1 à plusieurs centaines. Le plan Gratuit gère jusqu'à 2 logements, Premium et Pro fonctionnent sans limite de logements (vous payez par logement), et le plan Personnalisé est conçu pour les structures de 50+ logements avec des besoins multi-équipes.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>Vous proposez un site de réservation directe ?</summary>
+                <div class="fq-body">
+                    <p>Oui, via notre partenaire <strong>Booking In Shine</strong> : site personnalisé à ton image, sans commission, synchro native avec ton Channel Manager. Add-on en option, on te détaille le tarif en démo.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Le support, c'est des robots ou des humains ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Des humains. Notre équipe support est joignable par WhatsApp, chat et email. Sur le plan Personnalisé, vous avez même un contact dédié avec des visios possibles.</p></div>
-            </div>
+            <details class="fq-item" data-cat="produit">
+                <summary><span class="fq-tag">Produit</span>Et le ménage sur WhatsApp, comment ça marche ?</summary>
+                <div class="fq-body">
+                    <p>Tes prestataires ménage reçoivent les missions directement sur WhatsApp — pas d'app à installer, pas de formation. Mission affectée auto à la sortie d'un check-out, check-list intégrée, photos d'avant/après remontées dans la fiche réservation.</p>
+                    <p>Ça marche dès le premier jour : ils savent déjà utiliser WhatsApp, t'as rien à expliquer.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">C'est adapté aux débutants ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Oui. L'interface a été pensée pour être prise en main rapidement, même sans expérience technique. Et si vous démarrez votre activité, on vous propose une session de paramétrage offerte sur le plan Premium et au-delà.</p></div>
-            </div>
+            <details class="fq-item" data-cat="migration">
+                <summary><span class="fq-tag">Migration</span>Comment se passe la migration depuis mon outil actuel ?</summary>
+                <div class="fq-body">
+                    <p><strong>Gratuite, généralement faite en 48h.</strong> Notre équipe reprend tes annonces, tes calendriers, tes templates voyageurs, tes contacts prestataires. On supporte tous les outils du marché — on a déjà migré des centaines de comptes.</p>
+                    <p>Tu n'as rien à faire à part nous donner les accès en lecture. On t'envoie un Loom dès que tout est prêt.</p>
+                </div>
+            </details>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3 class="faq-question-text">Mes données sont-elles sécurisées ?</h3>
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer"><p>Oui. Hébergement en Europe, chiffrement TLS, paiements via Stripe (PCI-DSS niveau 1), conformité RGPD. Vous pouvez exporter ou supprimer vos données à tout moment.</p></div>
-            </div>
+            <details class="fq-item" data-cat="migration">
+                <summary><span class="fq-tag">Migration</span>C'est adapté aux débutants ?</summary>
+                <div class="fq-body">
+                    <p>Oui. L'interface est en français normal, pensée pour des non-techos. Et on offre une <strong>session de paramétrage gratuite</strong> dès le plan Premium : on configure ton premier logement en visio, tu repars avec un compte qui tourne.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="migration">
+                <summary><span class="fq-tag">Migration</span>Ça marche pour combien de logements ?</summary>
+                <div class="fq-body">
+                    <p>De 1 à 500+. Gratuit jusqu'à 2 logements, Premium et Pro sans limite (tu paies par logement). Au-delà de 50 logements, on passe sur le plan Personnalisé avec un account manager dédié et un tarif négocié.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="migration">
+                <summary><span class="fq-tag">Migration</span>Je peux essayer gratuitement avant de payer ?</summary>
+                <div class="fq-body">
+                    <p>Oui, 2 façons :</p>
+                    <p>• <strong>Plan Gratuit à vie</strong> jusqu'à 2 logements — pas de CB demandée<br>• <strong>Démo gratuite 30 min</strong> en visio — on configure ton premier logement ensemble</p>
+                    <p><a href="demo.html">Réserver ma démo →</a></p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="securite">
+                <summary><span class="fq-tag">Sécurité</span>Mes données sont-elles sécurisées ?</summary>
+                <div class="fq-body">
+                    <p>Hébergement en France (datacenter PlanetHoster Roubaix), chiffrement TLS 1.3, paiements via <strong>Stripe (PCI-DSS Level 1)</strong>, sauvegardes quotidiennes avec rétention 30 jours, conformité RGPD native.</p>
+                    <p>Tu peux exporter ou supprimer 100% de tes données en 1 clic.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="securite">
+                <summary><span class="fq-tag">Sécurité</span>Vous gérez la facturation électronique 2026 ?</summary>
+                <div class="fq-body">
+                    <p>Oui — c'est natif. Facture PDF certifiée, envoi auto au voyageur, archivage 10 ans, dépôt sur Chorus Pro. On suit la réforme depuis le début, on est prêts avant l'échéance officielle.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="securite">
+                <summary><span class="fq-tag">Sécurité</span>Et la conformité loi Hoguet (Carte G) ?</summary>
+                <div class="fq-body">
+                    <p>L'outil est conçu pour les conciergeries professionnelles détentrices de la Carte G : <strong>registre des opérations</strong>, <strong>comptabilité séparée par mandant</strong>, archivage 10 ans, contrats digitalisés. On parle ton métier, pas l'inverse.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="securite">
+                <summary><span class="fq-tag">Sécurité</span>Que devient ma donnée si j'arrête ?</summary>
+                <div class="fq-body">
+                    <p>Tu peux exporter 100% à tout moment (résas, voyageurs, annonces, compta). Si tu supprimes ton compte, tes données sont effacées sous 30 jours. Aucune trace, pas de "vendor lock-in", tu pars quand tu veux.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="support">
+                <summary><span class="fq-tag">Support</span>Le support, c'est des robots ou des humains ?</summary>
+                <div class="fq-body">
+                    <p><strong>Des humains.</strong> Une petite équipe française, en France. Joignable sur WhatsApp (le canal qu'on préfère, réponse en 2-5 min en journée), par email (sous 24h ouvrées), ou via le bouton ? dans l'app.</p>
+                    <p>Pas de chatbot, pas de BPO offshore. Ton ticket arrive directement dans le Slack de l'équipe.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="support">
+                <summary><span class="fq-tag">Support</span>Quels sont les horaires du support ?</summary>
+                <div class="fq-body">
+                    <p>Lun-Ven, 9h-19h, fuseau Paris. Le week-end, on jette quand même un œil aux urgences voyageurs en cours (check-in bloqué, paiement KO). Pour le plan Personnalisé, tu as un contact direct joignable hors horaires.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="support">
+                <summary><span class="fq-tag">Support</span>Vous formez mes équipes ?</summary>
+                <div class="fq-body">
+                    <p>Sur les plans Premium et Pro : 1 session de paramétrage offerte (30 min visio). Sur le plan Personnalisé : formation équipe complète + documentation custom + vidéos de démo internes.</p>
+                </div>
+            </details>
+
+            <details class="fq-item" data-cat="support">
+                <summary><span class="fq-tag">Support</span>Et si j'ai 50+ logements ?</summary>
+                <div class="fq-body">
+                    <p>Tarif négocié + <strong>account manager dédié</strong> + paramétrage clé en main par notre équipe. Migration sous 1 semaine, formation équipe, support prioritaire. <a href="contact.html">Demander un devis →</a> ou écris-nous sur <a href="https://wa.me/33759944305" target="_blank" rel="noopener">WhatsApp</a>.</p>
+                </div>
+            </details>
 
         </div>
     </div>
 </section>
 
-<section class="section navy">
-    <div class="blob-bg"><div class="blob a"></div><div class="blob b"></div></div>
-    <div class="container" style="text-align:center;">
-        <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1rem;">Une autre <span class="accent">question</span> ?</h2>
-        <p class="lead" style="margin-bottom:2rem;">Notre équipe répond en moins de 24h sur WhatsApp ou par email.</p>
-        <a href="contact.html" class="btn-cta" style="padding:0.95rem 1.8rem;">Nous contacter <span class="arrow">→</span></a>
+<!-- STILL HAVE QUESTIONS -->
+<section class="fq-still">
+    <div class="container">
+        <h2>Une autre question <span class="fq-grad">qu'on n'a pas couverte&nbsp;?</span></h2>
+        <p>Écris-nous sur WhatsApp. Réponse en moins de 5 minutes en journée — un humain de l'équipe, pas un bot.</p>
+        <div class="fq-still-ctas">
+            <a href="https://wa.me/33759944305" target="_blank" rel="noopener" class="mc-btn-primary"><span>Écrire sur WhatsApp</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="demo.html" class="mc-btn-wa" style="background:rgba(15,26,53,.08);color:#0F1A35 !important;box-shadow:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Réserver une démo</a>
+        </div>
     </div>
 </section>
 
 </main>
+
+<script>
+// FAQ filter & search
+(function(){
+    var cats=document.querySelectorAll('[data-fq]');
+    var items=document.querySelectorAll('.fq-item');
+    var search=document.getElementById('fqSearch');
+    var activeCat='all';
+    function filter(){
+        var q=(search.value||'').toLowerCase().trim();
+        items.forEach(function(i){
+            var ok=true;
+            if(activeCat!=='all' && i.dataset.cat!==activeCat) ok=false;
+            if(q && i.textContent.toLowerCase().indexOf(q)===-1) ok=false;
+            i.classList.toggle('hidden',!ok);
+        });
+    }
+    cats.forEach(function(c){
+        c.addEventListener('click',function(){
+            cats.forEach(function(x){x.classList.remove('active');});
+            c.classList.add('active');
+            activeCat=c.dataset.fq;
+            filter();
+        });
+    });
+    if(search) search.addEventListener('input',filter);
+})();
+</script>
 
 <footer class="site-footer">
     <div class="container">
