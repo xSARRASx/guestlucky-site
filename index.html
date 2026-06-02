@@ -161,22 +161,33 @@ html{scroll-behavior:smooth}
 .m-logo{font-size:28px;font-weight:800;color:#c4c8d8;font-family:'Inter',sans-serif;letter-spacing:-.04em;line-height:1;flex-shrink:0;text-transform:lowercase}
 .m-logo:nth-child(2n){text-transform:capitalize}
 .m-logo:hover{color:#6b46ff}
-.autopilot{position:relative;padding:100px 0;background:linear-gradient(180deg,#faf8ff 0%,#f0eaff 100%);overflow:hidden}
+.autopilot{position:relative;padding:70px 0 60px;background:linear-gradient(180deg,#faf8ff 0%,#f0eaff 100%);overflow:hidden}
 .ap-bg{position:absolute;inset:0;pointer-events:none}
 .ap-bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(107,70,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(107,70,255,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000 40%,transparent 90%)}
 .ap-glow{position:absolute;border-radius:50%;filter:blur(140px);opacity:.35}
 .ap-glow.a{width:500px;height:500px;background:#E84A8C;top:-150px;right:-100px}
 .ap-glow.b{width:450px;height:450px;background:#6b46ff;bottom:-150px;left:-100px}
-.ap-head{text-align:center;margin-bottom:50px;position:relative}
+.ap-head{text-align:center;margin-bottom:28px;position:relative}
 .ap-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(232,74,140,.12);border:1px solid rgba(232,74,140,.25);color:#E84A8C;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:16px}
-.ap-title{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.035em;color:#0F1A35;margin:0 0 14px}
+.ap-title{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:800;line-height:1.1;letter-spacing:-.035em;color:#0F1A35;margin:0 0 12px}
 .ap-grad{background:linear-gradient(135deg,#E84A8C,#6b46ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.ap-lead{color:#3a3a4a;font-size:1.1rem;max-width:56ch;margin:0 auto;line-height:1.55}
-.ap-toggle{display:inline-flex;gap:4px;padding:5px;background:#fff;border:1px solid rgba(15,26,53,.08);border-radius:100px;margin:28px auto 36px;box-shadow:0 8px 24px -8px rgba(15,26,53,.1);position:relative;z-index:1;left:50%;transform:translateX(-50%)}
+.ap-lead{color:#3a3a4a;font-size:1rem;max-width:60ch;margin:0 auto;line-height:1.55}
+.ap-toggle{display:inline-flex;gap:4px;padding:5px;background:#fff;border:1px solid rgba(15,26,53,.08);border-radius:100px;margin:18px auto 20px;box-shadow:0 8px 24px -8px rgba(15,26,53,.1);position:relative;z-index:1;left:50%;transform:translateX(-50%)}
 .ap-tg{border:0;background:transparent;padding:11px 22px;font-size:14.5px;font-weight:600;color:#6b6b80;border-radius:100px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
 .ap-tg.active{background:linear-gradient(135deg,#6b46ff,#E84A8C);color:#fff;box-shadow:0 8px 20px -6px rgba(232,74,140,.5)}
-.ap-board{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;position:relative;z-index:1}
-.ap-team-card{background:#fff;border:1px solid rgba(15,26,53,.06);border-radius:24px;padding:24px;box-shadow:0 30px 70px -20px rgba(15,26,53,.15)}
+.ap-board{display:block;position:relative;z-index:1;max-width:920px;margin:0 auto}
+.ap-day-card{background:#fff;border:1px solid rgba(15,26,53,.06);border-radius:24px;padding:22px 24px;box-shadow:0 30px 70px -20px rgba(15,26,53,.15)}
+.ap-day-head{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid #f0eaff;margin-bottom:8px}
+.ap-day-persona{display:flex;align-items:center;gap:12px;flex:1}
+.ap-day-ava{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FFB1C9,#E84A8C);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+.ap-day-persona strong{display:block;font-size:14.5px;color:#0F1A35;font-weight:700;line-height:1.1}
+.ap-day-sub{font-size:12px;color:#6b6b80;display:block;margin-top:2px}
+.ap-day-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid #f0eaff}
+.ap-stat-mini{padding:12px 14px;background:linear-gradient(135deg,rgba(107,70,255,.07),rgba(232,74,140,.06));border-radius:12px;text-align:left}
+.ap-stat-mini-num{display:block;font-size:1.5rem;font-weight:800;color:#0F1A35;letter-spacing:-.02em;line-height:1;background:linear-gradient(135deg,#6b46ff,#E84A8C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ap-stat-mini-lab{display:block;font-size:11.5px;color:#6b6b80;margin-top:5px;font-weight:500;line-height:1.3}
+.ap-day-keep{background:linear-gradient(135deg,rgba(232,74,140,.08),rgba(107,70,255,.08));border:1px dashed rgba(232,74,140,.35);border-radius:12px;padding:12px 16px;font-size:13.5px;color:#3a3a4a;line-height:1.45;margin-top:14px}
+.ap-day-keep strong{color:#E84A8C}
 .ap-team-head{display:flex;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid #f0eaff;margin-bottom:18px}
 .ap-team-avatars{display:flex}
 .ap-av{width:34px;height:34px;border-radius:50%;color:#fff;font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;border:2px solid #fff;margin-left:-10px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
@@ -188,7 +199,7 @@ html{scroll-behavior:smooth}
 .ap-live-dot{width:6px;height:6px;background:#25D366;border-radius:50%;box-shadow:0 0 0 3px rgba(37,211,102,.25)}
 .ap-rt{font-size:11.5px;color:#25D366;font-weight:600}
 .ap-tl{display:flex;flex-direction:column;gap:0}
-.ap-tl-row{display:grid;grid-template-columns:60px 36px 1fr 36px;gap:12px;align-items:center;padding:14px 4px;border-bottom:1px solid #f6f3ff}
+.ap-tl-row{display:grid;grid-template-columns:60px 1fr 32px;gap:14px;align-items:center;padding:11px 4px;border-bottom:1px solid #f6f3ff}
 .ap-tl-row:last-child{border-bottom:0}
 .ap-tl-time{font-size:12px;font-weight:700;color:#6b6b80;letter-spacing:.5px}
 .ap-tl-av{width:36px;height:36px;border-radius:50%;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px -2px rgba(0,0,0,.15)}
@@ -197,8 +208,8 @@ html{scroll-behavior:smooth}
 .ap-tl-name{font-size:13.5px;color:#0F1A35;font-weight:700}
 .ap-tl-name em{font-style:normal;font-weight:500;color:#6b6b80;font-size:12px}
 .ap-tl-task{font-size:13px;color:#3a3a4a;margin-top:2px;line-height:1.35}
-.ap-tl-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(107,70,255,.1);color:#6b46ff}
-.ap-tl-ic svg{width:18px;height:18px}
+.ap-tl-ic{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(107,70,255,.1);color:#6b46ff;flex-shrink:0}
+.ap-tl-ic svg{width:16px;height:16px}
 .ap-tl-ic.msg{background:rgba(232,74,140,.12);color:#E84A8C}
 .ap-tl-ic.money{background:rgba(107,70,255,.12);color:#6b46ff}
 .ap-tl-ic.clean{background:rgba(155,111,255,.15);color:#6b46ff}
@@ -215,7 +226,7 @@ html{scroll-behavior:smooth}
 .ap-stat-sub{font-size:13px;color:#6b6b80;margin-top:4px}
 .ap-keep{background:linear-gradient(135deg,rgba(232,74,140,.08),rgba(107,70,255,.08));border:1px dashed rgba(232,74,140,.35);border-radius:16px;padding:18px 20px;font-size:14px;color:#3a3a4a;line-height:1.45}
 .ap-keep strong{color:#E84A8C}
-.ap-cta-row{text-align:center;margin-top:40px;position:relative;z-index:1}
+.ap-cta-row{text-align:center;margin-top:24px;position:relative;z-index:1}
 .sticky-tour{padding:100px 0;background:linear-gradient(180deg,#f0eaff 0%,#fff 100%);position:relative;overflow:hidden}
 .sticky-tour::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(107,70,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(107,70,255,.04) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
 .st-head{text-align:center;margin-bottom:50px;position:relative}
@@ -326,7 +337,7 @@ html{scroll-behavior:smooth}
 .mc-msg.out{background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
 .bubble.logo{display:none !important}
 @media (max-width:1024px){.h3-grid{grid-template-columns:1fr;gap:60px}.h3-right{order:2}.h3-app{transform:none}.h3-float-a,.h3-float-b,.h3-float-c{display:none}.ap-board{grid-template-columns:1fr}.st-grid{grid-template-columns:repeat(2,1fr)}.tv3-grid{grid-template-columns:1fr}.tv3-card.big{grid-column:span 1}.gtrio-grid{grid-template-columns:1fr}.gtrio-feat{transform:none}.mc-inner{grid-template-columns:1fr;gap:40px;text-align:center}.mc-left{align-items:center}.mc-left p{text-align:center}.mc-eb{margin:0 auto}}
-@media (max-width:768px){.h3{padding:60px 0 80px}.h3-app,.h3-right{display:none}.h3-meta{gap:12px 16px}.h3-sep{display:none}.marquee-track{gap:40px;animation-duration:24s}.m-logo{font-size:22px}.ap-tl-row{grid-template-columns:56px 32px 1fr}.ap-tl-ic{display:none}.ap-stat-num{font-size:2rem}.st-grid{grid-template-columns:1fr;gap:14px}.bv-row{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr}.bv-c{padding:12px 6px;font-size:12px}.bv-c.bv-l{font-size:12.5px}.bv-c i.ok{width:24px;height:24px;font-size:12px}.bv-row.bv-price .bv-c{font-size:14px}.bv-row.bv-price .bv-us strong{font-size:16px}.mc-phone{width:280px}}
+@media (max-width:768px){.h3{padding:60px 0 80px}.h3-app,.h3-right{display:none}.h3-meta{gap:12px 16px}.h3-sep{display:none}.marquee-track{gap:40px;animation-duration:24s}.m-logo{font-size:22px}.ap-tl-row{grid-template-columns:54px 1fr 28px;gap:10px;padding:9px 2px}.ap-day-stats{grid-template-columns:1fr;gap:8px}.ap-stat-mini-num{font-size:1.3rem}.st-grid{grid-template-columns:1fr;gap:14px}.bv-row{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr}.bv-c{padding:12px 6px;font-size:12px}.bv-c.bv-l{font-size:12.5px}.bv-c i.ok{width:24px;height:24px;font-size:12px}.bv-row.bv-price .bv-c{font-size:14px}.bv-row.bv-price .bv-us strong{font-size:16px}.mc-phone{width:280px}}
 </style>
 </head>
 <body>
@@ -377,7 +388,7 @@ html{scroll-behavior:smooth}
         <div class="h3-left">
             <div class="h3-pill">
                 <span class="h3-pulse"></span>
-                <span>Nouveau · Mode Autopilote en bêta</span>
+                <span>Nouveau · Mode Tranquille — la conciergerie sans toi</span>
             </div>
             <h1 class="h3-title">
                 Ta conciergerie tourne <em>toute seule</em>.<br>
@@ -391,9 +402,9 @@ html{scroll-behavior:smooth}
                     <span>Réserver ma démo offerte</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
-                <a href="#autopilote" class="h3-btn-watch">
+                <a href="#tranquille" class="h3-btn-watch">
                     <span class="h3-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></span>
-                    <span>Voir l'autopilote en action</span>
+                    <span>Voir le Mode Tranquille</span>
                 </a>
             </div>
             <div class="h3-meta">
@@ -530,135 +541,112 @@ html{scroll-behavior:smooth}
     </div>
 </section>
 
-<!-- ===== AUTOPILOT DAY ===== -->
-<section class="autopilot" id="autopilote">
+<!-- ===== MODE TRANQUILLE ===== -->
+<section class="autopilot" id="tranquille">
     <div class="ap-bg">
         <div class="ap-glow a"></div>
         <div class="ap-glow b"></div>
     </div>
     <div class="container">
         <div class="ap-head">
-            <span class="ap-eyebrow">Mode Autopilote · une journée chez toi</span>
-            <h2 class="ap-title">Tes <span class="ap-grad">5 agents IA</span> bossent.<br>Toi tu prends ton café.</h2>
-            <p class="ap-lead">Lundi 06h → 23h. Voilà ce que GuestLucky fait <strong>sans que tu lèves le petit doigt</strong>.</p>
+            <span class="ap-eyebrow">Mode Tranquille · une journée chez Léa</span>
+            <h2 class="ap-title">Pendant que tu vis ta vie,<br><span class="ap-grad">ta conciergerie tourne.</span></h2>
+            <p class="ap-lead">Lundi 6 mai. Léa, 7 logements à Annecy. Elle a son autre boulot, 2 enfants, et un cours de yoga le mardi. Voilà ce que GuestLucky a fait <strong>pendant qu'elle vivait sa journée</strong>.</p>
         </div>
 
         <div class="ap-toggle">
-            <button class="ap-tg" data-ap="off">Sans autopilote</button>
-            <button class="ap-tg active" data-ap="on">Mode autopilote</button>
+            <button class="ap-tg" data-ap="off">Sans Mode Tranquille</button>
+            <button class="ap-tg active" data-ap="on">Mode Tranquille</button>
         </div>
 
         <div class="ap-board">
-            <div class="ap-board-left">
-                <div class="ap-team-card">
-                    <div class="ap-team-head">
-                        <div class="ap-team-avatars">
-                            <span class="ap-av v1">V</span>
-                            <span class="ap-av v2">C</span>
-                            <span class="ap-av v3">C</span>
-                            <span class="ap-av v4">S</span>
-                            <span class="ap-av v5">L</span>
-                        </div>
+            <div class="ap-day-card">
+                <div class="ap-day-head">
+                    <div class="ap-day-persona">
+                        <span class="ap-day-ava">L</span>
                         <div>
-                            <strong>Ton équipe · Live</strong>
-                            <span class="ap-live"><span class="ap-live-dot"></span> 5 assistants actifs</span>
+                            <strong>Léa M.</strong>
+                            <span class="ap-day-sub">7 logements · Annecy · cliente depuis mars 2026</span>
                         </div>
-                        <span class="ap-rt">● Temps réel</span>
                     </div>
+                    <span class="ap-rt"><span class="ap-live-dot"></span> Lundi 6 mai · capture réelle</span>
+                </div>
 
-                    <div class="ap-tl">
-                        <div class="ap-tl-row">
-                            <span class="ap-tl-time">07h32</span>
-                            <span class="ap-tl-av v1">V</span>
-                            <div class="ap-tl-info">
-                                <span class="ap-tl-name">Vaness <em>· Voyageurs</em></span>
-                                <span class="ap-tl-task">14 messages voyageurs traités en 6 langues · ton respecté</span>
-                            </div>
-                            <span class="ap-tl-ic msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                <div class="ap-tl">
+                    <div class="ap-tl-row">
+                        <span class="ap-tl-time">06h47</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Léa dort encore</span>
+                            <span class="ap-tl-task">14 messages voyageurs (EN, ES, DE) traités · ton respecté · 0 erreur</span>
                         </div>
-                        <div class="ap-tl-row">
-                            <span class="ap-tl-time">09h15</span>
-                            <span class="ap-tl-av v2">C</span>
-                            <div class="ap-tl-info">
-                                <span class="ap-tl-name">Chris <em>· Exécutif</em></span>
-                                <span class="ap-tl-task">Ménages auto-assignés · 3 prestataires ont confirmé sur WhatsApp</span>
-                            </div>
-                            <span class="ap-tl-ic clean"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <span class="ap-tl-ic msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row">
+                        <span class="ap-tl-time">08h15</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">École des enfants</span>
+                            <span class="ap-tl-task">3 ménages auto-assignés · Sandra, Mia et Karim ont confirmé sur WhatsApp</span>
                         </div>
-                        <div class="ap-tl-row">
-                            <span class="ap-tl-time">11h50</span>
-                            <span class="ap-tl-av v3">C</span>
-                            <div class="ap-tl-info">
-                                <span class="ap-tl-name">Céline <em>· Compta</em></span>
-                                <span class="ap-tl-task">Caution Booking encaissée · reçu envoyé auto au voyageur</span>
-                            </div>
-                            <span class="ap-tl-ic money"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                        <span class="ap-tl-ic clean"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row">
+                        <span class="ap-tl-time">11h32</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Réunion avec son associé</span>
+                            <span class="ap-tl-task">Caution Booking 350 € encaissée sur Stripe · reçu envoyé auto</span>
                         </div>
-                        <div class="ap-tl-row">
-                            <span class="ap-tl-time">14h20</span>
-                            <span class="ap-tl-av v4">S</span>
-                            <div class="ap-tl-info">
-                                <span class="ap-tl-name">Sam <em>· Sécurité</em></span>
-                                <span class="ap-tl-task">Serrure connectée · nouveau code généré pour Léa M. · envoyé J-1</span>
-                            </div>
-                            <span class="ap-tl-ic key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
+                        <span class="ap-tl-ic money"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row">
+                        <span class="ap-tl-time">14h08</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Pause déjeuner — sushi</span>
+                            <span class="ap-tl-task">Code serrure connectée généré + envoyé J-1 à la famille Q. (arrivée demain 16h)</span>
                         </div>
-                        <div class="ap-tl-row">
-                            <span class="ap-tl-time">18h00</span>
-                            <span class="ap-tl-av v1">V</span>
-                            <div class="ap-tl-info">
-                                <span class="ap-tl-name">Vaness <em>· Voyageurs</em></span>
-                                <span class="ap-tl-task">3 arrivées demain · livret d'accueil envoyé (12 onglets · 3 langues)</span>
-                            </div>
-                            <span class="ap-tl-ic book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+                        <span class="ap-tl-ic key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row">
+                        <span class="ap-tl-time">18h22</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Cours de yoga</span>
+                            <span class="ap-tl-task">3 livrets d'accueil envoyés (FR / EN / IT) · wifi + parking + bonnes adresses</span>
                         </div>
-                        <div class="ap-tl-row">
-                            <span class="ap-tl-time">22h40</span>
-                            <span class="ap-tl-av v5">L</span>
-                            <div class="ap-tl-info">
-                                <span class="ap-tl-name">Lucky <em>· Copilot</em></span>
-                                <span class="ap-tl-task">+42 €/nuit suggéré sur Loft Vieux-Port · pic de demande détecté</span>
-                            </div>
-                            <span class="ap-tl-ic stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                        <span class="ap-tl-ic book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row">
+                        <span class="ap-tl-time">22h11</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Léa devant un épisode de The Bear</span>
+                            <span class="ap-tl-task">Pic de demande détecté week-end ascension · +42 €/nuit suggéré sur Loft Vieux-Port</span>
                         </div>
+                        <span class="ap-tl-ic stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
                     </div>
                 </div>
-            </div>
 
-            <div class="ap-board-right">
-                <div class="ap-stat">
-                    <div class="ap-stat-head">
-                        <span class="ap-stat-eb">Temps gagné</span>
-                        <span class="ap-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <div class="ap-day-stats">
+                    <div class="ap-stat-mini">
+                        <span class="ap-stat-mini-num">14 h</span>
+                        <span class="ap-stat-mini-lab">gagnées cette semaine</span>
                     </div>
-                    <div class="ap-stat-num">15 h</div>
-                    <div class="ap-stat-sub">par semaine, en moyenne</div>
-                </div>
-                <div class="ap-stat">
-                    <div class="ap-stat-head">
-                        <span class="ap-stat-eb">Notifs à traiter</span>
-                        <span class="ap-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg></span>
+                    <div class="ap-stat-mini">
+                        <span class="ap-stat-mini-num">0</span>
+                        <span class="ap-stat-mini-lab">notif urgente à traiter</span>
                     </div>
-                    <div class="ap-stat-num">0</div>
-                    <div class="ap-stat-sub">tout est sous contrôle</div>
-                </div>
-                <div class="ap-stat">
-                    <div class="ap-stat-head">
-                        <span class="ap-stat-eb">Soirées libres</span>
-                        <span class="ap-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <div class="ap-stat-mini">
+                        <span class="ap-stat-mini-num">+612 €</span>
+                        <span class="ap-stat-mini-lab">de revenus auto-optimisés</span>
                     </div>
-                    <div class="ap-stat-num">5</div>
-                    <div class="ap-stat-sub">cette semaine</div>
                 </div>
-                <div class="ap-keep">
-                    <strong>Tes agents gèrent.</strong> Toi tu gardes la main sur ce qui compte vraiment.
+
+                <div class="ap-day-keep">
+                    <strong>Léa garde la main.</strong> Validation 1-clic sur ce qui compte. Le reste se fait tout seul, en arrière-plan.
                 </div>
             </div>
         </div>
 
         <div class="ap-cta-row">
             <a href="demo.html" class="h3-btn-primary">
-                <span>Activer mon autopilote</span>
+                <span>Activer mon Mode Tranquille</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
         </div>

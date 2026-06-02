@@ -128,7 +128,45 @@
 .tp-card.popular .tp-feats li{color:rgba(255,255,255,.95)}
 .tp-feats li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background-color:#6b46ff;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px 11px;background-position:center;background-repeat:no-repeat;margin-top:1px;box-shadow:0 2px 6px -2px rgba(107,70,255,.4)}
 .tp-card.popular .tp-feats li::before{background-color:#fff;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b46ff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>")}
+.tp-details{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;background:transparent;border:1.5px solid rgba(107,70,255,.25);color:#6b46ff;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s;width:100%;margin-top:auto}
+.tp-details:hover{background:rgba(107,70,255,.06);border-color:#6b46ff}
+.tp-card.popular .tp-details{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
+.tp-card.popular .tp-details:hover{background:rgba(255,255,255,.22);border-color:#fff}
+.tp-card.dark .tp-details{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+.tp-card.dark .tp-details:hover{background:rgba(255,255,255,.16);border-color:#fff}
 .tp-card .tp-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff !important;border-radius:14px;font-weight:700;font-size:14.5px;text-decoration:none !important;box-shadow:0 12px 28px -10px rgba(107,70,255,.5);transition:transform .15s;position:relative}
+
+/* MODAL */
+.tp-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:opacity .25s,visibility .25s}
+.tp-modal.open{visibility:visible;opacity:1}
+.tp-modal-bg{position:absolute;inset:0;background:rgba(15,26,53,.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer}
+.tp-modal-card{position:relative;background:#fff;border-radius:28px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 50px 100px -30px rgba(15,26,53,.5);transform:scale(.96);transition:transform .25s}
+.tp-modal.open .tp-modal-card{transform:scale(1)}
+.tp-modal-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:#f6f3ff;border:0;color:#0F1A35;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:background .15s,transform .15s}
+.tp-modal-close:hover{background:rgba(107,70,255,.15);transform:rotate(90deg)}
+.tp-modal-content{padding:36px 36px 32px}
+.tpm-head{padding-right:46px;margin-bottom:24px;border-bottom:1.5px solid rgba(15,26,53,.06);padding-bottom:20px}
+.tpm-eb{display:inline-block;padding:5px 12px;border-radius:100px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;background:rgba(107,70,255,.10);color:#6b46ff}
+.tpm-name{font-size:1.8rem;font-weight:800;color:#0F1A35;letter-spacing:-.025em;margin:0 0 4px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.tpm-name strong{font-size:2.3rem;background:linear-gradient(135deg,#6b46ff,#E84A8C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tpm-name small{font-weight:600;color:#6b6b80;font-size:14px;letter-spacing:0}
+.tpm-tagline{color:#5a5a72;font-size:15px;margin:8px 0 0;line-height:1.5}
+.tpm-section{margin-bottom:22px}
+.tpm-section:last-of-type{margin-bottom:14px}
+.tpm-h{font-size:13px;font-weight:700;color:#6b46ff;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
+.tpm-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.tpm-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#3a3a4a;line-height:1.5}
+.tpm-list li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background-color:#6b46ff;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px;background-position:center;background-repeat:no-repeat;margin-top:1px}
+.tpm-list.tpm-no li::before{background-color:#e8e6f0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237b7b8e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'/><line x1='6' y1='6' x2='18' y2='18'/></svg>")}
+.tpm-list.tpm-no li{color:#7b7b8e}
+.tpm-usecase{padding:16px 18px;background:linear-gradient(165deg,#f6f3ff,#fff);border:1.5px solid rgba(107,70,255,.10);border-radius:14px;font-size:14px;color:#3a3a4a;line-height:1.55;margin-top:6px}
+.tpm-usecase strong{color:#0F1A35;display:block;margin-bottom:4px;font-size:13px}
+.tpm-foot{display:flex;gap:10px;margin-top:24px;padding-top:20px;border-top:1.5px solid rgba(15,26,53,.06);flex-wrap:wrap}
+.tpm-foot a{flex:1;min-width:160px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:transform .15s}
+.tpm-foot a.tpm-primary{background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff !important;box-shadow:0 12px 28px -10px rgba(107,70,255,.5)}
+.tpm-foot a.tpm-secondary{background:rgba(107,70,255,.08);color:#6b46ff !important}
+.tpm-foot a:hover{transform:translateY(-2px)}
+@media (max-width:600px){.tp-modal-content{padding:28px 22px 24px}.tpm-name{font-size:1.4rem}.tpm-name strong{font-size:1.8rem}}
 .tp-card .tp-cta:hover{transform:translateY(-2px)}
 .tp-card.popular .tp-cta{background:#fff;color:#6b46ff !important;box-shadow:0 12px 28px -10px rgba(0,0,0,.25)}
 .tp-card.dark .tp-cta{background:#0F1A35;color:#fff !important}
@@ -210,7 +248,7 @@
 <section class="tp-cards-section">
     <div class="container">
         <div class="tp-cards">
-            <div class="tp-card">
+            <div class="tp-card" data-plan="gratuit">
                 <span class="tp-name">Gratuit</span>
                 <div class="tp-price">0 €<span class="tp-unit"></span></div>
                 <div class="tp-period">À vie · jusqu'à 2 logements</div>
@@ -223,10 +261,11 @@
                     <li>2 membres d'équipe</li>
                     <li>Support en ligne</li>
                 </ul>
+                <button class="tp-details" data-plan-open="gratuit">Voir tous les détails →</button>
                 <a href="https://app.guestlucky.io/register" target="_blank" rel="noopener" class="tp-cta">Démarrer gratuitement <span>→</span></a>
             </div>
 
-            <div class="tp-card">
+            <div class="tp-card" data-plan="premium">
                 <span class="tp-name">Premium</span>
                 <div class="tp-price"><span data-price-m="5.99" data-price-a="4.79">5,99 €</span><span class="tp-unit">/ mois</span></div>
                 <div class="tp-period">HT / logement / <span data-billing="mensuel">mois</span></div>
@@ -240,10 +279,11 @@
                     <li>Support prioritaire WhatsApp 24h</li>
                     <li>Livret d'accueil interactif</li>
                 </ul>
+                <button class="tp-details" data-plan-open="premium">Voir tous les détails →</button>
                 <a href="demo.html" class="tp-cta">Réserver une démo <span>→</span></a>
             </div>
 
-            <div class="tp-card popular">
+            <div class="tp-card popular" data-plan="pro">
                 <span class="tp-rib">★ Le plus choisi</span>
                 <span class="tp-name">Pro</span>
                 <div class="tp-price"><span data-price-m="9.99" data-price-a="7.99">9,99 €</span><span class="tp-unit">/ mois</span></div>
@@ -259,10 +299,11 @@
                     <li>Synchronisation temps réel</li>
                     <li>Facturation électronique 2026</li>
                 </ul>
+                <button class="tp-details" data-plan-open="pro">Voir tous les détails →</button>
                 <a href="demo.html" class="tp-cta">Réserver une démo <span>→</span></a>
             </div>
 
-            <div class="tp-card dark">
+            <div class="tp-card dark" data-plan="custom">
                 <span class="tp-name">Personnalisé</span>
                 <div class="tp-price">Sur devis<span class="tp-unit"></span></div>
                 <div class="tp-period">+ 50 logements</div>
@@ -275,11 +316,23 @@
                     <li>Paramétrage clé en main par notre équipe</li>
                     <li>Account manager dédié</li>
                 </ul>
+                <button class="tp-details" data-plan-open="custom">Voir tous les détails →</button>
                 <a href="contact.html" class="tp-cta">Nous contacter <span>→</span></a>
             </div>
         </div>
     </div>
 </section>
+
+<!-- PLAN DETAILS MODAL -->
+<div class="tp-modal" id="tpModal" aria-hidden="true">
+    <div class="tp-modal-bg" data-tp-close></div>
+    <div class="tp-modal-card" role="dialog" aria-modal="true" aria-labelledby="tpModalTitle">
+        <button class="tp-modal-close" data-tp-close aria-label="Fermer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="tp-modal-content" id="tpModalContent"></div>
+    </div>
+</div>
 
 <!-- GUARANTEE TRIO -->
 <section class="gtrio">
@@ -427,6 +480,139 @@
     minus.addEventListener('click', function(){ if (count > 1){ count--; countEl.textContent = count; update(); } });
     plus.addEventListener('click', function(){ if (count < 99){ count++; countEl.textContent = count; update(); } });
     update();
+})();
+
+// PLAN DETAILS MODAL
+(function(){
+    var modal = document.getElementById('tpModal');
+    var content = document.getElementById('tpModalContent');
+    var plans = {
+        gratuit: {
+            eb: 'Démarrer · sans risque',
+            name: '<strong>0 €</strong> Gratuit <small>à vie · 2 logements</small>',
+            tagline: 'Pour tester GuestLucky sereinement, sans CB demandée. Tu gères 1 ou 2 logements et tu valides que l\'outil te convient avant d\'évoluer.',
+            included: [
+                'ERP complet en version gratuite',
+                'Synchronisation iCal / ICS avec Airbnb, Booking, Abritel',
+                'Jusqu\'à <strong>2 logements actifs</strong> à vie',
+                'Jusqu\'à <strong>2 membres d\'équipe</strong>',
+                'Templates voyageurs illimités',
+                'Support en ligne (réponse sous 48h)',
+                'Hébergement France, RGPD, sauvegardes quotidiennes'
+            ],
+            notIncluded: [
+                'Channel Manager natif (synchro temps réel <2s)',
+                'Messagerie IA voyageurs 24/7',
+                'Lucky Copilot (assistant IA gestionnaire)',
+                'Ménage piloté sur WhatsApp',
+                'Facturation électronique 2026',
+                'Support WhatsApp prioritaire'
+            ],
+            usecase: '<strong>C\'est pour toi si</strong> tu démarres ton premier logement, tu testes la sous-location, ou tu veux comparer GuestLucky à ton outil actuel pendant 1-2 mois sans engagement.',
+            primary: { href:'https://app.guestlucky.io/register', text:'Démarrer gratuitement', target:'_blank' },
+            secondary: { href:'demo.html', text:'Voir une démo d\'abord' }
+        },
+        premium: {
+            eb: 'L\'ERP complet · sans Channel Manager',
+            name: '<strong>5,99 €</strong> Premium <small>HT / logement / mois</small>',
+            tagline: 'Tout l\'ERP GuestLucky en version pro, sans le Channel Manager ni les IA. Pour les hôtes qui ne synchronisent qu\'1 canal (mono-Airbnb par exemple) et veulent l\'outillage complet derrière.',
+            included: [
+                '<strong>Tout le Gratuit, sans limites</strong>',
+                'Logements illimités (5,99 € par logement)',
+                'Membres d\'équipe illimités',
+                'Services additionnels + cautions illimités (0 % commission)',
+                'Livret d\'accueil interactif multilingue',
+                'Auto-actions (code wifi auto, demandes d\'avis, relances)',
+                'Stock linge & consommables',
+                'Gestion incidents avec photos',
+                'Support WhatsApp prioritaire (réponse &lt;24h)',
+                'Exports comptables FEC + Pennylane + Sage'
+            ],
+            notIncluded: [
+                'Channel Manager natif (Airbnb + Booking + Abritel + Vrbo synchro <2s)',
+                'Messagerie IA voyageurs 24/7 (6 langues)',
+                'Lucky Copilot (l\'IA qui agit dans ton compte)',
+                'Ménage piloté sur WhatsApp',
+                'Facturation électronique 2026'
+            ],
+            usecase: '<strong>C\'est pour toi si</strong> tu fais que de l\'Airbnb (ou que du Booking) et que t\'as pas besoin de synchro multi-canaux. Mais tu veux un vrai ERP : compta, livret, services, équipe.',
+            primary: { href:'demo.html', text:'Réserver une démo' },
+            secondary: { href:'https://wa.me/33759944305', text:'Question WhatsApp', target:'_blank' }
+        },
+        pro: {
+            eb: '★ Le plus choisi · TOUT inclus',
+            name: '<strong>9,99 €</strong> Pro <small>HT / logement / mois</small>',
+            tagline: 'L\'offre complète : Channel Manager natif + les 3 IA (voyageurs, Lucky Copilot, ménage WhatsApp). C\'est ce que prennent 80 % de nos clients. Tu veux du tout-en-un, c\'est par là.',
+            included: [
+                '<strong>Tout le Premium inclus</strong>',
+                'Channel Manager natif (Airbnb, Booking, Abritel, Vrbo) — synchro <2 secondes',
+                '<strong>Messagerie IA voyageurs 24/7</strong> en 6 langues',
+                '<strong>Lucky Copilot</strong> — l\'IA gestionnaire qui agit dans ton compte',
+                '<strong>Lucky Clean</strong> — ménage piloté par WhatsApp, aucune app à installer',
+                'Facturation électronique 2026 conforme + Chorus Pro',
+                'Interface propriétaire dédiée (par mandant)',
+                'Conformité loi Hoguet / Carte G',
+                'Audit trail complet',
+                'Géolocalisation prestataires'
+            ],
+            notIncluded: [
+                'Account manager dédié (réservé au plan Personnalisé 50+)',
+                'Formation équipe sur-mesure (sur Personnalisé)'
+            ],
+            usecase: '<strong>C\'est pour toi si</strong> tu gères 3 logements ou 30, sur plusieurs canaux, et tu veux que GuestLucky tourne tout seul en arrière-plan. C\'est l\'offre tout-en-un, zéro outil tiers à payer.',
+            primary: { href:'demo.html', text:'Réserver ma démo Pro' },
+            secondary: { href:'https://wa.me/33759944305', text:'Question WhatsApp', target:'_blank' }
+        },
+        custom: {
+            eb: 'Sur devis · 50+ logements',
+            name: '<strong>Sur devis</strong> Personnalisé <small>conciergeries multi-équipes</small>',
+            tagline: 'Tarif négocié, account manager dédié, setup complet par notre équipe. Conçu pour les conciergeries 50+ logements ou les structures avec plusieurs équipes opérationnelles.',
+            included: [
+                '<strong>Tout le Pro, sans aucune limite</strong>',
+                'Tarif négocié par logement (jusqu\'à -40 %)',
+                '<strong>Account manager dédié</strong> joignable hors horaires',
+                'Setup complet par notre équipe (sous 1 semaine)',
+                'Formation équipe sur-mesure (visios + doc interne)',
+                'SLA support sous 12h (WhatsApp + visio prioritaire)',
+                'API custom + webhooks',
+                'Multi-tenant (équipes séparées sous une même structure)',
+                'Sécurité renforcée (SSO, IP whitelisting, audit log étendu)'
+            ],
+            usecase: '<strong>C\'est pour toi si</strong> tu pilotes une conciergerie de 50 à 500 logements, t\'as plusieurs équipes opérationnelles, et tu veux un partenaire SaaS qui t\'accompagne vraiment — pas juste un compte annuel à payer.',
+            primary: { href:'contact.html', text:'Demander mon devis' },
+            secondary: { href:'https://wa.me/33759944305', text:'WhatsApp direct', target:'_blank' }
+        }
+    };
+
+    function render(key){
+        var p = plans[key];
+        if (!p) return;
+        var html = '<div class="tpm-head"><span class="tpm-eb">'+p.eb+'</span>'+
+            '<h3 class="tpm-name" id="tpModalTitle">'+p.name+'</h3>'+
+            '<p class="tpm-tagline">'+p.tagline+'</p></div>'+
+            '<div class="tpm-section"><h4 class="tpm-h">✓ Inclus dans ce plan</h4>'+
+            '<ul class="tpm-list">'+p.included.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul></div>';
+        if (p.notIncluded && p.notIncluded.length){
+            html += '<div class="tpm-section"><h4 class="tpm-h">— Pas inclus</h4>'+
+                '<ul class="tpm-list tpm-no">'+p.notIncluded.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul></div>';
+        }
+        html += '<div class="tpm-section"><h4 class="tpm-h">Use case</h4><div class="tpm-usecase">'+p.usecase+'</div></div>'+
+            '<div class="tpm-foot">'+
+            '<a href="'+p.primary.href+'"'+(p.primary.target?' target="_blank" rel="noopener"':'')+' class="tpm-primary">'+p.primary.text+' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>'+
+            '<a href="'+p.secondary.href+'"'+(p.secondary.target?' target="_blank" rel="noopener"':'')+' class="tpm-secondary">'+p.secondary.text+'</a>'+
+            '</div>';
+        content.innerHTML = html;
+    }
+    function open(key){ render(key); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function close(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+    document.querySelectorAll('[data-plan-open]').forEach(function(b){
+        b.addEventListener('click', function(e){ e.stopPropagation(); open(b.dataset.planOpen); });
+    });
+    document.querySelectorAll('[data-tp-close]').forEach(function(b){
+        b.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
 })();
 </script>
 
