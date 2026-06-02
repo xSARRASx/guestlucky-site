@@ -68,7 +68,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=9">
 <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RXLNKH6L"></script>
     <script>
@@ -173,11 +173,55 @@ html{scroll-behavior:smooth}
 .ap-title{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:800;line-height:1.1;letter-spacing:-.035em;color:#0F1A35;margin:0 0 12px}
 .ap-grad{background:linear-gradient(135deg,#E84A8C,#6b46ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ap-lead{color:#3a3a4a;font-size:1rem;max-width:60ch;margin:0 auto;line-height:1.55}
+/* ===== WHATS NEW ===== */
+.whatsnew{padding:60px 0 40px;background:linear-gradient(180deg,#fff 0%,#faf8ff 100%);position:relative}
+.wn-head{text-align:center;margin-bottom:30px}
+.wn-eb{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:#6b46ff;background:rgba(107,70,255,.08);padding:6px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+.wn-dot{width:7px;height:7px;border-radius:50%;background:#25d366;box-shadow:0 0 0 4px rgba(37,211,102,.18);animation:pulseDot 2s infinite}
+@keyframes pulseDot{0%,100%{opacity:1}50%{opacity:.6}}
+.wn-title{font-size:clamp(28px,3.4vw,40px);font-weight:800;color:#0f0f1f;letter-spacing:-.025em;line-height:1.15;margin:0}
+.wn-grad{background:linear-gradient(135deg,#6b46ff,#E84A8C);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:0 auto}
+.wn-card{background:#fff;border:1px solid rgba(15,26,53,.07);border-radius:20px;padding:22px 22px 20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+.wn-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(107,70,255,.04) 0%,transparent 50%);opacity:0;transition:opacity .3s;pointer-events:none}
+.wn-card:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 24px 50px -12px rgba(107,70,255,.22);border-color:rgba(107,70,255,.25)}
+.wn-card:hover::before{opacity:1}
+.wn-card-green:hover{transform:translateY(-6px) rotate(.4deg);box-shadow:0 24px 50px -12px rgba(37,211,102,.25);border-color:rgba(37,211,102,.3)}
+.wn-card-pink:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 24px 50px -12px rgba(232,74,140,.25);border-color:rgba(232,74,140,.3)}
+.wn-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.wn-tag{font-size:11px;font-weight:700;color:#6b46ff;background:rgba(107,70,255,.1);padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.04em}
+.wn-tag-green{color:#1aa84a;background:rgba(37,211,102,.12)}
+.wn-tag-pink{color:#E84A8C;background:rgba(232,74,140,.1)}
+.wn-ic{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#6b46ff,#9B6FFF);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -4px rgba(107,70,255,.4)}
+.wn-ic svg{width:20px;height:20px}
+.wn-ic-green{background:linear-gradient(135deg,#25d366,#1aa84a);box-shadow:0 8px 18px -4px rgba(37,211,102,.5)}
+.wn-ic-pink{background:linear-gradient(135deg,#E84A8C,#FFB1C9);box-shadow:0 8px 18px -4px rgba(232,74,140,.4)}
+.wn-name{font-size:18px;font-weight:800;color:#0f0f1f;margin:0;letter-spacing:-.01em}
+.wn-desc{font-size:13.5px;color:#6b6b80;line-height:1.55;margin:0;flex-grow:1}
+.wn-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:#6b46ff;margin-top:6px;transition:gap .2s}
+.wn-link-green{color:#1aa84a}
+.wn-link-pink{color:#E84A8C}
+.wn-card:hover .wn-link{gap:9px}
+@media (max-width:880px){.wn-grid{grid-template-columns:1fr;gap:14px}}
+
 .ap-toggle{display:inline-flex;gap:4px;padding:5px;background:#fff;border:1px solid rgba(15,26,53,.08);border-radius:100px;margin:18px auto 20px;box-shadow:0 8px 24px -8px rgba(15,26,53,.1);position:relative;z-index:1;left:50%;transform:translateX(-50%)}
 .ap-tg{border:0;background:transparent;padding:11px 22px;font-size:14.5px;font-weight:600;color:#6b6b80;border-radius:100px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
 .ap-tg.active{background:linear-gradient(135deg,#6b46ff,#E84A8C);color:#fff;box-shadow:0 8px 20px -6px rgba(232,74,140,.5)}
 .ap-board{display:block;position:relative;z-index:1;max-width:920px;margin:0 auto}
 .ap-day-card{background:#fff;border:1px solid rgba(15,26,53,.06);border-radius:24px;padding:22px 24px;box-shadow:0 30px 70px -20px rgba(15,26,53,.15)}
+.ap-board[data-mode="on"] .ap-card-off{display:none}
+.ap-board[data-mode="off"] .ap-card-on{display:none}
+.ap-card-off{background:#fff8f8;border-color:rgba(232,74,140,.12)}
+.ap-ava-off{background:linear-gradient(135deg,#9aa0b2,#6b6b80)!important}
+.ap-rt-off{color:#b3273a!important}
+.ap-dot-off{background:#e84a3c!important;box-shadow:0 0 0 4px rgba(232,74,60,.18)!important}
+.ap-row-off .ap-tl-name{color:#7a1f2c}
+.ap-row-off .ap-tl-task{color:#9a4858}
+.ap-row-off .ap-tl-time{background:rgba(232,74,60,.08);color:#b3273a}
+.ic-off{background:rgba(232,74,60,.1)!important;color:#e84a3c!important}
+.ap-stats-off .ap-stat-mini{background:rgba(232,74,60,.06);border-color:rgba(232,74,60,.18)}
+.ap-stats-off .ap-stat-mini-num{background:linear-gradient(135deg,#e84a3c,#b3273a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ap-keep-off{background:linear-gradient(135deg,#fef0f1,#fde4e7)!important;color:#7a1f2c!important;border-color:rgba(232,74,60,.18)!important}
 .ap-day-head{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid #f0eaff;margin-bottom:8px}
 .ap-day-persona{display:flex;align-items:center;gap:12px;flex:1}
 .ap-day-ava{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FFB1C9,#E84A8C);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
@@ -351,7 +395,7 @@ html{scroll-behavior:smooth}
 <header class="site-header">
     <div class="container header-inner">
         <a href="index.html" class="brand">
-            <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/logo-guestlucky.png" alt="GuestLucky — logiciel de gestion conciergerie et channel manager" class="logo-img" width="200" height="56" loading="eager">
+            <span class="brand-mark"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M10 28 L28 8 L46 28" fill="none" stroke="#6b46ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26 L12 48 L44 48 L44 26" fill="none" stroke="#0f0f1f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="20" y="30" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="30" y="30" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="20" y="38" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="30" y="38" width="6" height="6" rx="1.3" fill="#E84A8C"/></svg><span class="brand-text">GuestLucky</span></span>
         </a>
         <button class="menu-toggle" data-menu-toggle aria-label="Menu"><span></span><span></span><span></span></button>
         <nav class="main-nav" data-main-nav>
@@ -543,6 +587,57 @@ html{scroll-behavior:smooth}
     </div>
 </section>
 
+<!-- ===== WHATS NEW ===== -->
+<section class="whatsnew">
+    <div class="container">
+        <div class="wn-head">
+            <span class="wn-eb"><span class="wn-dot"></span> Sorties de juin 2026</span>
+            <h2 class="wn-title">Les <span class="wn-grad">dernières nouveautés.</span></h2>
+        </div>
+        <div class="wn-grid">
+            <a href="#tranquille" class="wn-card wn-card-purple">
+                <div class="wn-card-head">
+                    <span class="wn-tag">Nouveau</span>
+                    <span class="wn-ic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </span>
+                </div>
+                <h3 class="wn-name">Mode Tranquille</h3>
+                <p class="wn-desc">L'IA prend la main sur ta journée. Messages, ménages, prix, livrets : tout en autopilote tant que tu valides l'essentiel.</p>
+                <span class="wn-link">Découvrir
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+            <a href="fonctionnalites.html#lucky-clean" class="wn-card wn-card-green">
+                <div class="wn-card-head">
+                    <span class="wn-tag wn-tag-green">Nouveau</span>
+                    <span class="wn-ic wn-ic-green">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                    </span>
+                </div>
+                <h3 class="wn-name">Lucky Clean</h3>
+                <p class="wn-desc">Ton équipe ménage pilotée sur WhatsApp. Missions, checklists, photos avant/après — zéro app à installer, marche dès le 1ᵉʳ soir.</p>
+                <span class="wn-link wn-link-green">Découvrir
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+            <a href="fonctionnalites.html#copilot" class="wn-card wn-card-pink">
+                <div class="wn-card-head">
+                    <span class="wn-tag wn-tag-pink">Amélioré</span>
+                    <span class="wn-ic wn-ic-pink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </span>
+                </div>
+                <h3 class="wn-name">Lucky Copilot v2</h3>
+                <p class="wn-desc">Plus rapide, comprend 6 langues, agit dans ton compte : crée une annonce, baisse un prix, planifie un ménage — direct en français.</p>
+                <span class="wn-link wn-link-pink">Découvrir
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- ===== MODE TRANQUILLE ===== -->
 <section class="autopilot" id="tranquille">
     <div class="ap-bg">
@@ -561,8 +656,9 @@ html{scroll-behavior:smooth}
             <button class="ap-tg active" data-ap="on">Mode Tranquille</button>
         </div>
 
-        <div class="ap-board">
-            <div class="ap-day-card">
+        <div class="ap-board" data-mode="on">
+            <!-- Version ON : Mode Tranquille activé -->
+            <div class="ap-day-card ap-card-on">
                 <div class="ap-day-head">
                     <div class="ap-day-persona">
                         <span class="ap-day-ava">L</span>
@@ -642,6 +738,90 @@ html{scroll-behavior:smooth}
 
                 <div class="ap-day-keep">
                     <strong>Léa garde la main.</strong> Validation 1-clic sur ce qui compte. Le reste se fait tout seul, en arrière-plan.
+                </div>
+            </div>
+
+            <!-- Version OFF : sans Mode Tranquille, le chaos -->
+            <div class="ap-day-card ap-card-off">
+                <div class="ap-day-head">
+                    <div class="ap-day-persona">
+                        <span class="ap-day-ava ap-ava-off">L</span>
+                        <div>
+                            <strong>Léa M. — sans GuestLucky</strong>
+                            <span class="ap-day-sub">7 logements · Annecy · 4 outils différents · épuisée</span>
+                        </div>
+                    </div>
+                    <span class="ap-rt ap-rt-off"><span class="ap-live-dot ap-dot-off"></span> Lundi 6 mai · à la main</span>
+                </div>
+
+                <div class="ap-tl">
+                    <div class="ap-tl-row ap-row-off">
+                        <span class="ap-tl-time">06h47</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Réveil en panique — 14 messages non lus</span>
+                            <span class="ap-tl-task">Elle traduit avec Google Trad, répond depuis 3 apps différentes · 1h12 dans la salle de bain</span>
+                        </div>
+                        <span class="ap-tl-ic ic-off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row ap-row-off">
+                        <span class="ap-tl-time">08h15</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Devant l'école, téléphone à la main</span>
+                            <span class="ap-tl-task">Appelle Sandra (no répond), texto Mia, recommence avec Karim · 22 min perdues</span>
+                        </div>
+                        <span class="ap-tl-ic ic-off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row ap-row-off">
+                        <span class="ap-tl-time">11h32</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">En réunion · se déconcentre pour gérer Stripe</span>
+                            <span class="ap-tl-task">Caution Booking 350 € à encaisser à la main · facture à émettre ce soir</span>
+                        </div>
+                        <span class="ap-tl-ic ic-off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row ap-row-off">
+                        <span class="ap-tl-time">14h08</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Sushi devant l'ordi</span>
+                            <span class="ap-tl-task">Génère le code serrure sur Igloohome, copie-colle dans WhatsApp, oublie l'horaire → re-message</span>
+                        </div>
+                        <span class="ap-tl-ic ic-off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row ap-row-off">
+                        <span class="ap-tl-time">18h22</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Annule le yoga</span>
+                            <span class="ap-tl-task">3 livrets à rédiger dans Word · traduction manuelle EN + IT · PDF envoyé à 23h47</span>
+                        </div>
+                        <span class="ap-tl-ic ic-off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                    </div>
+                    <div class="ap-tl-row ap-row-off">
+                        <span class="ap-tl-time">22h11</span>
+                        <div class="ap-tl-info">
+                            <span class="ap-tl-name">Trop crevée pour The Bear</span>
+                            <span class="ap-tl-task">Loupé le pic week-end ascension · -612 € qui resteront sur la table</span>
+                        </div>
+                        <span class="ap-tl-ic ic-off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></span>
+                    </div>
+                </div>
+
+                <div class="ap-day-stats ap-stats-off">
+                    <div class="ap-stat-mini">
+                        <span class="ap-stat-mini-num">-14 h</span>
+                        <span class="ap-stat-mini-lab">perdues cette semaine</span>
+                    </div>
+                    <div class="ap-stat-mini">
+                        <span class="ap-stat-mini-num">37</span>
+                        <span class="ap-stat-mini-lab">notifs à traiter</span>
+                    </div>
+                    <div class="ap-stat-mini">
+                        <span class="ap-stat-mini-num">-612 €</span>
+                        <span class="ap-stat-mini-lab">de revenus loupés</span>
+                    </div>
+                </div>
+
+                <div class="ap-day-keep ap-keep-off">
+                    <strong>Léa subit sa journée.</strong> Elle a du talent, mais elle court derrière ses outils. Résultat : aucun temps pour grandir.
                 </div>
             </div>
         </div>
@@ -844,7 +1024,7 @@ html{scroll-behavior:smooth}
         <div class="footer-grid">
             <div>
                 <div class="brand">
-                    <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/logo-guestlucky.png" alt="GuestLucky — logiciel de gestion conciergerie et channel manager" class="logo-img" width="200" height="56" loading="eager">
+                    <span class="brand-mark"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M10 28 L28 8 L46 28" fill="none" stroke="#6b46ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26 L12 48 L44 48 L44 26" fill="none" stroke="#0f0f1f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="20" y="30" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="30" y="30" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="20" y="38" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="30" y="38" width="6" height="6" rx="1.3" fill="#E84A8C"/></svg><span class="brand-text">GuestLucky</span></span>
                 </div>
                 <p class="footer-tag">Le Channel Manager et l'ERP tout-en-un pour les pros de la location courte durée.</p>
             </div>

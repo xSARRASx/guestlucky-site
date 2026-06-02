@@ -395,6 +395,21 @@
         }, 30 * 1000);
     }
 
+    function initTranquilleToggle() {
+        var toggle = document.querySelector(".ap-toggle");
+        if (!toggle) return;
+        var board = document.querySelector(".ap-board");
+        if (!board) return;
+        toggle.addEventListener("click", function (e) {
+            var btn = e.target.closest(".ap-tg");
+            if (!btn) return;
+            toggle.querySelectorAll(".ap-tg").forEach(function (b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            var mode = btn.getAttribute("data-ap");
+            board.setAttribute("data-mode", mode);
+        });
+    }
+
     function init() {
         initPricing();
         initFAQ();
@@ -405,6 +420,7 @@
         initLangDropdown();
         initInterfaceTour();
         initShareCopy();
+        initTranquilleToggle();
         // initFloatingLogo(); // disabled — bubble removed per Martin
         initWelcomeModal();
         var yearEl = document.getElementById("year");

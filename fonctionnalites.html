@@ -46,7 +46,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=9">
 
 <style id="v6-fonc-defensive">
 /* FONC V6 — inline defensive */
@@ -74,13 +74,21 @@
 .fn-p-eb{display:inline-block;padding:6px 14px;background:rgba(232,74,140,.10);color:#E84A8C;border-radius:100px;font-size:12.5px;font-weight:700;margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase}
 .fn-p-title{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.035em;color:#0F1A35;margin:0 auto 14px;max-width:18ch}
 .fn-p-lead{color:#5a5a72;font-size:1.05rem;max-width:55ch;margin:0 auto}
-.fn-p-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:22px;max-width:1200px;margin:0 auto}
-.fn-p-card{background:#fff;border:1.5px solid rgba(15,26,53,.06);border-radius:24px;padding:34px 30px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s,border-color .25s}
-.fn-p-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -20px rgba(107,70,255,.25);border-color:rgba(107,70,255,.2)}
-.fn-p-card.big{grid-row:span 2;background:linear-gradient(165deg,#0F1A35 0%,#1a2547 60%,#2a1850 100%);color:#fff;border-color:transparent;justify-content:space-between;min-height:520px}
+.fn-p-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1200px;margin:0 auto}
+.fn-p-card{background:#fff;border:1.5px solid rgba(15,26,53,.06);border-radius:24px;padding:34px 30px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s,border-color .35s}
+.fn-p-card:hover{transform:translateY(-8px) rotate(-.3deg);box-shadow:0 36px 70px -20px rgba(107,70,255,.3);border-color:rgba(107,70,255,.2)}
+.fn-p-card.big{background:linear-gradient(165deg,#0F1A35 0%,#1a2547 60%,#2a1850 100%);color:#fff;border-color:transparent;justify-content:space-between;min-height:520px}
 .fn-p-card.big::before{content:"";position:absolute;top:-30%;right:-30%;width:80%;height:80%;background:radial-gradient(circle,rgba(232,74,140,.35),transparent 70%);pointer-events:none}
 .fn-p-card.big::after{content:"";position:absolute;bottom:-20%;left:-20%;width:60%;height:60%;background:radial-gradient(circle,rgba(107,70,255,.4),transparent 70%);pointer-events:none}
 .fn-p-card.big > *{position:relative;z-index:1}
+/* Variante "big-clean" : ambiance vert WhatsApp */
+.fn-p-card.big-clean{background:linear-gradient(165deg,#0a3b21 0%,#0d5a30 55%,#0e7a3c 100%)}
+.fn-p-card.big-clean::before{background:radial-gradient(circle,rgba(37,211,102,.45),transparent 70%)}
+.fn-p-card.big-clean::after{background:radial-gradient(circle,rgba(20,180,80,.35),transparent 70%)}
+.fn-p-card.big-clean:hover{transform:translateY(-8px) rotate(.3deg);box-shadow:0 36px 70px -20px rgba(37,211,102,.4)}
+.fn-p-card.big-clean .fn-p-ic{background:linear-gradient(135deg,#25d366,#1aa84a)}
+.fn-p-card.big-clean .fn-p-tag{background:rgba(255,255,255,.18);color:#bff3d2}
+.fn-p-card.big-clean .fn-p-points li::before{background-color:#fff;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2325d366' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>")}
 .fn-p-ic{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(107,70,255,.12),rgba(232,74,140,.12));color:#6b46ff}
 .fn-p-ic svg{width:28px;height:28px}
 .fn-p-card.big .fn-p-ic{background:linear-gradient(135deg,#E84A8C,#6b46ff);color:#fff}
@@ -88,6 +96,7 @@
 .fn-p-card.big .fn-p-name{color:#fff;font-size:1.7rem}
 .fn-p-desc{color:#5a5a72;font-size:14.5px;line-height:1.6;margin:0;flex:1}
 .fn-p-card.big .fn-p-desc{color:#c4c8d8;font-size:15.5px}
+.fn-p-card.big-clean .fn-p-desc{color:#bff3d2}
 .fn-p-points{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
 .fn-p-points li{font-size:13.5px;color:#3a3a4a;display:flex;gap:8px;align-items:flex-start}
 .fn-p-card.big .fn-p-points li{color:#e8e6f0;font-size:14.5px}
@@ -95,6 +104,7 @@
 .fn-p-card.big .fn-p-points li::before{background-color:#fff;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E84A8C' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>")}
 .fn-p-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;background:rgba(107,70,255,.10);color:#6b46ff;border-radius:100px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;align-self:flex-start}
 .fn-p-card.big .fn-p-tag{background:rgba(255,255,255,.15);color:#FFB1C9}
+@media (max-width:880px){.fn-p-grid{grid-template-columns:1fr}}
 
 /* GROUPS */
 .fn-groups{padding:80px 0;background:linear-gradient(180deg,#fff 0%,#f6f3ff 100%);position:relative;overflow:hidden}
@@ -179,7 +189,7 @@
 <header class="site-header">
     <div class="container header-inner">
         <a href="index.html" class="brand">
-            <img src="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/logo-guestlucky.png" alt="GuestLucky" class="logo-img" width="200" height="56" loading="eager">
+            <span class="brand-mark"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M10 28 L28 8 L46 28" fill="none" stroke="#6b46ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26 L12 48 L44 48 L44 26" fill="none" stroke="#0f0f1f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="20" y="30" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="30" y="30" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="20" y="38" width="6" height="6" rx="1.3" fill="#E84A8C"/><rect x="30" y="38" width="6" height="6" rx="1.3" fill="#E84A8C"/></svg><span class="brand-text">GuestLucky</span></span>
         </a>
         <button class="menu-toggle" data-menu-toggle aria-label="Menu"><span></span><span></span><span></span></button>
         <nav class="main-nav" data-main-nav>
@@ -233,32 +243,32 @@
         </div>
 
         <div class="fn-p-grid">
-            <div class="fn-p-card big">
+            <div class="fn-p-card big" id="copilot">
                 <div>
                     <span class="fn-p-tag">★ Exclusif GuestLucky</span>
                     <div class="fn-p-ic" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14 9L21 12L14 15L12 22L10 15L3 12L10 9L12 2z"/></svg></div>
                     <h3 class="fn-p-name" style="margin-top:18px">Lucky Copilot</h3>
-                    <p class="fn-p-desc">Un assistant IA qui ne se contente pas de répondre — il <strong>agit</strong> dans ton compte. Crée une annonce, baisse un prix, génère un incident, sort un export compta, plannifie un ménage. En français. Direct dans WhatsApp ou dans l'app.</p>
+                    <p class="fn-p-desc">Un assistant IA qui ne se contente pas de répondre — il <strong>agit</strong> dans ton compte. Crée une annonce, baisse un prix, génère un incident, sort un export compta, planifie un ménage. En français. Direct dans WhatsApp ou dans l'app.</p>
                 </div>
                 <ul class="fn-p-points">
-                    <li>« Baisse de 10% le prix du Loft République entre le 14 et le 21 juillet »</li>
+                    <li>« Baisse de 10 % le prix du Loft République entre le 14 et le 21 juillet »</li>
                     <li>« Sors-moi le CA Airbnb de juin avec la TVA déduite »</li>
                     <li>« Crée un incident douche bouchée chez Sarah K. avec photo »</li>
                 </ul>
             </div>
 
-            <div class="fn-p-card">
-                <div class="fn-p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                <h3 class="fn-p-name">Messagerie IA voyageurs</h3>
-                <p class="fn-p-desc">Répond 24/7 en 6 langues, dans <em>ton</em> ton de voix. Tu valides chaque réponse, ou tu laisses partir en auto — c'est toi qui décides du niveau.</p>
-                <span class="fn-p-tag">Plan Pro</span>
-            </div>
-
-            <div class="fn-p-card">
-                <div class="fn-p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/><circle cx="12" cy="12" r="10"/></svg></div>
-                <h3 class="fn-p-name">Ménage sur WhatsApp</h3>
-                <p class="fn-p-desc">Tes prestataires ménage reçoivent missions, check-lists et photos directement sur WhatsApp. Aucune app à installer, aucune formation — ça marche dès le premier soir.</p>
-                <span class="fn-p-tag">Plan Pro</span>
+            <div class="fn-p-card big big-clean" id="lucky-clean">
+                <div>
+                    <span class="fn-p-tag">★ Nouveau · Exclusif GuestLucky</span>
+                    <div class="fn-p-ic" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg></div>
+                    <h3 class="fn-p-name" style="margin-top:18px">Lucky Clean</h3>
+                    <p class="fn-p-desc">Ton équipe ménage pilotée <strong>directement sur WhatsApp</strong>. Mission auto-assignée au prestataire le plus dispo, check-list à valider, photos avant/après, validation en 1 tap. Pas d'app à installer, pas de formation, ça marche dès le premier soir.</p>
+                </div>
+                <ul class="fn-p-points">
+                    <li>« Mission Loft République · check-in vendredi 16h » → Sandra accepte en 12 sec</li>
+                    <li>Check-list 14 points · photos obligatoires sur 6 zones</li>
+                    <li>Paiement auto-calculé (m² + temps réel) · facture mensuelle</li>
+                </ul>
             </div>
         </div>
     </div>

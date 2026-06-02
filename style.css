@@ -98,13 +98,47 @@ a { color: inherit; text-decoration: none; }
 .brand {
     display: inline-flex;
     align-items: center;
-    height: 38px;
+    height: 42px;
+    text-decoration: none;
 }
 
 .brand svg.logo-svg {
     height: 38px;
     width: auto;
     display: block;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: transform .25s ease;
+}
+.brand-mark:hover { transform: translateY(-1px); }
+.brand-mark svg {
+    width: 38px;
+    height: 38px;
+    display: block;
+    flex-shrink: 0;
+}
+.brand-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -.02em;
+    color: #0f0f1f;
+    line-height: 1;
+    background: linear-gradient(135deg, #6b46ff 0%, #E84A8C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.site-footer .brand-text { color: #fff; background: none; -webkit-text-fill-color: #fff; }
+.site-footer .brand-mark svg path[stroke="#0f0f1f"] { stroke: #fff; }
+@media (max-width: 768px) {
+    .brand-mark svg { width: 34px; height: 34px; }
+    .brand-text { font-size: 1.1rem; }
 }
 
 .main-nav {
@@ -6105,4 +6139,81 @@ html { scroll-behavior: smooth; }
     .bv-row.bv-price .bv-c { font-size: 14px; }
     .bv-row.bv-price .bv-us strong { font-size: 16px; }
     .mc-phone { width: 280px; }
+}
+
+/* ============================================================ */
+/*   MICROINTERACTIONS V6 — site plus vivant                    */
+/* ============================================================ */
+
+/* Hover tilt légers — toutes les cards génériques.
+   On exclut les déjà-animées (.ap-day-card, .fn-p-card, .wn-card, tarifs) qui ont leur propre transform */
+.fn-card,
+.fea-card,
+.tv3-card,
+.gtrio-feat,
+.bv-row,
+.svc-card,
+.persona-card,
+.use-card,
+.canal-card,
+.tg-card,
+.pour-card {
+    transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s, border-color .35s;
+}
+.fn-card:hover { transform: translateY(-6px) rotate(-.25deg); box-shadow: 0 24px 50px -16px rgba(107,70,255,.18); border-color: rgba(107,70,255,.25); }
+.fn-card:nth-child(even):hover { transform: translateY(-6px) rotate(.25deg); }
+.fn-card:nth-child(3n):hover { transform: translateY(-6px) rotate(-.4deg); }
+
+.tv3-card:hover { transform: translateY(-5px) rotate(.3deg); box-shadow: 0 28px 56px -18px rgba(15,26,53,.22); }
+.tv3-card:nth-child(even):hover { transform: translateY(-5px) rotate(-.3deg); }
+
+.svc-card:hover, .persona-card:hover, .use-card:hover, .canal-card:hover, .pour-card:hover, .tg-card:hover {
+    transform: translateY(-5px) rotate(-.25deg);
+    box-shadow: 0 22px 46px -16px rgba(107,70,255,.2);
+}
+.svc-card:nth-child(even):hover, .persona-card:nth-child(even):hover, .use-card:nth-child(even):hover {
+    transform: translateY(-5px) rotate(.25deg);
+}
+
+/* Float animation léger pour quelques éléments décoratifs */
+@keyframes glFloatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+@keyframes glFloatYR {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+/* Cards qui flottent doucement */
+.h3-float-a, .h3-float-b, .h3-float-c { animation: glFloatY 4s ease-in-out infinite; }
+.h3-float-b { animation-delay: 1.3s; animation-name: glFloatYR; }
+.h3-float-c { animation-delay: 2.6s; }
+
+/* Boutons : léger pulse on hover */
+.btn-primary, .h3-btn-primary, .mc-btn-wa {
+    transition: transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, filter .25s;
+}
+.btn-primary:hover, .h3-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px -10px rgba(107,70,255,.45);
+}
+
+/* Sections + icônes : léger lift sur hover */
+.fn-g-ic, .gtrio-ic, .mc-avatar, .ap-tl-ic {
+    transition: transform .3s ease;
+}
+.fn-card:hover .fn-card-ic { transform: scale(1.08) rotate(-3deg); }
+
+/* Liens : underline animé */
+a.wn-link, a.fn-card-cta { position: relative; }
+
+/* Réduction si l'utilisateur préfère pas d'anim */
+@media (prefers-reduced-motion: reduce) {
+    .h3-float-a, .h3-float-b, .h3-float-c { animation: none; }
+    *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
