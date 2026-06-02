@@ -405,7 +405,7 @@
         initLangDropdown();
         initInterfaceTour();
         initShareCopy();
-        initFloatingLogo();
+        // initFloatingLogo(); // disabled — bubble removed per Martin
         initWelcomeModal();
         var yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
