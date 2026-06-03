@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 6 · Bento Asymétrique — GuestLucky preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#1a2547;background:#fdf8f0;line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',serif}
+::selection{background:#E84A8C;color:#fff}
+.wrap{max-width:1320px;margin:0 auto;padding:24px}
+
+/* HEADER */
+header{padding:16px 0;position:sticky;top:0;background:rgba(253,248,240,.85);backdrop-filter:blur(12px);z-index:50}
+.h-inner{display:flex;align-items:center;justify-content:space-between;max-width:1320px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.02em;color:#1a2547}
+.logo i{font-family:'Instrument Serif',serif;font-style:italic;color:#6b46ff;font-weight:400}
+nav ul{display:flex;list-style:none;gap:28px}
+nav a{color:#1a2547;text-decoration:none;font-size:14px;font-weight:500;opacity:.75;transition:opacity .15s}
+nav a:hover{opacity:1}
+.h-cta{padding:10px 18px;background:#1a2547;color:#fdf8f0;border-radius:100px;text-decoration:none;font-size:13px;font-weight:600}
+
+/* BENTO GRID */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:96px;gap:12px;margin:24px auto 64px;max-width:1320px;padding:0 24px}
+@media(max-width:920px){.bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:90px}}
+@media(max-width:560px){.bento{grid-template-columns:repeat(2,1fr)}}
+
+.cell{border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;position:relative;transition:transform .25s}
+.cell:hover{transform:translateY(-3px)}
+
+/* COLOR THEMES */
+.navy{background:#1a2547;color:#fdf8f0}
+.violet{background:#6b46ff;color:#fdf8f0}
+.magenta{background:#E84A8C;color:#fdf8f0}
+.cream{background:#fdf2e3;color:#1a2547}
+.ink{background:#0a0a0a;color:#fdf8f0}
+.lavender{background:#E0DBFF;color:#1a2547}
+.peach{background:#FFE8D6;color:#1a2547}
+
+.cell .lab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;opacity:.7;margin-bottom:10px}
+.cell h2,.cell h3{font-weight:700;letter-spacing:-.02em;line-height:1.05;color:inherit;margin:0}
+.cell p{font-size:14.5px;line-height:1.5;opacity:.85;margin-top:8px}
+
+/* HERO CELL */
+.cell-hero{grid-column:span 8;grid-row:span 5;background:linear-gradient(135deg,#1a2547 0%,#3d1d6b 100%);color:#fdf8f0;justify-content:space-between;position:relative;overflow:hidden}
+.cell-hero::before{content:"";position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,74,140,.4),transparent 60%);filter:blur(40px)}
+.cell-hero::after{content:"";position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(107,70,255,.35),transparent 60%);filter:blur(30px)}
+.cell-hero .top{position:relative;display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.04em;opacity:.85}
+.cell-hero .top .pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}}
+.cell-hero h1{position:relative;font-size:clamp(40px,4.8vw,72px);font-weight:800;line-height:.95;letter-spacing:-.035em;margin:auto 0 8px}
+.cell-hero h1 i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FFB1C9}
+.cell-hero .lede{position:relative;font-size:18px;opacity:.85;max-width:60ch;margin-bottom:18px}
+.cell-hero .actions{position:relative;display:flex;gap:10px;flex-wrap:wrap}
+.cell-hero .btn-fill{padding:12px 20px;background:#fdf8f0;color:#1a2547;border-radius:100px;text-decoration:none;font-weight:600;font-size:14px}
+.cell-hero .btn-ghost{padding:12px 20px;background:rgba(255,255,255,.1);color:#fdf8f0;border-radius:100px;text-decoration:none;font-weight:600;font-size:14px;backdrop-filter:blur(8px)}
+
+/* STAT CELLS */
+.cell-price{grid-column:span 4;grid-row:span 3;background:#FFE8D6;justify-content:flex-end}
+.cell-price .big{font-family:'Instrument Serif',serif;font-size:clamp(80px,9vw,140px);font-weight:400;line-height:.85;letter-spacing:-.04em;color:#1a2547}
+.cell-price .big sup{font-size:.4em;color:#E84A8C}
+
+.cell-commission{grid-column:span 4;grid-row:span 2;background:#E84A8C;color:#fdf8f0;justify-content:flex-end}
+.cell-commission .big{font-family:'Instrument Serif',serif;font-size:clamp(72px,8vw,120px);line-height:.85;letter-spacing:-.04em}
+
+/* MID ROW */
+.cell-copilot{grid-column:span 7;grid-row:span 4;background:#0a0a0a;color:#fdf8f0;overflow:hidden;position:relative;justify-content:space-between}
+.cell-copilot h3{font-size:clamp(28px,3vw,42px);font-weight:800;line-height:1;letter-spacing:-.02em}
+.cell-copilot h3 i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#a78bfa}
+.cell-copilot .term{margin-top:auto;background:rgba(255,255,255,.04);border-radius:14px;padding:18px 20px;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.7}
+.cell-copilot .prompt{color:#a78bfa}
+.cell-copilot .out{color:rgba(255,255,255,.55)}
+.cell-copilot .ok{color:#22c55e}
+
+.cell-channels{grid-column:span 5;grid-row:span 4;background:#1a2547;color:#fdf8f0;justify-content:space-between}
+.cell-channels h3{font-size:clamp(24px,2.4vw,34px);font-weight:800;line-height:1;letter-spacing:-.02em}
+.cell-channels .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.cell-channels .chip{padding:8px 14px;background:rgba(255,255,255,.08);border-radius:100px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
+.cell-channels .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:#22c55e}
+.cell-channels .footer-sync{margin-top:18px;display:flex;align-items:center;gap:8px;font-size:13px;opacity:.65}
+
+/* WHATSAPP CELL */
+.cell-whatsapp{grid-column:span 4;grid-row:span 3;background:#dcf8c6;color:#1a2547;justify-content:space-between;position:relative}
+.cell-whatsapp .bubble{align-self:flex-start;background:#fff;border-radius:18px 18px 18px 4px;padding:10px 14px;font-size:13.5px;max-width:280px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:6px}
+.cell-whatsapp .bubble.me{align-self:flex-end;background:#1a2547;color:#fdf8f0;border-radius:18px 18px 4px 18px}
+.cell-whatsapp h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.cell-whatsapp .lab{color:#25d366}
+
+/* GRADIENT CELLS */
+.cell-grad{grid-column:span 4;grid-row:span 3;background:linear-gradient(135deg,#6b46ff,#E84A8C);color:#fdf8f0;justify-content:space-between;position:relative;overflow:hidden}
+.cell-grad::before{content:"";position:absolute;top:-50px;right:-50px;width:250px;height:250px;background:radial-gradient(circle,rgba(255,255,255,.2),transparent);filter:blur(30px)}
+.cell-grad h3{position:relative;font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.cell-grad .num{position:relative;font-family:'Instrument Serif',serif;font-size:80px;font-weight:400;letter-spacing:-.04em;line-height:.85;margin-top:auto}
+
+/* SMALL CELLS */
+.cell-sm{grid-column:span 4;grid-row:span 2;justify-content:space-between}
+.cell-sm h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1}
+
+.cell-ateliers{grid-column:span 5;grid-row:span 3;background:#FFE8D6;justify-content:space-between;position:relative;overflow:hidden}
+.cell-ateliers .row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(26,37,71,.12)}
+.cell-ateliers .row:last-child{border-bottom:none}
+.cell-ateliers .day{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#E84A8C;width:90px;flex-shrink:0}
+.cell-ateliers .topic{font-weight:600;font-size:14px}
+.cell-ateliers .badge{margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;background:#1a2547;color:#fdf8f0}
+.cell-ateliers .badge.full{background:rgba(26,37,71,.1);color:rgba(26,37,71,.5)}
+
+.cell-skool{grid-column:span 3;grid-row:span 3;background:#1a2547;color:#fdf8f0;justify-content:space-between}
+.cell-skool h3{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:36px;line-height:1;letter-spacing:-.02em;color:#FFB1C9}
+
+.cell-cta{grid-column:span 12;grid-row:span 3;background:#1a2547;color:#fdf8f0;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:40px}
+.cell-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(107,70,255,.3),transparent 60%);pointer-events:none}
+.cell-cta h2{position:relative;font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:14px}
+.cell-cta h2 i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FFB1C9}
+.cell-cta p{position:relative;font-size:17px;opacity:.85;margin-bottom:24px;max-width:50ch;text-align:center}
+.cell-cta .actions{position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cell-cta .btn-fill{padding:14px 24px;background:#fdf8f0;color:#1a2547;border-radius:100px;text-decoration:none;font-weight:600;font-size:15px}
+.cell-cta .btn-ghost{padding:14px 24px;background:rgba(255,255,255,.1);color:#fdf8f0;border-radius:100px;text-decoration:none;font-weight:600;font-size:15px}
+
+footer{padding:32px 0;text-align:center;font-size:12px;color:#1a2547;opacity:.5;font-weight:500}
+
+/* Responsive — passe les cells en pleine largeur sur mobile */
+@media(max-width:560px){
+.cell-hero,.cell-copilot,.cell-channels,.cell-ateliers,.cell-cta{grid-column:span 2}
+.cell-price,.cell-commission,.cell-whatsapp,.cell-grad,.cell-skool,.cell-sm{grid-column:span 2}
+.bento{grid-auto-rows:auto}
+.cell{min-height:200px}
+.cell-hero{min-height:520px}
+}
+
+.back-chooser{position:fixed;bottom:20px;left:20px;background:#1a2547;color:#fdf8f0;padding:10px 16px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:600;z-index:100}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-chooser">← Les styles</a>
+
+<header><div class="h-inner">
+    <div class="logo">guest<i>lucky</i> <sub style="font-size:10px;color:#6b46ff;margin-left:4px;font-style:italic">bento</sub></div>
+    <nav><ul><li><a href="#">Produit</a></li><li><a href="#">Tarifs</a></li><li><a href="#">Blog</a></li><li><a href="#">FAQ</a></li></ul></nav>
+    <a href="#" class="h-cta">Réserver une démo →</a>
+</div></header>
+
+<div class="bento">
+
+    <!-- Hero -->
+    <div class="cell cell-hero">
+        <div class="top"><span class="pulse"></span> Ateliers gratuits chaque jour</div>
+        <div>
+            <h1>Ta conciergerie<br>tourne <i>toute seule.</i><br>Tu encaisses.</h1>
+            <p class="lede">Channel Manager + IA voyageurs + Lucky Copilot + ERP. Tout dans un seul outil français à 9,99 €/logement, sans commission.</p>
+            <div class="actions">
+                <a href="#" class="btn-fill">Réserver une démo →</a>
+                <a href="#" class="btn-ghost">Mode Tranquille</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prix -->
+    <div class="cell cell-price">
+        <span class="lab">Pro · tout inclus</span>
+        <div class="big">9,99<sup>€</sup></div>
+        <p style="font-size:13px;opacity:.7;margin-top:4px">HT/mois/logement</p>
+    </div>
+
+    <!-- Commission -->
+    <div class="cell cell-commission">
+        <span class="lab">commission · sur tout</span>
+        <div class="big">0<span style="font-family:Instrument Serif;color:#FFB1C9">%</span></div>
+    </div>
+
+    <!-- App badge mini cell -->
+    <div class="cell lavender cell-sm">
+        <span class="lab">app iOS</span>
+        <h3>GuestLucky Team</h3>
+        <p style="margin-top:8px">Pour ton équipe ménage. Disponible App Store.</p>
+    </div>
+
+    <!-- Lucky Copilot terminal -->
+    <div class="cell cell-copilot">
+        <span class="lab">Lucky Copilot · IA agentique</span>
+        <h3>Tu parles. Il <i>agit</i> dans l'app.</h3>
+        <div class="term">
+            <div><span class="prompt">→</span> modifie les prix juillet à +18% sur tout</div>
+            <div class="out">  3 logements concernés · <span class="ok">appliqué</span></div>
+            <div><span class="prompt">→</span> crée incident plomberie T2 Marais</div>
+            <div class="out">  prestataire prévenu · <span class="ok">voyageur notifié</span></div>
+            <div><span class="prompt">→</span> revpar mai · capitole</div>
+            <div class="out">  <span class="ok">98,40 €/nuit</span> · +12% vs avril</div>
+        </div>
+    </div>
+
+    <!-- Channels -->
+    <div class="cell cell-channels">
+        <span class="lab">Channel Manager · temps réel</span>
+        <h3>Airbnb, Booking, Abritel<br>synchronisés en <i>&lt; 2s</i>.</h3>
+        <div>
+            <div class="chips">
+                <span class="chip">Airbnb</span>
+                <span class="chip">Booking</span>
+                <span class="chip">Abritel</span>
+                <span class="chip">Vrbo</span>
+                <span class="chip">Direct</span>
+            </div>
+            <div class="footer-sync">⟲ Dernière synchro · il y a 1 seconde</div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Ménage -->
+    <div class="cell cell-whatsapp">
+        <span class="lab">WhatsApp Ménage · finalisé</span>
+        <div>
+            <div class="bubble">📍 Mission ménage · Loft République<br>Code : 4827 · Avant 11h</div>
+            <div class="bubble me">Reçu, j'y suis dans 20 min ✓</div>
+            <div class="bubble">📸 2 photos reçues · validé</div>
+        </div>
+        <h3>Ton équipe dans WhatsApp. Zéro app.</h3>
+    </div>
+
+    <!-- Gradient time saved -->
+    <div class="cell cell-grad">
+        <span class="lab">temps gagné · par semaine</span>
+        <h3>Le Mode Tranquille te rend tes soirées.</h3>
+        <div class="num">15h</div>
+    </div>
+
+    <!-- Booking Engine -->
+    <div class="cell magenta cell-sm">
+        <span class="lab">Booking Engine</span>
+        <h3>Vendre en direct.<br>Sans commission Airbnb.</h3>
+    </div>
+
+    <!-- Ateliers -->
+    <div class="cell cell-ateliers">
+        <span class="lab">Ateliers gratuits · tous les jours</span>
+        <div>
+            <div class="row"><span class="day">Aujourd'hui</span><span class="topic">18:00 — Découverte de l'outil</span><span class="badge">3 places</span></div>
+            <div class="row"><span class="day">Demain</span><span class="topic">11:00 — Optimiser son parc</span><span class="badge">5 places</span></div>
+            <div class="row"><span class="day">Demain</span><span class="topic">18:00 — Q/R live</span><span class="badge full">Complet</span></div>
+        </div>
+        <h3 style="font-size:18px;margin-top:14px">+ 4 créneaux cette semaine</h3>
+    </div>
+
+    <!-- Skool -->
+    <div class="cell cell-skool">
+        <span class="lab">communauté</span>
+        <h3>Skool<br>GuestLucky</h3>
+        <p style="opacity:.7">Entraide, replays, ressources, événements.</p>
+    </div>
+
+    <!-- Lucky Cover -->
+    <div class="cell peach cell-sm">
+        <span class="lab">option · assurance</span>
+        <h3>Lucky Cover</h3>
+        <p style="margin-top:8px">Pensée pour la location courte durée.</p>
+    </div>
+
+    <!-- CTA final -->
+    <div class="cell cell-cta">
+        <h2>Deux logements <i>gratuits</i><br>à vie. Sans CB.</h2>
+        <p>Tu testes l'ensemble, tu valides, tu décides. La meilleure invitation qu'on puisse te faire.</p>
+        <div class="actions">
+            <a href="#" class="btn-fill">Réserver une démo →</a>
+            <a href="#" class="btn-ghost">Rejoindre Skool</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>© 2026 GuestLucky · Style "Bento Asymétrique" · Preview</footer>
+
+</body>
+</html>

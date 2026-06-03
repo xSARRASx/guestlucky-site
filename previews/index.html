@@ -3,45 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4 styles pour GuestLucky - choisis ta direction</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<title>Styles GuestLucky · brand colors préservées</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
-.container{max-width:1280px;margin:0 auto;padding:48px 24px}
+body{font-family:'Inter',sans-serif;background:#fdf8f0;color:#1a2547;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+.container{max-width:1320px;margin:0 auto;padding:48px 24px}
 
 .intro{text-align:center;padding:24px 0 56px}
-.intro .eb{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:13px;color:#a78bfa;background:rgba(167,139,250,.12);padding:6px 14px;border-radius:100px;margin-bottom:20px}
-.intro h1{font-size:clamp(36px,5.5vw,64px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:18px}
-.intro h1 .grad{background:linear-gradient(135deg,#a78bfa 0%,#f472b6 50%,#fb923c 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.intro p{color:#a0a0a8;font-size:18px;max-width:620px;margin:0 auto;line-height:1.55}
+.intro .eb{display:inline-block;font-size:12px;color:#6b46ff;background:rgba(107,70,255,.1);padding:6px 14px;border-radius:100px;margin-bottom:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.intro h1{font-size:clamp(36px,5.5vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:18px;color:#1a2547}
+.intro h1 i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#E84A8C}
+.intro p{color:#1a2547;opacity:.72;font-size:18px;max-width:680px;margin:0 auto;line-height:1.55}
 
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+/* SECTION DIVIDER */
+.section-title{font-weight:800;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#6b46ff;margin:32px 0 14px;padding-top:32px;border-top:1px solid rgba(26,37,71,.12)}
+.section-title:first-child{border-top:none;padding-top:0;margin-top:0}
+.section-sub{font-size:14px;color:#1a2547;opacity:.65;margin-bottom:20px;max-width:780px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px}
 @media(max-width:880px){.grid{grid-template-columns:1fr}}
 
-.card{position:relative;background:#141414;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.4);box-shadow:0 24px 60px -20px rgba(167,139,250,.3)}
-.card-preview{aspect-ratio:16/10;background:#000;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.card{position:relative;background:#fff;border:1px solid rgba(26,37,71,.1);border-radius:20px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;text-decoration:none;color:inherit;display:block}
+.card.featured{border-color:#6b46ff;box-shadow:0 12px 40px -10px rgba(107,70,255,.2)}
+.card:hover{transform:translateY(-4px);border-color:#6b46ff;box-shadow:0 20px 50px -10px rgba(107,70,255,.25)}
+.card-preview{aspect-ratio:16/10;background:#fdf8f0;position:relative;overflow:hidden;border-bottom:1px solid rgba(26,37,71,.08)}
 .card-frame{position:absolute;inset:0;transform:scale(.55);transform-origin:top left;width:182%;height:182%;pointer-events:none}
 .card-frame iframe{width:100%;height:100%;border:0;pointer-events:none}
-.card-num{position:absolute;top:14px;left:14px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;background:rgba(0,0,0,.7);color:#fff;padding:4px 10px;border-radius:6px;backdrop-filter:blur(8px);z-index:5}
-.card-tag{position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:6px;backdrop-filter:blur(8px);z-index:5}
-.tag-minimal{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2)}
-.tag-apple{background:rgba(110,110,255,.18);color:#bdc3ff;border:1px solid rgba(110,110,255,.3)}
+.card-num{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;background:rgba(26,37,71,.85);color:#fdf8f0;padding:4px 10px;border-radius:6px;backdrop-filter:blur(8px);z-index:5;letter-spacing:.04em}
+.card-tag{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:6px;backdrop-filter:blur(8px);z-index:5}
+.tag-edit{background:#1a2547;color:#fdf8f0}
+.tag-bento{background:#E84A8C;color:#fff}
+.tag-min{background:rgba(255,255,255,.85);color:#0a0a0a;border:1px solid rgba(0,0,0,.15)}
+.tag-apple{background:rgba(110,110,255,.18);color:#6b46ff;border:1px solid rgba(110,110,255,.3)}
 .tag-brut{background:#FF5DA2;color:#fff}
-.tag-tech{background:rgba(34,211,238,.18);color:#22d3ee;border:1px solid rgba(34,211,238,.3)}
+.tag-tech{background:rgba(34,211,238,.18);color:#0e7490;border:1px solid rgba(34,211,238,.3)}
 
 .card-body{padding:24px 26px}
-.card-body h3{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
-.card-body .vibe{font-size:14px;color:#a0a0a8;line-height:1.5;margin-bottom:16px}
+.card-body h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;color:#1a2547}
+.card-body h3 i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#E84A8C}
+.card-body .vibe{font-size:14px;color:#1a2547;opacity:.72;line-height:1.55;margin-bottom:16px}
 .card-pros{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.pro{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(255,255,255,.05);color:#a0a0a8;padding:4px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
-.card-cta{display:inline-flex;align-items:center;gap:8px;color:#a78bfa;text-decoration:none;font-weight:600;font-size:14px;transition:gap .15s}
-.card-cta:hover{gap:12px}
+.pro{font-size:11px;background:rgba(107,70,255,.08);color:#6b46ff;padding:4px 10px;border-radius:6px;font-weight:600;letter-spacing:.02em}
+.card-cta{display:inline-flex;align-items:center;gap:6px;color:#1a2547;text-decoration:none;font-weight:700;font-size:14px;transition:gap .15s}
+.card-cta:hover{gap:10px;color:#E84A8C}
 
-.note{margin-top:48px;padding:24px;background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.2);border-radius:14px;text-align:center}
-.note h4{font-size:15px;font-weight:700;margin-bottom:6px;color:#fff}
-.note p{font-size:14px;color:#a0a0a8;line-height:1.5}
+.note{margin-top:48px;padding:28px;background:#1a2547;color:#fdf8f0;border-radius:18px;text-align:center}
+.note h4{font-size:17px;font-weight:700;margin-bottom:8px}
+.note h4 i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#FFB1C9}
+.note p{font-size:14px;opacity:.85;line-height:1.55;max-width:680px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -49,94 +59,116 @@ body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;line-height:1.
 <div class="container">
 
     <div class="intro">
-        <span class="eb">4 PISTES VISUELLES · MÊME CONTENU</span>
-        <h1>4 directions visuelles<br>pour <span class="grad">GuestLucky</span></h1>
-        <p>Le même contenu (Channel Manager + 9,99 € + Lucky Copilot + ateliers) dans 4 styles radicalement différents. Clique sur celui qui te parle pour voir la home complète en grand.</p>
+        <span class="eb">6 directions · couleurs GuestLucky préservées</span>
+        <h1>Choisis ta <i>direction visuelle</i><br>pour GuestLucky.</h1>
+        <p>Tu trouvais que mes 4 premières propositions restaient dans les mêmes patterns "cards arrondies + grilles". Voici 2 directions qui cassent le moule, en gardant <strong>tes couleurs</strong> (navy + violet + magenta).</p>
     </div>
+
+    <h2 class="section-title">★ Les 2 nouvelles directions (recommandées)</h2>
+    <p class="section-sub">Tes couleurs, mais une mise en page totalement différente du SaaS classique. Plus distinctif, plus mémorable.</p>
 
     <div class="grid">
 
-        <a href="style-minimal.html" class="card" style="text-decoration:none;color:inherit">
+        <a href="style-editorial.html" class="card featured">
             <div class="card-preview">
-                <span class="card-num">01</span>
-                <span class="card-tag tag-minimal">MINIMAL</span>
-                <div class="card-frame"><iframe src="style-minimal.html" loading="lazy"></iframe></div>
+                <span class="card-num">★ 05</span>
+                <span class="card-tag tag-edit">ÉDITORIAL</span>
+                <div class="card-frame"><iframe src="style-editorial.html" loading="lazy"></iframe></div>
             </div>
             <div class="card-body">
-                <h3>Minimal Notion / Vercel</h3>
-                <p class="vibe">Noir &amp; blanc. Typographie géante. Beaucoup d'espace. Accents monospace. Un terminal Lucky Copilot interactif. Direct, pro, intemporel.</p>
+                <h3>Éditorial <i>magazine</i></h3>
+                <p class="vibe">Comme un magazine imprimé : grandes typo serif, photos plein cadre, colonnes de texte, drop caps, pull quotes. <strong>Zéro card, zéro pill</strong>. Vibe New Yorker / Monocle / publication haut de gamme. Le contraire absolu d'une page SaaS générique.</p>
                 <div class="card-pros">
-                    <span class="pro">✓ pro</span>
-                    <span class="pro">✓ intemporel</span>
-                    <span class="pro">✓ rapide à scanner</span>
-                    <span class="pro">✓ SaaS-grade</span>
+                    <span class="pro">distinctif</span>
+                    <span class="pro">éditorial</span>
+                    <span class="pro">premium</span>
+                    <span class="pro">se démarque</span>
+                    <span class="pro">brand chic</span>
                 </div>
-                <span class="card-cta">Voir la home complète →</span>
+                <span class="card-cta">Voir en grand →</span>
             </div>
         </a>
 
-        <a href="style-apple.html" class="card" style="text-decoration:none;color:inherit">
+        <a href="style-bento.html" class="card featured">
             <div class="card-preview">
-                <span class="card-num">02</span>
-                <span class="card-tag tag-apple">PREMIUM</span>
+                <span class="card-num">★ 06</span>
+                <span class="card-tag tag-bento">BENTO</span>
+                <div class="card-frame"><iframe src="style-bento.html" loading="lazy"></iframe></div>
+            </div>
+            <div class="card-body">
+                <h3>Bento <i>asymétrique</i></h3>
+                <p class="vibe">Mosaïque de blocs de tailles différentes — comme la page iPad Pro d'Apple. Mix navy / cream / violet / magenta. Chaque bloc raconte une fonctionnalité. <strong>Plus de colonnes verticales</strong>. Scroll réinventé. Très tape-à-l'œil.</p>
+                <div class="card-pros">
+                    <span class="pro">unique</span>
+                    <span class="pro">photo-friendly</span>
+                    <span class="pro">brand-fort</span>
+                    <span class="pro">mémorable</span>
+                    <span class="pro">tape-à-l'œil</span>
+                </div>
+                <span class="card-cta">Voir en grand →</span>
+            </div>
+        </a>
+
+    </div>
+
+    <h2 class="section-title">Les 4 premières propositions (plus classiques)</h2>
+    <p class="section-sub">Si jamais un de ces 4 te parle quand même, ils sont toujours dispos.</p>
+
+    <div class="grid">
+
+        <a href="style-minimal.html" class="card">
+            <div class="card-preview">
+                <span class="card-num">01</span><span class="card-tag tag-min">MINIMAL</span>
+                <div class="card-frame"><iframe src="style-minimal.html" loading="lazy"></iframe></div>
+            </div>
+            <div class="card-body">
+                <h3>Minimal Notion/Vercel</h3>
+                <p class="vibe">Noir &amp; blanc, typo géante, terminal interactif.</p>
+                <span class="card-cta">Voir en grand →</span>
+            </div>
+        </a>
+
+        <a href="style-apple.html" class="card">
+            <div class="card-preview">
+                <span class="card-num">02</span><span class="card-tag tag-apple">PREMIUM</span>
                 <div class="card-frame"><iframe src="style-apple.html" loading="lazy"></iframe></div>
             </div>
             <div class="card-body">
                 <h3>Apple-like Premium</h3>
-                <p class="vibe">Typo massives. Espaces énormes. Dégradés violet/rose. Sections sombres alternées. Cartes éditoriales. Tout respire le haut de gamme.</p>
-                <div class="card-pros">
-                    <span class="pro">✓ premium</span>
-                    <span class="pro">✓ photo-friendly</span>
-                    <span class="pro">✓ inspire confiance</span>
-                    <span class="pro">✓ wow effect</span>
-                </div>
-                <span class="card-cta">Voir la home complète →</span>
+                <p class="vibe">Typo massive, espaces énormes, dégradés violet/rose.</p>
+                <span class="card-cta">Voir en grand →</span>
             </div>
         </a>
 
-        <a href="style-brutalist.html" class="card" style="text-decoration:none;color:inherit">
+        <a href="style-brutalist.html" class="card">
             <div class="card-preview">
-                <span class="card-num">03</span>
-                <span class="card-tag tag-brut">BOLD</span>
+                <span class="card-num">03</span><span class="card-tag tag-brut">BOLD</span>
                 <div class="card-frame"><iframe src="style-brutalist.html" loading="lazy"></iframe></div>
             </div>
             <div class="card-body">
                 <h3>Brutalist Bold</h3>
-                <p class="vibe">Couleurs vives (rose / jaune / bleu / vert). Bordures épaisses noires. Ombres décalées. Stickers stickers. Fun, jeune, qui sort du lot.</p>
-                <div class="card-pros">
-                    <span class="pro">✓ mémorable</span>
-                    <span class="pro">✓ jeune</span>
-                    <span class="pro">✓ se démarque</span>
-                    <span class="pro">✓ joue avec la concurrence</span>
-                </div>
-                <span class="card-cta">Voir la home complète →</span>
+                <p class="vibe">Couleurs vives, bordures noires, ombres décalées, fun.</p>
+                <span class="card-cta">Voir en grand →</span>
             </div>
         </a>
 
-        <a href="style-dark-tech.html" class="card" style="text-decoration:none;color:inherit">
+        <a href="style-dark-tech.html" class="card">
             <div class="card-preview">
-                <span class="card-num">04</span>
-                <span class="card-tag tag-tech">DARK TECH</span>
+                <span class="card-num">04</span><span class="card-tag tag-tech">DARK</span>
                 <div class="card-frame"><iframe src="style-dark-tech.html" loading="lazy"></iframe></div>
             </div>
             <div class="card-body">
                 <h3>Dark Mode Tech</h3>
-                <p class="vibe">Fond noir. Néons violet / cyan / vert. Monospace. Terminal Lucky Copilot avec commandes shell. Vibe Cursor / Vercel / Linear dark.</p>
-                <div class="card-pros">
-                    <span class="pro">✓ tech-savvy</span>
-                    <span class="pro">✓ futuriste</span>
-                    <span class="pro">✓ premium aussi</span>
-                    <span class="pro">✓ unique sur LCD</span>
-                </div>
-                <span class="card-cta">Voir la home complète →</span>
+                <p class="vibe">Fond noir, néons, terminal shell, vibe Cursor.</p>
+                <span class="card-cta">Voir en grand →</span>
             </div>
         </a>
 
     </div>
 
     <div class="note">
-        <h4>Comment ça marche</h4>
-        <p>Chacune des 4 pages est une home complète, autonome, avec le même contenu GuestLucky.<br>Tu choisis ton préféré (ou un mix), et je refais TOUT le site dans ce style en quelques jours. Sans CMS, sans abonnement, hébergement PlanetHoster inchangé.</p>
+        <h4>Et après ? <i>On propage le style choisi</i></h4>
+        <p>Tu me dis lequel te parle (ou un mix : "le hero du #6 avec la pricing du #5"), et je refais TOUT le site dans ce style — home, tarifs, FAQ, pour-qui, fonctionnalités, blog, EN. Sans CMS, sans abonnement, hébergement PlanetHoster inchangé. Quelques jours de travail.</p>
     </div>
 
 </div>
