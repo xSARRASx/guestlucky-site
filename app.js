@@ -289,6 +289,128 @@
         });
     }
 
+    function initFloatingLogo() {
+        var container = document.querySelector(".floating-contact");
+        if (!container) return;
+        if (container.querySelector(".bubble.logo")) return;
+        var isEN = document.documentElement.lang === "en" || /\-en\.html$/.test(location.pathname);
+        var link = document.createElement("a");
+        link.href = isEN ? "index-en.html" : "index.html";
+        link.className = "bubble logo";
+        link.setAttribute("aria-label", "GuestLucky");
+        var img = document.createElement("img");
+        img.src = "https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-16-a-11.02.01.png";
+        img.alt = "GuestLucky";
+        img.width = 40;
+        img.height = 40;
+        link.appendChild(img);
+        container.insertBefore(link, container.firstChild);
+    }
+
+    function initWelcomeModal() {
+        if (document.getElementById("gl-welcome-modal")) return;
+        var isEN = document.documentElement.lang === "en" || /\-en\.html$/.test(location.pathname);
+        var content = isEN ? {
+            badge: "WE CAN HELP YOU",
+            title: 'Questions? Need a <span class="gl-accent">personalized offer</span>?',
+            body: "Book a call with a GuestLucky expert. 30 minutes by video to map out your setup, answer all your questions, and unlock a tailored offer for your business.",
+            cta: "Book a demo",
+            ctaHref: "demo-en.html",
+            decline: "No thanks, continue browsing",
+            footer: "Free · No commitment",
+            closeLabel: "Close"
+        } : {
+            badge: "ON PEUT T'AIDER",
+            title: 'Des questions ? Besoin d\'une <span class="gl-accent">offre personnalisée</span> ?',
+            body: "Prends rendez-vous avec un expert GuestLucky. 30 minutes en visio pour cadrer ton setup, répondre à toutes tes questions et débloquer une offre adaptée à ton activité.",
+            cta: "Prendre rendez-vous",
+            ctaHref: "demo.html",
+            decline: "Non merci, je continue ma visite",
+            footer: "Gratuit · Sans engagement",
+            closeLabel: "Fermer"
+        };
+        var STORAGE_KEY = "gl_welcome_modal_last_shown";
+        var COOLDOWN_MS = 3 * 60 * 1000;
+        var INITIAL_DELAY_MS = 20 * 1000;
+        function getLastShown() {
+            try { return parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0; } catch (e) { return 0; }
+        }
+        function markShown() {
+            try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (e) {}
+        }
+        function shouldShowNow() {
+            return (Date.now() - getLastShown()) >= COOLDOWN_MS;
+        }
+
+        var modal = document.createElement("div");
+        modal.id = "gl-welcome-modal";
+        modal.className = "gl-modal";
+        modal.setAttribute("role", "dialog");
+        modal.setAttribute("aria-modal", "true");
+        modal.setAttribute("aria-hidden", "true");
+        modal.innerHTML =
+            '<div class="gl-modal-overlay" data-gl-close></div>' +
+            '<div class="gl-modal-card" role="document">' +
+                '<button type="button" class="gl-modal-close" data-gl-close aria-label="' + content.closeLabel + '">' +
+                    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+                '</button>' +
+                '<span class="gl-modal-badge">' +
+                    '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.7 5.2L19 9l-5.3 1.7L12 16l-1.7-5.3L5 9l5.3-1.8z"/></svg>' +
+                    content.badge +
+                '</span>' +
+                '<h3 class="gl-modal-title">' + content.title + '</h3>' +
+                '<p class="gl-modal-body">' + content.body + '</p>' +
+                '<a href="' + content.ctaHref + '" class="gl-modal-cta">' +
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
+                    '<span>' + content.cta + '</span>' +
+                    '<span class="gl-modal-arrow">→</span>' +
+                '</a>' +
+                '<button type="button" class="gl-modal-decline" data-gl-close>' + content.decline + '</button>' +
+                '<p class="gl-modal-footer">' + content.footer + '</p>' +
+            '</div>';
+        document.body.appendChild(modal);
+
+        function openModal() {
+            modal.classList.add("show");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            markShown();
+        }
+        function closeModal() {
+            modal.classList.remove("show");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+        modal.querySelectorAll("[data-gl-close]").forEach(function (el) {
+            el.addEventListener("click", closeModal);
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+        });
+
+        if (shouldShowNow()) {
+            setTimeout(openModal, INITIAL_DELAY_MS);
+        }
+        setInterval(function () {
+            if (!modal.classList.contains("show") && shouldShowNow()) openModal();
+        }, 30 * 1000);
+    }
+
+    function initTranquilleToggle() {
+        var toggle = document.querySelector(".ap-toggle");
+        if (!toggle) return;
+        var board = document.querySelector(".ap-board");
+        if (!board) return;
+        toggle.addEventListener("click", function (e) {
+            var btn = e.target.closest(".ap-tg");
+            if (!btn) return;
+            toggle.querySelectorAll(".ap-tg").forEach(function (b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            var mode = btn.getAttribute("data-ap");
+            board.setAttribute("data-mode", mode);
+        });
+    }
+
     function init() {
         initPricing();
         initFAQ();
@@ -299,6 +421,9 @@
         initLangDropdown();
         initInterfaceTour();
         initShareCopy();
+        initTranquilleToggle();
+        // initFloatingLogo(); // disabled — bubble removed per Martin
+        initWelcomeModal();
         var yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
