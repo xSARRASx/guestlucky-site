@@ -146,6 +146,24 @@
 
         .article-end-cta { background: linear-gradient(135deg, #faf8ff, #fff); border: 2px solid var(--primary); border-radius: 18px; padding: 2rem; margin: 2rem 0; text-align: center; }
         .article-end-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+        /* FIX article-end-cta sur fond clair */
+        .article-end-cta { color: var(--ink-soft); }
+        .article-end-cta h3 { color: var(--ink) !important; }
+        .article-end-cta p { color: var(--ink-soft) !important; max-width: 50ch; margin-left: auto; margin-right: auto; }
+        .article-end-cta p strong { color: var(--ink) !important; }
+        .article-end-cta .btn-cta { background: linear-gradient(90deg, #6b46ff, #E84A8C) !important; color: #fff !important; padding: 0.85rem 1.5rem !important; border-radius: 999px !important; text-decoration: none !important; font-weight: 700 !important; display: inline-block !important; box-shadow: 0 8px 22px rgba(107,70,255,0.28) !important; border: none !important; }
+        .article-end-cta .btn-secondary { background: #fff !important; color: var(--primary) !important; border: 1.5px solid var(--primary) !important; padding: 0.85rem 1.5rem !important; border-radius: 999px !important; text-decoration: none !important; font-weight: 700 !important; display: inline-block !important; }
+        .article-end-cta .btn-secondary:hover { background: #faf8ff !important; }
+        /* Defensive inline pour cards related */
+        .article-related { margin: 3rem 0 1rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+        .article-related > h2 { text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--ink); margin-bottom: 1.5rem !important; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        @media (max-width: 720px) { .related-grid { grid-template-columns: 1fr; } }
+        .related-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; color: inherit; text-decoration: none; display: block; }
+        .related-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 12px 30px rgba(15,26,53,0.08); }
+        .related-tag { display: inline-block; background: rgba(107, 70, 255, 0.1); color: var(--primary-dark); padding: 0.22rem 0.65rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+        .related-card h3 { font-size: 1rem !important; font-weight: 700; color: var(--ink) !important; margin: 0 0 0.45rem !important; line-height: 1.3; }
+        .related-card p { color: var(--ink-soft); font-size: 0.88rem; line-height: 1.5; margin: 0; }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RXLNKH6L"></script>
@@ -393,14 +411,30 @@
                 </div>
             </div>
 
-            <h2>À lire aussi</h2>
-            <ul>
-                <li><a href="meilleurs-logiciels-conciergerie-airbnb-2026.html">Top 8 des meilleurs logiciels de conciergerie 2026</a></li>
-                <li><a href="combien-coute-conciergerie-airbnb-2026.html">Combien coûte vraiment une conciergerie Airbnb en 2026 ?</a></li>
-                <li><a href="booking-engine-vs-airbnb-economies-direct-2026.html">Booking Engine vs Airbnb : combien tu économises en direct ?</a></li>
-                <li><a href="mode-tranquille-automatiser-conciergerie-airbnb-2026.html">Mode Tranquille : automatiser 100 % de sa conciergerie</a></li>
-            </ul>
         </div>
+
+        <aside class="article-related">
+            <div class="container">
+                <h2>À lire ensuite</h2>
+                <div class="related-grid">
+                    <a href="meilleurs-logiciels-conciergerie-airbnb-2026.html" class="related-card">
+                        <span class="related-tag">Comparatif</span>
+                        <h3>Top 8 des meilleurs logiciels de conciergerie 2026</h3>
+                        <p>Tableau comparatif des 8 outils du marché et verdict objectif pour choisir.</p>
+                    </a>
+                    <a href="combien-coute-conciergerie-airbnb-2026.html" class="related-card">
+                        <span class="related-tag">Budget</span>
+                        <h3>Combien coûte vraiment une conciergerie Airbnb 2026 ?</h3>
+                        <p>Décortique chaque poste avec un calculateur interactif des coûts.</p>
+                    </a>
+                    <a href="booking-engine-vs-airbnb-economies-direct-2026.html" class="related-card">
+                        <span class="related-tag">Revenus</span>
+                        <h3>Booking Engine vs Airbnb : économies en direct ?</h3>
+                        <p>15,5 % récupérés par réservation. Calculateur d'économies inclus.</p>
+                    </a>
+                </div>
+            </div>
+        </aside>
     </article>
 </main>
 
