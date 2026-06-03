@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 1 · Minimal — GuestLucky preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#0a0a0a;background:#fff;line-height:1.5;font-size:16px;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+::selection{background:#000;color:#fff}
+
+/* HEADER */
+header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.06);z-index:50;padding:16px 0}
+.h-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.02em}
+.logo span{background:linear-gradient(90deg,#0a0a0a,#666);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;list-style:none;gap:32px}
+nav a{color:#666;text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
+nav a:hover{color:#0a0a0a}
+.h-cta{padding:8px 14px;background:#0a0a0a;color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;transition:opacity .15s}
+.h-cta:hover{opacity:.85}
+
+/* HERO */
+.hero{padding:120px 0 80px;text-align:center;position:relative}
+.eyebrow{display:inline-block;padding:6px 12px;background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.06);border-radius:100px;font-size:12px;font-weight:600;color:#555;margin-bottom:32px;letter-spacing:.02em}
+.eyebrow .pulse{display:inline-block;width:6px;height:6px;background:#22c55e;border-radius:50%;margin-right:6px;vertical-align:1px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-size:clamp(40px,7vw,84px);font-weight:800;line-height:1;letter-spacing:-.04em;margin:0 0 24px;max-width:900px;margin-left:auto;margin-right:auto}
+h1 .accent{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:.7em;display:inline-block;padding:0 8px;background:#0a0a0a;color:#fff;border-radius:8px;letter-spacing:-.02em;vertical-align:6px}
+.sub{font-size:20px;color:#555;max-width:580px;margin:0 auto 40px;line-height:1.5}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{padding:14px 22px;background:#0a0a0a;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.btn-secondary{padding:14px 22px;background:#fff;color:#0a0a0a;border:1px solid rgba(0,0,0,.12);border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:border-color .15s}
+.btn-secondary:hover{border-color:#0a0a0a}
+.hero-meta{margin-top:32px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;color:#888;font-size:13px}
+.hero-meta span::before{content:"";display:inline-block;width:4px;height:4px;background:#0a0a0a;border-radius:50%;margin-right:8px;vertical-align:2px}
+
+/* TERMINAL MOCKUP */
+.terminal{max-width:780px;margin:80px auto 0;background:#0a0a0a;border-radius:14px;padding:0;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);overflow:hidden}
+.term-bar{padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.08)}
+.term-bar .dot{width:11px;height:11px;border-radius:50%;background:#27c93f}
+.term-bar .dot:nth-child(2){background:#ffbd2e}
+.term-bar .dot:nth-child(3){background:#ff5f56}
+.term-bar .title{margin-left:14px;color:#888;font-size:12px;font-family:'JetBrains Mono',monospace}
+.term-body{padding:24px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#e4e4e4;line-height:1.8;text-align:left}
+.term-prompt{color:#22c55e}
+.term-input{color:#fff}
+.term-out{color:#888}
+.term-highlight{color:#a78bfa}
+.term-cursor{display:inline-block;width:7px;height:14px;background:#22c55e;animation:blink 1s infinite;vertical-align:-2px;margin-left:2px}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+
+/* SECTIONS */
+section{padding:100px 0}
+.section-eb{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.03em;margin-bottom:16px;max-width:680px;line-height:1.1}
+.section-sub{color:#555;font-size:17px;max-width:580px;line-height:1.5}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
+@media(max-width:780px){.features{grid-template-columns:1fr}}
+.feature{padding:32px;background:#fafafa;border:1px solid rgba(0,0,0,.06);border-radius:14px;transition:transform .2s,border-color .2s}
+.feature:hover{transform:translateY(-3px);border-color:rgba(0,0,0,.18)}
+.feature-icon{width:36px;height:36px;background:#0a0a0a;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px}
+.feature h3{font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.feature p{font-size:14px;color:#666;line-height:1.55}
+
+/* PRICING */
+.pricing-wrap{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:880px){.pricing-wrap{grid-template-columns:1fr}}
+.price-card{padding:36px 28px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;position:relative;transition:border-color .2s}
+.price-card.featured{background:#0a0a0a;color:#fff;border-color:#0a0a0a;transform:scale(1.03)}
+.price-card.featured .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#a78bfa,#f472b6);color:#fff;padding:5px 12px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.04em}
+.price-name{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#666;margin-bottom:16px}
+.price-card.featured .price-name{color:rgba(255,255,255,.6)}
+.price-amount{font-size:48px;font-weight:800;letter-spacing:-.04em;margin-bottom:4px}
+.price-period{color:#888;font-size:13px;margin-bottom:24px}
+.price-card.featured .price-period{color:rgba(255,255,255,.6)}
+.price-features{list-style:none;font-size:14px;line-height:2.1;color:#555;margin-bottom:24px}
+.price-card.featured .price-features{color:rgba(255,255,255,.85)}
+.price-features li::before{content:"→ ";color:#0a0a0a;font-family:'JetBrains Mono',monospace;font-weight:700}
+.price-card.featured .price-features li::before{color:#a78bfa}
+.price-cta{display:block;text-align:center;padding:12px;background:#0a0a0a;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;transition:opacity .15s}
+.price-card.featured .price-cta{background:#fff;color:#0a0a0a}
+.price-cta:hover{opacity:.85}
+
+/* CTA FINAL */
+.cta-final{padding:120px 0;text-align:center;background:#0a0a0a;color:#fff;border-radius:24px;margin:60px auto;max-width:1100px;position:relative;overflow:hidden}
+.cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(167,139,250,.2),transparent 50%),radial-gradient(circle at 70% 50%,rgba(244,114,182,.2),transparent 50%);pointer-events:none}
+.cta-final h2{position:relative;font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-.03em;margin-bottom:16px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.05}
+.cta-final p{position:relative;color:rgba(255,255,255,.7);font-size:18px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-final-ctas{position:relative;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-white{padding:14px 22px;background:#fff;color:#0a0a0a;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px}
+.btn-ghost{padding:14px 22px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:10px;text-decoration:none;font-weight:600;font-size:15px}
+
+/* FOOTER */
+footer{padding:60px 0 40px;border-top:1px solid rgba(0,0,0,.06);text-align:center;color:#888;font-size:13px}
+
+/* CHOOSER LINK */
+.back-chooser{position:fixed;bottom:20px;left:20px;background:#0a0a0a;color:#fff;padding:10px 16px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:100}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-chooser">← Voir les 4 styles</a>
+
+<header>
+    <div class="container h-inner">
+        <div class="logo">guest<span>lucky</span><sub style="font-size:10px;color:#888;margin-left:4px">v1·minimal</sub></div>
+        <nav><ul><li><a href="#">Produit</a></li><li><a href="#">Tarifs</a></li><li><a href="#">Blog</a></li><li><a href="#">FAQ</a></li></ul></nav>
+        <a href="#" class="h-cta">Réserver une démo →</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="eyebrow"><span class="pulse"></span>Ateliers gratuits chaque jour · Communauté Skool</div>
+        <h1>Ta conciergerie<br>tourne <span class="accent">toute seule</span>.</h1>
+        <p class="sub">Channel Manager, IA voyageurs, Lucky Copilot et ERP complet. Tout dans un seul outil français à 9,99 €/logement. Sans commission. Sans engagement.</p>
+        <div class="hero-ctas">
+            <a href="#" class="btn-primary">Réserver une démo →</a>
+            <a href="#" class="btn-secondary">Voir le Mode Tranquille</a>
+        </div>
+        <div class="hero-meta">
+            <span>0 % commission</span>
+            <span>Hébergé en France</span>
+            <span>Note 4,8/5 · 42 conciergeries</span>
+        </div>
+
+        <div class="terminal">
+            <div class="term-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">lucky-copilot ~ tu parles, il agit</span></div>
+            <div class="term-body">
+                <div><span class="term-prompt">→</span> <span class="term-input">crée une annonce T2 Capitole, 90€/nuit, 2 voyageurs max</span></div>
+                <div class="term-out">  Annonce créée. Publication Airbnb dans 30s.</div>
+                <div><span class="term-prompt">→</span> <span class="term-input">modifie tous mes prix de juillet à +18%</span></div>
+                <div class="term-out">  3 logements concernés. <span class="term-highlight">Validé.</span></div>
+                <div><span class="term-prompt">→</span> <span class="term-input">quel est mon RevPAR de mai sur le Marais ?</span></div>
+                <div class="term-out">  <span class="term-highlight">98,40 €/nuit</span> (+12% vs avril)</div>
+                <div><span class="term-prompt">→</span><span class="term-cursor"></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="padding:60px 0 100px">
+    <div class="container">
+        <div class="section-eb">// Fonctionnalités</div>
+        <h2 class="section-title">Six briques. Un seul outil.<br>Zéro friction.</h2>
+        <p class="section-sub">Tout ce dont ta conciergerie a besoin, dans une stack pensée pour la performance et la transparence.</p>
+        <div class="features">
+            <div class="feature"><div class="feature-icon">CM</div><h3>Channel Manager</h3><p>Synchro temps réel Airbnb, Booking, Abritel. Anti double-réservation garantie sous 2 secondes.</p></div>
+            <div class="feature"><div class="feature-icon">IA</div><h3>IA voyageurs</h3><p>Réponses auto 24/7, dans toutes les langues, dans ton ton. 80-90 % des messages traités sans toi.</p></div>
+            <div class="feature"><div class="feature-icon">LC</div><h3>Lucky Copilot</h3><p>L'IA agentique qui agit dans l'app. Tu parles, elle fait. Unique sur le marché en 2026.</p></div>
+            <div class="feature"><div class="feature-icon">WA</div><h3>WhatsApp Ménage</h3><p>Ton équipe ménage dans WhatsApp. Missions, photos, validation. Aucune app à installer.</p></div>
+            <div class="feature"><div class="feature-icon">BE</div><h3>Booking Engine</h3><p>Mini-site fourni. Tes voyageurs réservent en direct, 0 % commission, paiement Stripe natif.</p></div>
+            <div class="feature"><div class="feature-icon">$</div><h3>ERP complet</h3><p>Facturation propriétaires, planning, incidents, livret d'accueil. Tout inclus à 9,99 €.</p></div>
+        </div>
+    </div>
+</section>
+
+<section style="padding:60px 0 100px;background:#fafafa">
+    <div class="container">
+        <div class="section-eb">// Tarifs</div>
+        <h2 class="section-title">Un prix. Tout inclus.<br>Zéro frais caché.</h2>
+        <p class="section-sub">Pas de modules à débloquer. Pas de commission. Tu paies ce que tu vois.</p>
+        <div class="pricing-wrap">
+            <div class="price-card">
+                <div class="price-name">Gratuit</div>
+                <div class="price-amount">0 €</div>
+                <div class="price-period">jusqu'à 2 logements · à vie</div>
+                <ul class="price-features"><li>ERP basique</li><li>Sans engagement</li><li>Sans carte bancaire</li></ul>
+                <a href="#" class="price-cta">Commencer</a>
+            </div>
+            <div class="price-card featured">
+                <span class="badge">LE PLUS CHOISI</span>
+                <div class="price-name">Pro</div>
+                <div class="price-amount">9,99 €</div>
+                <div class="price-period">HT/mois/logement · tout inclus</div>
+                <ul class="price-features"><li>Channel Manager</li><li>IA voyageurs + Lucky Copilot</li><li>Booking Engine</li><li>ERP complet</li><li>0 % commission</li></ul>
+                <a href="#" class="price-cta">Démarrer Pro</a>
+            </div>
+            <div class="price-card">
+                <div class="price-name">Personnalisé</div>
+                <div class="price-amount">Devis</div>
+                <div class="price-period">50+ logements · tarif négocié</div>
+                <ul class="price-features"><li>Account manager dédié</li><li>Onboarding clé en main</li><li>Support prioritaire</li></ul>
+                <a href="#" class="price-cta">Nous contacter</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cta-final">
+    <h2>Ta conciergerie,<br>en autopilote dans 2 heures.</h2>
+    <p>2 logements gratuits à vie. 0 commission. 0 engagement. Tu testes, tu décides.</p>
+    <div class="cta-final-ctas">
+        <a href="#" class="btn-white">Réserver ma démo →</a>
+        <a href="#" class="btn-ghost">Rejoindre la communauté Skool</a>
+    </div>
+</div>
+
+<footer><div class="container">© 2026 GuestLucky · Style "Minimal" — preview · Fait avec ❤︎ à Toulouse</div></footer>
+
+</body>
+</html>
