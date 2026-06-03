@@ -150,8 +150,15 @@
     function initWebinarFloat() {
         var card = document.querySelector("[data-webinar-float]");
         if (!card) return;
+        // Dismiss expire après 7 jours (nouveau key pour invalider les anciennes fermetures permanentes)
         var dismissed = null;
-        try { dismissed = localStorage.getItem("guestlucky_webinar_dismissed"); } catch (e) {}
+        try {
+            var raw = localStorage.getItem("guestlucky_webinar_dismissed_at");
+            if (raw) {
+                var elapsed = Date.now() - parseInt(raw, 10);
+                if (elapsed < 7 * 24 * 60 * 60 * 1000) dismissed = true;
+            }
+        } catch (e) {}
         if (!dismissed) {
             setTimeout(function () { card.classList.add("show"); }, 1500);
         }
@@ -159,7 +166,7 @@
         if (closeBtn) {
             closeBtn.addEventListener("click", function () {
                 card.classList.remove("show");
-                try { localStorage.setItem("guestlucky_webinar_dismissed", "1"); } catch (e) {}
+                try { localStorage.setItem("guestlucky_webinar_dismissed_at", Date.now().toString()); } catch (e) {}
             });
         }
     }
