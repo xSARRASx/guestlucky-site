@@ -70,8 +70,23 @@
         }
         .blog-card-link { display: contents; color: inherit; text-decoration: none; }
         .blog-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(15, 26, 53, 0.14); }
-        .blog-card.blog-card-soon { opacity: 0.85; cursor: default; }
+        .blog-card.blog-card-soon { cursor: default; position: relative; }
         .blog-card.blog-card-soon:hover { transform: none; box-shadow: 0 8px 30px rgba(15, 26, 53, 0.08); }
+        .blog-card.blog-card-soon .blog-card-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 37, 71, 0.55) 0%, rgba(107, 70, 255, 0.4) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .blog-card.blog-card-soon .blog-card-tag.soon {
+            background: linear-gradient(90deg, #E84A8C, #ff7eb1);
+            color: #fff;
+            font-weight: 800;
+            box-shadow: 0 4px 14px rgba(232, 74, 140, 0.45);
+            z-index: 2;
+        }
         .blog-card-featured { grid-column: span 2; }
         .blog-card-featured .blog-card-link {
             display: grid !important;
@@ -263,60 +278,71 @@
                     </a>
                 </article>
 
-                <!-- ARTICLE 2 : à venir -->
+                <!-- ARTICLE : à venir — Budget conciergerie -->
                 <article class="blog-card blog-card-soon">
                     <div class="blog-card-img">
                         <span class="blog-card-tag soon">À venir</span>
-                        <div class="blog-card-img-placeholder">
-                            <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&amp;h=560&amp;fit=crop&amp;q=80" alt="Budget conciergerie Airbnb 2026" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-card-meta">
                             <time>Bientôt</time>
                             <span>·</span>
-                            <span>Conformité</span>
+                            <span>Budget</span>
                         </div>
-                        <h2>Facturation électronique 2026 : ce qui change pour les conciergeries</h2>
-                        <p>Le calendrier officiel, les nouvelles obligations, les sanctions, les outils pour s'y conformer sans paniquer. On démêle tout.</p>
+                        <h2>Combien coûte vraiment une conciergerie Airbnb en 2026 ? (avec calculateur)</h2>
+                        <p>Logiciels, ménages, IA, marketing, assurance : le vrai budget mensuel pour gérer une conciergerie pro. Calculateur interactif inclus pour ton parc.</p>
                     </div>
                 </article>
 
-                <!-- ARTICLE 3 : à venir -->
+                <!-- ARTICLE : à venir — Mode Tranquille -->
                 <article class="blog-card blog-card-soon">
                     <div class="blog-card-img">
                         <span class="blog-card-tag soon">À venir</span>
-                        <div class="blog-card-img-placeholder">
-                            <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&amp;h=560&amp;fit=crop&amp;q=80" alt="Mode Tranquille — automatiser sa conciergerie GuestLucky" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-card-meta">
                             <time>Bientôt</time>
                             <span>·</span>
-                            <span>Stratégie</span>
+                            <span>Automatisation</span>
                         </div>
-                        <h2>5 erreurs à éviter quand on lance sa conciergerie Airbnb</h2>
-                        <p>Les pièges classiques qui coûtent cher (en euros et en réputation), et comment les contourner dès le départ.</p>
+                        <h2>Mode Tranquille : la méthode pour automatiser 100 % de ta conciergerie</h2>
+                        <p>5 agents IA, WhatsApp Ménage, IA voyageurs 24/7, Lucky Copilot : le playbook complet pour laisser ta conciergerie tourner sans toi, vraiment.</p>
                     </div>
                 </article>
 
-                <!-- ARTICLE 4 : à venir -->
+                <!-- ARTICLE : à venir — Booking Engine -->
                 <article class="blog-card blog-card-soon">
                     <div class="blog-card-img">
                         <span class="blog-card-tag soon">À venir</span>
-                        <div class="blog-card-img-placeholder">
-                            <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&amp;h=560&amp;fit=crop&amp;q=80" alt="Booking Engine : économies sur la commission Airbnb" loading="lazy">
                     </div>
                     <div class="blog-card-body">
                         <div class="blog-card-meta">
                             <time>Bientôt</time>
                             <span>·</span>
-                            <span>IA & automatisation</span>
+                            <span>Revenus</span>
                         </div>
-                        <h2>Messagerie IA voyageurs : ce qu'elle peut (et ne peut pas) faire en 2026</h2>
-                        <p>L'IA répond pour vous aux voyageurs Airbnb : comment ça marche, quel ton choisir, et comment garder le contrôle.</p>
+                        <h2>Booking Engine vs Airbnb : combien tu économises vraiment en vendant en direct ?</h2>
+                        <p>Airbnb prend 15,5 % en 2026. Avec un Booking Engine et un mini-site, tu récupères tout. Méthode complète + calcul d'économies pour un parc de 5 logements.</p>
+                    </div>
+                </article>
+
+                <!-- ARTICLE : à venir — KPIs -->
+                <article class="blog-card blog-card-soon">
+                    <div class="blog-card-img">
+                        <span class="blog-card-tag soon">À venir</span>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&amp;h=560&amp;fit=crop&amp;q=80" alt="KPIs location courte durée : RevPAR, taux d'occupation, ADR" loading="lazy">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <time>Bientôt</time>
+                            <span>·</span>
+                            <span>Performance</span>
+                        </div>
+                        <h2>10 KPIs incontournables en location courte durée (RevPAR, TO, ADR…)</h2>
+                        <p>Les indicateurs que tout gestionnaire pro doit suivre pour piloter sa conciergerie comme un opérateur hôtelier. Avec les valeurs cibles 2026.</p>
                     </div>
                 </article>
 
