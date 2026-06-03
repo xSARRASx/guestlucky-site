@@ -330,7 +330,8 @@
             closeLabel: "Fermer"
         };
         var STORAGE_KEY = "gl_welcome_modal_last_shown";
-        var COOLDOWN_MS = 4 * 60 * 1000;
+        var COOLDOWN_MS = 3 * 60 * 1000;
+        var INITIAL_DELAY_MS = 20 * 1000;
         function getLastShown() {
             try { return parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0; } catch (e) { return 0; }
         }
@@ -388,7 +389,7 @@
         });
 
         if (shouldShowNow()) {
-            setTimeout(openModal, 2000);
+            setTimeout(openModal, INITIAL_DELAY_MS);
         }
         setInterval(function () {
             if (!modal.classList.contains("show") && shouldShowNow()) openModal();

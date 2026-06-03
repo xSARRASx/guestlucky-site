@@ -66,7 +66,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=16">
+    <link rel="stylesheet" href="style.css?v=17">
 <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RXLNKH6L"></script>
     <script>
@@ -192,7 +192,9 @@
 .tv-quote{color:#0F1A35;font-size:1.05rem;line-height:1.55;margin:0;flex:1}
 .tv-author{display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid rgba(15,26,53,.06)}
 .tv-card.featured .tv-author{border-top-color:rgba(255,255,255,.1)}
-.tv-avatar{width:44px;height:44px;border-radius:50%;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tv-avatar{width:46px;height:46px;border-radius:50%;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:2px solid rgba(255,255,255,.85);box-shadow:0 4px 12px -4px rgba(15,26,53,.25);background:linear-gradient(135deg,#9B6FFF,#6b46ff)}
+.tv-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.tv-card.featured .tv-avatar{border-color:rgba(255,255,255,.95);box-shadow:0 6px 18px -4px rgba(0,0,0,.4)}
 .tv-name{font-weight:700;font-size:14.5px;color:#0F1A35}
 .tv-role{font-size:12.5px;color:#6b6b80}
 .tv-badge{margin-left:auto;padding:5px 11px;background:rgba(255,177,201,.2);color:#FFB1C9;border-radius:100px;font-size:11px;font-weight:600}
@@ -1119,7 +1121,7 @@
                     <div class="tv-stars">★★★★★</div>
                     <p class="tv-quote">"We migrated our entire concierge business to GuestLucky in one weekend. No more double-bookings. The AI copilot saves me an hour every morning on incident triage."</p>
                     <div class="tv-author">
-                        <div class="tv-avatar" style="background:linear-gradient(135deg,#9B6FFF,#6b46ff);">JM</div>
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Julien M." loading="lazy" width="46" height="46"></div>
                         <div>
                             <div class="tv-name">Julien M.</div>
                             <div class="tv-role">Concierge Sud · 12 properties</div>
@@ -1130,9 +1132,21 @@
 
                 <article class="tv-card">
                     <div class="tv-stars">★★★★★</div>
+                    <p class="tv-quote">"I used to be on <strong>Superhôte</strong>. I was paying ~€400/month for 7 properties, and the Channel Manager was a paid add-on. With GuestLucky: €9.99 × 7 and <strong>EVERYTHING is included</strong>. I cut my bill by <strong>4×</strong>."</p>
+                    <div class="tv-author">
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Camille B." loading="lazy" width="46" height="46"></div>
+                        <div>
+                            <div class="tv-name">Camille B.</div>
+                            <div class="tv-role">Concierge · 7 properties · Bordeaux</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tv-card">
+                    <div class="tv-stars">★★★★★</div>
                     <p class="tv-quote">"0% commission is honest. Deposit and services go straight into my pocket, not Airbnb's. On 5 apartments I gained +€300/month."</p>
                     <div class="tv-author">
-                        <div class="tv-avatar" style="background:linear-gradient(135deg,#FFB1C9,#E84A8C);">CL</div>
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Claire L." loading="lazy" width="46" height="46"></div>
                         <div>
                             <div class="tv-name">Claire L.</div>
                             <div class="tv-role">Sub-letter · 5 properties</div>
@@ -1144,7 +1158,7 @@
                     <div class="tv-stars">★★★★★</div>
                     <p class="tv-quote">"Lucky Clean freed my cleaning teams. They do everything on WhatsApp, I never call anyone anymore. Photos land in the right folder automatically."</p>
                     <div class="tv-author">
-                        <div class="tv-avatar" style="background:linear-gradient(135deg,#6BCB77,#1FA34A);">SD</div>
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Sébastien D." loading="lazy" width="46" height="46"></div>
                         <div>
                             <div class="tv-name">Sébastien D.</div>
                             <div class="tv-role">Concierge · 22 properties</div>
@@ -1156,7 +1170,7 @@
                     <div class="tv-stars">★★★★★</div>
                     <p class="tv-quote">"As an investor managing 8 units remotely, the owner portal saved me from chasing my manager. I see my revenue live."</p>
                     <div class="tv-author">
-                        <div class="tv-avatar" style="background:linear-gradient(135deg,#FFD58A,#F39C2A);">TR</div>
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Thomas R." loading="lazy" width="46" height="46"></div>
                         <div>
                             <div class="tv-name">Thomas R.</div>
                             <div class="tv-role">STR investor · 8 properties</div>
@@ -1168,7 +1182,7 @@
                     <div class="tv-stars">★★★★★</div>
                     <p class="tv-quote">"The 2 free properties for life let me test risk-free. 4 months later I went Pro with 9 units and I'm never going back."</p>
                     <div class="tv-author">
-                        <div class="tv-avatar" style="background:linear-gradient(135deg,#5EC6FF,#1F8FE5);">AM</div>
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Aurélie M." loading="lazy" width="46" height="46"></div>
                         <div>
                             <div class="tv-name">Aurélie M.</div>
                             <div class="tv-role">Boutique concierge · 9 properties</div>
@@ -1180,7 +1194,7 @@
                     <div class="tv-stars">★★★★★</div>
                     <p class="tv-quote">"Their team replies in 2 min on WhatsApp. For a tool this complete at this price, it's insane. We switched in a weekend without looking back."</p>
                     <div class="tv-author">
-                        <div class="tv-avatar" style="background:linear-gradient(135deg,#FF9F8E,#E84A8C);">PB</div>
+                        <div class="tv-avatar"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Pauline B." loading="lazy" width="46" height="46"></div>
                         <div>
                             <div class="tv-name">Pauline B.</div>
                             <div class="tv-role">Concierge · 7 properties</div>
