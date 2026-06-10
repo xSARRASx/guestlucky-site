@@ -1,10 +1,10 @@
 <?php
 /**
- * GuestLucky — Notification d'inscription au webinaire
+ * GuestLucky - Notification d'inscription au webinaire
  *
  * L'inscription réelle sur WebinarJam est faite par le NAVIGATEUR du visiteur,
  * qui est redirigé vers l'URL 1-click WebinarJam (voir webinaire.html). Une URL
- * 1-click ne crée une inscription que lorsqu'un vrai navigateur l'ouvre — un
+ * 1-click ne crée une inscription que lorsqu'un vrai navigateur l'ouvre - un
  * appel curl côté serveur ne l'enregistre pas.
  *
  * Ce script se contente donc d'envoyer une notification email à l'admin pour

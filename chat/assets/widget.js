@@ -1,5 +1,5 @@
 /* =============================================================================
-   Lucky Copilot Vitrine — widget JavaScript
+   Lucky Copilot Vitrine - widget JavaScript
    A inclure sur les pages de guestlucky.com :
      <link rel="stylesheet" href="/chat/assets/widget.css">
      <script src="/chat/assets/widget.js" data-chat-url="/chat/chat.php"></script>
