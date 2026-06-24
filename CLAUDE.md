@@ -65,8 +65,8 @@ Ne JAMAIS proposer email comme canal de support. L'email `contact@guestlucky.com
 
 ## 📅 Réservation démo
 
-URL directe iClosed (FORMULAIRE) : `https://app.iclosed.io/e/lesousloueur/guestlucky`
-Toujours linker DIRECTEMENT vers cette URL pour les CTA "Réserver une démo", pas via la home.
+URL prise de RDV : `https://www.guestlucky.com/rdv/site`
+Toujours linker DIRECTEMENT vers cette URL pour les CTA "Réserver une démo" / "Réserver un appel". Exception : les CTA WhatsApp (`https://wa.me/33759944305`) restent inchangés.
 
 ## ⛔ Mots BANNIS publiquement (ne JAMAIS écrire dans le site)
 

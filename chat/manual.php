@@ -105,7 +105,7 @@ connexions OTA. Aucun engagement, paiement unique.
 5. Profiter de l'app
 Pour parler a un conseiller avant de se lancer ou demander une demo :
 Lien d'appel decouverte (15 minutes, gratuit, sans engagement) :
-https://app.iclosed.io/e/lesousloueur/guestlucky
+https://www.guestlucky.com/rdv/site
 # QUESTIONS FREQUENTES
 ## Y a-t-il un engagement ?
 Non, aucun engagement. Sans engagement, sans duree minimum. Tu peux annuler
@@ -161,7 +161,7 @@ Oui, on a un programme de recommandation. Contacte le support ou prends RDV
 via le lien iClosed pour qu'on t'en parle.
 # COMMENT CONTACTER GUESTLUCKY
 - Site : https://guestlucky.com
-- Appel decouverte (gratuit, 15 min) : https://app.iclosed.io/e/lesousloueur/guestlucky
+- Appel decouverte (gratuit, 15 min) : https://www.guestlucky.com/rdv/site
 - Email : via le formulaire de contact sur guestlucky.com
 # CE QU'IL FAUT EVITER DE FAIRE EN TANT QUE COPILOTE VITRINE
 - Ne pas pretendre avoir acces au compte du visiteur (on ne sait rien de lui)
