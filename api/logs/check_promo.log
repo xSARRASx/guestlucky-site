@@ -1,0 +1,6 @@
+[2026-06-10 16:40:13] START
+[2026-06-10 16:40:14] ENV token=patYRHbITQ base=appaugs4hsh3iObQG table=tbl8gWDQGWqQuDn5A
+[2026-06-10 16:40:14] INPUT code=LESOUSLOUEURGLK0 type_id=onboarding
+[2026-06-10 16:40:14] AIRTABLE code=200 records=1 preview={"records":[{"id":"recJtI1s6M2w6YVGB","createdTime":"2026-05-24T10:08:08.000Z","fields":{"Code":"LESOUSLOUEURGLK0","MeetingTypes":["recvYjT12Wkv1uuot"],"UsedCount":1,"MeetingTypeId":["onboarding"],"Ex
+[2026-06-10 16:40:14] TYPES allowed=["onboarding"] requested=onboarding
+[2026-06-10 16:40:15] VALID code=LESOUSLOUEURGLK0

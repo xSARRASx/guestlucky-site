@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réserver une démo — GuestLucky</title>
+  <meta name="description" content="Planifiez votre rendez-vous avec l'équipe GuestLucky. Démo gratuite, 30 min, sans engagement.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:#1a2547; --blue-light:#2d3f7a; --blue-dim:#0F1A35;
+      --green:#6b46ff; --orange:#E84A8C; --red:#ef4444;
+      --dark:#f6f3ff; --dark2:#ede9ff; --dark3:#e0d9ff;
+      --card:#ffffff; --border:#d8d0f5; --border2:#b8aee8;
+      --muted:#6b6b80; --text:#0f0f1f; --white:#ffffff;
+      --font:'Inter',sans-serif; --mono:'DM Mono',monospace;
+    }
+    body { font-family:var(--font); background:#f6f3ff; color:var(--text); min-height:100vh; overflow-x:hidden; }
+    body::before { content:''; position:fixed; inset:0; background:radial-gradient(ellipse at 20% 0%, rgba(26,37,71,.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(76,175,130,.05) 0%, transparent 60%); pointer-events:none; z-index:0; }
+    body::after { display:none; }
+    #root { position:relative; z-index:1; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#eef2ff; } ::-webkit-scrollbar-thumb { background:#c5cfe8; border-radius:3px; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes pulse  { 0%,100%{opacity:1} 50%{opacity:.5} }
+    @keyframes spin   { to{transform:rotate(360deg)} }
+    @keyframes scalePop { 0%{transform:scale(.85);opacity:0} 70%{transform:scale(1.04)} 100%{transform:scale(1);opacity:1} }
+    .fade-up{animation:fadeUp .35s ease both} .fade-in{animation:fadeIn .25s ease both} .scale-pop{animation:scalePop .4s cubic-bezier(.34,1.56,.64,1) both}
+    .d1{animation-delay:.05s} .d2{animation-delay:.10s} .d3{animation-delay:.15s} .d4{animation-delay:.20s}
+    input,select,textarea,button{font-family:var(--font)}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)!important;box-shadow:0 0 0 3px rgba(30,102,245,.15)}
+    a{color:var(--blue)}
+    .spinner{width:18px;height:18px;border:2px solid rgba(26,37,71,.15);border-top-color:#1a2547;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+const WEBHOOK_URL      = '/api/booking_webhook.php';
+const WEBHOOK_SECRET   = '9cd47336c03e3078aa62f10c2a8ed9797d488760e877bf37c3bf1d2444865720';
+const CONFIG_URL       = '/api/get_agenda_config.php';
+const AVAILABILITY_URL = '/api/get_availability.php';
+const AUTOSAVE_URL     = '/api/autosave_contact.php';
+
+// ─── UTM depuis URL ────────────────────────────────────────────────────────────
+function getUtmParams() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_source:   p.get('utm_source')   || '',
+    utm_medium:   p.get('utm_medium')   || '',
+    utm_content:  p.get('utm_content')  || '',
+    utm_term:     p.get('utm_term')     || '',
+  };
+}
+
+// ─── UTILS ────────────────────────────────────────────────────────────────────
+const MONTHS  = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const DAYS_FR = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+
+function dateKey(d) {
+  const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+function sameDay(a,b) { return a && b && dateKey(a)===dateKey(b); }
+function fmtDate(d)   { return `${DAYS_FR[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`; }
+
+function getCalDays(year, month) {
+  const first=new Date(year,month,1), last=new Date(year,month+1,0);
+  const pad=first.getDay()===0?6:first.getDay()-1;
+  const days=Array(pad).fill(null);
+  for(let d=1;d<=last.getDate();d++) days.push(new Date(year,month,d));
+  return days;
+}
+
+// ─── CACHE DISPO ─────────────────────────────────────────────────────────────
+const availCache = {};
+
+async function fetchAvailability(agentId, typeId) {
+  const key=`${agentId}|${typeId}`;
+  if(availCache[key]) return availCache[key];
+  try {
+    const res=await fetch(`${AVAILABILITY_URL}?agent_id=${agentId}&type_id=${typeId}&days=45`);
+    const data=await res.json();
+    availCache[key]=data.dates||{};
+    return availCache[key];
+  } catch { return {}; }
+}
+
+async function fetchMergedAvailability(agents, typeId) {
+  const merged={};
+  await Promise.all(agents.map(async a=>{
+    const dates=await fetchAvailability(a.id,typeId);
+    Object.entries(dates).forEach(([date,slots])=>{
+      if(!merged[date]) merged[date]=new Set();
+      slots.forEach(s=>merged[date].add(s));
+    });
+  }));
+  const result={};
+  Object.entries(merged).forEach(([date,set])=>{ result[date]=[...set].sort(); });
+  return result;
+}
+
+// ─── COMPOSANTS UI ───────────────────────────────────────────────────────────
+function Logo() {
+  return <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+    <img src="logo-gl.svg"
+      alt="GuestLucky" style={{height:'32px',objectFit:'contain'}}
+      onError={e=>{e.target.style.display='none';e.target.nextSibling.style.display='flex';}}
+    />
+    <div style={{display:'none',alignItems:'center',gap:'2px',fontWeight:800,fontSize:'20px',color:'#1a2547'}}>
+      Guest<span style={{color:'#6b46ff'}}>Lucky</span>
+    </div>
+  </div>;
+}
+
+function StepBar({step,total,color}) {
+  return <div style={{display:'flex',gap:'6px',marginBottom:'36px'}}>
+    {Array.from({length:total},(_,i)=>(
+      <div key={i} style={{flex:1,height:'3px',borderRadius:'99px',background:i<step?color:'var(--border)',transition:'background .4s'}}/>
+    ))}
+  </div>;
+}
+
+function Card({children,style={}}) {
+  return <div style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:'16px',padding:'24px',...style}}>{children}</div>;
+}
+
+function Btn({children,onClick,color='var(--blue)',full=false,outline=false,disabled=false,loading=false,style={}}) {
+  return <button onClick={onClick} disabled={disabled||loading} style={{
+    background:outline?'transparent':disabled?'var(--border)':color,
+    color:outline?'var(--muted)':'white', border:outline?'1px solid var(--border2)':'none',
+    borderRadius:'10px', padding:'12px 24px', fontSize:'14px', fontWeight:700,
+    cursor:disabled||loading?'not-allowed':'pointer', width:full?'100%':'auto',
+    opacity:disabled?.5:1, display:'inline-flex', alignItems:'center', justifyContent:'center',
+    gap:'8px', transition:'all .2s', ...style,
+  }}>
+    {loading?<span className="spinner"/>:null}{children}
+  </button>;
+}
+
+function FieldGroup({label,children}) {
+  return <div style={{marginBottom:'16px'}}>
+    <label style={{display:'block',fontSize:'12px',fontWeight:600,color:'var(--muted)',marginBottom:'6px',textTransform:'uppercase',letterSpacing:'.06em'}}>{label}</label>
+    {children}
+  </div>;
+}
+
+function Input({value,onChange,onBlur,placeholder='',type='text',required=false}) {
+  return <input type={type} value={value} onChange={e=>onChange(e.target.value)} onBlur={onBlur}
+    placeholder={placeholder} required={required}
+    style={{width:'100%',background:'var(--dark2)',border:'1px solid var(--border)',borderRadius:'10px',
+      padding:'11px 14px',color:'var(--text)',fontSize:'14px',transition:'border-color .2s,box-shadow .2s'}}/>;
+}
+
+function Tag({children,color}) {
+  return <span style={{display:'inline-flex',alignItems:'center',gap:'5px',
+    background:`${color}18`,border:`1px solid ${color}35`,color,
+    padding:'5px 12px',borderRadius:'99px',fontSize:'12px',fontWeight:700}}>
+    {children}
+  </span>;
+}
+
+// Question renderer
+function QuestionField({question, value, onChange}) {
+  const {fieldType, options, question:label, required} = question;
+
+  if(fieldType === 'text') return (
+    <textarea value={value||''} onChange={e=>onChange(e.target.value)} rows={3}
+      placeholder="Votre réponse…"
+      style={{width:'100%',background:'var(--dark2)',border:'1px solid var(--border)',borderRadius:'10px',
+        padding:'11px 14px',color:'var(--text)',fontSize:'14px',resize:'vertical',minHeight:'80px'}}/>
+  );
+
+  if(fieldType === 'single_choice') return (
+    <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
+      {options.map(opt=>(
+        <label key={opt} style={{display:'flex',alignItems:'center',gap:'12px',
+          background:value===opt?'rgba(30,102,245,.1)':'var(--dark3)',
+          border:`1px solid ${value===opt?'var(--blue)':'var(--border)'}`,
+          borderRadius:'10px',padding:'12px 16px',cursor:'pointer',transition:'all .15s'}}>
+          <input type="radio" checked={value===opt} onChange={()=>onChange(opt)}
+            style={{accentColor:'var(--blue)',width:'16px',height:'16px'}}/>
+          <span style={{fontSize:'14px',fontWeight:value===opt?700:400}}>{opt}</span>
+        </label>
+      ))}
+    </div>
+  );
+
+  if(fieldType === 'multi_choice' || fieldType === 'multiple_choice') return (
+    <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
+      {options.map(opt=>{
+        const selected=(value||[]).includes(opt);
+        return (
+          <label key={opt} style={{display:'flex',alignItems:'center',gap:'12px',
+            background:selected?'rgba(30,102,245,.1)':'var(--dark3)',
+            border:`1px solid ${selected?'var(--blue)':'var(--border)'}`,
+            borderRadius:'10px',padding:'12px 16px',cursor:'pointer',transition:'all .15s'}}>
+            <input type="checkbox" checked={selected}
+              onChange={e=>{
+                const cur=value||[];
+                onChange(e.target.checked?[...cur,opt]:cur.filter(v=>v!==opt));
+              }}
+              style={{accentColor:'var(--blue)',width:'16px',height:'16px'}}/>
+            <span style={{fontSize:'14px',fontWeight:selected?700:400}}>{opt}</span>
+          </label>
+        );
+      })}
+    </div>
+  );
+
+  return null;
+}
+
+// ─── APP PRINCIPALE ──────────────────────────────────────────────────────────
+function App() {
+  const today = new Date();
+  const utmParams   = React.useMemo(()=>getUtmParams(),[]);
+  const geoData     = React.useRef({country:'', timezone:'Europe/Paris'});
+
+  // Géolocalisation au chargement — une seule fois
+  React.useEffect(()=>{
+    fetch('https://ipapi.co/json/')
+      .then(r=>r.json())
+      .then(d=>{
+        geoData.current = {
+          country:  d.country_name || '',
+          timezone: d.timezone     || 'Europe/Paris',
+        };
+      })
+      .catch(()=>{});
+  },[]);
+
+  // Config
+  const [agents,        setAgents]        = React.useState([]);
+  const [meetingTypes,  setMeetingTypes]  = React.useState([]);
+  const [allQuestions,  setAllQuestions]  = React.useState([]);
+  const [configLoading, setConfigLoading] = React.useState(true);
+  const [configError,   setConfigError]   = React.useState(null);
+
+  // Tunnel state
+  // Steps: 1=type, 2=contact, 3=questions, 4=disqualified|agent, 5=calendar, 6=slot, 7=confirm, 8=done
+  const [step,           setStep]          = React.useState(1);
+  const [selType,        setSelType]       = React.useState(null);
+  const [qualified,      setQualified]     = React.useState(null); // true|false|null
+  const [selAgent,       setSelAgent]      = React.useState(null);
+  const [agentMode,      setAgentMode]     = React.useState(null);
+  const [calYear,        setCalYear]       = React.useState(today.getFullYear());
+  const [calMonth,       setCalMonth]      = React.useState(today.getMonth());
+  const [selDate,        setSelDate]       = React.useState(null);
+  const [selSlot,        setSelSlot]       = React.useState(null);
+  const [confirmedAgent, setConfirmedAgent]= React.useState(null);
+  const [meetLink,       setMeetLink]      = React.useState(null);
+  const [stripeUrl,      setStripeUrl]     = React.useState(null);
+  const [loading,        setLoading]       = React.useState(false);
+  const [error,          setError]         = React.useState(null);
+
+  // Contact form
+  const [contact, setContact] = React.useState({firstname:'',lastname:'',email:'',phone:'',company:''});
+  const [message, setMessage] = React.useState('');
+
+  // Answers
+  const [answers, setAnswers] = React.useState({});
+
+  // Dispo
+  const [availDates,   setAvailDates]   = React.useState({});
+  const [availLoading, setAvailLoading] = React.useState(false);
+
+  const typeColor = selType?.color || 'var(--blue)';
+
+  // Questions du type sélectionné
+  const typeQuestions = React.useMemo(()=>{
+    if(!selType) return [];
+    return allQuestions
+      .filter(q=>q.typeId===selType.id)
+      .sort((a,b)=>a.order-b.order);
+  },[selType, allQuestions]);
+
+  // Agents compatibles
+  const compatibleAgents = React.useMemo(()=>{
+    if(!selType) return agents;
+    const allowed=selType.agentIds||[];
+    if(allowed.length===0) return agents;
+    return agents.filter(a=>allowed.includes(a.id));
+  },[selType, agents]);
+
+  // Charger config
+  // Restaurer l'état après retour Stripe (?paid=1)
+  React.useEffect(()=>{
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('paid') === '1') {
+      const token = params.get('token');
+      const saved = token ? localStorage.getItem(token) : null;
+      if(saved) {
+        try {
+          const s = JSON.parse(saved);
+          // Nettoyer localStorage (données expirées > 2h aussi)
+          localStorage.removeItem(token);
+          Object.keys(localStorage)
+            .filter(k => k.startsWith('gl_'))
+            .forEach(k => {
+              try {
+                const d = JSON.parse(localStorage.getItem(k));
+                if(Date.now() - (d.savedAt||0) > 7200000) localStorage.removeItem(k);
+              } catch { localStorage.removeItem(k); }
+            });
+          window.__restoreAfterPayment = s;
+        } catch(e) {}
+      }
+      // Nettoyer l'URL
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
+
+  React.useEffect(()=>{
+    fetch(CONFIG_URL)
+      .then(r=>{ if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then(data=>{
+        setAgents(data.agents||[]);
+        setMeetingTypes(data.meetingTypes||[]);
+        setAllQuestions(data.questions||[]);
+        setConfigLoading(false);
+        // Restaurer l'état après retour Stripe
+        if(window.__restoreAfterPayment) {
+          const s = window.__restoreAfterPayment;
+          delete window.__restoreAfterPayment;
+          const mt = (data.meetingTypes||[]).find(t=>t.id===s.selType?.id);
+          if(mt) {
+            setSelType(mt);
+            setSelAgent(s.selAgent||null);
+            setAgentMode(s.agentMode||null);
+            if(s.selDate) setSelDate(new Date(s.selDate));
+            setSelSlot(s.selSlot||null);
+            setContact(s.contact||{firstname:'',lastname:'',email:'',phone:'',company:''});
+            setAnswers(s.answers||{});
+            setStep(7); // Retour au step confirmation, paiement fait
+          }
+        }
+      })
+      .catch(err=>{ setConfigError(`Erreur : ${err.message}`); setConfigLoading(false); });
+  },[]);
+
+  // Charger dispos
+  React.useEffect(()=>{
+    if(!selType || step < 5) return;
+    const pool=selAgent?[selAgent]:compatibleAgents;
+    if(pool.length===0) return;
+    setAvailLoading(true);
+    setAvailDates({});
+    fetchMergedAvailability(pool, selType.id).then(dates=>{
+      setAvailDates(dates);
+      setAvailLoading(false);
+    });
+  },[selType, selAgent, step]);
+
+  // ID du record contact Airtable (stocké dès le premier autosave pour éviter les doublons)
+  const contactRecordId = React.useRef(null);
+
+  // ── Autosave téléphone dès saisie ──────────────────────────────────────────
+  const autosaveTimer = React.useRef(null);
+  function handlePhoneChange(val) {
+    setContact(c=>({...c, phone:val}));
+    clearTimeout(autosaveTimer.current);
+    if(val.length >= 8) {
+      autosaveTimer.current = setTimeout(()=>{
+        fetch(AUTOSAVE_URL, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            firstname: contact.firstname, lastname: contact.lastname,
+            email: contact.email, phone: val,
+            company: contact.company,
+            record_id: contactRecordId.current,
+            type_id: selType?.id,
+            country:  geoData.current.country,
+            timezone: geoData.current.timezone,
+            ...utmParams,
+          }),
+        })
+        .then(r=>r.json())
+        .then(data=>{ if(data.id) contactRecordId.current = data.id; }) // mémoriser l'ID
+        .catch(()=>{});
+      }, 800);
+    }
+  }
+
+  // ── Vérification qualification ────────────────────────────────────────────
+  function evaluateQualification() {
+    let isQualified = true;
+    for(const q of typeQuestions) {
+      if(!q.disqualify || q.disqualify.length===0) continue;
+      const answer = answers[q.id];
+      if(!answer) continue;
+      const answerStr = Array.isArray(answer) ? answer.join(',') : answer;
+      const disqualified = q.disqualify.some(kw =>
+        answerStr.toLowerCase().includes(kw.toLowerCase())
+      );
+      if(disqualified) { isQualified = false; break; }
+    }
+    return isQualified;
+  }
+
+function submitQuestions() {
+    for(const q of typeQuestions) {
+      if(q.required && !answers[q.id]) {
+        setError(`Veuillez répondre à la question : "${q.question}"`);
+        return;
+      }
+    }
+    setError(null);
+    const isQualified = evaluateQualification();
+    setQualified(isQualified);
+    setStep(isQualified ? 4 : 'disqualified');
+
+    // Si disqualifié et contact déjà autosauvegardé → mettre à jour le statut
+    if (!isQualified && (contact.phone || contact.email)) {
+      fetch(AUTOSAVE_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          phone:          contact.phone,
+          email:          contact.email,
+          record_id:      contactRecordId.current,
+          contact_stage:  'Rejected',
+          planning_status:'Disqualifié',
+          type_id:        selType?.id,
+          country:        geoData.current.country,
+          timezone:       geoData.current.timezone,
+          ...utmParams,
+        }),
+      })
+      .then(r=>r.json())
+      .then(data=>{ if(data.id) contactRecordId.current = data.id; })
+      .catch(()=>{});
+    }
+  }
+
+  // ── Helpers calendrier ────────────────────────────────────────────────────
+  function isDayAvailable(date) {
+    return !!(availDates[dateKey(date)]?.length > 0);
+  }
+  function getSlotsForDate(date) { return availDates[dateKey(date)]||[]; }
+  function getBestAgentForSlot(date, slot) {
+    const pool=selAgent?[selAgent]:compatibleAgents;
+    for(const agent of pool) {
+      const agentDates=availCache[`${agent.id}|${selType.id}`]||{};
+      if((agentDates[dateKey(date)]||[]).includes(slot)) return agent;
+    }
+    return pool[0];
+  }
+
+  // ── Confirmation finale ───────────────────────────────────────────────────
+  async function confirmBooking() {
+    const agent=getBestAgentForSlot(selDate, selSlot);
+    if(!agent) return;
+    setConfirmedAgent(agent);
+    setLoading(true);
+    setError(null);
+    Object.keys(availCache).forEach(k=>{ if(k.startsWith(`${agent.id}|`)) delete availCache[k]; });
+
+    const payload = {
+      agent_id: agent.id, agent_name: agent.name, agent_email: agent.email,
+      type_id: selType.id, type_label: selType.label, type_icon: selType.icon,
+      type_color: selType.color, type_planning_status: selType.planningStatus || '',
+      date: dateKey(selDate), date_label: fmtDate(selDate), slot: selSlot, duration: selType.duration,
+      client_firstname: contact.firstname, client_lastname: contact.lastname,
+      client_email: contact.email, client_phone: contact.phone,
+      client_company: contact.company,
+      country:  geoData.current.country,
+      timezone: geoData.current.timezone,
+      message, qualified: true,
+      answers: typeQuestions.map(q=>({ question: q.question, answer: answers[q.id]||'' })),
+      ...utmParams,
+    };
+
+    try {
+      const res=await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json','X-Webhook-Secret':WEBHOOK_SECRET},body:JSON.stringify(payload)});
+      const data=await res.json();
+      if(data.meet_link) setMeetLink(data.meet_link);
+    } catch(err) { console.warn('Webhook error:', err); }
+    finally { setLoading(false); setStep(8); }
+  }
+
+  // Détermine le lien Stripe selon les réponses aux questions
+  function getStripeUrl() {
+      if(!selType?.paymentRequired || !selType?.stripeLinks) return null;
+      const links = selType.stripeLinks;
+      if(!selType.paymentQuestion) return Object.values(links)[0] || null;
+    
+      const payQ = typeQuestions.find(q =>
+        q.question.toLowerCase().includes(selType.paymentQuestion.toLowerCase())
+      );
+      if(!payQ) return Object.values(links)[0] || null;
+      const answer = answers[payQ.id];
+      if(!answer) return Object.values(links)[0] || null;
+    
+      // Match exact normalisé uniquement
+      const normalize = s => s.replace(/[+ ]/g, '').toLowerCase();
+      const normAnswer = normalize(answer);
+      for(const [key, url] of Object.entries(links)) {
+        if(normalize(key) === normAnswer) return url;
+      }
+    
+      // Fallback numérique
+      const num = parseInt(answer.replace(/[^0-9]/g, ''));
+      if(!isNaN(num)) {
+        for(const [key, url] of Object.entries(links)) {
+          if(key.includes('+')) {
+            const threshold = parseInt(key.replace(/[^0-9]/g, ''));
+            if(num >= threshold) return url;
+          } else if(key.includes('-')) {
+            const [min, max] = key.split('-').map(Number);
+            if(num >= min && num <= max) return url;
+          } else if(num === parseInt(key)) return url;
+        }
+      }
+    
+      return Object.values(links)[0] || null;
+    }
+
+  function reset() {
+    setStep(1); setSelType(null); setQualified(null); setSelAgent(null); setAgentMode(null);
+    setSelDate(null); setSelSlot(null); setConfirmedAgent(null); setMeetLink(null); setError(null); setStripeUrl(null);
+    setContact({firstname:'',lastname:'',email:'',phone:'',company:''}); setMessage(''); setAnswers({});
+    setCalYear(today.getFullYear()); setCalMonth(today.getMonth());
+  }
+
+  function prevMonth(){if(calMonth===0){setCalMonth(11);setCalYear(y=>y-1);}else setCalMonth(m=>m-1);}
+  function nextMonth(){if(calMonth===11){setCalMonth(0);setCalYear(y=>y+1);}else setCalMonth(m=>m+1);}
+
+  const calDays  = getCalDays(calYear, calMonth);
+  const curSlots = selDate ? getSlotsForDate(selDate) : [];
+
+  // Total steps pour la barre (hors disqualifié)
+  const totalSteps = typeQuestions.length > 0 ? 7 : 6;
+  const currentBar = typeof step === 'number' ? step - 1 : 0;
+
+  if(configLoading) return (
+    <div style={{minHeight:'100vh',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:'16px'}}>
+      <Logo/>
+      <div style={{display:'flex',alignItems:'center',gap:'10px',color:'var(--muted)',fontSize:'14px',marginTop:'8px'}}>
+        <span className="spinner" style={{width:'16px',height:'16px'}}/>
+        Chargement des disponibilités…
+      </div>
+    </div>
+  );
+
+  if(configError) return (
+    <div style={{minHeight:'100vh',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:'16px',padding:'24px',textAlign:'center'}}>
+      <Logo/>
+      <div style={{background:'rgba(239,68,68,.08)',border:'1px solid rgba(239,68,68,.25)',borderRadius:'12px',padding:'20px 24px',maxWidth:'500px'}}>
+        <p style={{color:'var(--red)',fontSize:'14px',fontWeight:700,marginBottom:'8px'}}>Erreur de chargement</p>
+        <p style={{color:'#f87171',fontSize:'13px',fontFamily:'var(--mono)',wordBreak:'break-all'}}>{configError}</p>
+      </div>
+      <Btn color="var(--blue)" onClick={()=>window.location.reload()}>↺ Réessayer</Btn>
+    </div>
+  );
+
+  return (
+    <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}}>
+
+      {/* HEADER */}
+      <header style={{borderBottom:'1px solid var(--border)',padding:'16px 24px',display:'flex',alignItems:'center',
+        justifyContent:'space-between',background:'linear-gradient(135deg,#1a2547 0%,#2d3f7a 100%)',backdropFilter:'blur(12px)',position:'sticky',top:0,zIndex:50,boxShadow:'0 2px 20px rgba(26,37,71,.25)'}}>
+        <Logo/>
+        <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+          <div style={{width:'8px',height:'8px',borderRadius:'50%',background:'#7c3aed',boxShadow:'0 0 8px rgba(76,175,130,.5)',animation:'pulse 2s infinite'}}/>
+          <span style={{fontSize:'12px',color:'rgba(255,255,255,0.7)',fontWeight:500}}>Disponible aujourd'hui</span>
+        </div>
+      </header>
+
+      {/* HERO */}
+      {step===1 && (
+        <div className="fade-in" style={{textAlign:'center',padding:'64px 24px 40px',maxWidth:'640px',margin:'0 auto'}}>
+          <div style={{display:'inline-flex',alignItems:'center',gap:'6px',background:'rgba(26,37,71,.08)',border:'1px solid rgba(26,37,71,.15)',borderRadius:'99px',padding:'6px 14px',marginBottom:'24px'}}>
+            <span style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--blue)',display:'inline-block'}}/>
+            <span style={{fontSize:'12px',fontWeight:600,color:'var(--blue)',letterSpacing:'.06em',textTransform:'uppercase'}}>Prise de rendez-vous</span>
+          </div>
+          <h1 style={{fontSize:'clamp(28px,5vw,42px)',fontWeight:800,lineHeight:1.1,letterSpacing:'-.03em',marginBottom:'16px',color:'var(--text)'}}>
+            Planifiez votre échange<br/><span style={{color:'#7c3aed'}}>avec GuestLucky</span>
+          </h1>
+          <p style={{color:'var(--muted)',fontSize:'16px',lineHeight:1.6,maxWidth:'480px',margin:'0 auto'}}>
+            Channel Manager, messagerie IA, revenue management ou partenariat — choisissez le créneau qui vous convient.
+          </p>
+        </div>
+      )}
+
+      <main style={{flex:1,maxWidth:'900px',width:'100%',margin:'0 auto',padding:'0 20px 80px'}}>
+        {typeof step==='number' && step>1 && step<8 && (
+          <div style={{paddingTop:'40px'}}><StepBar step={currentBar} total={totalSteps} color={typeColor}/></div>
+        )}
+
+        {/* ── STEP 1 : Type de RDV ─────────────────────────────────────── */}
+        {step===1 && (
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'14px',paddingBottom:'40px'}}>
+            {meetingTypes.map((t,i)=>(
+              <div key={t.id} className={`fade-up d${Math.min(i+1,4)}`}
+                onClick={()=>{setSelType(t);setStep(2);}}
+                style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:'16px',padding:'22px',cursor:'pointer',transition:'transform .2s,border-color .2s,box-shadow .2s'}}
+                onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-3px)';e.currentTarget.style.borderColor=t.color;e.currentTarget.style.boxShadow=`0 8px 32px ${t.color}20`;}}
+                onMouseLeave={e=>{e.currentTarget.style.transform='';e.currentTarget.style.borderColor='var(--border)';e.currentTarget.style.boxShadow='';}}>
+                <div style={{fontSize:'32px',marginBottom:'14px'}}>{t.icon}</div>
+                <div style={{fontWeight:800,fontSize:'16px',color:'var(--text)',marginBottom:'4px'}}>{t.label}</div>
+                <div style={{display:'flex',alignItems:'center',gap:'8px',marginBottom:'10px'}}>
+                  <span style={{color:t.color,fontSize:'12px',fontWeight:600,fontFamily:'var(--mono)'}}>{t.duration} min</span>
+                  {t.paymentRequired && <span style={{background:'#fef3c7',color:'#92400e',fontSize:'11px',fontWeight:700,padding:'2px 8px',borderRadius:'99px'}}>💳 Payant</span>}
+                </div>
+                <div style={{color:'var(--muted)',fontSize:'13px',lineHeight:1.5}}>{t.description}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* ── STEP 2 : Contact ─────────────────────────────────────────── */}
+        {step===2 && (
+          <div className="fade-up" style={{maxWidth:'520px'}}>
+            <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'6px',color:'var(--text)'}}>Vos coordonnées</h2>
+            <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'24px'}}>
+              <Tag color={typeColor}>{selType?.icon} {selType?.label}</Tag>
+            </p>
+            <Card>
+              <FieldGroup label="Téléphone *">
+                <Input type="tel" value={contact.phone} onChange={handlePhoneChange} placeholder="+33 6 00 00 00 00"/>
+              </FieldGroup>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'12px'}}>
+                <FieldGroup label="Prénom *">
+                  <Input value={contact.firstname} onChange={v=>setContact(c=>({...c,firstname:v}))} placeholder="Prénom"/>
+                </FieldGroup>
+                <FieldGroup label="Nom *">
+                  <Input value={contact.lastname} onChange={v=>setContact(c=>({...c,lastname:v}))} placeholder="Nom"/>
+                </FieldGroup>
+              </div>
+              <FieldGroup label="Entreprise">
+                <Input value={contact.company||''} onChange={v=>setContact(c=>({...c,company:v}))} placeholder="Optionnel"/>
+              </FieldGroup>
+              <FieldGroup label="Email *">
+                <Input type="email" value={contact.email} onChange={v=>setContact(c=>({...c,email:v}))} placeholder="vous@exemple.fr"/>
+              </FieldGroup>
+              <div style={{display:'flex',gap:'10px',marginTop:'8px'}}>
+                <Btn outline onClick={()=>setStep(1)}>← Retour</Btn>
+                <Btn color={typeColor} style={{flex:1}}
+                  disabled={!contact.firstname||!contact.lastname||!contact.email||!contact.phone}
+                  onClick={()=>setStep(typeQuestions.length>0?3:4)}>
+                  Continuer →
+                </Btn>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {/* ── STEP 3 : Questions pré-RDV ───────────────────────────────── */}
+        {step===3 && (
+          <div className="fade-up" style={{maxWidth:'580px'}}>
+            <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'6px',color:'var(--text)'}}>Quelques questions</h2>
+            <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'24px'}}>
+              Pour mieux préparer votre échange <Tag color={typeColor}>{selType?.icon} {selType?.label}</Tag>
+            </p>
+            <div style={{display:'flex',flexDirection:'column',gap:'20px'}}>
+              {typeQuestions.map((q,i)=>(
+                <Card key={q.id}>
+                  <div style={{fontWeight:700,fontSize:'15px',marginBottom:'14px',color:'var(--text)'}}>
+                    {i+1}. {q.question}
+                    {q.required && <span style={{color:'var(--red)',marginLeft:'4px'}}>*</span>}
+                  </div>
+                  <QuestionField question={q} value={answers[q.id]} onChange={v=>setAnswers(a=>({...a,[q.id]:v}))}/>
+                </Card>
+              ))}
+            </div>
+            {error && <p style={{color:'var(--red)',fontSize:'13px',marginTop:'16px'}}>{error}</p>}
+            <div style={{display:'flex',gap:'10px',marginTop:'24px'}}>
+              <Btn outline onClick={()=>setStep(2)}>← Retour</Btn>
+              <Btn color={typeColor} style={{flex:1}} onClick={submitQuestions}>Continuer →</Btn>
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP disqualifié ─────────────────────────────────────────── */}
+        {step==='disqualified' && (
+          <div className="scale-pop" style={{maxWidth:'480px',margin:'0 auto',textAlign:'center',paddingTop:'20px'}}>
+            <Card style={{padding:'48px 36px'}}>
+              <div style={{fontSize:'56px',marginBottom:'16px'}}>🙏</div>
+              <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'12px',color:'var(--text)'}}>Merci pour vos réponses</h2>
+              <p style={{color:'var(--muted)',fontSize:'15px',lineHeight:1.7,marginBottom:'28px'}}>
+                Après analyse de votre situation, il semble que notre solution ne soit pas la plus adaptée à votre projet pour le moment.<br/><br/>
+                Nous vous encourageons à consulter notre documentation ou à revenir vers nous quand votre projet sera plus avancé.
+              </p>
+              <a href="https://www.guestlucky.com" style={{display:'inline-block',background:'var(--blue)',color:'white',fontWeight:700,padding:'12px 28px',borderRadius:'10px',textDecoration:'none',fontSize:'14px'}}>
+                Découvrir nos ressources
+              </a>
+            </Card>
+          </div>
+        )}
+
+        {/* ── STEP 4 : Choix agent ─────────────────────────────────────── */}
+        {step===4 && (
+          <div className="fade-up">
+            <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'6px',color:'var(--text)'}}>Avec qui souhaitez-vous échanger ?</h2>
+            <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'28px'}}>
+              <Tag color={typeColor}>{selType?.icon} {selType?.label}</Tag>
+            </p>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'14px',maxWidth:'640px'}}>
+              <div onClick={()=>{setAgentMode('any');setSelAgent(null);setStep(5);}}
+                style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:'16px',padding:'22px',cursor:'pointer',transition:'all .2s'}}
+                onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--blue)';e.currentTarget.style.background='rgba(30,102,245,.06)';}}
+                onMouseLeave={e=>{e.currentTarget.style.borderColor='var(--border)';e.currentTarget.style.background='var(--card)';}}>
+                <div style={{fontSize:'32px',marginBottom:'14px'}}>⚡</div>
+                <div style={{fontWeight:800,fontSize:'15px',color:'var(--text)',marginBottom:'4px'}}>Premier disponible</div>
+                <div style={{color:'var(--muted)',fontSize:'13px'}}>Assignation automatique au prochain créneau libre</div>
+              </div>
+              {compatibleAgents.map(a=>(
+                <div key={a.id} onClick={()=>{setAgentMode('choose');setSelAgent(a);setStep(5);}}
+                  style={{background:'var(--card)',border:'1px solid var(--border)',borderRadius:'16px',padding:'22px',cursor:'pointer',transition:'all .2s'}}
+                  onMouseEnter={e=>{e.currentTarget.style.borderColor=a.color;e.currentTarget.style.background=`${a.color}08`;}}
+                  onMouseLeave={e=>{e.currentTarget.style.borderColor='var(--border)';e.currentTarget.style.background='var(--card)';}}>
+                  <div style={{width:'42px',height:'42px',borderRadius:'50%',background:`${a.color}20`,border:`2px solid ${a.color}`,
+                    display:'flex',alignItems:'center',justifyContent:'center',fontSize:'14px',fontWeight:800,color:a.color,marginBottom:'14px',fontFamily:'var(--mono)'}}>
+                    {a.initials}
+                  </div>
+                  <div style={{fontWeight:800,fontSize:'15px',color:'var(--text)',marginBottom:'3px'}}>{a.name}</div>
+                  <div style={{color:'var(--muted)',fontSize:'12px'}}>{a.role}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{marginTop:'24px'}}>
+              <Btn outline onClick={()=>setStep(typeQuestions.length>0?3:2)}>← Retour</Btn>
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 5 : Calendrier ──────────────────────────────────────── */}
+        {step===5 && (
+          <div className="fade-up">
+            <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'6px',color:'var(--text)'}}>Choisissez une date</h2>
+            <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'28px',display:'flex',gap:'8px',flexWrap:'wrap',alignItems:'center'}}>
+              <Tag color={typeColor}>{selType?.icon} {selType?.label}</Tag>
+              {selAgent && <Tag color={selAgent.color}>👤 {selAgent.name}</Tag>}
+              {agentMode==='any' && <Tag color="var(--muted)">⚡ Premier disponible</Tag>}
+            </p>
+            <div style={{position:'relative',maxWidth:'360px'}}>
+              {availLoading && (
+                <div style={{position:'absolute',inset:0,background:'rgba(8,14,26,.7)',borderRadius:'16px',zIndex:10,
+                  display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:'10px'}}>
+                  <span className="spinner"/>
+                  <span style={{fontSize:'12px',color:'var(--muted)'}}>Consultation de l'agenda…</span>
+                </div>
+              )}
+              <Card style={{padding:'28px'}}>
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'20px'}}>
+                  <button onClick={prevMonth} style={{background:'var(--dark3)',border:'1px solid var(--border2)',color:'var(--text)',width:'32px',height:'32px',borderRadius:'8px',cursor:'pointer',fontSize:'16px',display:'flex',alignItems:'center',justifyContent:'center'}}>‹</button>
+                  <div style={{fontWeight:700,fontSize:'15px'}}>{MONTHS[calMonth]} {calYear}</div>
+                  <button onClick={nextMonth} style={{background:'var(--dark3)',border:'1px solid var(--border2)',color:'var(--text)',width:'32px',height:'32px',borderRadius:'8px',cursor:'pointer',fontSize:'16px',display:'flex',alignItems:'center',justifyContent:'center'}}>›</button>
+                </div>
+                <div style={{display:'grid',gridTemplateColumns:'repeat(7,1fr)',gap:'3px'}}>
+                  {['Lu','Ma','Me','Je','Ve','Sa','Di'].map(d=>(
+                    <div key={d} style={{textAlign:'center',fontSize:'11px',fontWeight:600,color:'var(--muted)',padding:'2px 0 10px',fontFamily:'var(--mono)'}}>{d}</div>
+                  ))}
+                  {calDays.map((d,i)=>{
+                    if(!d) return <div key={i}/>;
+                    const past=d<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+                    const avail=!past&&isDayAvailable(d);
+                    const sel=sameDay(d,selDate), tod=sameDay(d,today);
+                    return <div key={i} onClick={()=>{if(avail){setSelDate(d);setStep(6);}}}
+                      style={{aspectRatio:'1',display:'flex',alignItems:'center',justifyContent:'center',
+                        borderRadius:'8px',fontSize:'13px',fontFamily:'var(--mono)',
+                        cursor:avail?'pointer':'default',fontWeight:tod?700:400,
+                        background:sel?typeColor:avail?'var(--dark3)':'transparent',
+                        color:sel?'white':past?'var(--border2)':avail?'var(--text)':'var(--border2)',
+                        border:tod&&!sel?`1px solid ${typeColor}`:'1px solid transparent',transition:'all .15s'}}
+                      onMouseEnter={e=>{if(avail&&!sel)e.currentTarget.style.background=`${typeColor}25`;}}
+                      onMouseLeave={e=>{if(!sel)e.currentTarget.style.background=avail?'var(--dark3)':'transparent';}}>
+                      {d.getDate()}
+                    </div>;
+                  })}
+                </div>
+              </Card>
+            </div>
+            <div style={{marginTop:'20px'}}><Btn outline onClick={()=>setStep(4)}>← Retour</Btn></div>
+          </div>
+        )}
+
+        {/* ── STEP 6 : Créneau ─────────────────────────────────────────── */}
+        {step===6 && selDate && (
+          <div className="fade-up">
+            <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'6px',color:'var(--text)'}}>Choisissez un créneau</h2>
+            <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'28px',display:'flex',gap:'8px',flexWrap:'wrap',alignItems:'center'}}>
+              <Tag color={typeColor}>{selType?.icon} {selType?.label}</Tag>
+              <Tag color="var(--muted)">📅 {fmtDate(selDate)}</Tag>
+            </p>
+            <Card style={{maxWidth:'400px'}}>
+              <div style={{fontSize:'11px',fontWeight:600,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'.08em',marginBottom:'16px',fontFamily:'var(--mono)'}}>
+                Créneaux disponibles · {selType?.duration} min
+              </div>
+              {curSlots.length===0
+                ? (() => {
+                    // Vérifier si c'est à cause du délai minimum (jour sélectionné trop proche)
+                    const minH = selType?.minNoticeHours || 0;
+                    const earliestBookable = new Date(Date.now() + minH * 3600 * 1000);
+                    const isTooSoon = minH > 0 && selDate < earliestBookable;
+                    return (
+                      <p style={{color:'var(--muted)',textAlign:'center',padding:'20px',fontSize:'13px',lineHeight:1.6}}>
+                        {isTooSoon
+                          ? `⏳ Les réservations pour ce type de RDV doivent être effectuées au moins ${minH}h à l'avance.`
+                          : 'Aucun créneau disponible ce jour.'}
+                      </p>
+                    );
+                  })()
+                : <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'8px'}}>
+                    {curSlots.map(slot=>(
+                      <button key={slot} onClick={()=>{setSelSlot(slot);setStep(7);}}
+                        style={{background:selSlot===slot?typeColor:'var(--dark3)',
+                          border:`1px solid ${selSlot===slot?typeColor:'var(--border2)'}`,
+                          color:'var(--text)',padding:'9px 0',borderRadius:'8px',cursor:'pointer',
+                          fontSize:'13px',fontWeight:600,fontFamily:'var(--mono)',transition:'all .15s'}}>
+                        {slot}
+                      </button>
+                    ))}
+                  </div>
+              }
+            </Card>
+            <div style={{marginTop:'20px'}}><Btn outline onClick={()=>{setStep(5);setSelDate(null);}}>← Retour</Btn></div>
+          </div>
+        )}
+
+        {/* ── STEP 7 : Message + Confirmation ──────────────────────────── */}
+        {step===7 && (
+          <div className="fade-up" style={{maxWidth:'520px'}}>
+            <h2 style={{fontSize:'22px',fontWeight:800,marginBottom:'6px',color:'var(--text)'}}>Confirmer le rendez-vous</h2>
+            <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'24px'}}>Un dernier mot avant de valider ?</p>
+            <Card style={{marginBottom:'16px',padding:'16px 20px',background:'var(--dark3)'}}>
+              <div style={{display:'flex',flexWrap:'wrap',gap:'8px',alignItems:'center'}}>
+                <Tag color={typeColor}>{selType?.icon} {selType?.label}</Tag>
+                <Tag color="var(--muted)">📅 {fmtDate(selDate)}</Tag>
+                <Tag color="var(--muted)">🕐 {selSlot}</Tag>
+                <Tag color="var(--muted)">⏱ {selType?.duration} min</Tag>
+              </div>
+            </Card>
+            <Card>
+              <FieldGroup label="Message (optionnel)">
+                <textarea value={message} onChange={e=>setMessage(e.target.value)}
+                  placeholder="Un contexte à partager avec votre interlocuteur…" rows={3}
+                  style={{width:'100%',background:'var(--dark2)',border:'1px solid var(--border)',borderRadius:'10px',
+                    padding:'11px 14px',color:'var(--text)',fontSize:'14px',resize:'vertical',minHeight:'80px'}}/>
+              </FieldGroup>
+              {error && <p style={{color:'var(--red)',fontSize:'13px',marginBottom:'14px'}}>{error}</p>}
+              <div style={{display:'flex',gap:'10px',marginTop:'8px'}}>
+                <Btn outline onClick={()=>setStep(6)}>← Retour</Btn>
+                <Btn color={typeColor} loading={loading}
+                  onClick={()=>{
+                    const url = getStripeUrl();
+                    if(url) {
+                      const bookingToken = 'gl_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+                      localStorage.setItem(bookingToken, JSON.stringify({
+                        selType, selAgent, agentMode,
+                        selDate: selDate?.toISOString(), selSlot,
+                        contact, answers, step: 7,
+                        savedAt: Date.now(),
+                      }));
+                      const successUrl = window.location.origin + window.location.pathname +
+                        '?paid=1&token=' + bookingToken;
+                      window.location.href = url +
+                        '?success_url=' + encodeURIComponent(successUrl) +
+                        '&cancel_url=' + encodeURIComponent(window.location.href) +
+                        '&prefilled_email=' + encodeURIComponent(contact.email);
+                    } else {
+                      confirmBooking();
+                    }
+                  }}
+                  style={{flex:1}}>
+                  {selType?.paymentRequired ? 'Payer & Confirmer →' : 'Confirmer →'}
+                </Btn>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {/* ── STEP 8 : Succès ──────────────────────────────────────────── */}
+        {step===8 && (
+          <div className="scale-pop" style={{maxWidth:'480px',margin:'0 auto',textAlign:'center',paddingTop:'20px'}}>
+            <Card style={{padding:'48px 36px'}}>
+              <div style={{fontSize:'56px',marginBottom:'16px'}}>✅</div>
+              <h2 style={{fontSize:'24px',fontWeight:800,color:'var(--text)',marginBottom:'8px'}}>Rendez-vous confirmé !</h2>
+              <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'28px'}}>
+                Un email de confirmation a été envoyé à <strong style={{color:'var(--text)'}}>{contact.email}</strong>
+              </p>
+              <div style={{background:'var(--dark3)',border:'1px solid var(--border)',borderRadius:'12px',padding:'16px 20px',marginBottom:'20px',textAlign:'left'}}>
+                <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
+                  {[[selType?.icon,selType?.label],['📅',`${fmtDate(selDate)} à ${selSlot}`],
+                    ['⏱',`${selType?.duration} minutes`],
+                    ['👤',`${contact.firstname} ${contact.lastname}`],
+                    confirmedAgent?['🎧',confirmedAgent.name]:null
+                  ].filter(Boolean).map(([icon,label],i)=>(
+                    <div key={i} style={{display:'flex',gap:'10px',alignItems:'center'}}>
+                      <span style={{fontSize:'16px',width:'22px',textAlign:'center',flexShrink:0}}>{icon}</span>
+                      <span style={{fontSize:'14px',color:'var(--text)',fontWeight:500}}>{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {meetLink && (
+                <a href={meetLink} target="_blank" rel="noopener noreferrer"
+                  style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'8px',
+                    background:'rgba(30,102,245,.1)',border:'1px solid rgba(30,102,245,.3)',
+                    borderRadius:'10px',padding:'12px',marginBottom:'20px',
+                    color:'var(--blue)',fontWeight:700,fontSize:'14px',textDecoration:'none'}}>
+                  🎥 Rejoindre sur Google Meet
+                </a>
+              )}
+              <Btn color={typeColor} full onClick={reset}>Planifier un autre rendez-vous</Btn>
+            </Card>
+          </div>
+        )}
+
+      </main>
+
+      <footer style={{borderTop:'1px solid var(--border)',padding:'20px 24px',textAlign:'center',background:'var(--white)'}}>
+        <p style={{fontSize:'12px',color:'var(--muted)'}}>
+          <strong style={{color:'#1a2547'}}>Guest<span style={{color:'#6b46ff'}}>Lucky</span></strong>
+          {' '}— Le Channel Manager des pros de la location courte durée ·{' '}
+          <a href="https://www.guestlucky.com" style={{color:'#1a2547'}}>guestlucky.com</a>
+        </p>
+      </footer>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

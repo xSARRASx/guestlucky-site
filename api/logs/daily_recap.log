@@ -1,0 +1,84 @@
+[2026-06-11 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-11","yesterday":"2026-06-10","mode":"cron"}
+[2026-06-11 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-11 04:05:05] [INFO] Bookings yesterday {"count":4}
+[2026-06-11 04:05:06] [INFO] Contacts created {"count":3}
+[2026-06-11 04:05:06] [INFO] Contacts modified {"count":2}
+[2026-06-11 04:05:07] [INFO] ✅ Récap envoyé {"to":"lumnistech@gmail.com,moresebastien@gmail.com","date":"11\/06\/2026","bookings":4,"contacts":5,"gmail_id":"19eb46d11b13cd81"}
+[2026-06-12 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-12","yesterday":"2026-06-11","mode":"cron"}
+[2026-06-12 04:05:05] [INFO] Bookings today {"count":0}
+[2026-06-12 04:05:05] [INFO] Bookings yesterday {"count":1}
+[2026-06-12 04:05:05] [INFO] Contacts created {"count":2}
+[2026-06-12 04:05:06] [INFO] Contacts modified {"count":1}
+[2026-06-12 04:05:07] [INFO] ✅ Récap envoyé {"to":"lumnistech@gmail.com,moresebastien@gmail.com","date":"12\/06\/2026","bookings":1,"contacts":3,"gmail_id":"19eb9936d74ddf9e"}
+[2026-06-13 04:05:03] [INFO] ── Début récap quotidien ── {"today":"2026-06-13","yesterday":"2026-06-12","mode":"cron"}
+[2026-06-13 04:05:05] [INFO] Bookings today {"count":0}
+[2026-06-13 04:05:06] [INFO] Bookings yesterday {"count":1}
+[2026-06-13 04:05:06] [INFO] Contacts created {"count":1}
+[2026-06-13 04:05:07] [INFO] Contacts modified {"count":1}
+[2026-06-13 04:05:07] [ERROR] Token Google invalide — fallback mail() {"body":{"error":"invalid_grant","error_description":"Token has been expired or revoked."}}
+[2026-06-14 04:05:01] [INFO] ── Début récap quotidien ── {"today":"2026-06-14","yesterday":"2026-06-13","mode":"cron"}
+[2026-06-14 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-14 04:05:04] [INFO] Bookings yesterday {"count":0}
+[2026-06-14 04:05:04] [INFO] Contacts created {"count":0}
+[2026-06-14 04:05:05] [INFO] Contacts modified {"count":0}
+[2026-06-14 04:05:06] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"14\/06\/2026","bookings":0,"contacts":0,"gmail_id":"19ec3e01eb030bc5"}
+[2026-06-15 04:05:03] [INFO] ── Début récap quotidien ── {"today":"2026-06-15","yesterday":"2026-06-14","mode":"cron"}
+[2026-06-15 04:05:05] [INFO] Bookings today {"count":0}
+[2026-06-15 04:05:06] [INFO] Bookings yesterday {"count":0}
+[2026-06-15 04:05:06] [INFO] Contacts created {"count":0}
+[2026-06-15 04:05:07] [INFO] Contacts modified {"count":0}
+[2026-06-15 04:05:07] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"15\/06\/2026","bookings":0,"contacts":0,"gmail_id":"19ec90683a7fbbfe"}
+[2026-06-16 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-16","yesterday":"2026-06-15","mode":"cron"}
+[2026-06-16 04:05:05] [INFO] Bookings today {"count":0}
+[2026-06-16 04:05:05] [INFO] Bookings yesterday {"count":0}
+[2026-06-16 04:05:06] [INFO] Contacts created {"count":0}
+[2026-06-16 04:05:06] [INFO] Contacts modified {"count":0}
+[2026-06-16 04:05:07] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"16\/06\/2026","bookings":0,"contacts":0,"gmail_id":"19ece2cde287456b"}
+[2026-06-17 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-17","yesterday":"2026-06-16","mode":"cron"}
+[2026-06-17 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-17 04:05:05] [INFO] Bookings yesterday {"count":1}
+[2026-06-17 04:05:05] [INFO] Contacts created {"count":2}
+[2026-06-17 04:05:06] [INFO] Contacts modified {"count":1}
+[2026-06-17 04:05:06] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"17\/06\/2026","bookings":1,"contacts":3,"gmail_id":"19ed35337b6a9a68"}
+[2026-06-18 04:05:01] [INFO] ── Début récap quotidien ── {"today":"2026-06-18","yesterday":"2026-06-17","mode":"cron"}
+[2026-06-18 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-18 04:05:05] [INFO] Bookings yesterday {"count":2}
+[2026-06-18 04:05:05] [INFO] Contacts created {"count":4}
+[2026-06-18 04:05:06] [INFO] Contacts modified {"count":0}
+[2026-06-18 04:05:06] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"18\/06\/2026","bookings":2,"contacts":4,"gmail_id":"19ed87993d649675"}
+[2026-06-19 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-19","yesterday":"2026-06-18","mode":"cron"}
+[2026-06-19 04:05:08] [INFO] Bookings today {"count":0}
+[2026-06-19 04:05:08] [INFO] Bookings yesterday {"count":5}
+[2026-06-19 04:05:09] [INFO] Contacts created {"count":7}
+[2026-06-19 04:05:09] [INFO] Contacts modified {"count":1}
+[2026-06-19 04:05:10] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"19\/06\/2026","bookings":5,"contacts":8,"gmail_id":"19edd9ffc53ce38b"}
+[2026-06-20 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-20","yesterday":"2026-06-19","mode":"cron"}
+[2026-06-20 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-20 04:05:04] [INFO] Bookings yesterday {"count":2}
+[2026-06-20 04:05:05] [INFO] Contacts created {"count":2}
+[2026-06-20 04:05:05] [INFO] Contacts modified {"count":0}
+[2026-06-20 04:05:06] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"20\/06\/2026","bookings":2,"contacts":2,"gmail_id":"19ee2c648a9ef176"}
+[2026-06-21 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-21","yesterday":"2026-06-20","mode":"cron"}
+[2026-06-21 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-21 04:05:05] [INFO] Bookings yesterday {"count":3}
+[2026-06-21 04:05:05] [INFO] Contacts created {"count":4}
+[2026-06-21 04:05:06] [INFO] Contacts modified {"count":1}
+[2026-06-21 04:05:06] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"21\/06\/2026","bookings":3,"contacts":5,"gmail_id":"19ee7eca7051888c"}
+[2026-06-22 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-22","yesterday":"2026-06-21","mode":"cron"}
+[2026-06-22 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-22 04:05:05] [INFO] Bookings yesterday {"count":2}
+[2026-06-22 04:05:05] [INFO] Contacts created {"count":2}
+[2026-06-22 04:05:06] [INFO] Contacts modified {"count":0}
+[2026-06-22 04:05:07] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"22\/06\/2026","bookings":2,"contacts":2,"gmail_id":"19eed13036702f89"}
+[2026-06-23 04:05:02] [INFO] ── Début récap quotidien ── {"today":"2026-06-23","yesterday":"2026-06-22","mode":"cron"}
+[2026-06-23 04:05:05] [INFO] Bookings today {"count":0}
+[2026-06-23 04:05:05] [INFO] Bookings yesterday {"count":2}
+[2026-06-23 04:05:06] [INFO] Contacts created {"count":1}
+[2026-06-23 04:05:06] [INFO] Contacts modified {"count":0}
+[2026-06-23 04:05:07] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"23\/06\/2026","bookings":2,"contacts":1,"gmail_id":"19ef2396036476f3"}
+[2026-06-24 04:05:01] [INFO] ── Début récap quotidien ── {"today":"2026-06-24","yesterday":"2026-06-23","mode":"cron"}
+[2026-06-24 04:05:04] [INFO] Bookings today {"count":0}
+[2026-06-24 04:05:04] [INFO] Bookings yesterday {"count":0}
+[2026-06-24 04:05:05] [INFO] Contacts created {"count":2}
+[2026-06-24 04:05:05] [INFO] Contacts modified {"count":2}
+[2026-06-24 04:05:06] [INFO] ✅ Récap envoyé {"to":"moresebastien@gmail.com,lumnistech@gmail.com","date":"24\/06\/2026","bookings":0,"contacts":4,"gmail_id":"19ef75fba987c04e"}

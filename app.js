@@ -390,6 +390,24 @@
   }
   function init() {
   initPricing();
+  // ---- Auto-scroll si URL contient #agenda au chargement ----
+  if (window.location.hash === '#agenda') {
+    setTimeout(function() {
+      var target = document.getElementById('agenda');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+  }
+  // ---- Smooth scroll vers #agenda ----
+  document.querySelectorAll('a[href="#agenda"], a[href$="index.html#agenda"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.getElementById('agenda');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', '#agenda');
+      }
+    });
+  });
   initFAQ();
   initCTAMenu();
   initMobileMenu();

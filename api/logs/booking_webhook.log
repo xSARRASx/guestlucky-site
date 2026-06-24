@@ -1,0 +1,214 @@
+[2026-06-10 18:40:50] [INFO] Upserting contact {"phone":"0762627000"}
+[2026-06-10 18:40:52] [INFO] Contact updated (upsert) {"id":"recla1Ri2rWEIsUaJ"}
+[2026-06-10 18:40:52] [INFO] Creating booking record {"client":"contact@klarity-services.fr"}
+[2026-06-10 18:40:52] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recN42gnQotlxAqVK"}
+[2026-06-10 18:40:52] [INFO] Airtable record created {"id":"recN42gnQotlxAqVK"}
+[2026-06-10 18:40:53] [INFO] Contact updated with BookingId {"contact":"recla1Ri2rWEIsUaJ","booking":"recN42gnQotlxAqVK","planning_status":"Support technique réservé","contact_stage":"Approved"}
+[2026-06-10 18:40:55] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=MTB0M2d1ZnE3cWoxa2dodWpvMjU3MGM4MGMgNmRlZjFiNzg4ZDFlOTQ2N2Y5YTk4NjBkYzNkYWY3MDUyYmQyMmFhM2E3OGIyZGMzNjdhMWU1YjE4YTk1ZjdlYkBn"}
+[2026-06-10 18:40:55] [INFO] Cache invalidated {"agent":"kevin"}
+[2026-06-10 18:40:56] [INFO] Email sent {"to":"contact@klarity-services.fr","success":true}
+[2026-06-10 18:50:41] [INFO] Upserting contact {"phone":"+33670476014"}
+[2026-06-10 18:50:42] [INFO] Contact updated (upsert) {"id":"recHtIaixuEw8bLUP"}
+[2026-06-10 18:50:42] [INFO] Creating booking record {"client":"hp040890@gmail.com"}
+[2026-06-10 18:50:42] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recxv8oMbZhoLacrH"}
+[2026-06-10 18:50:42] [INFO] Airtable record created {"id":"recxv8oMbZhoLacrH"}
+[2026-06-10 18:50:43] [INFO] Contact updated with BookingId {"contact":"recHtIaixuEw8bLUP","booking":"recxv8oMbZhoLacrH","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-10 18:50:45] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=YnMxNGczbGtobG9rdjR2dW5vZmtib2dwaDQgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-10 18:50:45] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-10 18:50:46] [INFO] Email sent {"to":"hp040890@gmail.com","success":true}
+[2026-06-10 19:01:29] [INFO] Upserting contact {"phone":"+33670476014"}
+[2026-06-10 19:01:30] [INFO] Contact updated (upsert) {"id":"recHtIaixuEw8bLUP"}
+[2026-06-10 19:01:30] [INFO] Creating booking record {"client":"hp040890@gmail.com"}
+[2026-06-10 19:01:31] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recUrgB23qA4lNtun"}
+[2026-06-10 19:01:31] [INFO] Airtable record created {"id":"recUrgB23qA4lNtun"}
+[2026-06-10 19:01:32] [INFO] Contact updated with BookingId {"contact":"recHtIaixuEw8bLUP","booking":"recUrgB23qA4lNtun","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-10 19:01:34] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=ajdhbmxjbnJ0aDcwOGwwMGxrOGM0ZWNnOGsgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-10 19:01:34] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-10 19:01:35] [INFO] Email sent {"to":"hp040890@gmail.com","success":true}
+[2026-06-10 19:13:43] [INFO] Upserting contact {"phone":"+33670476014"}
+[2026-06-10 19:13:44] [INFO] Contact updated (upsert) {"id":"recHtIaixuEw8bLUP"}
+[2026-06-10 19:13:44] [INFO] Creating booking record {"client":"hp040890@gmail.com"}
+[2026-06-10 19:13:45] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"rec90v5iYSxfzdLd5"}
+[2026-06-10 19:13:45] [INFO] Airtable record created {"id":"rec90v5iYSxfzdLd5"}
+[2026-06-10 19:13:45] [INFO] Contact updated with BookingId {"contact":"recHtIaixuEw8bLUP","booking":"rec90v5iYSxfzdLd5","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-10 19:13:47] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=OHBrNGFxNWIwZXUxMzViZG0ydGkyOHNpZjggYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-10 19:13:47] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-10 19:13:48] [INFO] Email sent {"to":"hp040890@gmail.com","success":true}
+[2026-06-11 11:49:36] [INFO] Upserting contact {"phone":"0601731284"}
+[2026-06-11 11:49:37] [INFO] Contact updated (upsert) {"id":"reczExQTuvmGHHHA0"}
+[2026-06-11 11:49:37] [INFO] Creating booking record {"client":"contact@adrconciergerie.fr"}
+[2026-06-11 11:49:37] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recz10MTnrFSw9P61"}
+[2026-06-11 11:49:37] [INFO] Airtable record created {"id":"recz10MTnrFSw9P61"}
+[2026-06-11 11:49:38] [INFO] Contact updated with BookingId {"contact":"reczExQTuvmGHHHA0","booking":"recz10MTnrFSw9P61","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-11 11:49:40] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=bWkxbDQwaGFpN2xxamp0MjlvNXFoZjc5cjQgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-11 11:49:40] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-11 11:49:41] [INFO] Email sent {"to":"contact@adrconciergerie.fr","success":true}
+[2026-06-12 10:51:19] [INFO] Upserting contact {"phone":"0614127103"}
+[2026-06-12 10:51:22] [INFO] Contact updated (upsert) {"id":"recNX1DJis08ulBdg"}
+[2026-06-12 10:51:22] [INFO] Creating booking record {"client":"lovegite22@gmail.com"}
+[2026-06-12 10:51:23] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recpTf0i48FOSr3Yo"}
+[2026-06-12 10:51:23] [INFO] Airtable record created {"id":"recpTf0i48FOSr3Yo"}
+[2026-06-12 10:51:24] [INFO] Contact updated with BookingId {"contact":"recNX1DJis08ulBdg","booking":"recpTf0i48FOSr3Yo","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-12 10:51:25] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=cTZ0YjhlNzk0MGJia2J2ZzRpZXRudmE3aTAgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-12 10:51:25] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-12 10:51:26] [INFO] Email sent {"to":"lovegite22@gmail.com","success":true}
+[2026-06-16 10:21:45] [INFO] Upserting contact {"phone":"0775786297"}
+[2026-06-16 10:21:46] [INFO] Contact updated (upsert) {"id":"recs8jdxkNekq9SrZ"}
+[2026-06-16 10:21:46] [INFO] Creating booking record {"client":"contact@cdm83.fr"}
+[2026-06-16 10:21:47] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"rec4snZFeH7ME6L0M"}
+[2026-06-16 10:21:47] [INFO] Airtable record created {"id":"rec4snZFeH7ME6L0M"}
+[2026-06-16 10:21:47] [INFO] Contact updated with BookingId {"contact":"recs8jdxkNekq9SrZ","booking":"rec4snZFeH7ME6L0M","planning_status":"Support technique réservé","contact_stage":"Approved"}
+[2026-06-16 10:21:49] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=MzAyNTdlbWNvMWxhbGtqNm1ra2N2bTEyYWMgNmRlZjFiNzg4ZDFlOTQ2N2Y5YTk4NjBkYzNkYWY3MDUyYmQyMmFhM2E3OGIyZGMzNjdhMWU1YjE4YTk1ZjdlYkBn"}
+[2026-06-16 10:21:49] [INFO] Cache invalidated {"agent":"kevin"}
+[2026-06-16 10:21:50] [INFO] Email sent {"to":"contact@cdm83.fr","success":true}
+[2026-06-17 12:52:51] [INFO] Upserting contact {"phone":"+33650551715"}
+[2026-06-17 12:52:52] [INFO] Contact updated (upsert) {"id":"rectE75UlzEbiM3Tf"}
+[2026-06-17 12:52:52] [INFO] Creating booking record {"client":"contact.lokatys@gmail.com"}
+[2026-06-17 12:52:53] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recfFbcjFfH0kBZ0U"}
+[2026-06-17 12:52:53] [INFO] Airtable record created {"id":"recfFbcjFfH0kBZ0U"}
+[2026-06-17 12:52:53] [INFO] Contact updated with BookingId {"contact":"rectE75UlzEbiM3Tf","booking":"recfFbcjFfH0kBZ0U","planning_status":"Support technique réservé","contact_stage":"Approved"}
+[2026-06-17 12:52:55] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=YWc3YTM5dDhnbHV1cmxzNnJzYzNuZ3NldDggNmRlZjFiNzg4ZDFlOTQ2N2Y5YTk4NjBkYzNkYWY3MDUyYmQyMmFhM2E3OGIyZGMzNjdhMWU1YjE4YTk1ZjdlYkBn"}
+[2026-06-17 12:52:55] [INFO] Cache invalidated {"agent":"kevin"}
+[2026-06-17 12:52:56] [INFO] Email sent {"to":"contact.lokatys@gmail.com","success":true}
+[2026-06-17 14:27:18] [INFO] Upserting contact {"phone":"+33650551715"}
+[2026-06-17 14:27:20] [INFO] Contact updated (upsert) {"id":"rectE75UlzEbiM3Tf"}
+[2026-06-17 14:27:20] [INFO] Creating booking record {"client":"kahina.gelpe@gmail.com"}
+[2026-06-17 14:27:20] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"reciSDvWrsu9YpHYE"}
+[2026-06-17 14:27:20] [INFO] Airtable record created {"id":"reciSDvWrsu9YpHYE"}
+[2026-06-17 14:27:21] [INFO] Contact updated with BookingId {"contact":"rectE75UlzEbiM3Tf","booking":"reciSDvWrsu9YpHYE","planning_status":"Support technique réservé","contact_stage":"Approved"}
+[2026-06-17 14:27:23] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=YzNtamJkZzFqYTNpbzQzZTg2YmpwaWRtOTQgNmRlZjFiNzg4ZDFlOTQ2N2Y5YTk4NjBkYzNkYWY3MDUyYmQyMmFhM2E3OGIyZGMzNjdhMWU1YjE4YTk1ZjdlYkBn"}
+[2026-06-17 14:27:23] [INFO] Cache invalidated {"agent":"kevin"}
+[2026-06-17 14:27:24] [INFO] Email sent {"to":"kahina.gelpe@gmail.com","success":true}
+[2026-06-18 13:15:55] [INFO] Upserting contact {"phone":"+33644367770"}
+[2026-06-18 13:15:56] [INFO] Contact updated (upsert) {"id":"recaD2tmEGpdQxajR"}
+[2026-06-18 13:15:56] [INFO] Creating booking record {"client":"marrerosterenn@gmail.com"}
+[2026-06-18 13:15:57] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recXEz7IGKVumaL7b"}
+[2026-06-18 13:15:57] [INFO] Airtable record created {"id":"recXEz7IGKVumaL7b"}
+[2026-06-18 13:15:57] [INFO] Contact updated with BookingId {"contact":"recaD2tmEGpdQxajR","booking":"recXEz7IGKVumaL7b","planning_status":"Support technique réservé","contact_stage":"Approved"}
+[2026-06-18 13:15:59] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=Y3RzZjcwNDVmOG9maGprdWNwMWcyMHNudWcgNmRlZjFiNzg4ZDFlOTQ2N2Y5YTk4NjBkYzNkYWY3MDUyYmQyMmFhM2E3OGIyZGMzNjdhMWU1YjE4YTk1ZjdlYkBn"}
+[2026-06-18 13:15:59] [INFO] Cache invalidated {"agent":"kevin"}
+[2026-06-18 13:16:00] [INFO] Email sent {"to":"marrerosterenn@gmail.com","success":true}
+[2026-06-18 18:29:57] [INFO] Upserting contact {"phone":"0603940549"}
+[2026-06-18 18:29:58] [INFO] Contact updated (upsert) {"id":"recWazBt0JBMvXb53"}
+[2026-06-18 18:29:58] [INFO] Creating booking record {"client":"christelle.harmonyzenservices@gmail.com"}
+[2026-06-18 18:29:59] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"rec6kkTXQsdfChAPB"}
+[2026-06-18 18:29:59] [INFO] Airtable record created {"id":"rec6kkTXQsdfChAPB"}
+[2026-06-18 18:30:00] [INFO] Contact updated with BookingId {"contact":"recWazBt0JBMvXb53","booking":"rec6kkTXQsdfChAPB","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-18 18:30:02] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=N2N1MmE4MnFtZnVmM2o1MzFwcjEycWE4OGMgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-18 18:30:02] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-18 18:30:03] [INFO] Email sent {"to":"christelle.harmonyzenservices@gmail.com","success":true}
+[2026-06-18 19:03:25] [INFO] Upserting contact {"phone":"+33648101506"}
+[2026-06-18 19:03:28] [INFO] Contact updated (upsert) {"id":"recTsTjazfObcr9dR"}
+[2026-06-18 19:03:28] [INFO] Creating booking record {"client":"contact@angersconciergerieservices.fr"}
+[2026-06-18 19:03:29] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recIb21BrA4ABCqeW"}
+[2026-06-18 19:03:29] [INFO] Airtable record created {"id":"recIb21BrA4ABCqeW"}
+[2026-06-18 19:03:30] [INFO] Contact updated with BookingId {"contact":"recTsTjazfObcr9dR","booking":"recIb21BrA4ABCqeW","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-18 19:03:32] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=ZnExbzJodDQzcWdjYnY2dWxpZnNlZHFnb2sgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-18 19:03:32] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-18 19:03:33] [INFO] Email sent {"to":"contact@angersconciergerieservices.fr","success":true}
+[2026-06-18 19:09:48] [INFO] Upserting contact {"phone":"+33610495503"}
+[2026-06-18 19:09:50] [INFO] Contact updated (upsert) {"id":"recHrjSXPlJrfoEBh"}
+[2026-06-18 19:09:50] [INFO] Creating booking record {"client":"Christianperrot@hotmail.fr"}
+[2026-06-18 19:09:50] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"reclCUuyw9YSYGYhq"}
+[2026-06-18 19:09:50] [INFO] Airtable record created {"id":"reclCUuyw9YSYGYhq"}
+[2026-06-18 19:09:51] [INFO] Contact updated with BookingId {"contact":"recHrjSXPlJrfoEBh","booking":"reclCUuyw9YSYGYhq","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-18 19:09:53] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=NG04OG5hdGpiNG9iMWI2OXFmdW50ZXA0cTQgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-18 19:09:53] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-18 19:09:54] [INFO] Email sent {"to":"Christianperrot@hotmail.fr","success":true}
+[2026-06-18 19:32:19] [INFO] Upserting contact {"phone":"0761061077"}
+[2026-06-18 19:32:20] [INFO] Contact updated (upsert) {"id":"recDJfH68EHC10cLc"}
+[2026-06-18 19:32:20] [INFO] Creating booking record {"client":"contact@beds-and-you.com"}
+[2026-06-18 19:32:21] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recYjUVh1lcA6icvJ"}
+[2026-06-18 19:32:21] [INFO] Airtable record created {"id":"recYjUVh1lcA6icvJ"}
+[2026-06-18 19:32:21] [INFO] Contact updated with BookingId {"contact":"recDJfH68EHC10cLc","booking":"recYjUVh1lcA6icvJ","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-18 19:32:23] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=cjhncnJjbWZjc2ltcWs4cGU3a2E0Y3NzdnMgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-18 19:32:23] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-18 19:32:24] [INFO] Email sent {"to":"contact@beds-and-you.com","success":true}
+[2026-06-19 16:02:57] [INFO] Upserting contact {"phone":"+33623241752"}
+[2026-06-19 16:02:58] [INFO] Contact updated (upsert) {"id":"recWtKnYcKSB76uoC"}
+[2026-06-19 16:02:58] [INFO] Creating booking record {"client":"ragnarok.immo@gmail.com"}
+[2026-06-19 16:02:59] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recU1YPstDQyACFZO"}
+[2026-06-19 16:02:59] [INFO] Airtable record created {"id":"recU1YPstDQyACFZO"}
+[2026-06-19 16:03:00] [INFO] Contact updated with BookingId {"contact":"recWtKnYcKSB76uoC","booking":"recU1YPstDQyACFZO","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-19 16:03:01] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=NWZ2djZlMjNzcm1xcmpyZmlxbWZjYXJrMXMgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-19 16:03:01] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-19 16:03:03] [INFO] Email sent {"to":"ragnarok.immo@gmail.com","success":true}
+[2026-06-19 18:43:35] [INFO] Upserting contact {"phone":"0780529569"}
+[2026-06-19 18:43:37] [INFO] Contact updated (upsert) {"id":"recCZDVT9pcwgkEeJ"}
+[2026-06-19 18:43:37] [INFO] Creating booking record {"client":"vmhae@hotmail.fr"}
+[2026-06-19 18:43:37] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recHu5auBeKtxHL7q"}
+[2026-06-19 18:43:37] [INFO] Airtable record created {"id":"recHu5auBeKtxHL7q"}
+[2026-06-19 18:43:38] [INFO] Contact updated with BookingId {"contact":"recCZDVT9pcwgkEeJ","booking":"recHu5auBeKtxHL7q","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-19 18:43:40] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=c2k2M21odnBmZGJqZ2lqcGZlcWZsMG43ZmcgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-19 18:43:40] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-19 18:43:41] [INFO] Email sent {"to":"vmhae@hotmail.fr","success":true}
+[2026-06-20 09:38:35] [INFO] Upserting contact {"phone":"+33610495503"}
+[2026-06-20 09:38:36] [INFO] Contact updated (upsert) {"id":"recHrjSXPlJrfoEBh"}
+[2026-06-20 09:38:36] [INFO] Creating booking record {"client":"Christianperrot@hotmail.fr"}
+[2026-06-20 09:38:37] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recOSXZNCwPFFR1me"}
+[2026-06-20 09:38:37] [INFO] Airtable record created {"id":"recOSXZNCwPFFR1me"}
+[2026-06-20 09:38:38] [INFO] Contact updated with BookingId {"contact":"recHrjSXPlJrfoEBh","booking":"recOSXZNCwPFFR1me","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-20 09:38:40] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=YjBiNjNob2M2bnFqOGlhbDNiYm4wbHQ2NGsgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-20 09:38:40] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-20 09:38:41] [INFO] Email sent {"to":"Christianperrot@hotmail.fr","success":true}
+[2026-06-20 10:21:27] [INFO] Upserting contact {"phone":"+33685297070"}
+[2026-06-20 10:21:28] [INFO] Contact updated (upsert) {"id":"recg6fCed6ik9E62u"}
+[2026-06-20 10:21:28] [INFO] Creating booking record {"client":"toune66530@hotmail.fr"}
+[2026-06-20 10:21:29] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recMZ47dknSBnPlHf"}
+[2026-06-20 10:21:29] [INFO] Airtable record created {"id":"recMZ47dknSBnPlHf"}
+[2026-06-20 10:21:29] [INFO] Contact updated with BookingId {"contact":"recg6fCed6ik9E62u","booking":"recMZ47dknSBnPlHf","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-20 10:21:31] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=NjJyYmpkaGpwZ2k5bGppNXJsaTBna2t2MmMgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-20 10:21:31] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-20 10:21:32] [INFO] Email sent {"to":"toune66530@hotmail.fr","success":true}
+[2026-06-20 21:54:52] [INFO] Upserting contact {"phone":"+330782768150"}
+[2026-06-20 21:54:54] [INFO] Contact updated (upsert) {"id":"rect2MXM5ACANuo3D"}
+[2026-06-20 21:54:54] [INFO] Creating booking record {"client":"teyssedreantoine@gmail.com"}
+[2026-06-20 21:54:55] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recMjhk1UrmdesdrR"}
+[2026-06-20 21:54:55] [INFO] Airtable record created {"id":"recMjhk1UrmdesdrR"}
+[2026-06-20 21:54:56] [INFO] Contact updated with BookingId {"contact":"rect2MXM5ACANuo3D","booking":"recMjhk1UrmdesdrR","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-20 21:54:57] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=cGc4aDBrcDRoNGQ4ZHYwODdmMW1jdHBxbDggYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-20 21:54:57] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-20 21:54:59] [INFO] Email sent {"to":"teyssedreantoine@gmail.com","success":true}
+[2026-06-21 11:10:37] [INFO] Upserting contact {"phone":"0662302907"}
+[2026-06-21 11:10:39] [INFO] Contact updated (upsert) {"id":"rec1JW2Ahq4molGph"}
+[2026-06-21 11:10:39] [INFO] Creating booking record {"client":"contact@nuits-de-panneciere.com"}
+[2026-06-21 11:10:39] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"rec49DSgwZPzzJPc0"}
+[2026-06-21 11:10:39] [INFO] Airtable record created {"id":"rec49DSgwZPzzJPc0"}
+[2026-06-21 11:10:40] [INFO] Contact updated with BookingId {"contact":"rec1JW2Ahq4molGph","booking":"rec49DSgwZPzzJPc0","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-21 11:10:41] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=dWltN3JmbWhhODBxcjV2anJiMmtxaDU2ZDAgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-21 11:10:41] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-21 11:10:43] [INFO] Email sent {"to":"contact@nuits-de-panneciere.com","success":true}
+[2026-06-21 15:15:08] [INFO] Upserting contact {"phone":"0643282124"}
+[2026-06-21 15:15:09] [INFO] Contact updated (upsert) {"id":"reckW2SJ9bnk3uFEZ"}
+[2026-06-21 15:15:09] [INFO] Creating booking record {"client":"romain_693@hotmail.fr"}
+[2026-06-21 15:15:10] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recHyAa89EXoBy20I"}
+[2026-06-21 15:15:10] [INFO] Airtable record created {"id":"recHyAa89EXoBy20I"}
+[2026-06-21 15:15:11] [INFO] Contact updated with BookingId {"contact":"reckW2SJ9bnk3uFEZ","booking":"recHyAa89EXoBy20I","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-21 15:15:12] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=b3VxcjFhbWVlbHE2aTF0NzFzYzN1aDJ2aWcgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-21 15:15:12] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-21 15:15:13] [INFO] Email sent {"to":"romain_693@hotmail.fr","success":true}
+[2026-06-22 10:44:37] [INFO] Upserting contact {"phone":"+33663293844"}
+[2026-06-22 10:44:40] [INFO] Contact updated (upsert) {"id":"rec7puFJWtLRAk4wu"}
+[2026-06-22 10:44:40] [INFO] Creating booking record {"client":"lesfmr.conciergerie@gmail.com"}
+[2026-06-22 10:44:41] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"recf261hoJxh07u0o"}
+[2026-06-22 10:44:41] [INFO] Airtable record created {"id":"recf261hoJxh07u0o"}
+[2026-06-22 10:44:41] [INFO] Contact updated with BookingId {"contact":"rec7puFJWtLRAk4wu","booking":"recf261hoJxh07u0o","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-22 10:44:43] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=NTdoMW9zcWt0ZHJhbnA2cTBpMmtidTRkaG8gYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-22 10:44:43] [INFO] Cache invalidated {"agent":"camille"}
+[2026-06-22 10:44:44] [INFO] Email sent {"to":"lesfmr.conciergerie@gmail.com","success":true}
+[2026-06-22 11:19:59] [INFO] Upserting contact {"phone":"+33663293844"}
+[2026-06-22 11:20:02] [INFO] Contact updated (upsert) {"id":"rec7puFJWtLRAk4wu"}
+[2026-06-22 11:20:02] [INFO] Creating booking record {"client":"fmrlinius@gmail.com"}
+[2026-06-22 11:20:03] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"rec4huJQezrQqYijR"}
+[2026-06-22 11:20:03] [INFO] Airtable record created {"id":"rec4huJQezrQqYijR"}
+[2026-06-22 11:20:03] [INFO] Contact updated with BookingId {"contact":"rec7puFJWtLRAk4wu","booking":"rec4huJQezrQqYijR","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-22 11:20:05] [INFO] GCal event created {"meetLink":"https:\/\/www.google.com\/calendar\/event?eid=ZWsxbm05ZTlvdHE5OXFwdDZ2YXA4ZnZxdXMgYTRmN2ExNjg0ZjE1NTIwMzE4NWVhMDQ1OTg3N2RiMzlmM2RmMjc3OGM2YzU2M2QzYmRmMDI0MWZhOTBkN2RkOEBn"}
+[2026-06-22 11:20:06] [INFO] Email sent {"to":"fmrlinius@gmail.com","success":true}
+[2026-06-24 09:53:42] [INFO] Upserting contact {"phone":"+32491137330"}
+[2026-06-24 09:53:43] [INFO] Contact updated (upsert) {"id":"reccVWfZQ5Zvh3tln"}
+[2026-06-24 09:53:43] [INFO] Creating booking record {"client":"alexandre.thone@gmail.com"}
+[2026-06-24 09:53:44] [DEBUG] airtable_create_record {"table":"tbltript1P7ZdPVKs","code":200,"error":null,"id":"rec71d1iZNHQcUuC5"}
+[2026-06-24 09:53:44] [INFO] Airtable record created {"id":"rec71d1iZNHQcUuC5"}
+[2026-06-24 09:53:44] [INFO] Contact updated with BookingId {"contact":"reccVWfZQ5Zvh3tln","booking":"rec71d1iZNHQcUuC5","planning_status":"Appel stratégique réservé","contact_stage":"Approved"}
+[2026-06-24 09:53:45] [ERROR] Google token refresh failed {"code":400}
+[2026-06-24 09:53:45] [ERROR] Could not refresh Google token {"agentId":"camille"}

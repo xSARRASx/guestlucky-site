@@ -1,0 +1,299 @@
+[2026-06-10 18:33:39] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"90.16.9.21"}
+[2026-06-10 18:33:39] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 18:33:40] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-10 18:33:40] [INFO] Access token obtenu 
+[2026-06-10 18:33:40] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 18:33:40] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-10 18:40:56] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"90.16.9.21"}
+[2026-06-10 18:40:56] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 18:40:57] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-10 18:40:57] [INFO] Access token obtenu 
+[2026-06-10 18:40:57] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 18:40:57] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-10 18:49:20] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-10 18:49:20] [INFO] Cache HIT {"agent":"kevin"}
+[2026-06-10 18:49:21] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 18:49:21] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-10 18:50:31] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-10 18:50:32] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-10 18:50:32] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-10 18:50:32] [INFO] Access token obtenu 
+[2026-06-10 18:50:32] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-10 18:50:33] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-10 19:01:12] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-10 19:01:13] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-10 19:01:13] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-10 19:01:13] [INFO] Access token obtenu 
+[2026-06-10 19:01:13] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-10 19:01:13] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-10 19:12:21] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-10 19:12:22] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 19:12:22] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-10 19:12:22] [INFO] Access token obtenu 
+[2026-06-10 19:12:22] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-10 19:12:23] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-10 19:13:38] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-10 19:13:38] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-10 19:13:39] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-10 19:13:39] [INFO] Access token obtenu 
+[2026-06-10 19:13:39] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-10 19:13:39] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-11 10:58:08] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"88.138.73.27"}
+[2026-06-11 10:58:09] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 10:58:10] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 10:58:10] [INFO] Access token obtenu 
+[2026-06-11 10:58:10] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 10:58:10] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-11 11:48:37] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"37.65.14.94"}
+[2026-06-11 11:48:38] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-11 11:48:39] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 11:48:39] [INFO] Access token obtenu 
+[2026-06-11 11:48:39] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-11 11:48:39] [INFO] Réponse envoyée {"source":"google_calendar","days_available":45}
+[2026-06-11 14:17:49] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"88.138.73.27"}
+[2026-06-11 14:17:50] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 14:17:50] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 14:17:50] [INFO] Access token obtenu 
+[2026-06-11 14:17:50] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 14:17:51] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-11 15:20:32] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"115.87.153.218"}
+[2026-06-11 15:20:33] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 15:20:33] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 15:20:34] [INFO] Access token obtenu 
+[2026-06-11 15:20:34] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 15:20:34] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-11 17:13:28] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"88.138.73.27"}
+[2026-06-11 17:13:28] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 17:13:29] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 17:13:29] [INFO] Access token obtenu 
+[2026-06-11 17:13:29] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 17:13:30] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-11 17:53:55] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"88.138.73.27"}
+[2026-06-11 17:53:56] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 17:53:56] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 17:53:56] [INFO] Access token obtenu 
+[2026-06-11 17:53:56] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 17:53:57] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-11 22:16:59] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"82.64.30.151"}
+[2026-06-11 22:16:59] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 22:17:00] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-11 22:17:00] [INFO] Access token obtenu 
+[2026-06-11 22:17:00] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-11 22:17:00] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-12 09:18:37] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"82.96.142.207"}
+[2026-06-12 09:18:37] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-12 09:18:38] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-12 09:18:38] [INFO] Access token obtenu 
+[2026-06-12 09:18:38] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-12 09:18:38] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-12 10:47:43] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"176.188.185.104"}
+[2026-06-12 10:47:44] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03wTv8X...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-12 10:47:44] [INFO] Refresh token Google {"hint":"1\/\/03wTv8X..."}
+[2026-06-12 10:47:44] [INFO] Access token obtenu 
+[2026-06-12 10:47:44] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-12 10:47:44] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-16 10:18:51] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"91.161.69.201"}
+[2026-06-16 10:18:51] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03aiNUh...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 10:18:52] [INFO] Refresh token Google {"hint":"1\/\/03aiNUh..."}
+[2026-06-16 10:18:52] [INFO] Access token obtenu 
+[2026-06-16 10:18:52] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 10:18:52] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-16 10:21:30] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"technique","days":45,"flush":"0","ip":"91.161.69.201"}
+[2026-06-16 10:21:30] [INFO] Cache HIT {"agent":"kevin"}
+[2026-06-16 10:21:30] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03aiNUh...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 10:21:31] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-16 11:01:12] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"176.133.181.96"}
+[2026-06-16 11:01:13] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03aiNUh...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 11:01:13] [INFO] Refresh token Google {"hint":"1\/\/03aiNUh..."}
+[2026-06-16 11:01:13] [INFO] Access token obtenu 
+[2026-06-16 11:01:13] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 11:01:14] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-16 12:04:39] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"45.141.123.70"}
+[2026-06-16 12:04:40] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03aiNUh...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 12:04:40] [INFO] Refresh token Google {"hint":"1\/\/03aiNUh..."}
+[2026-06-16 12:04:40] [INFO] Access token obtenu 
+[2026-06-16 12:04:40] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-16 12:04:41] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-17 12:52:12] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"technique","days":45,"flush":"0","ip":"88.164.168.81"}
+[2026-06-17 12:52:13] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-17 12:52:13] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-17 12:52:14] [INFO] Access token obtenu 
+[2026-06-17 12:52:14] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-17 12:52:14] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-17 14:26:49] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"technique","days":45,"flush":"0","ip":"89.80.99.122"}
+[2026-06-17 14:26:49] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-17 14:26:50] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-17 14:26:50] [INFO] Access token obtenu 
+[2026-06-17 14:26:50] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-17 14:26:50] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-17 18:08:25] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"technique","days":45,"flush":"0","ip":"88.168.226.159"}
+[2026-06-17 18:08:26] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-17 18:08:26] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-17 18:08:26] [INFO] Access token obtenu 
+[2026-06-17 18:08:26] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-17 18:08:27] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-18 11:24:58] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"technique","days":45,"flush":"0","ip":"45.152.47.87"}
+[2026-06-18 11:24:59] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-18 11:24:59] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 11:24:59] [INFO] Access token obtenu 
+[2026-06-18 11:24:59] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-18 11:25:00] [INFO] Réponse envoyée {"source":"google_calendar","days_available":29}
+[2026-06-18 13:13:44] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"technique","days":45,"flush":"0","ip":"93.30.197.109"}
+[2026-06-18 13:13:44] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-18 13:13:45] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 13:13:45] [INFO] Access token obtenu 
+[2026-06-18 13:13:45] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-18 13:13:45] [INFO] Réponse envoyée {"source":"google_calendar","days_available":29}
+[2026-06-18 17:26:01] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"45.152.47.92"}
+[2026-06-18 17:26:02] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 17:26:02] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 17:26:03] [INFO] Access token obtenu 
+[2026-06-18 17:26:03] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 17:26:03] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 18:09:30] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"45.152.47.92"}
+[2026-06-18 18:09:30] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 18:09:31] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 18:09:31] [INFO] Access token obtenu 
+[2026-06-18 18:09:31] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 18:09:31] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 18:29:21] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"89.89.51.13"}
+[2026-06-18 18:29:22] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 18:29:22] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 18:29:22] [INFO] Access token obtenu 
+[2026-06-18 18:29:22] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 18:29:22] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 18:57:45] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"85.69.103.147"}
+[2026-06-18 18:57:46] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 18:57:46] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 18:57:46] [INFO] Access token obtenu 
+[2026-06-18 18:57:46] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 18:57:47] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 19:03:33] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"85.69.103.147"}
+[2026-06-18 19:03:33] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:03:34] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 19:03:34] [INFO] Access token obtenu 
+[2026-06-18 19:03:34] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:03:34] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 19:09:21] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"176.146.18.25"}
+[2026-06-18 19:09:21] [INFO] Cache HIT {"agent":"camille"}
+[2026-06-18 19:09:21] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:09:22] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 19:16:23] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"31.37.72.45"}
+[2026-06-18 19:16:24] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:16:24] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 19:16:24] [INFO] Access token obtenu 
+[2026-06-18 19:16:24] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:16:25] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 19:18:10] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"37.67.182.176"}
+[2026-06-18 19:18:10] [INFO] Cache HIT {"agent":"camille"}
+[2026-06-18 19:18:11] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:18:11] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-18 19:31:41] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"176.181.44.81"}
+[2026-06-18 19:31:42] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:31:42] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-18 19:31:42] [INFO] Access token obtenu 
+[2026-06-18 19:31:42] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-18 19:31:43] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-19 16:02:01] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"82.225.193.61"}
+[2026-06-19 16:02:02] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-19 16:02:02] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-19 16:02:03] [INFO] Access token obtenu 
+[2026-06-19 16:02:03] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-19 16:02:03] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-19 18:42:21] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"37.66.207.219"}
+[2026-06-19 18:42:22] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-19 18:42:22] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-19 18:42:22] [INFO] Access token obtenu 
+[2026-06-19 18:42:22] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-19 18:42:22] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-20 09:38:08] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"176.146.18.25"}
+[2026-06-20 09:38:09] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-20 09:38:09] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-20 09:38:09] [INFO] Access token obtenu 
+[2026-06-20 09:38:09] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-20 09:38:10] [INFO] Réponse envoyée {"source":"google_calendar","days_available":45}
+[2026-06-20 10:14:07] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"62.36.116.35"}
+[2026-06-20 10:14:08] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-20 10:14:08] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-20 10:14:08] [INFO] Access token obtenu 
+[2026-06-20 10:14:08] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-20 10:14:09] [INFO] Réponse envoyée {"source":"google_calendar","days_available":30}
+[2026-06-20 10:20:41] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"62.36.116.35"}
+[2026-06-20 10:20:41] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-20 10:20:42] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-20 10:20:42] [INFO] Access token obtenu 
+[2026-06-20 10:20:42] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-20 10:20:42] [INFO] Réponse envoyée {"source":"google_calendar","days_available":45}
+[2026-06-20 21:54:26] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"88.172.179.53"}
+[2026-06-20 21:54:26] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-20 21:54:27] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-20 21:54:27] [INFO] Access token obtenu 
+[2026-06-20 21:54:27] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-20 21:54:27] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-21 11:08:53] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"37.65.163.124"}
+[2026-06-21 11:08:54] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-21 11:08:54] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-21 11:08:54] [INFO] Access token obtenu 
+[2026-06-21 11:08:54] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-21 11:08:54] [INFO] Réponse envoyée {"source":"google_calendar","days_available":45}
+[2026-06-21 15:14:42] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.62.39.196"}
+[2026-06-21 15:14:43] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-21 15:14:43] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-21 15:14:43] [INFO] Access token obtenu 
+[2026-06-21 15:14:43] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-21 15:14:44] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-22 10:40:01] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"90.104.249.61"}
+[2026-06-22 10:40:02] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-22 10:40:02] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-22 10:40:02] [INFO] Access token obtenu 
+[2026-06-22 10:40:02] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-22 10:40:03] [INFO] Réponse envoyée {"source":"google_calendar","days_available":45}
+[2026-06-22 11:20:06] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"90.104.249.61"}
+[2026-06-22 11:20:07] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-22 11:20:07] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-22 11:20:07] [INFO] Access token obtenu 
+[2026-06-22 11:20:07] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-22 11:20:07] [INFO] Réponse envoyée {"source":"google_calendar","days_available":45}
+[2026-06-23 17:04:49] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-23 17:04:50] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:04:50] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-23 17:04:50] [INFO] Access token obtenu 
+[2026-06-23 17:04:50] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:04:50] [DEBUG] Fenêtre de blocage appliquée {"minNoticeHours":6,"noticeMinutes":360,"scanStart":"2026-06-23 23:04","source":"airtable"}
+[2026-06-23 17:04:50] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-23 17:12:35] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-23 17:12:36] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:12:36] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-23 17:12:37] [INFO] Access token obtenu 
+[2026-06-23 17:12:37] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:12:37] [DEBUG] Fenêtre de blocage appliquée {"minNoticeHours":24,"noticeMinutes":1440,"scanStart":"2026-06-24 17:12","source":"airtable"}
+[2026-06-23 17:12:37] [INFO] Réponse envoyée {"source":"google_calendar","days_available":43}
+[2026-06-23 17:21:26] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-23 17:21:27] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:21:27] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-23 17:21:27] [INFO] Access token obtenu 
+[2026-06-23 17:21:27] [INFO] FreeBusy request {"calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:21:27] [DEBUG] Fenêtre de blocage appliquée {"minNoticeHours":6,"noticeMinutes":360,"scanStart":"2026-06-23 23:21","source":"airtable"}
+[2026-06-23 17:21:27] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-23 17:22:43] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-23 17:22:43] [INFO] Cache HIT {"agent":"camille"}
+[2026-06-23 17:22:43] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:22:44] [DEBUG] Fenêtre de blocage appliquée {"minNoticeHours":6,"noticeMinutes":360,"scanStart":"2026-06-23 23:22","source":"airtable"}
+[2026-06-23 17:22:44] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-23 17:28:39] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"109.223.4.154"}
+[2026-06-23 17:28:39] [INFO] Cache HIT {"agent":"camille"}
+[2026-06-23 17:28:40] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-23 17:28:40] [DEBUG] Fenêtre de blocage appliquée {"minNoticeHours":6,"noticeMinutes":360,"scanStart":"2026-06-23 23:28","source":"airtable"}
+[2026-06-23 17:28:40] [INFO] Réponse envoyée {"source":"google_calendar","days_available":44}
+[2026-06-23 17:53:27] [INFO] ── Requête entrante ── {"agent_id":"kevin","type_id":"onboarding","days":45,"flush":"0","ip":"89.93.118.200"}
+[2026-06-23 17:53:28] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-23 17:53:28] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-23 17:53:28] [INFO] Access token obtenu 
+[2026-06-23 17:53:28] [INFO] FreeBusy request {"calendar_id":"6def1b788d1e9467f9a9860dc3daf7052bd22aa3a78b2dc367a1e5b18a95f7eb@group.calendar.google.com"}
+[2026-06-23 17:53:29] [DEBUG] Fenêtre de blocage appliquée {"minNoticeHours":4,"noticeMinutes":240,"scanStart":"2026-06-23 21:53","source":"airtable"}
+[2026-06-23 17:53:29] [INFO] Réponse envoyée {"source":"google_calendar","days_available":31}
+[2026-06-24 09:52:11] [INFO] ── Requête entrante ── {"agent_id":"camille","type_id":"demo","days":45,"flush":"0","ip":"94.109.155.230"}
+[2026-06-24 09:52:11] [DEBUG] Token check {"refresh_token_length":103,"refresh_token_hint":"1\/\/03ZkhSF...","calendar_id":"a4f7a1684f155203185ea0459877db39f3df2778c6c563d3bdf0241fa90d7dd8@group.calendar.google.com"}
+[2026-06-24 09:52:12] [INFO] Refresh token Google {"hint":"1\/\/03ZkhSF..."}
+[2026-06-24 09:52:12] [ERROR] TOKEN_EXPIRED {"code":400,"error":"invalid_grant"}
+[2026-06-24 09:52:13] [INFO] Alerte token expiration envoyée {"to":"moresebastien@gmail.com,lumnistech@gmail.com"}
