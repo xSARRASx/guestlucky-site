@@ -106,6 +106,7 @@ Toujours linker DIRECTEMENT vers cette URL pour les CTA "Réserver une démo" / 
 ```
 guestlucky-site/
 ├── index.html, index-en.html              # Home FR + EN
+├── a-propos*.html                         # Page À propos (histoire de Sébastien Moré)
 ├── pour-qui*.html, fonctionnalites*.html  # Pages produit
 ├── tarifs*.html, faq*.html, contact*.html
 ├── demo*.html, webinaire*.html, merci*.html

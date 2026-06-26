@@ -256,7 +256,7 @@
   <button class="menu-toggle" data-menu-toggle aria-label="Menu"><span></span><span></span><span></span></button>
   <nav class="main-nav" data-main-nav>
   <ul>
-  <li><a href="index-en.html" class="active">Home</a></li>
+  <li><a href="index-en.html" class="active">Home</a></li><li><a href="a-propos-en.html">About</a></li>
   <li><a href="pour-qui-en.html">For whom?</a></li>
   <li><a href="fonctionnalites-en.html">Features</a></li>
   <li><a href="tarifs-en.html">Pricing</a></li>
@@ -432,6 +432,49 @@
   </div>
   </div>
   </section>
+  <!-- ===== FOUNDER STRIP ===== -->
+  <section class="founder-strip">
+    <div class="container">
+      <div class="fs-grid">
+        <div class="fs-photo">
+          <img src="assets/about/sebastien-seminaire-portrait.jpg" alt="Sébastien Moré, founder of GuestLucky" loading="lazy" width="800" height="800">
+        </div>
+        <div class="fs-text">
+          <span class="fs-eb">Not just another software.</span>
+          <h2 class="fs-title">Built by an <span class="fs-grad">operator</span>, not by a consulting firm.</h2>
+          <p class="fs-lead">I'm <strong>Sébastien Moré</strong>, founder of GuestLucky. <strong>10 years in the Airbnb business</strong>, <strong>8 years training pro property managers</strong>, software engineer by training. GuestLucky isn't a product manager's idea. It's the tool I built to <strong>solve my own operator pain points</strong>, coded with my own hands.</p>
+          <div class="fs-cta-row">
+            <a href="a-propos-en.html" class="fs-btn">Read my story <span class="arrow">→</span></a>
+            <a href="https://www.guestlucky.com/rdv/site" target="_blank" rel="noopener" class="fs-btn ghost">Book a demo with me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+  .founder-strip{padding:80px 0;background:linear-gradient(180deg,#fff 0%,#f6f3ff 100%);position:relative;overflow:hidden}
+  .founder-strip .container{position:relative;z-index:1}
+  .fs-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+  .fs-photo{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 40px 80px -30px rgba(15,26,53,.35),0 20px 40px -20px rgba(107,70,255,.25)}
+  .fs-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .fs-eb{display:inline-block;padding:8px 18px;background:rgba(232,74,140,.10);border:1px solid rgba(232,74,140,.18);color:#E84A8C;border-radius:100px;font-size:13px;font-weight:700;margin-bottom:18px;letter-spacing:.02em;text-transform:uppercase}
+  .fs-title{font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:800;color:#0F1A35;line-height:1.1;letter-spacing:-.03em;margin:0 0 20px}
+  .fs-grad{background:linear-gradient(135deg,#6b46ff 0%,#E84A8C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .fs-lead{color:#3a3a4a;font-size:clamp(1rem,1.25vw,1.15rem);line-height:1.7;margin:0 0 28px;max-width:60ch}
+  .fs-lead strong{color:#0F1A35;font-weight:700}
+  .fs-cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .fs-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;background:linear-gradient(135deg,#6b46ff,#E84A8C);color:#fff;border-radius:100px;font-weight:700;font-size:14.5px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 14px 32px -12px rgba(232,74,140,.45)}
+  .fs-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(232,74,140,.6)}
+  .fs-btn .arrow{transition:transform .2s}
+  .fs-btn:hover .arrow{transform:translateX(3px)}
+  .fs-btn.ghost{background:transparent;color:#0F1A35;border:1.5px solid rgba(15,26,53,.15);box-shadow:none}
+  .fs-btn.ghost:hover{background:#fff;border-color:#6b46ff;color:#6b46ff;transform:translateY(-2px)}
+  @media (max-width:900px){
+    .founder-strip{padding:60px 0}
+    .fs-grid{grid-template-columns:1fr;gap:32px}
+    .fs-photo{max-width:340px;margin:0 auto;aspect-ratio:1/1}
+  }
+  </style>
   <!-- LUCKY COPILOT - New AI feature -->
   <section class="section copilot-promo" id="copilot">
   <div class="copilot-promo-bg"><span class="blob purple"></span><span class="blob magenta"></span></div>

@@ -16,6 +16,8 @@
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.guestlucky.com/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.guestlucky.com/index-en.html"/>
     </url>
+    <url><loc>https://www.guestlucky.com/a-propos.html</loc><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.guestlucky.com/a-propos.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.guestlucky.com/a-propos-en.html"/></url>
+    <url><loc>https://www.guestlucky.com/a-propos-en.html</loc><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.guestlucky.com/a-propos.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.guestlucky.com/a-propos-en.html"/></url>
     <url><loc>https://www.guestlucky.com/pour-qui.html</loc><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.guestlucky.com/pour-qui.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.guestlucky.com/pour-qui-en.html"/></url>
     <url><loc>https://www.guestlucky.com/pour-qui-en.html</loc><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.guestlucky.com/pour-qui.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.guestlucky.com/pour-qui-en.html"/></url>
     <url><loc>https://www.guestlucky.com/fonctionnalites.html</loc><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="fr" href="https://www.guestlucky.com/fonctionnalites.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.guestlucky.com/fonctionnalites-en.html"/></url>
