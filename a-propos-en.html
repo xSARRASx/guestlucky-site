@@ -41,6 +41,11 @@
   <link rel="stylesheet" href="style.css?v=17">
 <style id="ap-defensive">
 .site-footer{margin-top:0 !important}
+/* Defensive nav header (8 items + buttons) */
+.main-nav ul{gap:1.5rem !important}
+.main-nav a{font-size:.88rem !important;white-space:nowrap !important}
+@media (max-width:1100px){.main-nav ul{gap:1.1rem !important}.main-nav a{font-size:.85rem !important}.btn-cta{padding:.65rem 1.1rem !important;font-size:.85rem !important}.btn-login{padding:.55rem .9rem !important;font-size:.85rem !important}}
+@media (max-width:980px){.main-nav{display:none}.menu-toggle{display:block !important}.main-nav.open{display:block}}
 .ap-hero{position:relative;padding:90px 0 70px;background:linear-gradient(180deg,#f6f3ff 0%,#fff 100%);overflow:hidden}
 .ap-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(107,70,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(107,70,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 50% at 50% 30%,#000 30%,transparent 80%);pointer-events:none}
 .ap-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.40;pointer-events:none}
@@ -103,6 +108,83 @@
 .ap-cta-btn:hover{transform:translateY(-2px);box-shadow:0 24px 50px -16px rgba(0,0,0,.45)}
 .ap-cta-btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);box-shadow:none}
 .ap-cta-btn.ghost:hover{background:rgba(255,255,255,.10);transform:translateY(-2px)}
+/* TIMELINE */
+.ap-timeline{padding:80px 0;background:#fff;position:relative}
+.ap-tl-head{text-align:center;max-width:680px;margin:0 auto 60px}
+.ap-tl-wrap{position:relative;max-width:880px;margin:0 auto}
+.ap-tl-wrap::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#6b46ff 0%,#E84A8C 100%);transform:translateX(-50%);border-radius:3px}
+.ap-tl-item{position:relative;width:50%;padding:24px 50px;box-sizing:border-box}
+.ap-tl-item.left{left:0;text-align:right}
+.ap-tl-item.right{left:50%;text-align:left}
+.ap-tl-item::before{content:"";position:absolute;top:32px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#6b46ff,#E84A8C);border:4px solid #fff;box-shadow:0 0 0 3px rgba(107,70,255,.25);z-index:1;transition:transform .3s,box-shadow .3s}
+.ap-tl-item.left::before{right:-9px}
+.ap-tl-item.right::before{left:-9px}
+.ap-tl-item:hover::before{transform:scale(1.4);box-shadow:0 0 0 6px rgba(107,70,255,.18)}
+.ap-tl-year{display:inline-block;padding:5px 14px;background:linear-gradient(135deg,#6b46ff,#E84A8C);color:#fff;border-radius:100px;font-size:12.5px;font-weight:800;letter-spacing:.04em;margin-bottom:10px}
+.ap-tl-h3{font-size:1.2rem;font-weight:800;color:#0F1A35;line-height:1.25;letter-spacing:-.02em;margin:0 0 8px}
+.ap-tl-p{color:#3a3a4a;font-size:.96rem;line-height:1.55;margin:0}
+/* PULL QUOTE */
+.ap-quote{padding:80px 0;background:linear-gradient(135deg,#0F1A35 0%,#1a2547 100%);color:#fff;position:relative;overflow:hidden}
+.ap-quote::before{content:'"';position:absolute;top:-40px;left:50%;transform:translateX(-50%);font-size:18rem;color:rgba(107,70,255,.15);font-family:Georgia,serif;font-weight:900;line-height:1;pointer-events:none}
+.ap-quote .container{position:relative;z-index:1;text-align:center;max-width:780px;margin:0 auto}
+.ap-quote-text{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;line-height:1.4;color:#fff;letter-spacing:-.015em;margin:0 0 26px;font-style:italic}
+.ap-quote-author{display:flex;align-items:center;justify-content:center;gap:14px}
+.ap-quote-pic{width:54px;height:54px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.2);flex-shrink:0}
+.ap-quote-pic img{width:100%;height:100%;object-fit:cover}
+.ap-quote-meta{text-align:left}
+.ap-quote-name{display:block;color:#fff;font-weight:800;font-size:15px;letter-spacing:-.01em}
+.ap-quote-role{display:block;color:rgba(255,255,255,.65);font-size:13px;font-weight:500;margin-top:1px}
+/* HUMOR */
+.ap-humor{padding:80px 0;background:#f6f3ff;position:relative}
+.ap-humor-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1100px;margin:0 auto}
+.ap-humor-photo{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 60px -25px rgba(15,26,53,.30);transition:transform .5s}
+.ap-humor-photo:hover{transform:rotate(-1deg) scale(1.02)}
+.ap-humor-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.ap-humor-photo:hover img{transform:scale(1.05)}
+.ap-humor-tag{position:absolute;top:18px;left:18px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);padding:8px 14px;border-radius:100px;color:#0F1A35;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 10px 24px -10px rgba(15,26,53,.30)}
+.ap-humor-eb{display:inline-block;padding:8px 16px;background:#fff;border:1.5px solid rgba(232,74,140,.20);color:#E84A8C;border-radius:100px;font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
+.ap-humor h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:#0F1A35;line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+.ap-humor p{color:#3a3a4a;font-size:1.02rem;line-height:1.7;margin:0 0 14px}
+.ap-humor p strong{color:#0F1A35;font-weight:700}
+.ap-humor p:last-child{margin-bottom:0}
+/* VISION */
+.ap-vision{padding:80px 0;background:#fff}
+.ap-vision-head{text-align:center;max-width:780px;margin:0 auto 50px}
+.ap-vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+.ap-vision-card{background:linear-gradient(180deg,#fff 0%,#f6f3ff 100%);border:1.5px solid rgba(107,70,255,.12);border-radius:22px;padding:32px 28px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.ap-vision-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -25px rgba(107,70,255,.30);border-color:rgba(107,70,255,.30)}
+.ap-vision-year{position:absolute;top:18px;right:18px;font-size:2.6rem;font-weight:900;color:rgba(107,70,255,.12);letter-spacing:-.04em;line-height:1;transition:color .3s}
+.ap-vision-card:hover .ap-vision-year{color:rgba(232,74,140,.20)}
+.ap-vision-ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6b46ff,#E84A8C);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:transform .3s}
+.ap-vision-card:hover .ap-vision-ic{transform:rotate(-6deg) scale(1.08)}
+.ap-vision-ic svg{width:24px;height:24px;color:#fff}
+.ap-vision-card h3{font-size:1.15rem;font-weight:800;color:#0F1A35;letter-spacing:-.02em;margin:0 0 10px;line-height:1.25}
+.ap-vision-card p{color:#3a3a4a;font-size:.95rem;line-height:1.6;margin:0}
+/* ANIMATIONS */
+@keyframes ap-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes ap-orb-pulse{0%,100%{opacity:.40;transform:scale(1)}50%{opacity:.55;transform:scale(1.08)}}
+.ap-reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.ap-reveal.in{opacity:1;transform:translateY(0)}
+.ap-hero-photo{animation:ap-float 6s ease-in-out infinite}
+.ap-orb{animation:ap-orb-pulse 8s ease-in-out infinite}
+.ap-orb.b{animation-delay:-4s}
+.ap-story-photo{transition:transform .5s cubic-bezier(.2,.7,.3,1),box-shadow .5s}
+.ap-story-photo:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 40px 80px -25px rgba(15,26,53,.45),0 20px 40px -20px rgba(107,70,255,.35)}
+.ap-story-photo img{transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.ap-story-photo:hover img{transform:scale(1.06)}
+.ap-gallery-item{transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s}
+.ap-gallery-item img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.ap-gallery-item:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 30px 60px -18px rgba(15,26,53,.55),0 0 0 3px rgba(107,70,255,.20)}
+.ap-gallery-item:hover img{transform:scale(1.10)}
+.ap-stat{transition:transform .3s,background .3s,border-color .3s}
+.ap-stat:hover{transform:translateY(-4px);background:rgba(255,255,255,.08);border-color:rgba(155,111,255,.35)}
+@media (max-width:900px){
+  .ap-tl-wrap::before{left:18px}
+  .ap-tl-item,.ap-tl-item.left,.ap-tl-item.right{width:100%;left:0;text-align:left;padding:14px 0 14px 50px}
+  .ap-tl-item::before{left:9px !important;right:auto !important}
+  .ap-humor-grid{grid-template-columns:1fr;gap:30px}
+  .ap-vision-grid{grid-template-columns:1fr;gap:14px}
+}
 @media (max-width:900px){
   .ap-hero{padding:50px 0 30px}
   .ap-hero-grid{grid-template-columns:1fr;gap:30px}
@@ -217,7 +299,7 @@
         <h1 class="ap-title">GuestLucky is <span class="ap-grad">10 years of operations</span> turned into software.</h1>
         <p class="ap-lead">Hi, I'm <strong>Sébastien Moré</strong>. I've spent 10 years in the Airbnb business, 8 of them training short-term rental pros across France. GuestLucky isn't software invented by devs who've never managed a property. It's the tool I wish I'd had 10 years ago, built by an operator and coded by a software engineer. Same person.</p>
         <div class="ap-hero-ctas">
-          <a href="https://www.guestlucky.com/rdv/site" target="_blank" rel="noopener" class="btn-cta">Book a demo with me <span class="arrow">→</span></a>
+          <a href="webinaire-en.html" class="btn-cta">Join the webinar <span class="arrow">→</span></a>
           <a href="https://wa.me/33759944305" target="_blank" rel="noopener" class="btn-cta" style="background:#25D366;color:#fff;border:none">WhatsApp</a>
         </div>
       </div>
@@ -228,6 +310,38 @@
           <span>GuestLucky founder · Airbnb trainer · Software engineer</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="ap-timeline">
+  <div class="container">
+    <div class="ap-tl-head">
+      <span class="ap-eb">The journey</span>
+      <h2 class="ap-values-h2">From Bangkok to GuestLucky, 10 years of adventure.</h2>
+      <p class="ap-values-sub">The real milestones - not a pitch-deck roadmap.</p>
+    </div>
+    <div class="ap-tl-wrap">
+      <div class="ap-tl-item left"><span class="ap-tl-year">2009 · Bangkok</span><h3 class="ap-tl-h3">Subletting an apartment to pay rent</h3><p class="ap-tl-p">It all starts in Thailand. For personal reasons, I have to sublet my apartment. I discover short-term rental. Back then, I didn't see the business model yet - but I felt there was money to be made.</p></div>
+      <div class="ap-tl-item right"><span class="ap-tl-year">2014 · Bangkok</span><h3 class="ap-tl-h3">Launching the first concierge</h3><p class="ap-tl-p">After a brutal bankruptcy in France that wiped me out, no more stock business, no more bank loans. Concierge service is my new bet. I see empty properties everywhere, no one managing them seriously. I dive in.</p></div>
+      <div class="ap-tl-item left"><span class="ap-tl-year">2016 · 30 properties</span><h3 class="ap-tl-h3">Check-ins at 2 AM on a scooter</h3><p class="ap-tl-p">30 properties, 100% physical check-ins. Premium service. But Thai airports run all night. I'm out at 2am, 3am, 4am on my scooter. Huge selling point for owners, but unmanageable.</p></div>
+      <div class="ap-tl-item right"><span class="ap-tl-year">2017 · The wake-up</span><h3 class="ap-tl-h3">I miss a check-in. I overslept.</h3><p class="ap-tl-p">One night I'm scrolling my Airbnb bookings on my phone, mix up the day, fall asleep. Guest stranded at the door. That's the trigger. <strong>I need software.</strong> Two sleepless nights in my bed in Bangkok, I code GuestLucky v1.</p></div>
+      <div class="ap-tl-item left"><span class="ap-tl-year">2018</span><h3 class="ap-tl-h3">Airbnb locks the APIs. GuestLucky dies overnight.</h3><p class="ap-tl-p">Airbnb locks down the API. Booking follows. To access reservations you need a token. The token is given only to a handful of huge US-based players. I fill the form 10 times - never hear back. GuestLucky v1 dies.</p></div>
+      <div class="ap-tl-item right"><span class="ap-tl-year">2019 · France</span><h3 class="ap-tl-h3">Back in France, launching Le Sous Loueur</h3><p class="ap-tl-p">I move back, relaunch a concierge company that grows to 100 properties. I rebuild GuestLucky as an ERP this time - operational, not Channel Manager. My students in coaching beg me to open it up.</p></div>
+      <div class="ap-tl-item left"><span class="ap-tl-year">2024</span><h3 class="ap-tl-h3">First commercial version (ERP only)</h3><p class="ap-tl-p">We release the first commercial version, ERP only. It works, but we plateau. People want <strong>both</strong> - operational AND Channel Manager.</p></div>
+      <div class="ap-tl-item right"><span class="ap-tl-year">2026</span><h3 class="ap-tl-h3">GuestLucky all-in-one (CM + ERP + AI)</h3><p class="ap-tl-p">Early 2026, we ship the full version: Channel Manager + ERP + guest AI + Lucky Copilot. Today: <strong>+10,000 properties</strong> in France and abroad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="ap-quote">
+  <div class="container">
+    <p class="ap-quote-text">"GuestLucky isn't a product manager's idea from someone who's never welcomed a guest. It's the tool I coded for myself when I was in the trenches, in Bangkok, with 30 properties and 3 night check-ins a week. Today I share it with people living the same reality."</p>
+    <div class="ap-quote-author">
+      <div class="ap-quote-pic"><img src="assets/about/sebastien-seminaire-portrait.jpg" alt="Sébastien Moré"></div>
+      <div class="ap-quote-meta"><span class="ap-quote-name">Sébastien Moré</span><span class="ap-quote-role">GuestLucky Founder · Le Sous Loueur</span></div>
     </div>
   </div>
 </section>
@@ -277,6 +391,25 @@
   </div>
 </section>
 
+<!-- HUMOR / Maserati -->
+<section class="ap-humor">
+  <div class="container">
+    <div class="ap-humor-grid">
+      <div class="ap-humor-photo">
+        <img src="assets/about/sebastien-maserati.jpg" alt="Sébastien Moré driving in Bangkok" loading="lazy" width="800" height="600">
+        <span class="ap-humor-tag">⚠️ Bangkok · Not a pitch deck shot</span>
+      </div>
+      <div>
+        <span class="ap-humor-eb">Little side note</span>
+        <h2>And what about the laundry bags on the scooter?</h2>
+        <p>For anyone who thinks concierge work is glamorous: here's the real "laundry transport setup" I used for 3 years in Bangkok - <strong>a motorbike with one bag in front, two behind, bungee-corded together</strong>. I have the photos. Maybe I'll release them someday.</p>
+        <p>My first "laundry room"? A converted apartment with washing machines running all night. <strong>I slept inside, in a separate room.</strong> Definitely not the kind of story you tell on a startup pitch deck.</p>
+        <p>But it's exactly why, today, when a GuestLucky user tells me "I can't handle my laundry anymore", <strong>I know exactly what they mean</strong>. The laundry feature in GuestLucky was designed with those memories in mind - not from a Figma on a brand-new MacBook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="ap-stats">
   <div class="container">
     <h2 class="ap-stats-title">The numbers behind GuestLucky.</h2>
@@ -316,6 +449,25 @@
   </div>
 </section>
 
+<!-- VISION -->
+<section class="ap-vision">
+  <div class="container">
+    <div class="ap-vision-head">
+      <span class="ap-eb">Sébastien's vision</span>
+      <h2 class="ap-values-h2">The future of concierge work, from someone who's been there</h2>
+      <p class="ap-values-sub">Robots, AI, digital concierges: what's coming in the next 3-5 years, seen by someone who's been in the field for 10 years.</p>
+    </div>
+    <div class="ap-vision-grid">
+      <div class="ap-vision-card"><span class="ap-vision-year">1-2 yrs</span><div class="ap-vision-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div><h3>Robots arrive</h3><p>Vacuum robots, mower robots already exist. But also <strong>foldable wall-mounted robots</strong> to clean bathrooms. China builds them, Europe distributes them. Months away, not years.</p></div>
+      <div class="ap-vision-card"><span class="ap-vision-year">2-3 yrs</span><div class="ap-vision-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></div><h3>Fully digital concierges</h3><p>For small properties (studios, T2s in cities), concierges will be <strong>fully digital</strong>. No human touches a key. Auto check-in, 24/7 guest AI, cleaning piloted remotely, laundry shuttled by autonomous vehicle.</p></div>
+      <div class="ap-vision-card"><span class="ap-vision-year">3-5 yrs</span><div class="ap-vision-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L1 21h22L12 2z"/></svg></div><h3>The concierge profession shifts</h3><p>The new job: <strong>help owners install their own system</strong>. You install, configure, train, hand them the software. No more "I take 25% commission". A real tech expertise that sells.</p></div>
+      <div class="ap-vision-card"><span class="ap-vision-year">5+ yrs</span><div class="ap-vision-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/></svg></div><h3>Humans keep value on premium villas</h3><p>Beautiful villas, top-tier travelers: they'll always want human contact. Digital for volume, premium for relationship. Both models will coexist.</p></div>
+      <div class="ap-vision-card"><span class="ap-vision-year">Always</span><div class="ap-vision-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>Operations stay essential</h3><p>You can run without a Channel Manager (if Airbnb-only). <strong>The ERP, however, is non-negotiable.</strong> Who cleans when, what broke, reporting, checklists. No AI will fully replace that. You need software. Always.</p></div>
+      <div class="ap-vision-card"><span class="ap-vision-year">2026</span><div class="ap-vision-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Our job: prep you for all this</h3><p>GuestLucky already covers it. Channel Manager + ERP + guest AI + laundry/cleaning automations. <strong>You jump 5 years ahead</strong> by signing now, without paying 5 years up front.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="ap-gallery">
   <div class="container">
     <div class="ap-gallery-head">
@@ -324,12 +476,26 @@
       <p class="ap-values-sub">Seminars, training, pro coaching. We know the field.</p>
     </div>
     <div class="ap-gallery-grid">
-      <div class="ap-gallery-item"><img src="assets/about/sebastien-team-scene.jpg" alt="Le Sous Loueur seminar" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Le Sous Loueur Seminar · Paris</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-team-scene.jpg" alt="Le Sous Loueur team seminar" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Le Sous Loueur Seminar · Team on stage</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-seminaire-portrait.jpg" alt="Sébastien Moré with microphone" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Sébastien on mic · Salut la Team</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-selfie-foule.jpg" alt="Community selfie" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Selfie post-seminar · Le Sous Loueur community</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-team-3.jpg" alt="Team Sous Loueur" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Group presentation · Full house</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-team-4.jpg" alt="Sébastien seminar" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Exchange moment · Annual seminar</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-team-5.jpg" alt="Public seminar" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Sous Loueur audience · Live coaching</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-mic-2.jpg" alt="Sébastien Moré on mic" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Q/A with concierges · Training</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-coaching.jpg" alt="Sébastien Moré coaching" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Pro coaching · Le Sous Loueur</div></div>
       <div class="ap-gallery-item"><img src="assets/about/sebastien-formation-banner.jpg" alt="Hotel training session" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Hotel training · Maine-et-Loire</div></div>
-      <div class="ap-gallery-item"><img src="assets/about/sebastien-seminaire-hotel.jpg" alt="Channel Manager workshop" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Channel Manager workshop · Mainetout</div></div>
-      <div class="ap-gallery-item"><img src="assets/about/sebastien-selfie-foule.jpg" alt="Community selfie" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Le Sous Loueur community · Post-seminar selfie</div></div>
-      <div class="ap-gallery-item"><img src="assets/about/sebastien-laptop-outdoor.jpg" alt="GuestLucky dev session" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">GuestLucky dev · Hands-on daily</div></div>
-      <div class="ap-gallery-item"><img src="assets/about/sebastien-seminaire-portrait.jpg" alt="Sébastien Moré with microphone" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Sébastien Moré · GuestLucky founder</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-team-formation.jpg" alt="Group training" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Mainetout salon · Group workshop</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-seminaire-hotel.jpg" alt="Hotel seminar" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Hotel presentation · Channel Manager</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-banner-blue.jpg" alt="Blue banner workshop" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Live workshop · Le Sous Loueur</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-maserati.jpg" alt="Sébastien Maserati Bangkok" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Bangkok · The fun shot (not a pitch deck)</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-maserati-2.jpg" alt="Sébastien Maserati phone" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Driving in Bangkok · Replying to a guest</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-maserati-3.jpg" alt="Sébastien Maserati 3" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">10 years after the scooter · The contrast</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-maserati-4.jpg" alt="Sébastien Maserati 4" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Still Bangkok · Still on the phone</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-laptop-outdoor.jpg" alt="Sébastien dev outdoor" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">GuestLucky dev · Outdoor, Thailand</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-laptop-2.jpg" alt="Sébastien at laptop" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Coding session · Hands-on daily</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-laptop-3.jpg" alt="Sébastien laptop session 3" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">GuestLucky roadmap · Field work</div></div>
+      <div class="ap-gallery-item"><img src="assets/about/sebastien-laptop-4.jpg" alt="Sébastien laptop session 4" loading="lazy" width="800" height="1000"><div class="ap-gallery-cap">Lucky Copilot · Polishing now</div></div>
     </div>
   </div>
 </section>
@@ -339,7 +505,7 @@
     <h2>Want to see GuestLucky live?</h2>
     <p>30 minutes on video with me or someone from the team. We look at your portfolio, your current tools, and we show you where GuestLucky saves you time. No fluff.</p>
     <div class="ap-cta-ctas">
-      <a href="https://www.guestlucky.com/rdv/site" target="_blank" rel="noopener" class="ap-cta-btn">Book a free demo →</a>
+      <a href="webinaire-en.html" class="ap-cta-btn">Join the webinar →</a>
       <a href="https://wa.me/33759944305" target="_blank" rel="noopener" class="ap-cta-btn ghost">WhatsApp: +33 7 59 94 43 05</a>
     </div>
   </div>
@@ -367,6 +533,33 @@
   </a>
 </div>
 <script src="app.js?v=2"></script>
+<script id="ap-anim">
+(function(){
+  var nodes=document.querySelectorAll('.ap-story-grid, .ap-tl-item, .ap-vision-card, .ap-value, .ap-stat, .ap-gallery-item, .ap-humor-grid > div, .ap-quote .container, .ap-tl-head, .ap-values-head, .ap-vision-head, .ap-gallery-head, .ap-hero-grid > div, .ap-stats-title, .ap-stats-sub, .ap-stats-grid');
+  nodes.forEach(function(n,i){n.classList.add('ap-reveal');n.style.transitionDelay=(i%4)*60+'ms';});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    nodes.forEach(function(n){io.observe(n);});
+  } else { nodes.forEach(function(n){n.classList.add('in');}); }
+  var stats=document.querySelectorAll('.ap-stat-num');
+  function animateNum(el){
+    var raw=el.getAttribute('data-final')||el.textContent.trim();
+    var match=raw.match(/([\d]+(?:[\s,.]\d+)*)/);
+    if(!match)return;
+    var prefix=raw.substring(0,match.index);
+    var num=parseInt(match[1].replace(/[\s,.]/g,''),10);
+    var suffix=raw.substring(match.index+match[1].length);
+    if(isNaN(num)||num<2)return;
+    var t0=null;
+    function tick(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1400);var eased=1-Math.pow(1-p,3);var cur=Math.floor(eased*num);el.textContent=prefix+(cur>=1000?cur.toLocaleString('en-US'):cur)+suffix;if(p<1)requestAnimationFrame(tick);}
+    requestAnimationFrame(tick);
+  }
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){if(!e.target.dataset.final){e.target.dataset.final=e.target.textContent.trim();}animateNum(e.target);io2.unobserve(e.target);}});},{threshold:0.5});
+    stats.forEach(function(s){io2.observe(s);});
+  }
+})();
+</script>
 <link rel="stylesheet" href="chat/assets/widget.css">
 <script src="chat/assets/widget.js" data-chat-url="chat/chat.php"></script>
 </body>
