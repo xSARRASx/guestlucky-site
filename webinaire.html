@@ -148,8 +148,8 @@
   <input type="email" id="wf-email" name="email" required autocomplete="email" placeholder="marie@exemple.com">
   </div>
   <div class="form-field">
-  <label for="wf-phone">Téléphone <span class="optional">(optionnel)</span></label>
-  <input type="tel" id="wf-phone" name="phone" autocomplete="tel" placeholder="06 12 34 56 78">
+  <label for="wf-phone">Téléphone *</label>
+  <input type="tel" id="wf-phone" name="phone" required autocomplete="tel" placeholder="06 12 34 56 78">
   </div>
   <label class="form-checkbox">
   <input type="checkbox" id="wf-consent" name="consent" required>
@@ -239,7 +239,10 @@
   p.set("last_name", data.get("lastname") || "");
   p.set("email", data.get("email") || "");
   var phone = (data.get("phone") || "").replace(/\D/g, "");
-  if (phone) { p.set("phone_country_code", "+33"); p.set("phone_number", phone); }
+  // Numéro FR : on retire le 0 initial car l'indicatif +33 le remplace
+  if (phone.charAt(0) === "0") { phone = phone.substring(1); }
+  p.set("phone_country_code", "+33");
+  p.set("phone_number", phone);
   p.set("timezone", tz);
   p.set("schedule_id", SCHEDULE_ID);
   return ONE_CLICK_BASE + "?" + p.toString();
