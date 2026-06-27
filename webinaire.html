@@ -231,9 +231,17 @@
   var SCHEDULE_ID = 1;
   var form = document.getElementById("webinar-form");
   if (!form) return;
+  function gmtOffset() {
+  // WebinarJam attend le format "GMT+2" / "GMT-7" (pas "Europe/Paris")
+  var off = -new Date().getTimezoneOffset(); // minutes, ex: 120 pour Paris été
+  var sign = off >= 0 ? "+" : "-";
+  var abs = Math.abs(off);
+  var h = Math.floor(abs / 60);
+  var m = abs % 60;
+  return "GMT" + sign + h + (m ? ":" + (m < 10 ? "0" : "") + m : "");
+  }
   function buildOneClickUrl(data) {
-  var tz = "Europe/Paris";
-  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || tz; } catch(e) {}
+  var tz = gmtOffset();
   var p = new URLSearchParams();
   p.set("first_name", data.get("firstname") || "");
   p.set("last_name", data.get("lastname") || "");
