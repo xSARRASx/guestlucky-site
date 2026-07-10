@@ -297,7 +297,7 @@
   title: 'Questions? Need a <span class="gl-accent">personalized offer</span>?',
   body: "Book a call with a GuestLucky expert. About 1 hour by video to map out your setup, answer all your questions, and unlock a tailored offer for your business.",
   cta: "Book a demo",
-  ctaHref: "demo-en.html",
+  ctaHref: "https://www.guestlucky.com/rdv/site",
   decline: "No thanks, continue browsing",
   footer: "Free · No commitment",
   closeLabel: "Close"
@@ -306,7 +306,7 @@
   title: 'Des questions ? Besoin d\'une <span class="gl-accent">offre personnalisée</span> ?',
   body: "Prends rendez-vous avec un expert GuestLucky. Environ 1h en visio pour cadrer ton setup, répondre à toutes tes questions et débloquer une offre adaptée à ton activité.",
   cta: "Prendre rendez-vous",
-  ctaHref: "demo.html",
+  ctaHref: "https://www.guestlucky.com/rdv/site",
   decline: "Non merci, je continue ma visite",
   footer: "Gratuit · Sans engagement",
   closeLabel: "Fermer"
