@@ -312,8 +312,8 @@
   closeLabel: "Fermer"
   };
   var STORAGE_KEY = "gl_welcome_modal_last_shown";
-  var COOLDOWN_MS = 3 * 60 * 1000;
-  var INITIAL_DELAY_MS = 20 * 1000;
+  var COOLDOWN_MS = 2 * 60 * 1000;      // 2 minutes pile entre chaque affichage
+  var INITIAL_DELAY_MS = 2 * 60 * 1000; // premiere apparition apres 2 minutes aussi
   function getLastShown() {
   try { return parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0; } catch (e) { return 0; }
   }
@@ -372,7 +372,7 @@
   }
   setInterval(function () {
   if (!modal.classList.contains("show") && shouldShowNow()) openModal();
-  }, 30 * 1000);
+  }, 15 * 1000);
   }
   function initTranquilleToggle() {
   var toggle = document.querySelector(".ap-toggle");
