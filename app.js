@@ -295,7 +295,7 @@
   var content = isEN ? {
   badge: "WE CAN HELP YOU",
   title: 'Questions? Need a <span class="gl-accent">personalized offer</span>?',
-  body: "Book a call with a GuestLucky expert. 30 minutes by video to map out your setup, answer all your questions, and unlock a tailored offer for your business.",
+  body: "Book a call with a GuestLucky expert. About 1 hour by video to map out your setup, answer all your questions, and unlock a tailored offer for your business.",
   cta: "Book a demo",
   ctaHref: "demo-en.html",
   decline: "No thanks, continue browsing",
@@ -304,7 +304,7 @@
   } : {
   badge: "ON PEUT T'AIDER",
   title: 'Des questions ? Besoin d\'une <span class="gl-accent">offre personnalisée</span> ?',
-  body: "Prends rendez-vous avec un expert GuestLucky. 30 minutes en visio pour cadrer ton setup, répondre à toutes tes questions et débloquer une offre adaptée à ton activité.",
+  body: "Prends rendez-vous avec un expert GuestLucky. Environ 1h en visio pour cadrer ton setup, répondre à toutes tes questions et débloquer une offre adaptée à ton activité.",
   cta: "Prendre rendez-vous",
   ctaHref: "demo.html",
   decline: "Non merci, je continue ma visite",
