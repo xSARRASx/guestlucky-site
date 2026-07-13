@@ -3,6 +3,7 @@
 # À placer dans /public_html/ (racine du site)
 # ============================================================
 
+Options +FollowSymLinks
 RewriteEngine On
 
 # ── Redirections UTM agenda (prise de RDV) ───────────────────
@@ -25,8 +26,7 @@ RewriteRule ^ /%1 [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# 3) Servir le fichier .html correspondant quand l'URL est sans extension
-RewriteCond %{REQUEST_FILENAME} !-f
+# 3) Servir le .html correspondant quand l'URL est sans extension
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
