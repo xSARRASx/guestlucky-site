@@ -550,6 +550,62 @@ html{scroll-behavior:smooth}
   </div>
   </div>
 </section>
+<!-- ===== WEBINAIRE (juste après le hero) ===== -->
+<section class="webinar-promo" aria-label="Webinaire de présentation GuestLucky" id="webinaire">
+  <style>
+  .webinar-promo{padding:80px 0;background:linear-gradient(135deg,#fdf8f0 0%,#f6f3ff 100%);position:relative;overflow:hidden}
+  .webinar-promo-card{max-width:1100px;margin:0 auto;background:#fff;border:1px solid rgba(26,37,71,.08);border-radius:24px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;box-shadow:0 20px 50px -20px rgba(107,70,255,.18);position:relative;overflow:hidden}
+  .webinar-promo-card::before{content:"";position:absolute;top:-100px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(232,74,140,.18),transparent 60%);filter:blur(40px);pointer-events:none}
+  @media(max-width:880px){.webinar-promo-card{grid-template-columns:1fr;gap:32px;padding:36px}}
+  .webinar-promo-left{position:relative;z-index:1}
+  .webinar-tag-inline{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(232,74,140,.12);border:1px solid rgba(232,74,140,.3);border-radius:100px;color:#E84A8C;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+  .webinar-tag-inline .pulse-dot{width:7px;height:7px;border-radius:50%;background:#E84A8C;animation:webPulse 1.6s infinite}
+  @keyframes webPulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .webinar-promo h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#1a2547;margin:0 0 14px}
+  .webinar-promo h2 .accent-light{background:linear-gradient(135deg,#6b46ff 0%,#E84A8C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .webinar-promo > .container > .webinar-promo-card > .webinar-promo-left > p,.webinar-promo p{color:#3a3a4a;font-size:16px;line-height:1.6;margin:0 0 18px;max-width:50ch}
+  .webinar-promo p strong{color:#1a2547}
+  .webinar-promo-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+  .webinar-promo-list li{font-size:15px;color:#1a2547;font-weight:500;display:flex;align-items:center;gap:8px}
+  .webinar-promo-list li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#6b46ff,#E84A8C);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px;background-repeat:no-repeat;background-position:center}
+  .webinar-promo-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px}
+  .webinar-date{background:linear-gradient(135deg,#1a2547 0%,#3d1d6b 100%);color:#fff;padding:24px 32px;border-radius:18px;text-align:center;box-shadow:0 12px 30px rgba(26,37,71,.18);position:relative;overflow:hidden;min-width:200px}
+  .webinar-date::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(232,74,140,.4),transparent);filter:blur(20px)}
+  .webinar-date-day{position:relative;font-size:64px;font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:4px}
+  .webinar-date-month{position:relative;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+  .webinar-date-time{position:relative;font-size:13px;color:#FFB1C9;font-weight:600;margin-top:8px;letter-spacing:.04em}
+  .webinar-promo-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;background:linear-gradient(90deg,#6b46ff,#E84A8C);color:#fff;border-radius:100px;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 10px 24px rgba(107,70,255,.32);transition:transform .2s,box-shadow .2s}
+  .webinar-promo-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(107,70,255,.42)}
+  .webinar-promo-note{font-size:12px;color:#3a3a4a;opacity:.7;margin:0;text-align:center}
+  </style>
+  <div class="container">
+  <div class="webinar-promo-card">
+  <div class="webinar-promo-left">
+  <span class="webinar-tag-inline"><span class="pulse-dot"></span> Webinaire en direct · 100 % gratuit</span>
+  <h2>Découvrez GuestLucky <span class="accent-light">en live</span></h2>
+  <p>Rejoins notre webinaire de présentation pour découvrir <strong>le logiciel de conciergerie et le Channel Manager</strong> qui changent la donne. Démo en direct, Q/R avec l'équipe, et tous les conseils pour bien démarrer.</p>
+  <ul class="webinar-promo-list">
+  <li>Démo complète de l'outil</li>
+  <li>Cas concrets &amp; bonnes pratiques</li>
+  <li>Session Q/R en direct</li>
+  <li>100 % gratuit, sans engagement</li>
+  </ul>
+  </div>
+  <div class="webinar-promo-right">
+  <div class="webinar-date">
+  <div class="webinar-date-day">16</div>
+  <div class="webinar-date-month">Juillet 2026</div>
+  <div class="webinar-date-time">Jeudi · 18 h 00</div>
+  </div>
+  <a href="webinaire.html" class="webinar-promo-cta">
+  S'inscrire gratuitement
+  <span class="arrow">→</span>
+  </a>
+  <p class="webinar-promo-note">Places limitées - réserve la tienne</p>
+  </div>
+  </div>
+  </div>
+</section>
 <!-- ===== FONDATEUR : qui est derrière GuestLucky ===== -->
 <section class="founder-strip">
   <div class="container">
@@ -776,62 +832,8 @@ html{scroll-behavior:smooth}
   </div>
   </div>
 </section>
-<!-- ===== WEBINAIRE PROMO ===== -->
-<section class="webinar-promo" aria-label="Webinaire de présentation GuestLucky" id="webinaire">
-  <style>
-  .webinar-promo{padding:80px 0;background:linear-gradient(135deg,#fdf8f0 0%,#f6f3ff 100%);position:relative;overflow:hidden}
-  .webinar-promo-card{max-width:1100px;margin:0 auto;background:#fff;border:1px solid rgba(26,37,71,.08);border-radius:24px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;box-shadow:0 20px 50px -20px rgba(107,70,255,.18);position:relative;overflow:hidden}
-  .webinar-promo-card::before{content:"";position:absolute;top:-100px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(232,74,140,.18),transparent 60%);filter:blur(40px);pointer-events:none}
-  @media(max-width:880px){.webinar-promo-card{grid-template-columns:1fr;gap:32px;padding:36px}}
-  .webinar-promo-left{position:relative;z-index:1}
-  .webinar-tag-inline{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(232,74,140,.12);border:1px solid rgba(232,74,140,.3);border-radius:100px;color:#E84A8C;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
-  .webinar-tag-inline .pulse-dot{width:7px;height:7px;border-radius:50%;background:#E84A8C;animation:webPulse 1.6s infinite}
-  @keyframes webPulse{0%,100%{opacity:1}50%{opacity:.4}}
-  .webinar-promo h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#1a2547;margin:0 0 14px}
-  .webinar-promo h2 .accent-light{background:linear-gradient(135deg,#6b46ff 0%,#E84A8C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .webinar-promo > .container > .webinar-promo-card > .webinar-promo-left > p,.webinar-promo p{color:#3a3a4a;font-size:16px;line-height:1.6;margin:0 0 18px;max-width:50ch}
-  .webinar-promo p strong{color:#1a2547}
-  .webinar-promo-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-  .webinar-promo-list li{font-size:15px;color:#1a2547;font-weight:500;display:flex;align-items:center;gap:8px}
-  .webinar-promo-list li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#6b46ff,#E84A8C);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:11px;background-repeat:no-repeat;background-position:center}
-  .webinar-promo-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px}
-  .webinar-date{background:linear-gradient(135deg,#1a2547 0%,#3d1d6b 100%);color:#fff;padding:24px 32px;border-radius:18px;text-align:center;box-shadow:0 12px 30px rgba(26,37,71,.18);position:relative;overflow:hidden;min-width:200px}
-  .webinar-date::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(232,74,140,.4),transparent);filter:blur(20px)}
-  .webinar-date-day{position:relative;font-size:64px;font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:4px}
-  .webinar-date-month{position:relative;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
-  .webinar-date-time{position:relative;font-size:13px;color:#FFB1C9;font-weight:600;margin-top:8px;letter-spacing:.04em}
-  .webinar-promo-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;background:linear-gradient(90deg,#6b46ff,#E84A8C);color:#fff;border-radius:100px;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 10px 24px rgba(107,70,255,.32);transition:transform .2s,box-shadow .2s}
-  .webinar-promo-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(107,70,255,.42)}
-  .webinar-promo-note{font-size:12px;color:#3a3a4a;opacity:.7;margin:0;text-align:center}
-  </style>
-  <div class="container">
-  <div class="webinar-promo-card">
-  <div class="webinar-promo-left">
-  <span class="webinar-tag-inline"><span class="pulse-dot"></span> Webinaire en direct · 100 % gratuit</span>
-  <h2>Découvrez GuestLucky <span class="accent-light">en live</span></h2>
-  <p>Rejoins notre webinaire de présentation pour découvrir <strong>le logiciel de conciergerie et le Channel Manager</strong> qui changent la donne. Démo en direct, Q/R avec l'équipe, et tous les conseils pour bien démarrer.</p>
-  <ul class="webinar-promo-list">
-  <li>Démo complète de l'outil</li>
-  <li>Cas concrets &amp; bonnes pratiques</li>
-  <li>Session Q/R en direct</li>
-  <li>100 % gratuit, sans engagement</li>
-  </ul>
-  </div>
-  <div class="webinar-promo-right">
-  <div class="webinar-date">
-  <div class="webinar-date-day">16</div>
-  <div class="webinar-date-month">Juillet 2026</div>
-  <div class="webinar-date-time">Jeudi · 18 h 00</div>
-  </div>
-  <a href="webinaire.html" class="webinar-promo-cta">
-  S'inscrire gratuitement
-  <span class="arrow">→</span>
-  </a>
-  <p class="webinar-promo-note">Places limitées - réserve la tienne</p>
-  </div>
-  </div>
-  </div>
-</section>
+
+
 <!-- ===== MODE TRANQUILLE ===== -->
 <section class="autopilot" id="tranquille">
   <div class="ap-bg">
