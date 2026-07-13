@@ -1,11 +1,11 @@
 # ============================================================
-# .htaccess — Agenda GuestLucky
+# .htaccess — GuestLucky
 # À placer dans /public_html/ (racine du site)
 # ============================================================
 
 RewriteEngine On
 
-# ── Redirections UTM agenda ───────────────────────────────────
+# ── Redirections UTM agenda (prise de RDV) ───────────────────
 RewriteRule ^rdv$                  /agenda.html [L]
 RewriteRule ^rdv/youtube$          /agenda.html?utm_source=youtube&utm_medium=video&utm_campaign=guestlucky&utm_content=description [L,QSA]
 RewriteRule ^rdv/instagram$        /agenda.html?utm_source=instagram&utm_medium=social&utm_campaign=guestlucky&utm_content=bio [L,QSA]
@@ -15,3 +15,18 @@ RewriteRule ^rdv/linkedin$         /agenda.html?utm_source=linkedin&utm_medium=s
 RewriteRule ^rdv/email$            /agenda.html?utm_source=email&utm_medium=newsletter&utm_campaign=guestlucky&utm_content=cta [L,QSA]
 RewriteRule ^rdv/site$             /agenda.html?utm_source=guestlucky&utm_medium=website&utm_campaign=guestlucky&utm_content=bouton_rdv [L,QSA]
 RewriteRule ^rdv/qr$               /agenda.html?utm_source=qrcode&utm_medium=print&utm_campaign=guestlucky&utm_content=flyer [L,QSA]
+
+# ── URLs propres (sans .html) ────────────────────────────────
+# 1) /index.html et /dossier/index.html -> dossier (301)
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 2) /page.html -> /page (301)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3) Servir le fichier .html correspondant quand l'URL est sans extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
