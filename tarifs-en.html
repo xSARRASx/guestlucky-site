@@ -307,7 +307,7 @@
   <div class="tp-toggle-wrap">
   <div class="tp-toggle" id="tpBilling">
   <button type="button" class="tp-tg active" data-tp="m">Monthly</button>
-  <button type="button" class="tp-tg" data-tp="a">Annual <span class="tp-save">-20%</span></button>
+  <button type="button" class="tp-tg" data-tp="a">Annual <span class="tp-save">up to 2 months free</span></button>
   </div>
   <div class="tp-counter">
   <button type="button" class="tp-cbtn" id="tpMinus" aria-label="Less">−</button>
@@ -343,7 +343,7 @@
   <div class="tp-price"><span data-price-m="5.99" data-price-a="4.79">€5.99</span><span class="tp-unit">/ month</span></div>
   <div class="tp-period">HT / property / <span data-billing="monthly">month</span></div>
   <p class="tp-tagline">The full ERP to run your business without the Channel Manager.</p>
-  <div class="tp-total" data-total="5.99">Total: €5.99 / month</div>
+  <div class="tp-total" data-total="5.99" data-total-y="57.48">Total: €5.99 / month</div>
   <ul class="tp-feats">
   <li>Full ERP (no Channel Manager)</li>
   <li>iCal / ICS sync</li>
@@ -358,10 +358,10 @@
   <div class="tp-card popular" data-plan="pro">
   <span class="tp-rib">★ Most chosen</span>
   <span class="tp-name">Pro</span>
-  <div class="tp-price"><span data-price-m="14.90" data-price-a="11.92">€14.90</span><span class="tp-unit">/ month</span></div>
+  <div class="tp-price"><span data-price-m="14.90" data-price-a="12.42">€14.90</span><span class="tp-unit">/ month</span></div>
   <div class="tp-period">HT / property / <span data-billing="monthly">month</span></div>
   <p class="tp-tagline">EVERYTHING included: Channel Manager + Lucky Copilot + guest AI.</p>
-  <div class="tp-total" data-total="14.90">Total: €14.90 / month</div>
+  <div class="tp-total" data-total="14.90" data-total-y="149">Total: €14.90 / month</div>
   <ul class="tp-feats">
   <li>Everything in Premium included</li>
   <li>Channel Manager (Airbnb, Booking, Abritel, Vrbo)</li>
@@ -676,11 +676,13 @@
   el.textContent = '€' + price.toFixed(2);
   });
   document.querySelectorAll('[data-total]').forEach(function(el){
-  var base = parseFloat(el.dataset.total);
-  if (base === 0){ el.textContent = 'Total: €0 / month'; return; }
-  var adj = billing === 'a' ? base * 0.8 : base;
-  var total = adj * count;
-  el.textContent = 'Total: €' + total.toFixed(2) + ' / month';
+  var monthly = parseFloat(el.dataset.total);
+  if (billing === 'a'){
+  var yr = el.dataset.totalY ? parseFloat(el.dataset.totalY) : monthly * 0.8 * 12;
+  el.textContent = 'Total: €' + (yr * count).toFixed(2) + ' / year';
+  } else {
+  el.textContent = 'Total: €' + (monthly * count).toFixed(2) + ' / month';
+  }
   });
   periodEls.forEach(function(el){ el.textContent = billing === 'a' ? 'month (annual)' : 'month'; });
   }
