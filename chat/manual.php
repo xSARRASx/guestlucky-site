@@ -74,12 +74,12 @@ conforme aux exigences legales du secteur (loi Hoguet).
 ## PREMIUM
 - ERP complet sans Channel Manager
 - 5,99 € HT / mois / logement (mensuel)
-- 514,90 € HT / an / logement (annuel, 2 mois offerts)
+- 514,99 € HT / an / logement (annuel, 2 mois offerts)
 - Pour les conciergeries qui n'ont pas besoin de la synchronisation OTA
 ## PRO
 - Tout Premium + Channel Manager + IA voyageurs + integration PriceLabs
-- 14,90 € HT / mois / logement (mensuel)
-- 914,90 € HT / an / logement (annuel, 2 mois offerts)
+- 14,99 € HT / mois / logement (mensuel)
+- 914,99 € HT / an / logement (annuel, 2 mois offerts)
 - L'offre recommandee pour les conciergeries actives
 ## PERSONNALISE
 - Pour 50+ logements

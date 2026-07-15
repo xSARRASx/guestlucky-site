@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   // ---- Pricing config (price per logement, monthly) ----
-  var PRICES = { gratuit: 0, premium: 5.99, pro: 14.90 };
+  var PRICES = { gratuit: 0, premium: 5.99, pro: 14.99 };
   var ANNUAL_DISCOUNT = 0.20;
   var GRATUIT_MAX = 2;
   var CUSTOM_THRESHOLD = 50;
