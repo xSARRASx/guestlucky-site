@@ -67,26 +67,25 @@ agree DGFiP.
 Rapports mensuels automatiques aux proprietaires, validation tacite 48h,
 conforme aux exigences legales du secteur (loi Hoguet).
 # TARIFS
-## GRATUIT
-- Jusqu'a 2 logements
-- Fonctionnalites de base
-- Ideal pour tester l'outil
+IMPORTANT : il n'y a PAS de plan gratuit ni de mois offert ni de logements
+gratuits. Pour decouvrir l'outil, on propose une DEMO OFFERTE en visio (sans
+engagement, sans carte bancaire) via https://www.guestlucky.com/rdv/site
 ## PREMIUM
 - ERP complet sans Channel Manager
 - 5,99 € HT / mois / logement (mensuel)
-- 514,99 € HT / an / logement (annuel, 2 mois offerts)
+- 57,48 € HT / an / logement (annuel, -20%)
 - Pour les conciergeries qui n'ont pas besoin de la synchronisation OTA
 ## PRO
-- Tout Premium + Channel Manager + IA voyageurs + integration PriceLabs
+- Tout Premium + Channel Manager + Booking Engine + IA voyageurs + Lucky Copilot
 - 14,99 € HT / mois / logement (mensuel)
-- 914,99 € HT / an / logement (annuel, 2 mois offerts)
+- 149 € HT / an / logement (annuel, ~2 mois offerts)
 - L'offre recommandee pour les conciergeries actives
+- Le Booking Engine (moteur de reservation directe) est INCLUS, sans frais
 ## PERSONNALISE
 - Pour 50+ logements
 - Tarification adaptee, support dedie
 - Sur devis
 ## OPTIONS PAYANTES (add-ons)
-- Booking Engine : +5 € HT / logement / mois (Premium et Pro)
 - LuckyCover : 65 € / an minimum par logement (Pro uniquement)
 - Facturation electronique : disponibilite Q3 2026, tarif a venir
 - PriceLabs : connexion gratuite cote GuestLucky, abonnement PriceLabs
@@ -97,14 +96,14 @@ conforme aux exigences legales du secteur (loi Hoguet).
 - 50+ logements : 197 €
 Inclut : configuration initiale, formation, accompagnement des premieres
 connexions OTA. Aucun engagement, paiement unique.
-# PARCOURS POUR S'INSCRIRE OU TESTER
-1. Aller sur guestlucky.com
-2. Cliquer sur "Inscription" / "Commencer gratuitement"
-3. Creer son compte (gratuit, jusqu'a 2 logements pour tester)
-4. Connecter ses annonces (Airbnb / Booking via le partenaire ChannelSync)
+# PARCOURS POUR DECOUVRIR ET S'INSCRIRE
+1. Reserver une DEMO OFFERTE en visio (sans engagement, sans carte bancaire) :
+   https://www.guestlucky.com/rdv/site
+2. Un expert montre l'outil en live et regarde le parc avec le prospect
+3. Choisir son plan (Premium ou Pro) et creer son compte sur guestlucky.com
+4. Notre equipe s'occupe des connexions Channel Manager (Airbnb / Booking)
 5. Profiter de l'app
-Pour parler a un conseiller avant de se lancer ou demander une demo :
-Lien d'appel decouverte (15 minutes, gratuit, sans engagement) :
+Pour parler a un conseiller ou demander une demo :
 https://www.guestlucky.com/rdv/site
 # QUESTIONS FREQUENTES
 ## Y a-t-il un engagement ?
