@@ -485,6 +485,32 @@ html{scroll-behavior:smooth}
   </div>
   </div>
   <div class="h3-right">
+  <!-- Carte webinaire compacte dans l'espace vide en haut du hero -->
+  <a href="webinaire.html" class="h3-webinar-card" aria-label="S'inscrire au webinaire GuestLucky">
+  <style>
+  .h3-webinar-card{position:absolute;top:-18px;left:50%;transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:14px;width:min(420px,92%);background:#fff;border:1px solid rgba(26,37,71,.08);border-radius:16px;padding:12px 16px;box-shadow:0 18px 44px -18px rgba(107,70,255,.4),0 6px 18px -8px rgba(232,74,140,.3);text-decoration:none;transition:transform .2s,box-shadow .2s}
+  .h3-webinar-card:hover{transform:translateX(-50%) translateY(-3px);box-shadow:0 24px 54px -18px rgba(107,70,255,.55),0 10px 24px -8px rgba(232,74,140,.4)}
+  .h3-wc-date{flex-shrink:0;width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#1a2547 0%,#3d1d6b 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+  .h3-wc-date b{font-size:22px;font-weight:900;letter-spacing:-.03em}
+  .h3-wc-date span{font-size:8.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#FFB1C9;margin-top:2px}
+  .h3-wc-txt{flex:1;min-width:0}
+  .h3-wc-tag{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#E84A8C;margin-bottom:3px}
+  .h3-wc-tag .d{width:6px;height:6px;border-radius:50%;background:#E84A8C;animation:wcPulse 1.6s infinite}
+  @keyframes wcPulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .h3-wc-txt strong{display:block;font-size:14px;font-weight:800;color:#0F1A35;line-height:1.2}
+  .h3-wc-txt em{font-style:normal;font-size:12px;color:#5a5a72;font-weight:600}
+  .h3-wc-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:5px;background:linear-gradient(90deg,#6b46ff,#E84A8C);color:#fff;border-radius:100px;padding:8px 14px;font-weight:800;font-size:12px;white-space:nowrap}
+  @media(max-width:1100px){.h3-webinar-card{position:static;transform:none;width:100%;margin-bottom:20px}.h3-webinar-card:hover{transform:translateY(-3px)}}
+  @media(max-width:600px){.h3-wc-btn span{display:none}.h3-wc-btn::after{content:"→"}}
+  </style>
+  <div class="h3-wc-date"><b>13</b><span>Août</span></div>
+  <div class="h3-wc-txt">
+  <span class="h3-wc-tag"><span class="d"></span> Webinaire en direct</span>
+  <strong>Découvrez GuestLucky en live</strong>
+  <em>Jeudi 13 août 2026 · 18h · 100% gratuit</em>
+  </div>
+  <span class="h3-wc-btn"><span>S'inscrire</span> →</span>
+  </a>
   <div class="h3-app">
   <div class="h3-app-chrome">
   <span class="h3-dot"></span><span class="h3-dot"></span><span class="h3-dot"></span>
@@ -1300,28 +1326,6 @@ html{scroll-behavior:smooth}
 </div>
 <script src="app.js?v=5"></script>
 <!-- Webinar floating card (home only) -->
-<!-- Mini carte webinaire fixe en haut à droite (home) -->
-<aside class="webinar-mini" id="webinarMini" role="complementary" aria-label="Webinaire GuestLucky">
-  <style>
-  .webinar-mini{position:fixed;top:88px;right:20px;z-index:94;width:270px;max-width:calc(100vw - 40px);background:linear-gradient(135deg,#6b46ff 0%,#b624c4 55%,#ff3d8c 100%);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:14px 14px 14px 16px;box-shadow:0 16px 40px -12px rgba(255,61,140,.55),0 8px 20px -8px rgba(107,70,255,.5);color:#fff;transform:translateY(-8px);opacity:0;animation:wmIn .4s ease .8s forwards}
-  @keyframes wmIn{to{transform:translateY(0);opacity:1}}
-  .webinar-mini .wm-close{position:absolute;top:8px;right:10px;background:transparent;border:0;color:rgba(255,255,255,.75);font-size:18px;line-height:1;cursor:pointer;padding:2px}
-  .webinar-mini .wm-close:hover{color:#fff}
-  .webinar-mini .wm-tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#fff;opacity:.95;margin-bottom:6px}
-  .webinar-mini .wm-dot{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:wmPulse 1.6s infinite}
-  @keyframes wmPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%{box-shadow:0 0 0 7px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
-  .webinar-mini h4{margin:0 0 3px;font-size:14.5px;font-weight:800;line-height:1.2}
-  .webinar-mini .wm-date{font-size:12.5px;font-weight:600;opacity:.95;margin:0 0 10px}
-  .webinar-mini .wm-btn{display:block;text-align:center;background:#fff;color:#8b1f6e;border-radius:100px;padding:8px 12px;font-weight:800;font-size:12.5px;text-decoration:none;transition:transform .15s}
-  .webinar-mini .wm-btn:hover{transform:translateY(-1px)}
-  @media(max-width:980px){.webinar-mini{display:none}}
-  </style>
-  <button class="wm-close" aria-label="Fermer" onclick="var m=document.getElementById('webinarMini');if(m)m.style.display='none';">×</button>
-  <span class="wm-tag"><span class="wm-dot"></span> Webinaire en direct</span>
-  <h4>Découvrez GuestLucky en live</h4>
-  <p class="wm-date">Jeudi 13 août 2026 · 18h</p>
-  <a href="webinaire.html" class="wm-btn">S'inscrire gratuitement →</a>
-</aside>
 <aside class="webinar-float" data-webinar-float role="complementary" aria-label="Inscription au webinaire GuestLucky">
   <button class="close" data-webinar-close aria-label="Fermer">×</button>
   <span class="webinar-tag"><span class="pulse"></span> Webinaire en direct</span>
