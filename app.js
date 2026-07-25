@@ -135,6 +135,8 @@
   function initWebinarFloat() {
   var card = document.querySelector("[data-webinar-float]");
   if (!card) return;
+  // Mobile uniquement : on retire complètement la carte flottante webinaire
+  if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) { card.remove(); return; }
   // Dismiss expire après 7 jours (nouveau key pour invalider les anciennes fermetures permanentes)
   var dismissed = null;
   try {
@@ -291,6 +293,8 @@
   }
   function initWelcomeModal() {
   if (document.getElementById("gl-welcome-modal")) return;
+  // Mobile uniquement : pas de popup intempestive (on la garde sur ordinateur)
+  if (window.matchMedia && window.matchMedia("(max-width: 768px)").matches) return;
   var isEN = document.documentElement.lang === "en" || /\-en\.html$/.test(location.pathname);
   var content = isEN ? {
   badge: "WE CAN HELP YOU",
