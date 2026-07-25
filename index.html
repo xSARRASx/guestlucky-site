@@ -1300,6 +1300,28 @@ html{scroll-behavior:smooth}
 </div>
 <script src="app.js?v=5"></script>
 <!-- Webinar floating card (home only) -->
+<!-- Mini carte webinaire fixe en haut à droite (home) -->
+<aside class="webinar-mini" id="webinarMini" role="complementary" aria-label="Webinaire GuestLucky">
+  <style>
+  .webinar-mini{position:fixed;top:88px;right:20px;z-index:94;width:270px;max-width:calc(100vw - 40px);background:linear-gradient(135deg,#6b46ff 0%,#b624c4 55%,#ff3d8c 100%);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:14px 14px 14px 16px;box-shadow:0 16px 40px -12px rgba(255,61,140,.55),0 8px 20px -8px rgba(107,70,255,.5);color:#fff;transform:translateY(-8px);opacity:0;animation:wmIn .4s ease .8s forwards}
+  @keyframes wmIn{to{transform:translateY(0);opacity:1}}
+  .webinar-mini .wm-close{position:absolute;top:8px;right:10px;background:transparent;border:0;color:rgba(255,255,255,.75);font-size:18px;line-height:1;cursor:pointer;padding:2px}
+  .webinar-mini .wm-close:hover{color:#fff}
+  .webinar-mini .wm-tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#fff;opacity:.95;margin-bottom:6px}
+  .webinar-mini .wm-dot{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:wmPulse 1.6s infinite}
+  @keyframes wmPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%{box-shadow:0 0 0 7px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+  .webinar-mini h4{margin:0 0 3px;font-size:14.5px;font-weight:800;line-height:1.2}
+  .webinar-mini .wm-date{font-size:12.5px;font-weight:600;opacity:.95;margin:0 0 10px}
+  .webinar-mini .wm-btn{display:block;text-align:center;background:#fff;color:#8b1f6e;border-radius:100px;padding:8px 12px;font-weight:800;font-size:12.5px;text-decoration:none;transition:transform .15s}
+  .webinar-mini .wm-btn:hover{transform:translateY(-1px)}
+  @media(max-width:980px){.webinar-mini{display:none}}
+  </style>
+  <button class="wm-close" aria-label="Fermer" onclick="var m=document.getElementById('webinarMini');if(m)m.style.display='none';">×</button>
+  <span class="wm-tag"><span class="wm-dot"></span> Webinaire en direct</span>
+  <h4>Découvrez GuestLucky en live</h4>
+  <p class="wm-date">Jeudi 13 août 2026 · 18h</p>
+  <a href="webinaire.html" class="wm-btn">S'inscrire gratuitement →</a>
+</aside>
 <aside class="webinar-float" data-webinar-float role="complementary" aria-label="Inscription au webinaire GuestLucky">
   <button class="close" data-webinar-close aria-label="Fermer">×</button>
   <span class="webinar-tag"><span class="pulse"></span> Webinaire en direct</span>
