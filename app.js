@@ -423,8 +423,47 @@
   initTranquilleToggle();
   // initFloatingLogo(); // disabled - bubble removed per Martin
   initWelcomeModal();
+  initAppBadges();
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+  }
+  function initAppBadges() {
+  var col = document.querySelector(".site-footer .footer-grid > div");
+  if (!col || document.getElementById("gl-appbadges")) return;
+  var isEN = document.documentElement.lang === "en" || /\-en\.html$/.test(location.pathname);
+  if (!document.getElementById("gl-appbadges-style")) {
+  var style = document.createElement("style");
+  style.id = "gl-appbadges-style";
+  style.textContent =
+  ".footer-apps{margin-top:22px}" +
+  ".footer-apps-eb{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9B6FFF;margin-bottom:12px}" +
+  ".footer-apps-badges{display:flex;flex-wrap:wrap;gap:12px}" +
+  ".gl-appbadge{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;text-decoration:none;cursor:default;transition:background .2s,border-color .2s}" +
+  ".gl-appbadge:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28)}" +
+  ".gl-appbadge svg{width:22px;height:22px;flex-shrink:0}" +
+  ".gl-ab-tx{display:flex;flex-direction:column;line-height:1.15;text-align:left}" +
+  ".gl-ab-small{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;opacity:.75}" +
+  ".gl-ab-big{font-size:15px;font-weight:700}";
+  document.head.appendChild(style);
+  }
+  var soon = isEN ? "Coming soon on" : "Bientôt sur";
+  var eb = isEN ? "Mobile app · coming soon" : "Application mobile · bientôt disponible";
+  var wrap = document.createElement("div");
+  wrap.className = "footer-apps";
+  wrap.id = "gl-appbadges";
+  wrap.innerHTML =
+  '<span class="footer-apps-eb">' + eb + '</span>' +
+  '<div class="footer-apps-badges">' +
+  '<span class="gl-appbadge" role="img" aria-label="App Store - ' + (isEN ? 'coming soon' : 'bientôt disponible') + '">' +
+  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.44 2.23-1.22 3.02-.83.86-2.2 1.52-3.34 1.43-.14-1.1.42-2.28 1.16-3.02.83-.84 2.28-1.46 3.4-1.43zM20.9 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.57-2.39 3.52-4.12 3.53-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.35C.4 15.9-.14 11.36 1.4 8.95c1.09-1.71 2.81-2.71 4.43-2.71 1.65 0 2.69 1 4.06 1 1.33 0 2.14-1 4.05-1 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06.9 8.63z"/></svg>' +
+  '<span class="gl-ab-tx"><span class="gl-ab-small">' + soon + '</span><span class="gl-ab-big">App Store</span></span>' +
+  '</span>' +
+  '<span class="gl-appbadge" role="img" aria-label="Google Play - ' + (isEN ? 'coming soon' : 'bientôt disponible') + '">' +
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D2FF" d="M3.6 2.3 13 11.7l-9.4 9.4c-.38-.2-.6-.6-.6-1.08V3.38c0-.48.22-.88.6-1.08z"/><path fill="#00E676" d="M4.7 2.3 16 8.75l-2.9 2.95z"/><path fill="#FFCE00" d="M18.95 10.6c.7.4.7 1.42 0 1.82L16 14.15l-2.9-2.95 2.9-2.95z"/><path fill="#FF3D00" d="M4.7 21.7 13.1 12.7l2.9 2.95z"/></svg>' +
+  '<span class="gl-ab-tx"><span class="gl-ab-small">' + soon + '</span><span class="gl-ab-big">Google Play</span></span>' +
+  '</span>' +
+  '</div>';
+  col.appendChild(wrap);
   }
   if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
