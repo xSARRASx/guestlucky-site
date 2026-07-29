@@ -424,6 +424,7 @@
   // initFloatingLogo(); // disabled - bubble removed per Martin
   initWelcomeModal();
   initAppBadges();
+  initVideoTestimonial();
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
@@ -464,6 +465,67 @@
   '</span>' +
   '</div>';
   col.appendChild(wrap);
+  }
+  function initVideoTestimonial() {
+  // Page d'accueil FR uniquement
+  var p = location.pathname;
+  var isHome = (p === "/" || /\/index\.html$/.test(p)) && !/index-en/.test(p);
+  if (!isHome) return;
+  if (document.getElementById("gl-vtestimo")) return;
+  var footer = document.querySelector(".site-footer");
+  if (!footer) return;
+  if (!document.getElementById("gl-vtestimo-style")) {
+  var style = document.createElement("style");
+  style.id = "gl-vtestimo-style";
+  style.textContent =
+  ".gl-vt{padding:80px 0;background:linear-gradient(180deg,#fff 0%,#f6f3ff 100%);position:relative;overflow:hidden}" +
+  ".gl-vt .container{position:relative;z-index:1}" +
+  ".gl-vt-head{text-align:center;max-width:720px;margin:0 auto 44px}" +
+  ".gl-vt-eb{display:inline-block;padding:6px 14px;background:rgba(107,70,255,.10);border:1px solid rgba(107,70,255,.15);color:#6b46ff;border-radius:100px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}" +
+  ".gl-vt-title{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em;color:#0F1A35;margin:0;line-height:1.15}" +
+  ".gl-vt-title .g{background:linear-gradient(135deg,#6b46ff 0%,#E84A8C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}" +
+  ".gl-vt-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;max-width:1120px;margin:0 auto}" +
+  "@media (max-width:900px){.gl-vt-grid{grid-template-columns:1fr;gap:32px}}" +
+  ".gl-vt-video{position:relative;width:100%;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 40px 90px -30px rgba(15,26,53,.5)}" +
+  ".gl-vt-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}" +
+  ".gl-vt-quotes{display:flex;flex-direction:column;gap:16px}" +
+  ".gl-vt-q{position:relative;padding:0 0 0 20px;color:#3a3a4a;font-size:1.02rem;line-height:1.55;border-left:3px solid transparent;border-image:linear-gradient(180deg,#6b46ff,#E84A8C) 1}" +
+  ".gl-vt-q strong{color:#0F1A35;font-weight:700}" +
+  ".gl-vt-author{display:flex;align-items:center;gap:16px;margin-top:10px;padding:16px 20px;background:#1a2547;border-radius:16px;color:#fff;max-width:max-content}" +
+  ".gl-vt-author-badge{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#6b46ff,#E84A8C);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}" +
+  ".gl-vt-author-tx strong{display:block;font-size:15px;font-weight:800}" +
+  ".gl-vt-author-tx span{font-size:13px;color:#c4c8d8}" +
+  "@media (max-width:900px){.gl-vt-author{max-width:none}}";
+  document.head.appendChild(style);
+  }
+  var sec = document.createElement("section");
+  sec.className = "gl-vt";
+  sec.id = "gl-vtestimo";
+  sec.setAttribute("aria-label", "Témoignage client Estelle - Conciergerie AmBiens");
+  sec.innerHTML =
+  '<div class="container">' +
+  '<div class="gl-vt-head">' +
+  '<span class="gl-vt-eb">Témoignage client</span>' +
+  '<h2 class="gl-vt-title">« Je ne peux plus <span class="g">m\'en passer</span> »</h2>' +
+  '</div>' +
+  '<div class="gl-vt-grid">' +
+  '<div class="gl-vt-video">' +
+  '<iframe src="https://player.vimeo.com/video/1152568026?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" title="Témoignage Estelle - Conciergerie AmBiens" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen loading="lazy"></iframe>' +
+  '</div>' +
+  '<div class="gl-vt-quotes">' +
+  '<p class="gl-vt-q">« Honnêtement, aujourd\'hui, je ne sais pas comment je ferais <strong>sans GuestLucky</strong>. »</p>' +
+  '<p class="gl-vt-q">« Dès qu\'une réservation tombe, la <strong>mission de ménage se crée automatiquement</strong>. Avant, je faisais tout à la main. »</p>' +
+  '<p class="gl-vt-q">« J\'ai gagné du temps, de la sérénité, et je suis sûre de <strong>ne plus passer à côté d\'un ménage</strong>. »</p>' +
+  '<p class="gl-vt-q">« Tout est centralisé : <strong>ménage, facturation, livret d\'accueil, services additionnels</strong>. »</p>' +
+  '<p class="gl-vt-q">« GuestLucky est un outil très complet, et surtout <strong>en constante évolution</strong>. »</p>' +
+  '<div class="gl-vt-author">' +
+  '<div class="gl-vt-author-badge">AB</div>' +
+  '<div class="gl-vt-author-tx"><strong>Estelle - Conciergerie AmBiens</strong><span>Amiens · 70 logements gérés</span></div>' +
+  '</div>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  footer.parentNode.insertBefore(sec, footer);
   }
   if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
