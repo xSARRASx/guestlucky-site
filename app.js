@@ -472,8 +472,9 @@
   var isHome = (p === "/" || /\/index\.html$/.test(p)) && !/index-en/.test(p);
   if (!isHome) return;
   if (document.getElementById("gl-vtestimo")) return;
-  var footer = document.querySelector(".site-footer");
-  if (!footer) return;
+  // On insère juste AU-DESSUS de la section avis clients (.tv3) ; sinon avant le footer
+  var anchor = document.querySelector(".tv3") || document.querySelector(".site-footer");
+  if (!anchor) return;
   if (!document.getElementById("gl-vtestimo-style")) {
   var style = document.createElement("style");
   style.id = "gl-vtestimo-style";
@@ -525,7 +526,7 @@
   '</div>' +
   '</div>' +
   '</div>';
-  footer.parentNode.insertBefore(sec, footer);
+  anchor.parentNode.insertBefore(sec, anchor);
   }
   if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
