@@ -447,9 +447,17 @@
   ".gl-ab-big{font-size:15px;font-weight:700}";
   document.head.appendChild(style);
   }
-  // ---- Liens des stores (à modifier ici si besoin) ----
-  var URL_APPLE = "https://apps.apple.com/fr/app/guestlucky-team/id6755963048";
-  var URL_GOOGLE = "https://play.google.com/store/apps/details?id=com.guestlucky.guestluckyteam";
+  // ============================================================
+  // LIENS DES STORES — 👉 Sébastien : c'est ICI qu'on les change.
+  // Actuellement : recherche officielle des stores (tombe toujours
+  // sur la fiche GUESTLUCKY TEAM, jamais sur une page d'erreur).
+  // Dès que tu m'envoies les liens directs (bouton "Partager" depuis
+  // la fiche de l'app), il suffit de remplacer les 2 lignes ci-dessous :
+  //   ex. Apple  : https://apps.apple.com/fr/app/xxxxx/idXXXXXXXXXX
+  //   ex. Google : https://play.google.com/store/apps/details?id=xxx.xxx.xxx
+  // ============================================================
+  var URL_APPLE = "https://apps.apple.com/fr/search?term=guestlucky%20team";
+  var URL_GOOGLE = "https://play.google.com/store/search?q=guestlucky%20team&c=apps";
   var dl = isEN ? "Download on the" : "Télécharger sur";
   var dlG = isEN ? "GET IT ON" : "Disponible sur";
   var eb = isEN ? "Mobile app · available now" : "Application mobile · disponible";
@@ -469,6 +477,12 @@
   '</a>' +
   '</div>';
   col.appendChild(wrap);
+  // Répare les anciens liens App Store morts déjà présents dans les pages
+  // (footer « App mobile (iOS) », FAQ, articles de blog…)
+  document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+  if (a.closest("#gl-appbadges")) return;
+  if (a.href.indexOf("id6755963048") !== -1) { a.href = URL_APPLE; }
+  });
   }
   function initVideoTestimonial() {
   // Page d'accueil FR uniquement
