@@ -449,15 +449,9 @@
   }
   // ============================================================
   // LIENS DES STORES — 👉 Sébastien : c'est ICI qu'on les change.
-  // Actuellement : recherche officielle des stores (tombe toujours
-  // sur la fiche GUESTLUCKY TEAM, jamais sur une page d'erreur).
-  // Dès que tu m'envoies les liens directs (bouton "Partager" depuis
-  // la fiche de l'app), il suffit de remplacer les 2 lignes ci-dessous :
-  //   ex. Apple  : https://apps.apple.com/fr/app/xxxxx/idXXXXXXXXXX
-  //   ex. Google : https://play.google.com/store/apps/details?id=xxx.xxx.xxx
   // ============================================================
-  var URL_APPLE = "https://apps.apple.com/fr/search?term=guestlucky%20team";
-  var URL_GOOGLE = "https://play.google.com/store/search?q=guestlucky%20team&c=apps";
+  var URL_APPLE = "https://apps.apple.com/fr/app/guestlucky/id6794615212";
+  var URL_GOOGLE = "https://play.google.com/store/apps/details?id=io.guestlucky.app.twa";
   var dl = isEN ? "Download on the" : "Télécharger sur";
   var dlG = isEN ? "GET IT ON" : "Disponible sur";
   var eb = isEN ? "Mobile app · available now" : "Application mobile · disponible";
