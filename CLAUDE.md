@@ -1,5 +1,47 @@
 # CLAUDE.md — Mémoire site vitrine GuestLucky
 
+## 🎙️ VOCAUX — transcrire les messages vocaux de Martin avec Whisper
+
+> Demandé par Martin le 10/08/2026 — **à connaître dans TOUTES les conversations.**
+
+Martin envoie souvent des vocaux. On sait maintenant les transcrire nous-mêmes.
+
+**⚠️ Ce n'est PAS préinstallé** : le conteneur repart de zéro à chaque session,
+il faut relancer l'installation (environ 40 secondes) :
+
+```bash
+pip install --quiet faster-whisper
+```
+
+**Transcrire** (script prêt à l'emploi : `pipeline/transcrire_vocal.py` du repo CARROUSSEL-) :
+
+```bash
+python3 transcrire_vocal.py vocal.ogg          # modele small (defaut, suffisant)
+python3 transcrire_vocal.py vocal.ogg medium   # si l'audio est difficile
+```
+
+Ou directement, sans le script :
+
+```bash
+python3 -c "
+from faster_whisper import WhisperModel
+m = WhisperModel('small', device='cpu', compute_type='int8')
+seg, _ = m.transcribe('vocal.ogg', language='fr', vad_filter=True)
+print(' '.join(s.text for s in seg))"
+```
+
+- **Formats lus** : ogg/opus (**le format des vocaux WhatsApp**), m4a, mp3, wav, mp4.
+  Le décodage passe par PyAV : `ffmpeg` en ligne de commande n'est PAS installé,
+  et ce n'est pas grave.
+- **Toujours mettre `vad_filter=True`** : sans lui, Whisper invente du texte sur
+  les silences (typiquement « Sous-titres réalisés par la communauté d'Amara.org »).
+  Vérifié le 10/08/2026 : avec le filtre, le parasite disparaît.
+- **Comment Martin envoie le vocal** : un fichier collé dans le chat n'arrive pas
+  toujours comme vrai fichier côté Claude. La méthode sûre reste le **ZIP**
+  (même règle que pour les images, cf. session 22 GuestLucky).
+
+---
+
 > Si je perds le contexte (nouvelle conversation, compaction, etc.), je lis ce fichier en premier.
 > Tout ce qui est ici a déjà été décidé / validé avec Martin.
 
