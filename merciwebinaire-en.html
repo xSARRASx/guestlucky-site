@@ -7,7 +7,7 @@
   <meta name="author" content="GuestLucky">
   <meta name="theme-color" content="#1a2547">
   <title>Registration confirmed! Thank you · GuestLucky</title>
-  <meta name="description" content="Your registration to the GuestLucky webinar on August 13, 2026 is confirmed. See you soon!">
+  <meta name="description" content="Your registration to the GuestLucky webinar on September 10, 2026 is confirmed. See you soon!">
   <link rel="canonical" href="https://www.guestlucky.com/merciwebinaire-en.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" type="image/png" href="https://www.locationcourteduree.fr/wp-content/uploads/2026/05/Capture-decran-2026-05-16-a-11.02.01.png">
@@ -85,13 +85,13 @@
   <div class="confetti"></div>
   </div>
   <span class="hero-badge"><span class="dot"></span> Registration confirmed</span>
-  <h1>Thank you <span class="accent" id="user-name">!</span><br>See you on <span class="accent">Thursday August 13, 2026</span></h1>
+  <h1>Thank you <span class="accent" id="user-name">!</span><br>See you on <span class="accent">Thursday September 10, 2026</span></h1>
   <p class="lead">A confirmation email with your join link is on its way. Don't forget to check your spam folder just in case.</p>
   <div class="thanks-info-row">
   <div class="thanks-info-item">
   <div class="info-icon"></div>
   <div>
-  <strong>Thursday August 13, 2026</strong>
+  <strong>Thursday September 10, 2026</strong>
   <small>6:00 PM (Paris time)</small>
   </div>
   </div>
@@ -230,8 +230,8 @@
   var name = "";
   try { var p = new URLSearchParams(window.location.search); name = (p.get("name") || p.get("wj_lead_first_name") || "").trim(); } catch (e) {}
   if (name) document.getElementById("user-name").textContent = name + "!";
-  var EVENT_START_UTC = "20260813T160000Z";
-  var EVENT_END_UTC  = "20260813T170000Z";
+  var EVENT_START_UTC = "20260910T160000Z";
+  var EVENT_END_UTC  = "20260910T170000Z";
   var EVENT_TITLE  = "GuestLucky Webinar - Channel Manager & concierge management";
   var EVENT_DESC  = "Discover GuestLucky live: full demo, AI guest messaging, cleaning schedule, pricing. Join link in your confirmation email.";
   var EVENT_LOCATION  = "Online (link sent by email)";
@@ -248,16 +248,16 @@
   + "&location=" + encodeURIComponent(EVENT_LOCATION);
   document.getElementById("cal-outlook").href = ocal;
   var ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//GuestLucky//Webinar//EN","BEGIN:VEVENT",
-  "UID:webinar-guestlucky-13082026@guestlucky.com","DTSTAMP:" + EVENT_START_UTC,
+  "UID:webinar-guestlucky-10092026@guestlucky.com","DTSTAMP:" + EVENT_START_UTC,
   "DTSTART:" + EVENT_START_UTC,"DTEND:" + EVENT_END_UTC,
   "SUMMARY:" + EVENT_TITLE,"DESCRIPTION:" + EVENT_DESC,"LOCATION:" + EVENT_LOCATION,
   "URL:https://www.guestlucky.com/webinaire-en.html","END:VEVENT","END:VCALENDAR"].join("\r\n");
   var icsUrl = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
   document.getElementById("cal-apple").href = icsUrl;
   var pageUrl = "https://www.guestlucky.com/webinaire-en.html";
-  var shareText = "I just registered for the free GuestLucky webinar on August 13, 2026 - live demo of the Channel Manager & guest AI. Join me: ";
+  var shareText = "I just registered for the free GuestLucky webinar on September 10, 2026 - live demo of the Channel Manager & guest AI. Join me: ";
   document.getElementById("share-wa").href = "https://wa.me/?text=" + encodeURIComponent(shareText + pageUrl);
-  document.getElementById("share-email").href = "mailto:?subject=" + encodeURIComponent("GuestLucky Webinar August 13, 2026")
+  document.getElementById("share-email").href = "mailto:?subject=" + encodeURIComponent("GuestLucky Webinar September 10, 2026")
   + "&body=" + encodeURIComponent(shareText + pageUrl);
   document.getElementById("share-linkedin").href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(pageUrl);
   var copyBtn = document.getElementById("copy-link");
